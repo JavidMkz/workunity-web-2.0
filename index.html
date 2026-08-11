@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=" js";</script>
+<title>WorkUnity — иностранные рабочие для предприятий СНГ</title>
+<meta name="description" content="Подбор рабочих из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для предприятий Кыргызстана, Казахстана, Узбекистана и России. Разрешения, документы, юридическое сопровождение работодателя.">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorkUnity">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="WorkUnity — иностранные рабочие для предприятий СНГ">
+<meta property="og:description" content="Подбор, разрешения, документы, юридическое сопровождение. Кыргызстан, Казахстан, Узбекистан, Россия.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WORKUNITY — INDUSTRIAL EDITORIAL
+   1. Tokens   2. Base   3. Grid   4. Components
+   5. Sections 6. Calculator  7. Motion  8. Responsive
+   ============================================================ */
+
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-soft:#1A2F57;
+  --navy-line:#22355C;
+  --glass:rgba(255,255,255,.05);
+  --glass-2:rgba(255,255,255,.09);
+
+  --gold:#C8A254;
+  --gold-lift:#E2BE74;
+  --gold-deep:#8E6D2A;
+  --gold-wash:rgba(200,162,84,.12);
+
+  --paper:#FFFFFF;
+  --bone:#F5F3EF;
+  --bone-2:#EDEAE3;
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --muted-l:#93A3BF;
+  --line:#E4E1DA;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:2px;              /* editorial = near-square corners */
+  --r-lg:4px;
+  --sec:clamp(64px,9vw,140px);
+}
+
+/* 2 ─ BASE -------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+img{max-width:100%;display:block}
+::selection{background:var(--gold);color:#161006}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+
+/* 3 ─ GRID -------------------------------------------------- */
+.g12{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.2vw,32px)}
+@media(max-width:899px){.g12{grid-template-columns:repeat(6,1fr)}}
+
+/* editorial section index + label */
+.ix{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px}
+.ix::before{content:"";width:26px;height:1px;background:var(--gold);flex:none}
+.ix--d{color:var(--gold-deep)}
+.ix--d::before{background:var(--gold-deep)}
+.ix--plain::before{display:none}
+
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.rule--d{background:var(--navy-line)}
+.rule--gold{background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* 4 ─ COMPONENTS -------------------------------------------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--gold{background:var(--gold);color:#161006;border-color:var(--gold)}
+.btn--gold:hover{background:var(--gold-lift);border-color:var(--gold-lift);transform:translateY(-2px);
+  box-shadow:0 14px 30px -14px rgba(200,162,84,.7)}
+.btn--navy,.btn--dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn--navy:hover,.btn--dark:hover{background:var(--navy-deep);border-color:var(--navy-deep);transform:translateY(-2px)}
+.btn--gl{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.btn--gl:hover{background:rgba(255,255,255,.09);border-color:#fff}
+.btn--out{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn--out:hover{background:var(--navy);color:#fff}
+.btn--sm{padding:11px 19px;font-size:14px}
+.btn--full{width:100%;padding-block:18px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* photo frame with graceful placeholder */
+.ph{position:relative;overflow:hidden;background:linear-gradient(150deg,#16294F 0%,#0B1830 60%,#0F1E3D 100%);
+  border:1px solid var(--navy-line)}
+.ph::before{content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:repeating-linear-gradient(115deg,rgba(200,162,84,.9) 0 1px,transparent 1px 22px)}
+.ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 90px rgba(0,0,0,.45)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.ph__tag{position:absolute;left:14px;bottom:12px;z-index:3;font-family:var(--m);font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);pointer-events:none}
+.ph--light{background:linear-gradient(150deg,#E8E4DC,#D6D1C6);border-color:var(--line)}
+.ph--light::before{opacity:.28;background-image:repeating-linear-gradient(115deg,rgba(142,109,42,.5) 0 1px,transparent 1px 22px)}
+.ph--light::after{box-shadow:inset 0 0 70px rgba(0,0,0,.1)}
+.ph--light .ph__tag{color:rgba(16,26,46,.4)}
+
+/* texture + gridlines */
+.tex{position:relative;isolation:isolate}
+.tex::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.tex > *{position:relative;z-index:1}
+.gridlines::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 110px)}
+
+/* scroll progress */
+.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--gold);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:120;background:rgba(15,30,61,.9);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none}
+.logo svg{width:34px;height:26px}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;color:#fff;letter-spacing:-.035em}
+.nav{display:none;gap:30px}
+@media(min-width:1080px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1080px){.burger{display:none}}
+@media(max-width:1079px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    left:calc(var(--gut)*-1);right:calc(var(--gut)*-1);background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+
+/* 5 ─ SECTIONS ---------------------------------------------- */
+.sec{padding-block:var(--sec)}
+.sec--bone{background:var(--bone)}
+.sec--navy{background:var(--navy);color:#fff}
+.sec--deep{background:var(--navy-deep);color:#fff}
+.sec--navy .ix,.sec--deep .ix{color:var(--gold)}
+
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(30px,4.6vw,60px);margin-top:16px;max-width:19ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:52ch;font-size:16.5px}
+.sec--navy .hd p,.sec--deep .hd p{color:var(--muted-l)}
+.hd--split{display:grid;gap:22px;align-items:end}
+@media(min-width:900px){.hd--split{grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr)}}
+
+/* HERO */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;
+  padding-top:clamp(48px,7vw,96px)}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(900px 620px at 88% 2%,rgba(200,162,84,.20),transparent 66%),
+  radial-gradient(820px 600px at 0% 100%,rgba(26,47,87,.9),transparent 70%)}
+.hero__g{align-items:end;padding-bottom:clamp(38px,5vw,62px)}
+.hero__l{grid-column:1/8}
+.hero__r{grid-column:8/13}
+@media(max-width:899px){.hero__l,.hero__r{grid-column:1/-1}}
+.hero h1{font-size:clamp(38px,7.4vw,92px);line-height:.98;margin-block:24px 26px;max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted-l);max-width:46ch;line-height:1.58}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__ph{aspect-ratio:4/5;width:100%}
+@media(max-width:899px){.hero__ph{aspect-ratio:16/10;margin-top:36px}}
+
+/* hero stat strip */
+.strip{border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line);
+  background:rgba(0,0,0,.16);position:relative;z-index:1}
+.strip__g{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:820px){.strip__g{grid-template-columns:repeat(4,1fr)}}
+.st{padding:26px 0 24px;border-right:1px solid var(--navy-line);padding-right:20px}
+.st:last-child{border-right:0}
+@media(max-width:819px){.st:nth-child(2n){border-right:0}.st:nth-child(-n+2){border-bottom:1px solid var(--navy-line)}}
+@media(min-width:820px){.st{padding-left:0}.st:not(:first-child){padding-left:26px}}
+.st__n{font-family:var(--h);font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1;
+  letter-spacing:-.05em;color:#fff}
+.st__n em{font-style:normal;color:var(--gold)}
+.st__l{font-family:var(--m);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted-l);margin-top:11px;line-height:1.5}
+
+/* ticker */
+.tick{border-bottom:1px solid var(--navy-line);background:var(--navy-deep);overflow:hidden;position:relative}
+.tick__row{display:flex;width:max-content;animation:marq 48s linear infinite}
+.tick:hover .tick__row{animation-play-state:paused}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick__i{display:flex;align-items:center;padding:14px 0;white-space:nowrap;font-family:var(--m);
+  font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-l)}
+.tick__i::after{content:"";width:4px;height:4px;background:var(--gold);margin-inline:20px;flex:none}
+
+/* NETWORK */
+.net__hd{margin-bottom:clamp(26px,3.6vw,44px)}
+.net__hd h2{font-size:clamp(28px,4.2vw,54px);max-width:18ch;margin-top:16px}
+.net__hd p{color:var(--muted-l);max-width:38ch;font-size:16px}
+.map{width:100%;height:auto;overflow:visible}
+.map .arc{fill:none;stroke:#22355C;stroke-width:1.4;transition:stroke .35s ease,opacity .35s ease}
+.map .arc.hot{stroke:var(--gold);opacity:1}
+.map .arc.cold{opacity:.3}
+.map .flow{fill:none;stroke:var(--gold);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:8 300;animation:flow 5s linear infinite}
+.map .f2{animation-delay:1.25s}.map .f3{animation-delay:2.5s}.map .f4{animation-delay:3.75s}.map .f5{animation-delay:5s}
+@keyframes flow{from{stroke-dashoffset:308}to{stroke-dashoffset:0}}
+.map .node{fill:#fff}
+.map .dest{fill:#fff;transition:fill .35s ease}
+.map .dest.on{fill:var(--gold)}
+.map text{font-family:'Manrope',sans-serif;font-size:19px;font-weight:700;fill:#fff;letter-spacing:-.02em}
+.map .sub{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;fill:#93A3BF;letter-spacing:.14em}
+.map .dlabel{transition:fill .35s ease}
+.map .dlabel.on{fill:var(--gold)}
+.map .hubbox{fill:rgba(200,162,84,.08);stroke:var(--gold);stroke-width:1.3}
+.map .hubt{font-size:21px;font-weight:800;fill:var(--gold);letter-spacing:.02em}
+.map .halo{fill:none;stroke:var(--gold);stroke-width:1.1;animation:halo 3.4s ease-out infinite}
+@keyframes halo{0%{r:34;opacity:.55}100%{r:82;opacity:0}}
+@media(max-width:759px){.map{display:none}}
+
+.mnet{display:none}
+@media(max-width:759px){.mnet{display:block}}
+.mnet__col{display:flex;flex-wrap:wrap;gap:8px}
+.mnet__c{border:1px solid var(--navy-line);border-radius:var(--r);padding:10px 14px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;background:var(--glass)}
+.mnet__arrow{display:grid;place-items:center;padding:18px 0}
+.mnet__arrow span{width:1px;height:34px;background:linear-gradient(180deg,rgba(200,162,84,.15),var(--gold))}
+.mnet__hub{border:1px solid var(--gold);border-radius:var(--r);padding:16px 18px;text-align:center;background:var(--gold-wash)}
+.mnet__hub b{font-family:var(--h);font-weight:800;font-size:18px;color:var(--gold)}
+.mlab{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted-l);margin-bottom:12px}
+
+/* country selector + doc panel */
+.dsel{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(30px,4vw,48px);
+  border:1px solid var(--navy-line);border-radius:var(--r);overflow:hidden;width:fit-content;max-width:100%}
+.dsel button{border:0;border-right:1px solid var(--navy-line);background:transparent;color:var(--muted-l);
+  padding:14px 26px;font-family:var(--h);font-weight:700;font-size:15px;cursor:pointer;transition:.2s ease}
+.dsel button:last-child{border-right:0}
+.dsel button:hover{color:#fff;background:var(--glass)}
+.dsel button[aria-selected="true"]{background:var(--gold);color:#161006}
+.dpanel{margin-top:14px;border:1px solid var(--navy-line);border-radius:var(--r);
+  background:var(--glass);padding:clamp(24px,3.4vw,40px)}
+.dpanel__t{font-family:var(--h);font-weight:800;font-size:clamp(21px,2.6vw,30px);
+  letter-spacing:-.04em;margin-bottom:8px}
+.dpanel__s{color:var(--muted-l);font-size:15.5px;margin-bottom:26px;max-width:62ch}
+.docs{display:grid;gap:0}
+@media(min-width:760px){.docs{grid-template-columns:repeat(2,1fr);column-gap:38px}}
+.doc{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:#E6EBF3;
+  padding:13px 0;border-bottom:1px solid var(--navy-line)}
+.doc svg{width:17px;height:17px;flex:none;color:var(--gold);margin-top:4px}
+.doc__n{font-family:var(--m);font-size:11px;color:var(--gold-deep);flex:none;margin-top:4px;letter-spacing:.1em}
+.dnote{margin-top:24px;font-family:var(--m);font-size:12px;line-height:1.7;
+  color:var(--muted-l);letter-spacing:.02em;max-width:72ch}
+
+/* SOLUTIONS — editorial numbered list */
+.sol{border-top:1px solid var(--line)}
+.sol__i{display:grid;gap:14px;padding:clamp(26px,3.4vw,42px) 0;border-bottom:1px solid var(--line);
+  position:relative;transition:background .3s ease}
+@media(min-width:900px){
+  .sol__i{grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,1.5fr);
+    gap:clamp(20px,3vw,48px);align-items:start}
+}
+.sol__i:hover{background:var(--bone)}
+.sec--bone .sol__i:hover{background:var(--bone-2)}
+.sol__n{font-family:var(--m);font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--gold-deep);padding-top:7px}
+.sol__t{display:flex;gap:16px;align-items:flex-start}
+.sol__t svg{width:26px;height:26px;flex:none;color:var(--navy);margin-top:2px;transition:color .25s}
+.sol__i:hover .sol__t svg{color:var(--gold-deep)}
+.sol__t h3{font-size:clamp(20px,2.3vw,27px);letter-spacing:-.04em}
+.sol__d{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:46ch}
+.sol__d b{color:var(--ink);font-weight:600}
+
+/* MANIFESTO */
+.man{background:var(--navy-deep);color:#fff;padding-block:clamp(80px,12vw,180px);position:relative;overflow:hidden}
+.man::before{content:"";position:absolute;inset:0;z-index:0;opacity:.06;pointer-events:none;
+  background-image:repeating-linear-gradient(135deg,rgba(200,162,84,.8) 0 1px,transparent 1px 30px)}
+.man__q{position:relative;z-index:1;font-family:var(--h);font-weight:800;letter-spacing:-.05em;
+  line-height:1.02;font-size:clamp(32px,7vw,88px);max-width:15ch}
+.man__q span{color:var(--gold)}
+.man__s{position:relative;z-index:1;margin-top:34px;font-size:clamp(16px,1.6vw,19px);
+  max-width:50ch;color:var(--muted-l)}
+
+/* WHY */
+.why{display:grid;gap:0;border-top:1px solid var(--navy-line)}
+@media(min-width:760px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.why{grid-template-columns:repeat(3,1fr)}}
+.w{padding:clamp(26px,3vw,38px) clamp(20px,2.4vw,32px) clamp(26px,3vw,38px) 0;
+  border-bottom:1px solid var(--navy-line);border-right:1px solid var(--navy-line);
+  transition:background .28s ease;position:relative}
+.w:hover{background:var(--glass)}
+@media(min-width:760px) and (max-width:1099px){.w:nth-child(2n){border-right:0;padding-right:0}
+  .w:nth-child(2n+1){padding-left:0}.w:nth-child(2n){padding-left:clamp(20px,2.4vw,32px)}}
+@media(min-width:1100px){.w:nth-child(3n){border-right:0}
+  .w:not(:nth-child(3n+1)){padding-left:clamp(20px,2.4vw,32px)}}
+@media(max-width:759px){.w{border-right:0;padding-right:0}}
+.w svg{width:23px;height:23px;color:var(--gold);margin-bottom:16px}
+.w b{font-family:var(--h);font-size:18px;font-weight:700;letter-spacing:-.03em;display:block;margin-bottom:8px}
+.w span{font-size:14.5px;color:var(--muted-l);display:block;line-height:1.6;max-width:36ch}
+
+/* PROCESS (scroll-pinned) */
+.pw{position:relative;background:var(--bone)}
+.pstick{padding-block:clamp(56px,8vw,90px)}
+.plist{display:grid;gap:14px}
+.pi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.pi__n{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.2em;color:var(--gold-deep)}
+.pi h3{font-size:20px;margin-block:11px 9px;letter-spacing:-.04em}
+.pi p{font-size:15px;color:var(--muted);line-height:1.6}
+.pi__meta{font-family:var(--m);font-size:11.5px;letter-spacing:.1em;color:var(--muted);
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);text-transform:uppercase}
+@media(min-width:900px){
+  .js .pw{height:340vh}
+  .js .pstick{position:sticky;top:0;height:100vh;display:flex;align-items:center;padding-block:0}
+  .pgrid{display:grid;grid-template-columns:minmax(0,.44fr) minmax(0,1fr);
+    gap:clamp(40px,7vw,110px);align-items:center;width:100%}
+  .js .plist{gap:0;position:relative}
+  .js .pi{background:transparent;border:0;border-radius:0;padding:0;position:absolute;inset:0;
+    opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+  .js .pi.on{opacity:1;transform:none;pointer-events:auto;position:relative}
+  .js .pi h3{font-size:clamp(28px,3.5vw,50px);margin-block:16px 16px}
+  .js .pi p{font-size:17.5px;max-width:40ch}
+  .js .pi__meta{max-width:40ch}
+  .prail{display:grid;align-content:center}
+  .rail{display:flex;flex-direction:column;margin-top:24px}
+  .rail__i{display:flex;align-items:center;gap:18px;padding:12px 0;opacity:.35;transition:opacity .4s ease}
+  .rail__i.on{opacity:1}
+  .rail__d{width:9px;height:9px;border:1px solid var(--gold-deep);flex:none;transition:.35s ease}
+  .rail__i.on .rail__d{background:var(--gold-deep);transform:scale(1.3)}
+  .rail__t{font-family:var(--h);font-weight:700;font-size:15.5px;letter-spacing:-.03em}
+  .rail__line{width:1px;height:26px;background:var(--line);margin-left:4px;transition:background .4s}
+  .rail__line.on{background:var(--gold-deep)}
+}
+@media(max-width:899px){.prail{display:none}.pmob{display:block}}
+@media(min-width:900px){.pmob{display:none}}
+
+/* VIDEO / ABOUT */
+.vid{display:grid;gap:clamp(28px,4.5vw,64px);align-items:center}
+@media(min-width:900px){.vid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.vframe{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;
+  background:linear-gradient(150deg,#16294F,#0B1830);border:1px solid var(--navy-line);
+  display:grid;place-items:center;cursor:pointer}
+.vframe::before{content:"";position:absolute;inset:0;opacity:.14;
+  background-image:repeating-linear-gradient(115deg,rgba(200,162,84,.9) 0 1px,transparent 1px 22px)}
+.vframe video{width:100%;height:100%;object-fit:cover}
+.vplay{display:grid;place-items:center;gap:18px;text-align:center;padding:20px;position:relative;z-index:2}
+.vplay__b{width:76px;height:76px;border-radius:50%;background:var(--gold);display:grid;place-items:center;
+  transition:transform .25s;animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(200,162,84,.45)}70%{box-shadow:0 0 0 26px rgba(200,162,84,0)}100%{box-shadow:0 0 0 0 rgba(200,162,84,0)}}
+.vframe:hover .vplay__b{transform:scale(1.08)}
+.vplay__b svg{width:26px;height:26px;color:#161006;margin-left:4px}
+.vplay__t{font-family:var(--h);font-weight:700;font-size:16.5px;color:#fff;letter-spacing:-.03em}
+.vplay__s{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-l);margin-top:6px}
+
+/* INDUSTRIES */
+.ind{display:grid;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(min-width:560px){.ind{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.ind{grid-template-columns:repeat(4,1fr)}}
+.i{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:30px 24px;display:flex;flex-direction:column;gap:16px;transition:background .25s;position:relative}
+.i::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.i:hover{background:var(--bone)}
+.i:hover::after{transform:scaleX(1)}
+.i svg{width:26px;height:26px;color:var(--navy)}
+.i h3{font-size:16.5px;font-weight:700;letter-spacing:-.03em}
+.i__n{font-family:var(--m);font-size:10.5px;letter-spacing:.18em;color:var(--muted);margin-top:auto}
+
+/* FAQ */
+.faq{display:grid;border-top:1px solid var(--line)}
+.q{border-bottom:1px solid var(--line);overflow:hidden}
+.q summary{list-style:none;cursor:pointer;padding:24px 0;font-family:var(--h);font-weight:700;
+  font-size:clamp(16.5px,1.9vw,20px);letter-spacing:-.035em;display:flex;gap:20px;align-items:center}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"";margin-left:auto;flex:none;width:13px;height:13px;
+  background:linear-gradient(var(--gold-deep) 0 0) center/100% 1.5px no-repeat,
+             linear-gradient(var(--gold-deep) 0 0) center/1.5px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.q[open] summary::after{transform:rotate(135deg)}
+.q__a{padding:0 0 26px;font-size:16px;color:var(--muted);max-width:68ch;line-height:1.65}
+.q__i{font-family:var(--m);font-size:11px;color:var(--gold-deep);letter-spacing:.18em;flex:none}
+
+/* LEAD */
+.lead{display:grid;gap:clamp(32px,5vw,72px)}
+@media(min-width:960px){.lead{grid-template-columns:minmax(0,1fr) minmax(0,.92fr);align-items:start}}
+.lead h2{color:#fff;font-size:clamp(30px,4.4vw,56px);margin-block:16px 18px;max-width:14ch}
+.alt{margin-top:34px;display:grid;border-top:1px solid var(--navy-line)}
+.alt a{display:flex;align-items:center;gap:14px;text-decoration:none;font-family:var(--h);
+  font-weight:600;font-size:16px;color:#fff;padding:16px 0;border-bottom:1px solid var(--navy-line);
+  transition:color .2s,padding-left .25s}
+.alt a:hover{color:var(--gold);padding-left:8px}
+.alt svg{width:19px;height:19px;color:var(--gold);flex:none}
+.qr{display:flex;gap:14px;align-items:center;margin-top:26px;padding-top:26px;border-top:1px solid var(--line-d)}
+.qr img{border-radius:10px;border:1px solid var(--line-d);flex:none;background:#fff;padding:4px}
+.qr span{font-size:13px;color:var(--muted-l);max-width:22ch;line-height:1.45}
+.fc{background:var(--paper);border-radius:var(--r);padding:clamp(24px,3.4vw,40px);color:var(--ink)}
+.fc__t{font-family:var(--h);font-weight:800;font-size:20px;letter-spacing:-.04em;margin-bottom:4px}
+.fc__s{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:24px}
+.f{margin-bottom:16px}
+.f label{display:block;font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px}
+.f input,.f select,.f textarea{width:100%;padding:14px 15px;font-family:var(--b);font-size:16px;
+  color:var(--ink);background:var(--bone);border:1px solid var(--line);border-radius:var(--r);transition:.18s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--navy);background:#fff;outline:none;
+  box-shadow:0 0 0 3px rgba(15,30,61,.08)}
+.f input.err,.f textarea.err{border-color:#B3402A;background:#FCF4F2}
+.f textarea{min-height:88px;resize:vertical}
+.fn{font-family:var(--m);font-size:11px;line-height:1.7;color:var(--muted);margin-top:14px;letter-spacing:.02em}
+.fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r);background:var(--bone);
+  border-left:2px solid var(--gold);font-size:14.5px}
+.fm.on{display:block}
+
+/* FOOTER */
+.ftr{background:var(--navy-deep);color:var(--muted-l);padding-block:56px 28px;font-size:14.5px}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--navy-line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:#fff;margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted-l);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--gold)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* sticky mobile CTA */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta a:first-child{background:var(--navy);color:#fff}
+.mcta a:last-child{background:var(--gold);color:#161006}
+.mcta svg{width:17px;height:17px}
+@media(max-width:759px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* 7 ─ MOTION ------------------------------------------------ */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+  .pw{height:auto!important}
+  .pstick{position:static!important;height:auto!important;padding-block:60px!important}
+  .pi{position:relative!important;opacity:1!important;transform:none!important}
+  .plist{gap:14px!important}
+}
+/* 6 ─ CALCULATOR -------------------------------------------- */
+.calc{background:var(--navy-deep);color:#fff}
+.calc__g{display:grid;gap:clamp(28px,3.4vw,52px)}
+@media(min-width:1000px){.calc__g{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);align-items:start}}
+
+.cbox{border:1px solid var(--navy-line);border-radius:var(--r);background:var(--glass)}
+.cbox__h{padding:20px 24px;border-bottom:1px solid var(--navy-line);display:flex;
+  align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.cbox__h h3{font-size:18px;letter-spacing:-.035em}
+.cbox__h .tagm{font-family:var(--m);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.cbox__b{padding:24px}
+
+.cfield{margin-bottom:26px}
+.cfield:last-child{margin-bottom:0}
+.cfield__l{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted-l);margin-bottom:13px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cfield__l b{font-family:var(--h);font-size:15px;color:var(--gold);letter-spacing:-.02em;text-transform:none}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1px solid var(--navy-line);background:transparent;color:var(--muted-l);
+  border-radius:var(--r);padding:10px 15px;font-family:var(--b);font-size:14px;font-weight:500;
+  cursor:pointer;transition:.18s ease;text-align:left}
+.chip:hover{color:#fff;border-color:#3A5285}
+.chip[aria-pressed="true"],.chip.on{background:var(--gold);color:#161006;border-color:var(--gold);font-weight:600}
+
+/* range */
+.rng{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--navy-line);
+  border-radius:2px;outline:none;margin:12px 0 6px;cursor:pointer}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;
+  border-radius:50%;background:var(--gold);cursor:pointer;border:3px solid var(--navy-deep);
+  box-shadow:0 0 0 1px var(--gold);transition:transform .15s}
+.rng::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--gold);
+  cursor:pointer;border:3px solid var(--navy-deep);box-shadow:0 0 0 1px var(--gold)}
+.rng__sc{display:flex;justify-content:space-between;font-family:var(--m);font-size:10.5px;
+  letter-spacing:.12em;color:var(--muted-l)}
+
+/* result */
+.cres{border:1px solid var(--navy-line);border-radius:var(--r);background:rgba(0,0,0,.22);overflow:hidden}
+.cres__top{padding:clamp(22px,2.8vw,32px);border-bottom:1px solid var(--navy-line);
+  display:grid;gap:22px}
+@media(min-width:640px){.cres__top{grid-template-columns:auto 1fr;align-items:center;gap:34px}}
+.cbig{font-family:var(--h);font-weight:800;font-size:clamp(44px,6.4vw,76px);line-height:.9;
+  letter-spacing:-.055em;color:var(--gold);white-space:nowrap}
+.cbig small{font-size:.32em;letter-spacing:.06em;color:var(--muted-l);font-weight:600;
+  display:block;margin-top:12px;font-family:var(--m);text-transform:uppercase}
+.cnote{font-size:14.5px;color:var(--muted-l);line-height:1.6;max-width:44ch}
+.cnote b{color:#fff;font-weight:600}
+
+/* gantt */
+.gantt{padding:clamp(20px,2.6vw,30px);display:grid;gap:11px}
+.gt{display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
+@media(min-width:560px){.gt{grid-template-columns:150px minmax(0,1fr) 74px;align-items:center;gap:16px}}
+.gt__n{font-family:var(--m);font-size:11px;letter-spacing:.08em;color:#E6EBF3;text-transform:uppercase;
+  display:flex;gap:9px;align-items:baseline}
+.gt__n i{font-style:normal;color:var(--gold-deep)}
+.gt__track{height:8px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;position:relative}
+.gt__bar{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold));
+  border-radius:2px;transition:left .55s cubic-bezier(.2,.7,.3,1),width .55s cubic-bezier(.2,.7,.3,1)}
+.gt__d{font-family:var(--m);font-size:11px;color:var(--muted-l);letter-spacing:.06em;text-align:right}
+@media(max-width:559px){.gt__d{text-align:left}}
+
+.cdocs{padding:clamp(20px,2.6vw,30px);border-top:1px solid var(--navy-line)}
+.cdocs__h{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted-l);margin-bottom:16px}
+.cdocs ul{display:grid;gap:9px}
+@media(min-width:700px){.cdocs ul{grid-template-columns:repeat(2,1fr);column-gap:30px}}
+.cdocs li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:#E6EBF3}
+.cdocs li svg{width:16px;height:16px;flex:none;color:var(--gold);margin-top:4px}
+
+.cflags{padding:clamp(20px,2.6vw,30px);border-top:1px solid var(--navy-line);display:grid;gap:12px}
+.cflag{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted-l);line-height:1.6}
+.cflag svg{width:16px;height:16px;flex:none;color:var(--gold);margin-top:4px}
+.cflag b{color:#fff;font-weight:600}
+
+.cact{padding:clamp(20px,2.6vw,30px);border-top:1px solid var(--navy-line);
+  display:flex;flex-wrap:wrap;gap:11px;align-items:center}
+.cdis{font-family:var(--m);font-size:10.5px;line-height:1.75;letter-spacing:.04em;
+  color:var(--muted);padding:0 clamp(20px,2.6vw,30px) clamp(20px,2.6vw,30px)}
+
+</style>
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></symbol>
+  <symbol id="stamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 6a3 3 0 0 0 6 0z"/><path d="m19 7 3 6a3 3 0 0 1-6 0z"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="one" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/></symbol>
+  <symbol id="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4"/><path d="M12 17.5v.1"/></symbol>
+  <symbol id="build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="fact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18V10l-6 4V10l-6 4V6H3z"/><path d="M7 21v-4"/><path d="M13 21v-4"/></symbol>
+  <symbol id="box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></symbol>
+  <symbol id="road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21 8 3"/><path d="M20 21 16 3"/><path d="M12 5v3"/><path d="M12 11v3"/><path d="M12 17v3"/></symbol>
+  <symbol id="thread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"/><path d="M4 21c3-6 7-9 12-11"/></symbol>
+  <symbol id="cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2"/><path d="M3 21h16"/></symbol>
+  <symbol id="pick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 14 9"/><path d="M4 12c4-6 12-8 16-9-1 4-3 12-9 16"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2 7 10 6 10-6"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wide hdr__in">
+    <a class="logo" href="#top" aria-label="WorkUnity">
+      <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M2 2h6.6l5 17.5L18.4 2h5.4l4.3 17.5L31.6 2H38l-7.2 30h-6.2L21 15.6 17.6 32h-6.2z" fill="#fff"/><circle cx="36.5" cy="6.5" r="4.5" fill="#C8A254"/></svg>
+      <span>WorkUnity</span>
+    </a>
+    <nav class="nav" id="mainnav" aria-label="Основное меню">
+      <a href="#net">Страны</a><a href="#calc">Расчёт</a><a href="#sol">Решения</a><a href="#why">Почему мы</a><a href="#proc">Процедура</a><a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--gold btn--sm hdr__cta" href="#contact">Консультация</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero tex gridlines">
+  <div class="wide">
+    <div class="g12 hero__g">
+      <div class="hero__l">
+        <span class="ix">Кыргызстан · Казахстан · Узбекистан · Россия</span>
+        <h1>Иностранные рабочие <em>для вашего предприятия</em></h1>
+        <p class="hero__sub">Привозим специалистов из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки. Разрешения, документы и юридическую сторону берём на себя — вы получаете людей на объекте.</p>
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="#calc">Рассчитать сроки и документы<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--gl" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero__r">
+        <div class="ph hero__ph">
+          <img src="img/hero-plant.jpg" alt="" onerror="this.remove()">
+          <span class="ph__tag">img / hero-plant.jpg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wide">
+      <div class="strip__g">
+        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l">стран набора<br>специалистов</div></div>
+        <div class="st"><div class="st__n" data-to="4">4</div><div class="st__l">страны найма<br>в СНГ</div></div>
+        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l">отраслей,<br>с которыми работаем</div></div>
+        <div class="st"><div class="st__n"><em>100%</em></div><div class="st__l">юридическое<br>сопровождение</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tick" aria-hidden="true"><div class="tick__row" id="tickRow"></div></div>
+</section>
+
+<!-- ══ NETWORK ════════════════════════════════════════════ -->
+<section class="sec sec--deep tex" id="net">
+  <div class="wide">
+    <div class="net__hd hd--split rv">
+      <div><span class="ix">01 — География</span><h2>Пять стран набора — четыре страны найма</h2></div>
+      <p>Мы связываем рынки труда Южной Азии с предприятиями СНГ и ведём каждого работника до объекта.</p>
+    </div>
+
+    <svg class="map rv" viewBox="0 0 1300 470" role="img" aria-label="Схема: Индия, Пакистан, Бангладеш, Непал, Шри-Ланка — через WorkUnity — в Кыргызстан, Казахстан, Узбекистан, Россию">
+      <path class="arc" d="M250 70 C 400 70, 470 135, 545 200"/>
+      <path class="arc" d="M250 145 C 400 145, 470 178, 545 210"/>
+      <path class="arc" d="M250 220 C 400 220, 470 222, 545 225"/>
+      <path class="arc" d="M250 295 C 400 295, 470 268, 545 240"/>
+      <path class="arc" d="M250 370 C 400 370, 470 310, 545 250"/>
+      <path class="flow" d="M250 70 C 400 70, 470 135, 545 200"/>
+      <path class="flow f2" d="M250 145 C 400 145, 470 178, 545 210"/>
+      <path class="flow f3" d="M250 220 C 400 220, 470 222, 545 225"/>
+      <path class="flow f4" d="M250 295 C 400 295, 470 268, 545 240"/>
+      <path class="flow f5" d="M250 370 C 400 370, 470 310, 545 250"/>
+
+      <circle class="node" cx="250" cy="70" r="6"/><text x="228" y="66" text-anchor="end">Индия</text><text class="sub" x="228" y="90" text-anchor="end">НАБОР</text>
+      <circle class="node" cx="250" cy="145" r="6"/><text x="228" y="141" text-anchor="end">Пакистан</text><text class="sub" x="228" y="165" text-anchor="end">НАБОР</text>
+      <circle class="node" cx="250" cy="220" r="6"/><text x="228" y="216" text-anchor="end">Бангладеш</text><text class="sub" x="228" y="240" text-anchor="end">НАБОР</text>
+      <circle class="node" cx="250" cy="295" r="6"/><text x="228" y="291" text-anchor="end">Непал</text><text class="sub" x="228" y="315" text-anchor="end">НАБОР</text>
+      <circle class="node" cx="250" cy="370" r="6"/><text x="228" y="366" text-anchor="end">Шри-Ланка</text><text class="sub" x="228" y="390" text-anchor="end">НАБОР</text>
+
+      <circle class="halo" cx="650" cy="225" r="34"/>
+      <rect class="hubbox" x="545" y="192" width="210" height="66"/>
+      <text class="hubt" x="650" y="223" text-anchor="middle">WorkUnity</text>
+      <text class="sub" x="650" y="245" text-anchor="middle">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</text>
+
+      <path class="arc d-kg" d="M755 225 C 830 225, 900 150, 1000 90"/>
+      <path class="arc d-kz" d="M755 225 C 830 225, 900 190, 1000 175"/>
+      <path class="arc d-uz" d="M755 225 C 830 225, 900 250, 1000 265"/>
+      <path class="arc d-ru" d="M755 225 C 830 225, 900 310, 1000 355"/>
+
+      <circle class="dest d-kg" cx="1000" cy="90" r="6"/><text class="dlabel d-kg" x="1024" y="86">Кыргызстан</text><text class="sub" x="1024" y="110">НАЁМ</text>
+      <circle class="dest d-kz" cx="1000" cy="175" r="6"/><text class="dlabel d-kz" x="1024" y="171">Казахстан</text><text class="sub" x="1024" y="195">НАЁМ</text>
+      <circle class="dest d-uz" cx="1000" cy="265" r="6"/><text class="dlabel d-uz" x="1024" y="261">Узбекистан</text><text class="sub" x="1024" y="285">НАЁМ</text>
+      <circle class="dest d-ru" cx="1000" cy="355" r="6"/><text class="dlabel d-ru" x="1024" y="351">Россия</text><text class="sub" x="1024" y="375">НАЁМ</text>
+    </svg>
+
+    <div class="mnet rv">
+      <div class="mlab">Страны набора</div>
+      <div class="mnet__col">
+        <span class="mnet__c">Индия</span><span class="mnet__c">Пакистан</span><span class="mnet__c">Бангладеш</span><span class="mnet__c">Непал</span><span class="mnet__c">Шри-Ланка</span>
+      </div>
+      <div class="mnet__arrow"><span></span></div>
+      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted-l);margin-top:6px">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
+      <div class="mnet__arrow"><span></span></div>
+      <div class="mlab">Страны найма</div>
+      <div class="mnet__col">
+        <span class="mnet__c">Кыргызстан</span><span class="mnet__c">Казахстан</span><span class="mnet__c">Узбекистан</span><span class="mnet__c">Россия</span>
+      </div>
+    </div>
+
+    <div class="dsel rv" role="tablist" aria-label="Страна найма" id="dsel"><button type="button" role="tab" aria-selected="true">Кыргызстан</button><button type="button" role="tab" aria-selected="false">Казахстан</button><button type="button" role="tab" aria-selected="false">Узбекистан</button><button type="button" role="tab" aria-selected="false">Россия</button></div>
+    <div class="dpanel rv" id="dpanel"><div class="dpanel__t">Что оформляется: Кыргызстан</div><p class="dpanel__s">Предприятие получает право нанимать иностранцев, затем оформляются документы на каждого работника.</p><div class="docs"><div class="doc"><span class="doc__n">01</span><svg aria-hidden="true"><use href="#tick"/></svg><span>Разрешение на привлечение иностранной рабочей силы</span></div><div class="doc"><span class="doc__n">02</span><svg aria-hidden="true"><use href="#tick"/></svg><span>Разрешение на работу для специалиста</span></div><div class="doc"><span class="doc__n">03</span><svg aria-hidden="true"><use href="#tick"/></svg><span>Виза для въезда</span></div><div class="doc"><span class="doc__n">04</span><svg aria-hidden="true"><use href="#tick"/></svg><span>Регистрация по месту пребывания</span></div><div class="doc"><span class="doc__n">05</span><svg aria-hidden="true"><use href="#tick"/></svg><span>Трудовой договор на понятном работнику языке</span></div></div><p class="dnote">ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.</p></div>
+  </div>
+</section>
+
+<!-- ══ CALCULATOR ═════════════════════════════════════════ -->
+<section class="sec calc tex" id="calc">
+  <div class="wide">
+    <div class="hd hd--split rv">
+      <div><span class="ix">02 — Расчёт</span><h2>Соберите заявку — увидите порядок и документы</h2></div>
+      <p>Выберите страну, профессию и количество. Мы покажем порядок этапов, полный перечень документов и узкие места по вашей вакансии. Сроки называем на консультации — они зависят от загрузки государственных органов.</p>
+    </div>
+
+    <div class="calc__g">
+      <!-- inputs -->
+      <div class="cbox rv">
+        <div class="cbox__h"><h3>Параметры заявки</h3><span class="tagm">Шаг 1 из 2</span></div>
+        <div class="cbox__b">
+
+          <div class="cfield">
+            <div class="cfield__l"><span>Страна, где нужны работники</span></div>
+            <div class="chips" id="kCountry" role="group" aria-label="Страна найма"><button type="button" class="chip" aria-pressed="true">Кыргызстан</button><button type="button" class="chip" aria-pressed="false">Казахстан</button><button type="button" class="chip" aria-pressed="false">Узбекистан</button><button type="button" class="chip" aria-pressed="false">Россия</button></div>
+          </div>
+
+          <div class="cfield">
+            <div class="cfield__l"><span>Профессия</span></div>
+            <div class="chips" id="kTrade" role="group" aria-label="Профессия"><button type="button" class="chip" aria-pressed="false">Разнорабочие</button><button type="button" class="chip" aria-pressed="true">Сварщики</button><button type="button" class="chip" aria-pressed="false">Операторы ЧПУ</button><button type="button" class="chip" aria-pressed="false">Электромонтажники</button><button type="button" class="chip" aria-pressed="false">Горнорабочие</button><button type="button" class="chip" aria-pressed="false">Водители погрузчика</button><button type="button" class="chip" aria-pressed="false">Отделочники</button><button type="button" class="chip" aria-pressed="false">Швеи</button><button type="button" class="chip" aria-pressed="false">Дорожные рабочие</button></div>
+          </div>
+
+          <div class="cfield">
+            <div class="cfield__l"><span>Количество человек</span><b id="kQtyOut">30</b></div>
+            <input class="rng" id="kQty" type="range" min="5" max="300" step="5" value="30"
+                   aria-label="Количество человек" aria-describedby="kQtyOut">
+            <div class="rng__sc"><span>5</span><span>150</span><span>300+</span></div>
+          </div>
+
+          <div class="cfield">
+            <div class="cfield__l"><span>Готовность документов предприятия</span></div>
+            <div class="chips" id="kReady" role="group" aria-label="Готовность документов"><button type="button" class="chip" aria-pressed="true">Разрешения нет</button><button type="button" class="chip" aria-pressed="false">В процессе</button><button type="button" class="chip" aria-pressed="false">Разрешение есть</button></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- results -->
+      <div class="cres rv rv-d1" id="cres" aria-live="polite">
+        <div class="cres__top">
+          <div class="cbig" id="rTotal">5<small>документов к оформлению</small></div>
+          <p class="cnote" id="rNote"></p>
+        </div>
+        <div class="gantt" id="rGantt"><div class="gt"><div class="gt__n"><i>01</i>Заявка и проверка</div><div class="gt__track"><span class="gt__bar" style="left:0;width:20.00%"></span></div><div class="gt__d">этап 1</div></div><div class="gt"><div class="gt__n"><i>02</i>Разрешение предприятия</div><div class="gt__track"><span class="gt__bar" style="left:0;width:40.00%"></span></div><div class="gt__d">этап 2</div></div><div class="gt"><div class="gt__n"><i>03</i>Подбор кандидатов</div><div class="gt__track"><span class="gt__bar" style="left:0;width:60.00%"></span></div><div class="gt__d">этап 3</div></div><div class="gt"><div class="gt__n"><i>04</i>Документы работников</div><div class="gt__track"><span class="gt__bar" style="left:0;width:80.00%"></span></div><div class="gt__d">этап 4</div></div><div class="gt"><div class="gt__n"><i>05</i>Перелёт и выход</div><div class="gt__track"><span class="gt__bar" style="left:0;width:100.00%"></span></div><div class="gt__d">этап 5</div></div></div>
+        <div class="cdocs">
+          <div class="cdocs__h">Документы, которые оформляются</div>
+          <ul id="rDocs"><li><svg aria-hidden="true"><use href="#tick"/></svg><span>Разрешение на привлечение иностранной рабочей силы</span></li><li><svg aria-hidden="true"><use href="#tick"/></svg><span>Разрешение на работу для специалиста</span></li><li><svg aria-hidden="true"><use href="#tick"/></svg><span>Виза для въезда</span></li><li><svg aria-hidden="true"><use href="#tick"/></svg><span>Регистрация по месту пребывания</span></li><li><svg aria-hidden="true"><use href="#tick"/></svg><span>Трудовой договор на понятном работнику языке</span></li></ul>
+        </div>
+        <div class="cflags" id="rFlags"></div>
+        <div class="cact">
+          <a class="btn btn--gold" href="#contact" id="rSend">Отправить этот расчёт<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--gl" href="https://wa.me/996700123445" target="_blank" rel="noopener" id="rWa"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>Обсудить в WhatsApp</a>
+        </div>
+        <p class="cdis">Расчёт ориентировочный и построен на типовых сроках. Фактические сроки зависят от загрузки государственных органов, полноты документов предприятия и профиля кандидатов. Точный график и стоимость подтверждаем после разбора заявки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTIONS ══════════════════════════════════════════ -->
+<section class="sec" id="sol">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d">03 — Решения</span><h2>Что мы берём на себя</h2></div>
+    <div class="sol">
+      <article class="sol__i rv">
+        <div class="sol__n">01</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#users"/></svg><h3>Подбор персонала</h3></div>
+        <p class="sol__d">Специалисты под требования вашего производства — с <b>проверкой квалификации</b>, документов и медицинским освидетельствованием в стране набора. Финальное решение всегда за вами.</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">02</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3>Разрешения и документы</h3></div>
+        <p class="sol__d">Разрешение работодателю, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Переписку с государственными органами ведём мы.</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">03</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3>Юридическое сопровождение</h3></div>
+        <p class="sol__d">Договоры, переписка с органами, спорные ситуации. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">04</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3>Миграционный аудит</h3></div>
+        <p class="sol__d">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANIFESTO ══════════════════════════════════════════ -->
+<section class="man">
+  <div class="wide">
+    <p class="man__q rv">Кадровый вопрос не должен становиться <span>юридическим риском</span>.</p>
+    <p class="man__s rv rv-d1">Правила в Кыргызстане, Казахстане, Узбекистане и России разные. Логика одна: пока документ не оформлен, отвечает работодатель. Мы закрываем эту часть.</p>
+  </div>
+</section>
+
+<!-- ══ WHY ════════════════════════════════════════════════ -->
+<section class="sec sec--navy tex" id="why">
+  <div class="wide">
+    <div class="hd rv"><span class="ix">04 — Причины</span><h2>Почему работодатели выбирают WorkUnity</h2></div>
+    <div class="why">
+      <div class="w rv"><svg aria-hidden="true"><use href="#one"/></svg><b>Один партнёр вместо пяти</b><span>Подбор, документы, юристы и логистика в одних руках.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"/></svg><b>Полностью легальная работа</b><span>Каждый этап закрыт документом. Ничего в обход.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"/></svg><b>Четыре страны найма</b><span>Один договор — независимо от того, где у вас производство.</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#scale"/></svg><b>Юридическая защита бизнеса</b><span>За нарушения отвечает наниматель — эту зону закрываем мы.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"/></svg><b>Нестандартные ситуации</b><span>Срочная замена, отказ, сдвиг сроков — решаем без пауз.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"/></svg><b>Прозрачность процесса</b><span>Вы видите статус по каждому работнику на каждом этапе.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════════ -->
+<section class="pw" id="proc">
+  <div class="pstick">
+    <div class="wide">
+      <div class="pgrid">
+        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d">05 — Процедура</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px">Пять этапов</h2></div>
+        <div class="prail">
+          <span class="ix ix--d">05 — Процедура</span>
+          <div class="rail" id="rail">
+            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t">Заявка</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Разрешение компании</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Подбор</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Документы и въезд</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Выход на объект</span></div>
+          </div>
+          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html">Подробная инструкция<svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </div>
+        <div class="plist" id="plist">
+          <div class="pi on"><div class="pi__n">Этап 01</div><h3>Заявка</h3><p>Фиксируем профессии, количество, сроки и условия. Проверяем, проходит ли ваша потребность по правилам страны найма.</p><div class="pi__meta">Вы даёте вводные — мы проверяем допустимость</div></div>
+          <div class="pi"><div class="pi__n">Этап 02</div><h3>Разрешение компании</h3><p>Готовим и подаём документы на право предприятия привлекать иностранную рабочую силу. Переписку с органами ведём мы.</p><div class="pi__meta">Разрешение на привлечение · квота · уведомления</div></div>
+          <div class="pi"><div class="pi__n">Этап 03</div><h3>Подбор</h3><p>Отбор в стране набора, проверка квалификации и документов, медицинское освидетельствование. Финальное решение — за вами.</p><div class="pi__meta">Анкеты · тесты · видеоинтервью · медкомиссия</div></div>
+          <div class="pi"><div class="pi__n">Этап 04</div><h3>Документы и въезд</h3><p>Разрешение на работу для каждого специалиста, визовые документы, перелёт и встреча.</p><div class="pi__meta">Разрешение на работу · виза · билеты · трансфер</div></div>
+          <div class="pi"><div class="pi__n">Этап 05</div><h3>Выход на объект</h3><p>Регистрация, трудовой договор, вводный инструктаж. Дальше — контроль сроков и своевременные продления.</p><div class="pi__meta">Регистрация · договор · продления по календарю</div></div>
+        </div>
+        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html">Подробная инструкция<svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT / VIDEO ══════════════════════════════════════ -->
+<section class="sec sec--deep tex">
+  <div class="wide vid">
+    <div class="vframe rv" id="vf" role="button" tabindex="0" aria-label="Смотреть видеообращение основателя">
+      <div class="vplay">
+        <div class="vplay__b"><svg aria-hidden="true"><use href="#play"/></svg></div>
+        <div><div class="vplay__t">Обращение основателя</div><div class="vplay__s">30 секунд</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d1">
+      <span class="ix">06 — О нас</span>
+      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch">Мы работаем с людьми, а не с бумагами</h2>
+      <p style="color:var(--muted-l);font-size:17.5px;max-width:44ch">За каждой заявкой — предприятие, которому нужны руки, и человек, который едет за тысячи километров работать. Наша задача — чтобы обе стороны были защищены.</p>
+      <div style="margin-top:30px"><a class="btn btn--gl" href="#contact">Поговорить с нами<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ═════════════════════════════════════════ -->
+<section class="sec sec--bone" id="ind">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d">07 — Отрасли</span><h2>С кем работаем</h2></div>
+    <div class="ind rv">
+      <article class="i"><svg aria-hidden="true"><use href="#build"/></svg><h3>Строительство</h3><span class="i__n">01</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#fact"/></svg><h3>Производство</h3><span class="i__n">02</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#box"/></svg><h3>Склады и логистика</h3><span class="i__n">03</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#road"/></svg><h3>Дорожные работы</h3><span class="i__n">04</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#thread"/></svg><h3>Швейное производство</h3><span class="i__n">05</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#leaf"/></svg><h3>Сельское хозяйство</h3><span class="i__n">06</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#cup"/></svg><h3>Гостиницы и общепит</h3><span class="i__n">07</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#pick"/></svg><h3>Горнодобыча</h3><span class="i__n">08</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════════ -->
+<section class="sec" id="faq">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d">08 — Вопросы</span><h2>Коротко о главном</h2></div>
+    <div class="faq rv">
+      <details class="q"><summary><span class="q__i">01</span>В каких странах вы работаете?</summary><div class="q__a">Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана и России. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке.</div></details>
+      <details class="q"><summary><span class="q__i">02</span>Нужно ли работодателю отдельное разрешение?</summary><div class="q__a">Да, во всех четырёх странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу. Названия документов различаются, логика одинакова. Оформляем оба.</div></details>
+      <details class="q"><summary><span class="q__i">03</span>Сколько времени занимает процесс?</summary><div class="q__a">Подбор кандидатов занимает 15–25 дней в зависимости от количества и профессии. Дальше идут разрешения, визы и перелёт, и здесь сроки зависят от страны найма и загрузки органов. Ориентир по вашей вакансии можно получить в блоке «Расчёт» выше, общий срок называем после разбора заявки.</div></details>
+      <details class="q"><summary><span class="q__i">04</span>Сколько это стоит?</summary><div class="q__a">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
+      <details class="q"><summary><span class="q__i">05</span>Что если работник не подойдёт?</summary><div class="q__a">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
+      <details class="q"><summary><span class="q__i">06</span>У нас уже работают иностранцы — проверите?</summary><div class="q__a">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<section class="sec sec--navy tex" id="contact">
+  <div class="wide lead">
+    <div class="rv">
+      <span class="ix">09 — Заявка</span>
+      <h2>Расскажите о задаче</h2>
+      <p style="color:var(--muted-l);font-size:17.5px;max-width:42ch">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
+      <div class="alt">
+        <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
+        <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
+        <a href="mailto:info@workunity.kg"><svg aria-hidden="true"><use href="#mail"/></svg>info@workunity.kg</a>
+      </div>
+      <div class="qr">
+        <img src="img/whatsapp-qr.png" alt="QR-код для чата WorkUnity в WhatsApp" width="112" height="105" loading="lazy">
+        <span>С компьютера — наведите камеру телефона на код</span>
+      </div>
+    </div>
+    <div class="fc rv rv-d1">
+      <div class="fc__t">Форма заявки</div>
+      <div class="fc__s">Ответ в течение рабочего дня</div>
+      <form id="leadform" novalidate>
+        <div class="f"><label for="c0">Страна, где нужны работники</label><select id="c0" name="country"><option>Кыргызстан</option><option>Казахстан</option><option>Узбекистан</option><option>Россия</option><option>Другая страна</option></select></div>
+        <div class="f"><label for="c1">Компания и ваше имя</label><input id="c1" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="c2">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
+        <div class="f"><label for="c3">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
+        <div class="f"><label for="c4">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
+        <button class="btn btn--gold btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>Отправить в WhatsApp</button>
+        <p class="fn">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
+        <div class="fm" id="msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="#top" aria-label="WorkUnity">
+          <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M2 2h6.6l5 17.5L18.4 2h5.4l4.3 17.5L31.6 2H38l-7.2 30h-6.2L21 15.6 17.6 32h-6.2z" fill="#fff"/><circle cx="36.5" cy="6.5" r="4.5" fill="#C8A254"/></svg>
+          <span>WorkUnity</span>
+        </a>
+        <p style="margin-top:16px;max-width:32ch">Иностранная рабочая сила для предприятий Кыргызстана, Казахстана, Узбекистана и России.</p>
+      </div>
+      <div><h4>Разделы</h4><ul><li><a href="#net">Страны</a></li><li><a href="#calc">Расчёт</a></li><li><a href="#sol">Решения</a></li><li><a href="#proc">Процедура</a></li></ul></div>
+      <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#ind">Отрасли</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@workunity.kg">info@workunity.kg</a></li><li>Бишкек</li></ul></div>
+    </div>
+    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «___» · ИНН ___</span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta">
+  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>Позвонить</a>
+  <a href="#calc"><svg aria-hidden="true"><use href="#arrow"/></svg>Рассчитать</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"#org","name":"WorkUnity",
+     "description":"Подбор иностранных рабочих из Южной Азии для предприятий СНГ, оформление разрешений и юридическое сопровождение работодателя.",
+     "areaServed":[{"@type":"Country","name":"Кыргызстан"},{"@type":"Country","name":"Казахстан"},{"@type":"Country","name":"Узбекистан"},{"@type":"Country","name":"Россия"}],
+     "address":{"@type":"PostalAddress","addressLocality":"Бишкек","addressCountry":"KG"},
+     "slogan":"Empowering People."},
+    {"@type":"Service","name":"Привлечение иностранной рабочей силы","provider":{"@id":"#org"},
+     "serviceType":"Подбор персонала, оформление разрешений, юридическое сопровождение",
+     "areaServed":[{"@type":"Country","name":"Кыргызстан"},{"@type":"Country","name":"Казахстан"},{"@type":"Country","name":"Узбекистан"},{"@type":"Country","name":"Россия"}]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"В каких странах вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана и России. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке."}},
+      {"@type":"Question","name":"Нужно ли работодателю отдельное разрешение?","acceptedAnswer":{"@type":"Answer","text":"Да, во всех четырёх странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу."}},
+      {"@type":"Question","name":"Сколько времени занимает процесс?","acceptedAnswer":{"@type":"Answer","text":"Подбор кандидатов занимает 15–25 дней. Сроки разрешений, виз и въезда зависят от страны найма."}},
+      {"@type":"Question","name":"Сколько это стоит?","acceptedAnswer":{"@type":"Answer","text":"Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения."}}
+    ]}
+  ]
+}
+</script>
+<script>
+(function(){
+'use strict';
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var WA_NUMBER = '996700123445';
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+/* ═══ DATA ═══════════════════════════════════════════════ */
+var DEST = [
+  {id:'kg', name:'Кыргызстан', short:'Кыргызстан',
+   lead:'Предприятие получает право нанимать иностранцев, затем оформляются документы на каждого работника.',
+   docs:['Разрешение на привлечение иностранной рабочей силы','Разрешение на работу для специалиста','Виза для въезда','Регистрация по месту пребывания','Трудовой договор на понятном работнику языке'],
+   flag:null},
+  {id:'kz', name:'Казахстан', short:'Казахстан',
+   lead:'Привлечение идёт в рамках квоты, поэтому проверку возможности делаем до старта подбора.',
+   docs:['Разрешение на привлечение иностранной рабочей силы','Квота на привлечение','Виза для трудовой деятельности','Регистрация по месту пребывания','Трудовой договор'],
+   flag:'Привлечение идёт <b>в рамках квоты</b>. Наличие свободного объёма проверяем до старта подбора — это влияет и на сроки, и на саму возможность найма.'},
+  {id:'uz', name:'Узбекистан', short:'Узбекистан',
+   lead:'Разрешительная часть проходит через уполномоченный орган по внешней трудовой миграции.',
+   docs:['Разрешение на привлечение иностранной рабочей силы','Подтверждение права на трудовую деятельность','Виза для въезда','Регистрация по месту пребывания','Трудовой договор'],
+   flag:'Разрешительная часть проходит <b>через уполномоченный орган</b> по внешней трудовой миграции — сроки зависят от его загрузки.'},
+  {id:'ru', name:'Россия', short:'Россия',
+   lead:'Для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки действует визовый порядок с уведомлением органов.',
+   docs:['Разрешение на привлечение и использование иностранных работников','Разрешение на работу для специалиста','Приглашение и рабочая виза','Миграционный учёт по месту пребывания','Уведомление о заключении трудового договора'],
+   flag:'Действует <b>визовый порядок</b> с приглашением и обязательным уведомлением органов о заключении договора. Это самая длинная разрешительная цепочка из четырёх стран.'}
+];
+
+var TRADES = [
+  {id:'gen',  name:'Разнорабочие',        k:0.85},
+  {id:'weld', name:'Сварщики',            k:1.35, cert:true},
+  {id:'cnc',  name:'Операторы ЧПУ',       k:1.50, cert:true},
+  {id:'elec', name:'Электромонтажники',   k:1.40, cert:true},
+  {id:'mine', name:'Горнорабочие',        k:1.30, cert:true},
+  {id:'fork', name:'Водители погрузчика', k:1.20, cert:true},
+  {id:'fin',  name:'Отделочники',         k:1.10},
+  {id:'sew',  name:'Швеи',                k:1.05},
+  {id:'road', name:'Дорожные рабочие',    k:1.00}
+];
+
+var READY = [
+  {id:'none', name:'Разрешения нет',  k:1},
+  {id:'proc', name:'В процессе',      k:.5},
+  {id:'have', name:'Разрешение есть', k:0}
+];
+
+var state = { c:0, t:1, q:30, r:0 };
+
+/* ═══ COUNTRY PANEL (section 01) ═════════════════════════ */
+var dsel = $('#dsel'), dpanel = $('#dpanel');
+
+function renderSel(){
+  dsel.innerHTML = '';
+  DEST.forEach(function(d, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role','tab');
+    b.setAttribute('aria-selected', i === state.c ? 'true' : 'false');
+    b.textContent = d.name;
+    b.addEventListener('click', function(){ state.c = i; syncAll(); });
+    dsel.appendChild(b);
+  });
+}
+function renderPanel(){
+  var d = DEST[state.c];
+  var docs = d.docs.map(function(x, n){
+    return '<div class="doc"><span class="doc__n">' + String(n+1).padStart(2,'0') + '</span>' +
+           '<svg aria-hidden="true"><use href="#tick"/></svg><span>' + x + '</span></div>';
+  }).join('');
+  dpanel.innerHTML =
+    '<div class="dpanel__t">Что оформляется: ' + d.name + '</div>' +
+    '<p class="dpanel__s">' + d.lead + '</p>' +
+    '<div class="docs">' + docs + '</div>' +
+    '<p class="dnote">ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.</p>';
+}
+function highlight(){
+  var id = DEST[state.c].id;
+  ['kg','kz','uz','ru'].forEach(function(k){
+    $$('.d-' + k).forEach(function(el){
+      var on = (k === id);
+      el.classList.toggle('on', on);
+      if(el.tagName === 'path'){ el.classList.toggle('hot', on); el.classList.toggle('cold', !on); }
+    });
+  });
+}
+
+/* ═══ CALCULATOR ═════════════════════════════════════════ */
+var kCountry = $('#kCountry'), kTrade = $('#kTrade'), kReady = $('#kReady'),
+    kQty = $('#kQty'), kQtyOut = $('#kQtyOut');
+
+function chips(host, list, key){
+  host.innerHTML = '';
+  list.forEach(function(item, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip';
+    b.setAttribute('aria-pressed', state[key] === i ? 'true' : 'false');
+    b.textContent = item.short || item.name;
+    b.addEventListener('click', function(){ state[key] = i; syncAll(); });
+    host.appendChild(b);
+  });
+}
+
+function qtyLabel(q){ return q >= 300 ? '300+' : String(q); }
+
+function compute(){
+  return {d: DEST[state.c], t: TRADES[state.t], r: READY[state.r], q: state.q};
+}
+
+var STAGE_NAMES = ['Заявка и проверка','Разрешение предприятия','Подбор кандидатов','Документы работников','Перелёт и выход'];
+
+function render(){
+  var R = compute();
+  $('#rTotal').innerHTML = R.d.docs.length + '<small>документов к оформлению</small>';
+
+  var skipped = R.r.k === 0;
+  $('#rNote').innerHTML = 'От заявки до выхода на объект: <b>' + R.t.name.toLowerCase() +
+    '</b>, <b>' + qtyLabel(R.q) + ' чел.</b>, страна найма — <b>' + R.d.name + '</b>. ' +
+    (skipped
+      ? 'Разрешение предприятия уже есть — этот этап исключён.'
+      : 'Подбор ведём параллельно с оформлением разрешения предприятия, чтобы не терять время.');
+
+  /* gantt */
+  var stages = STAGE_NAMES.filter(function(name, i){ return !(skipped && i === 1); });
+  $('#rGantt').innerHTML = stages.map(function(name, i){
+    var w = ((i + 1) / stages.length) * 100;
+    return '<div class="gt"><div class="gt__n"><i>' + String(i+1).padStart(2,'0') + '</i>' + name + '</div>' +
+      '<div class="gt__track"><span class="gt__bar" style="left:0;width:' + w.toFixed(2) + '%"></span></div>' +
+      '<div class="gt__d">этап ' + (i+1) + '</div></div>';
+  }).join('');
+
+  /* docs */
+  $('#rDocs').innerHTML = R.d.docs.map(function(x){
+    return '<li><svg aria-hidden="true"><use href="#tick"/></svg><span>' + x + '</span></li>';
+  }).join('');
+
+  /* flags */
+  var flags = [];
+  if(R.d.flag) flags.push({i:'alert', t:R.d.flag});
+  if(R.t.cert) flags.push({i:'shield', t:'<b>' + R.t.name + '</b> — профессия с подтверждением квалификации. Закладываем дополнительное время на проверку документов и тестирование кандидатов.'});
+  if(R.q >= 100) flags.push({i:'users', t:'Партию свыше 100 человек разбиваем на потоки по 30–50 человек. Иначе документы упираются в пропускную способность органов и весь процесс растягивается.'});
+  if(skipped) flags.push({i:'clock', t:'Разрешение предприятия уже оформлено — <b>этот этап пропускаем</b> и сразу переходим к подбору.'});
+  if(!flags.length) flags.push({i:'clock', t:'Узких мест по вашей конфигурации не видим. Основной риск — неполный комплект документов со стороны предприятия на старте.'});
+  $('#rFlags').innerHTML = flags.map(function(f){
+    return '<div class="cflag"><svg aria-hidden="true"><use href="#' + f.i + '"/></svg><span>' + f.t + '</span></div>';
+  }).join('');
+
+  /* whatsapp deep link */
+  $('#rWa').href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(summary(R));
+}
+
+function summary(R){
+  return 'Заявка с сайта WorkUnity\n\n'
+    + 'Страна найма: ' + R.d.name + '\n'
+    + 'Профессия: ' + R.t.name + '\n'
+    + 'Количество: ' + qtyLabel(R.q) + ' чел.\n'
+    + 'Разрешение предприятия: ' + R.r.name + '\n\n'
+    + 'Прошу подтвердить сроки и стоимость.';
+}
+
+/* calc → form handoff */
+$('#rSend').addEventListener('click', function(){
+  var R = compute(), f = $('#leadform');
+  f.elements.country.value = R.d.name;
+  f.elements.need.value = R.t.name + ' — ' + qtyLabel(R.q) + ' чел.';
+  setTimeout(function(){
+    var empty = ['company','when','contact'].map(function(n){ return f.elements[n]; })
+      .filter(function(el){ return !el.value.trim(); })[0];
+    if(empty) empty.focus({preventScroll:true});
+  }, 700);
+});
+
+kQty.addEventListener('input', function(){
+  state.q = parseInt(kQty.value, 10);
+  kQtyOut.textContent = qtyLabel(state.q) + ' чел.';
+  render();
+});
+
+function syncAll(){
+  renderSel(); renderPanel(); highlight();
+  chips(kCountry, DEST, 'c'); chips(kTrade, TRADES, 't'); chips(kReady, READY, 'r');
+  render();
+}
+kQtyOut.textContent = qtyLabel(state.q) + ' чел.';
+syncAll();
+
+/* ═══ TICKER ═════════════════════════════════════════════ */
+var trades = ['Сварщики','Монтажники металлоконструкций','Операторы ЧПУ','Швеи','Арматурщики','Бетонщики','Операторы линий','Кладовщики','Водители погрузчика','Электромонтажники','Отделочники','Разнорабочие','Плиточники','Слесари-сборщики','Дорожные рабочие'];
+var row = $('#tickRow');
+var tickHtml = trades.map(function(t){ return '<span class="tick__i">' + t + '</span>'; }).join('');
+row.innerHTML = tickHtml + tickHtml;
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ COUNTERS ═══════════════════════════════════════════ */
+var cio = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    var el = e.target, to = parseInt(el.dataset.to, 10);
+    if(isNaN(to)) return;
+    var pre = el.dataset.pre || '', post = el.dataset.post || '';
+    if(reduce){ el.textContent = pre + to + post; return; }
+    var t0 = null, dur = 950;
+    function step(t){
+      if(!t0) t0 = t;
+      var k = Math.min((t - t0) / dur, 1), ease = 1 - Math.pow(1 - k, 3);
+      el.textContent = pre + Math.round(to * ease) + post;
+      if(k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+},{threshold:.5});
+$$('.st__n[data-to]').forEach(function(el){ cio.observe(el); });
+
+/* ═══ PROCESS SCROLL ═════════════════════════════════════ */
+var pw = $('#proc');
+var items = $$('.pi'), railItems = $$('.rail__i'), railLines = $$('.rail__line');
+var cur = 0;
+function setStep(i){
+  if(i === cur) return;
+  cur = i;
+  items.forEach(function(el, n){ el.classList.toggle('on', n === i); });
+  railItems.forEach(function(el, n){ el.classList.toggle('on', n <= i); });
+  railLines.forEach(function(el, n){ el.classList.toggle('on', n < i); });
+}
+function onProcess(){
+  if(window.innerWidth < 900 || reduce) return;
+  var r = pw.getBoundingClientRect(), total = pw.offsetHeight - window.innerHeight;
+  if(total <= 0) return;
+  var p = Math.min(Math.max(-r.top / total, 0), 1);
+  setStep(Math.min(Math.floor(p * items.length), items.length - 1));
+}
+
+/* ═══ SCROLL: progress + mobile CTA + process ════════════ */
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+  onProcess();
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+window.addEventListener('resize', onScroll);
+onScroll();
+
+/* ═══ VIDEO ══════════════════════════════════════════════ */
+var vf = $('#vf');
+function playVideo(){
+  if(vf.dataset.on) return;
+  vf.dataset.on = '1';
+  vf.innerHTML = '<video controls autoplay playsinline preload="metadata" poster="video/ali-poster.jpg"><source src="video/ali.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>';
+}
+vf.addEventListener('click', playVideo);
+vf.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); playVideo(); } });
+
+/* ═══ LEAD FORM ══════════════════════════════════════════ */
+var f = $('#leadform'), m = $('#msg');
+f.addEventListener('submit', function(e){
+  e.preventDefault();
+  var names = ['company','need','when','contact'], v = {}, bad = null;
+  names.forEach(function(n){
+    var el = f.elements[n];
+    v[n] = el.value.trim();
+    var ok = v[n].length > 1;
+    el.classList.toggle('err', !ok);
+    if(!ok && !bad) bad = el;
+  });
+  m.classList.add('on');
+  if(bad){
+    m.textContent = 'Заполните отмеченные поля.';
+    m.style.borderLeftColor = '#B3402A';
+    bad.focus();
+    return;
+  }
+  var text = 'Заявка с сайта WorkUnity\n\n'
+    + 'Страна найма: ' + f.elements.country.value + '\n'
+    + 'Компания: ' + v.company + '\n'
+    + 'Профессии и количество: ' + v.need + '\n'
+    + 'Сроки: ' + v.when + '\n'
+    + 'Контакт: ' + v.contact;
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  m.textContent = 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
+  m.style.borderLeftColor = 'var(--gold)';
+});
+f.addEventListener('input', function(e){ if(e.target.classList) e.target.classList.remove('err'); });
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+var burger = $('#burger'), nav = $('#mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+});
+})();
+</script>
+</body>
+</html>

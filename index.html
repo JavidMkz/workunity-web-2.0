@@ -192,15 +192,11 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   radial-gradient(900px 620px at 88% 2%,rgba(200,162,84,.20),transparent 66%),
   radial-gradient(820px 600px at 0% 100%,rgba(26,47,87,.9),transparent 70%)}
 .hero__g{align-items:end;padding-bottom:clamp(38px,5vw,62px)}
-.hero__l{grid-column:1/8}
-.hero__r{grid-column:8/13}
-@media(max-width:899px){.hero__l,.hero__r{grid-column:1/-1}}
+.hero__l{grid-column:1/-1}
 .hero h1{font-size:clamp(38px,7.4vw,92px);line-height:.98;margin-block:24px 26px;max-width:13ch}
 .hero h1 em{font-style:normal;color:var(--gold);display:block}
 .hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted-l);max-width:46ch;line-height:1.58}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.hero__ph{aspect-ratio:4/5;width:100%}
-@media(max-width:899px){.hero__ph{aspect-ratio:16/10;margin-top:36px}}
 
 /* hero stat strip */
 .strip{border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line);
@@ -569,6 +565,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <symbol id="stamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></symbol>
   <symbol id="scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 6a3 3 0 0 0 6 0z"/><path d="m19 7 3 6a3 3 0 0 1-6 0z"/></symbol>
   <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-2 5-5 2 2-5z"/></symbol>
   <symbol id="one" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/></symbol>
   <symbol id="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></symbol>
   <symbol id="bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
@@ -618,12 +615,6 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <div class="hero__cta">
           <a class="btn btn--gold" href="#calc">Рассчитать сроки и документы<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
           <a class="btn btn--gl" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
-        </div>
-      </div>
-      <div class="hero__r">
-        <div class="ph hero__ph">
-          <img src="img/hero-plant.jpg" alt="" onerror="this.remove()">
-          <span class="ph__tag">img / hero-plant.jpg</span>
         </div>
       </div>
     </div>
@@ -777,16 +768,21 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       </article>
       <article class="sol__i rv">
         <div class="sol__n">02</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3>Разрешения и документы</h3></div>
-        <p class="sol__d">Разрешение работодателю, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Переписку с государственными органами ведём мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3>Разрешения и квоты</h3></div>
+        <p class="sol__d">Разрешение работодателю, квота на привлечение, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Получение квот и переписку с государственными органами ведём мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">03</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3>Юридическое сопровождение</h3></div>
-        <p class="sol__d">Договоры, переписка с органами, спорные ситуации. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3>Юридические консультации</h3></div>
+        <p class="sol__d">Договоры, переписка с органами, спорные ситуации, консультации по вопросам найма иностранной рабочей силы. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">04</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"/></svg><h3>Адаптация и сопровождение</h3></div>
+        <p class="sol__d">Помогаем работникам освоиться на месте, снимаем бытовые и рабочие вопросы, <b>занимаемся мотивацией на объекте</b>. При необходимости берём на себя и организацию питания — как опцию по запросу.</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">05</div>
         <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3>Миграционный аудит</h3></div>
         <p class="sol__d">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
       </article>
@@ -911,7 +907,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       <div class="alt">
         <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
         <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
-        <a href="mailto:info@workunity.kg"><svg aria-hidden="true"><use href="#mail"/></svg>info@workunity.kg</a>
+        <a href="mailto:workunity.recruit@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>workunity.recruit@gmail.com</a>
       </div>
       <div class="qr">
         <img src="img/whatsapp-qr.png" alt="QR-код для чата WorkUnity в WhatsApp" width="112" height="105" loading="lazy">
@@ -949,9 +945,9 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       </div>
       <div><h4>Разделы</h4><ul><li><a href="#net">Страны</a></li><li><a href="#calc">Расчёт</a></li><li><a href="#sol">Решения</a></li><li><a href="#proc">Процедура</a></li></ul></div>
       <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#ind">Отрасли</a></li></ul></div>
-      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@workunity.kg">info@workunity.kg</a></li><li>Бишкек</li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunity.recruit@gmail.com">workunity.recruit@gmail.com</a></li><li>Бишкек</li></ul></div>
     </div>
-    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «___» · ИНН ___</span></div>
+    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
   </div>
 </footer>
 
@@ -970,7 +966,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
      "address":{"@type":"PostalAddress","addressLocality":"Бишкек","addressCountry":"KG"},
      "slogan":"Empowering People."},
     {"@type":"Service","name":"Привлечение иностранной рабочей силы","provider":{"@id":"#org"},
-     "serviceType":"Подбор персонала, оформление разрешений, юридическое сопровождение",
+     "serviceType":"Подбор персонала, оформление разрешений и квот, юридические консультации, адаптация и сопровождение работников, миграционный аудит",
      "areaServed":[{"@type":"Country","name":"Кыргызстан"},{"@type":"Country","name":"Казахстан"},{"@type":"Country","name":"Узбекистан"},{"@type":"Country","name":"Россия"}]},
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"В каких странах вы работаете?","acceptedAnswer":{"@type":"Answer","text":"Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана и России. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке."}},

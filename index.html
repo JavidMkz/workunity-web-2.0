@@ -15,7 +15,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="WorkUnity — иностранные рабочие для вашего предприятия">
 <meta property="og:description" content="Подбор, разрешения, документы, юридические консультации. Девять стран найма.">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://workunityglobe.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,9 +36,8 @@
   --navy-soft:#1A2F57;
   --navy-line:#22355C;
 
-  --gold:#C8A254;
-  --gold-lift:#E2BE74;
-  --gold-deep:#8E6D2A;
+  --green:#0E9F6E;
+  --green-deep:#0C875E;
 
   --paper:#FFFFFF;
   --bone:#F5F3EF;
@@ -52,8 +51,9 @@
   --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
 
   --gut:clamp(20px,5vw,72px);
-  --r:2px;              /* editorial = near-square corners */
-  --r-lg:4px;
+  --r:10px;              /* buttons & tags/plaques */
+  --r-lg:14px;           /* cards & panels */
+  --r-sm:8px;            /* small elements */
   --sec:clamp(64px,9vw,140px);
 }
 
@@ -88,26 +88,23 @@ img{max-width:100%;display:block}
   padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
   font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
   text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
-.btn--gold{background:var(--gold);color:#161006;border-color:var(--gold)}
-.btn--gold:hover{background:var(--gold-lift);border-color:var(--gold-lift);transform:translateY(-2px);
-  box-shadow:0 14px 30px -14px rgba(200,162,84,.7)}
 .btn--navy,.btn--dark{background:var(--navy);color:#fff;border-color:var(--navy)}
 .btn--navy:hover,.btn--dark:hover{background:var(--navy-deep);border-color:var(--navy-deep);transform:translateY(-2px)}
 .btn--out{background:transparent;color:var(--navy);border-color:var(--navy)}
 .btn--out:hover{background:var(--navy);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:var(--bone);border-color:var(--bone);transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--wa:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px)}
 .btn--sm{padding:11px 19px;font-size:14px}
 .btn--full{width:100%;padding-block:18px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
-.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:var(--gold)}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
 
-/* texture + gridlines */
+/* stacking helper (kept for .hero::before) */
 .tex{position:relative;isolation:isolate}
-.tex::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.045;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .tex > *{position:relative;z-index:1}
-.gridlines::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;
-  background-image:repeating-linear-gradient(90deg,rgba(16,26,46,.05) 0 1px,transparent 1px 110px)}
 
 /* scroll progress */
 .prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--navy);z-index:200;
@@ -123,7 +120,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .nav{display:none;gap:30px}
 @media(min-width:1080px){.nav{display:flex}}
 .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
-.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
   transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
 .nav a:hover{color:#fff}
 .nav a:hover::after{transform:scaleX(1)}
@@ -168,16 +165,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .hero h1 em{font-style:normal;color:var(--navy);display:block}
 .hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted);max-width:46ch;line-height:1.58}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero__cta .btn{flex:1 1 200px}
 
 /* hero stat strip */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   position:relative;z-index:1}
-.strip__g{display:grid;grid-template-columns:repeat(2,1fr)}
+.strip__g{display:grid;grid-template-columns:repeat(2,1fr);column-gap:24px}
 @media(min-width:820px){.strip__g{grid-template-columns:repeat(4,1fr)}}
-.st{padding:26px 0 24px;border-right:1px solid var(--line);padding-right:20px}
+.st{padding:26px 20px 24px 0;border-right:1px solid var(--line)}
 .st:last-child{border-right:0}
 @media(max-width:819px){.st:nth-child(2n){border-right:0}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media(min-width:820px){.st{padding-left:0}.st:not(:first-child){padding-left:26px}}
 .st__n{font-family:var(--h);font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1;
   letter-spacing:-.05em;color:var(--ink)}
 .st__n em{font-style:normal;color:var(--navy)}
@@ -200,10 +197,13 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 
 /* recruiting -> hub -> hiring flow (single layout at all widths) */
 .mnet{display:block;max-width:660px;margin-inline:auto}
-.mnet__col{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.mnet__c{border:1px solid var(--line);border-radius:var(--r);padding:10px 16px;
+.mnet__col{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media(max-width:639px){.mnet__col{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:479px){.mnet__col{grid-template-columns:repeat(2,1fr)}}
+.mnet__c{display:flex;align-items:center;justify-content:center;text-align:center;
+  min-width:0;overflow-wrap:break-word;
+  border:1px solid var(--line);border-radius:var(--r);padding:10px 10px;
   font-family:var(--h);font-weight:700;font-size:14.5px;background:var(--paper);transition:.2s ease}
-.mnet__c.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .mnet__arrow{display:grid;place-items:center;padding:14px 0}
 .mnet__arrow span{width:1px;height:30px;background:linear-gradient(180deg,rgba(15,30,61,.1),var(--navy))}
 .mnet__hub{border:1px solid var(--navy);border-radius:var(--r);padding:16px 18px;text-align:center}
@@ -212,13 +212,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   color:var(--muted);margin-bottom:12px;text-align:center}
 
 /* country selector + doc panel */
-.dsel{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(30px,4vw,48px);
-  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;width:fit-content;max-width:100%}
+.dsel{display:grid;grid-template-columns:repeat(3,1fr);margin:clamp(30px,4vw,48px) auto 0;
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;max-width:660px}
 .dsel button{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--muted);
-  padding:14px 22px;font-family:var(--h);font-weight:700;font-size:14.5px;cursor:pointer;transition:.2s ease}
+  min-width:0;overflow-wrap:break-word;
+  padding:14px 10px;font-family:var(--h);font-weight:700;font-size:14px;cursor:pointer;transition:.2s ease;text-align:center}
+.dsel button:nth-child(3n){border-right:0}
+.dsel button:nth-last-child(-n+3){border-bottom:0}
 .dsel button:hover{color:var(--ink);background:var(--bone)}
 .dsel button[aria-selected="true"]{background:var(--navy);color:#fff}
-.dpanel{margin-top:14px;border:1px solid var(--line);border-radius:var(--r);
+.dpanel{margin-top:14px;border:1px solid var(--line);border-radius:var(--r-lg);
   background:var(--paper);padding:clamp(24px,3.4vw,40px)}
 .dpanel__t{font-family:var(--h);font-weight:800;font-size:clamp(21px,2.6vw,30px);
   letter-spacing:-.04em;margin-bottom:8px}
@@ -249,13 +252,11 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .sol__d b{color:var(--ink);font-weight:600}
 
 /* MANIFESTO */
-.man{background:var(--paper);color:var(--ink);padding-block:clamp(80px,12vw,180px);position:relative;overflow:hidden;border-top:1px solid var(--line)}
-.man::before{content:"";position:absolute;inset:0;z-index:0;opacity:.06;pointer-events:none;
-  background-image:repeating-linear-gradient(135deg,rgba(15,30,61,.8) 0 1px,transparent 1px 30px)}
-.man__q{position:relative;z-index:1;font-family:var(--h);font-weight:800;letter-spacing:-.05em;
+.man{background:var(--paper);color:var(--ink);padding-block:var(--sec);border-top:1px solid var(--line)}
+.man__q{font-family:var(--h);font-weight:800;letter-spacing:-.05em;
   line-height:1.02;font-size:clamp(32px,7vw,88px);max-width:15ch}
 .man__q span{color:var(--navy)}
-.man__s{position:relative;z-index:1;margin-top:34px;font-size:clamp(16px,1.6vw,19px);
+.man__s{margin-top:34px;font-size:clamp(16px,1.6vw,19px);
   max-width:50ch;color:var(--muted)}
 
 /* WHY */
@@ -279,7 +280,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .pw{position:relative}
 .pstick{padding-block:clamp(56px,8vw,90px)}
 .plist{display:grid;gap:14px}
-.pi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.pi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
 .pi__n{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.2em;color:var(--navy)}
 .pi h3{font-size:20px;margin-block:11px 9px;letter-spacing:-.04em}
 .pi p{font-size:15px;color:var(--muted);line-height:1.6}
@@ -313,11 +314,9 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 /* VIDEO / ABOUT */
 .vid{display:grid;gap:clamp(28px,4.5vw,64px);align-items:center}
 @media(min-width:900px){.vid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
-.vframe{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;
+.vframe{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;
   background:var(--paper);border:1px solid var(--line);
   display:grid;place-items:center;cursor:pointer}
-.vframe::before{content:"";position:absolute;inset:0;opacity:.14;
-  background-image:repeating-linear-gradient(115deg,rgba(15,30,61,.9) 0 1px,transparent 1px 22px)}
 .vframe video{width:100%;height:100%;object-fit:cover}
 .vplay{display:grid;place-items:center;gap:18px;text-align:center;padding:20px;position:relative;z-index:2}
 .vplay__b{width:76px;height:76px;border-radius:50%;background:var(--navy);display:grid;place-items:center;
@@ -366,10 +365,12 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   transition:color .2s,padding-left .25s}
 .alt a:hover{color:var(--navy);padding-left:8px}
 .alt svg{width:19px;height:19px;color:var(--navy);flex:none}
+.alt a.alt__wa svg{color:var(--green)}
+.alt a.alt__wa:hover{color:var(--green)}
 .qr{display:flex;gap:14px;align-items:flex-start;margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
-.qr img{width:180px;height:168px;border-radius:10px;border:1px solid var(--line);flex:none;background:#fff;padding:4px}
+.qr img{width:180px;height:168px;border-radius:var(--r);border:1px solid var(--line);flex:none;background:#fff;padding:4px}
 .qr span{font-size:13px;color:var(--muted);max-width:22ch;line-height:1.45}
-.fc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3.4vw,40px);color:var(--ink)}
+.fc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.4vw,40px);color:var(--ink)}
 .fc__t{font-family:var(--h);font-weight:800;font-size:20px;letter-spacing:-.04em;margin-bottom:4px}
 .fc__s{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:24px}
@@ -377,13 +378,13 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .f label{display:block;font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:8px}
 .f input,.f select,.f textarea{width:100%;padding:14px 15px;font-family:var(--b);font-size:16px;
-  color:var(--ink);background:var(--bone);border:1px solid var(--line);border-radius:var(--r);transition:.18s}
+  color:var(--ink);background:var(--bone);border:1px solid var(--line);border-radius:var(--r-sm);transition:.18s}
 .f input:focus,.f select:focus,.f textarea:focus{border-color:var(--navy);background:#fff;outline:none;
   box-shadow:0 0 0 3px rgba(15,30,61,.08)}
 .f input.err,.f textarea.err{border-color:#B3402A;background:#FCF4F2}
 .f textarea{min-height:88px;resize:vertical}
 .fn{font-family:var(--m);font-size:11px;line-height:1.7;color:var(--muted);margin-top:14px;letter-spacing:.02em}
-.fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r);background:var(--bone);
+.fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bone);
   border-left:2px solid var(--navy);font-size:14.5px}
 .fm.on{display:block}
 
@@ -396,6 +397,8 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   color:var(--ink);margin-bottom:16px;font-weight:500}
 .ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
 .ftr a:hover{color:var(--navy)}
+.ftr a.ftr__wa{color:var(--green)}
+.ftr a.ftr__wa:hover{color:var(--green-deep)}
 .ftr li{margin-bottom:10px}
 .ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
   font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
@@ -408,7 +411,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
   font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
 .mcta a:first-child{background:var(--navy);color:#fff}
-.mcta a:last-child{background:var(--gold);color:#161006}
+.mcta a:last-child{background:var(--green);color:#fff}
 .mcta svg{width:17px;height:17px}
 @media(max-width:759px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
@@ -468,7 +471,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
     <nav class="nav" id="mainnav" aria-label="Основное меню">
       <a href="#net">Страны</a><a href="#sol">Решения</a><a href="#why">Почему мы</a><a href="#proc">Процедура</a><a href="#faq">Вопросы</a>
     </nav>
-    <a class="btn btn--gold btn--sm hdr__cta" href="#contact">Консультация</a>
+    <a class="btn btn--white btn--sm hdr__cta" href="#contact">Консультация</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
   </div>
 </header>
@@ -476,7 +479,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <main id="top">
 
 <!-- ══ HERO ═══════════════════════════════════════════════ -->
-<section class="hero tex gridlines">
+<section class="hero tex">
   <div class="wide">
     <div class="g12 hero__g">
       <div class="hero__l">
@@ -485,7 +488,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <p class="hero__sub">Привозим специалистов из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки. Разрешения, документы и юридическую сторону берём на себя — вы получаете людей на объекте.</p>
         <div class="hero__cta">
           <a class="btn btn--navy" href="#contact">Оставить заявку<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
-          <a class="btn btn--out" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+          <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
         </div>
       </div>
     </div>
@@ -506,7 +509,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 </section>
 
 <!-- ══ NETWORK ════════════════════════════════════════════ -->
-<section class="sec tex" id="net">
+<section class="sec" id="net">
   <div class="wide">
     <div class="net__hd hd--split rv">
       <div><span class="ix">01 — География</span><h2>Пять стран набора — девять стран найма</h2></div>
@@ -521,10 +524,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       <div class="mnet__arrow"><span></span></div>
       <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
       <div class="mnet__arrow"><span></span></div>
-      <div class="mlab">Страны найма</div>
-      <div class="mnet__col" id="hireList">
-        <span class="mnet__c on" data-id="kg">Кыргызстан</span><span class="mnet__c" data-id="kz">Казахстан</span><span class="mnet__c" data-id="uz">Узбекистан</span><span class="mnet__c" data-id="ru">Россия</span><span class="mnet__c" data-id="az">Азербайджан</span><span class="mnet__c" data-id="by">Беларусь</span><span class="mnet__c" data-id="tj">Таджикистан</span><span class="mnet__c" data-id="ge">Грузия</span><span class="mnet__c" data-id="ua">Украина</span>
-      </div>
+      <div class="mlab">Страны найма — 9</div>
     </div>
 
     <div class="dsel rv" role="tablist" aria-label="Страна найма" id="dsel"><button type="button" role="tab" aria-selected="true">Кыргызстан</button><button type="button" role="tab" aria-selected="false">Казахстан</button><button type="button" role="tab" aria-selected="false">Узбекистан</button><button type="button" role="tab" aria-selected="false">Россия</button><button type="button" role="tab" aria-selected="false">Азербайджан</button><button type="button" role="tab" aria-selected="false">Беларусь</button><button type="button" role="tab" aria-selected="false">Таджикистан</button><button type="button" role="tab" aria-selected="false">Грузия</button><button type="button" role="tab" aria-selected="false">Украина</button></div>
@@ -576,7 +576,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 </section>
 
 <!-- ══ WHY ════════════════════════════════════════════════ -->
-<section class="sec tex" id="why">
+<section class="sec" id="why">
   <div class="wide">
     <div class="hd rv"><span class="ix">03 — Причины</span><h2>Почему работодатели выбирают WorkUnity</h2></div>
     <div class="why">
@@ -625,7 +625,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 </section>
 
 <!-- ══ ABOUT / VIDEO ══════════════════════════════════════ -->
-<section class="sec tex">
+<section class="sec">
   <div class="wide vid">
     <div class="vframe rv" id="vf" role="button" tabindex="0" aria-label="Смотреть видеообращение основателя">
       <div class="vplay">
@@ -675,16 +675,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 </section>
 
 <!-- ══ CONTACT ════════════════════════════════════════════ -->
-<section class="sec tex" id="contact">
+<section class="sec" id="contact">
   <div class="wide lead">
     <div class="rv">
       <span class="ix">08 — Заявка</span>
       <h2>Расскажите о задаче</h2>
       <p style="color:var(--muted);font-size:17.5px;max-width:42ch">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
       <div class="alt">
-        <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
+        <a class="alt__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
         <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
-        <a href="mailto:workunity.recruit@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>workunity.recruit@gmail.com</a>
+        <a href="mailto:workunityglobe@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>workunityglobe@gmail.com</a>
       </div>
       <div class="qr">
         <img src="img/whatsapp-qr.png" alt="QR-код для чата WorkUnity в WhatsApp" width="180" height="168" loading="lazy">
@@ -700,7 +700,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <div class="f"><label for="c2">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
         <div class="f"><label for="c3">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
         <div class="f"><label for="c4">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
-        <button class="btn btn--navy btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>Отправить в WhatsApp</button>
+        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>Отправить в WhatsApp</button>
         <p class="fn">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
         <div class="fm" id="msg" role="status"></div>
       </form>
@@ -722,7 +722,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       </div>
       <div><h4>Разделы</h4><ul><li><a href="#net">Страны</a></li><li><a href="#sol">Решения</a></li><li><a href="#proc">Процедура</a></li></ul></div>
       <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#ind">Отрасли</a></li></ul></div>
-      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunity.recruit@gmail.com">workunity.recruit@gmail.com</a></li><li>Бишкек</li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li>Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
   </div>
@@ -825,15 +825,8 @@ function renderPanel(){
     '<div class="docs">' + docs + '</div>' +
     '<p class="dnote">ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.</p>';
 }
-function highlight(){
-  var id = DEST[state.c].id;
-  $$('.mnet__c[data-id]').forEach(function(el){
-    el.classList.toggle('on', el.dataset.id === id);
-  });
-}
-
 function syncAll(){
-  renderSel(); renderPanel(); highlight();
+  renderSel(); renderPanel();
 }
 syncAll();
 

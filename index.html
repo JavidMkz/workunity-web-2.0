@@ -115,7 +115,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
 .hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none;color:#fff}
-.logo svg{width:34px;height:26px}
+.logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:30px}
 @media(min-width:1080px){.nav{display:flex}}
@@ -390,7 +390,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 
 /* FOOTER */
 .ftr{background:var(--paper);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
-.ftr .logo{color:var(--ink)}
+.ftr .logo img{height:90px;filter:brightness(0)}
 .ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
 @media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
 .ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
@@ -465,7 +465,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <header class="hdr">
   <div class="wide hdr__in">
     <a class="logo" href="#top" aria-label="WorkUnity">
-      <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M2 2h6.6l5 17.5L18.4 2h5.4l4.3 17.5L31.6 2H38l-7.2 30h-6.2L21 15.6 17.6 32h-6.2z" fill="currentColor"/><circle cx="36.5" cy="6.5" r="4.5" fill="#C8A254"/></svg>
+      <img src="img/logo-mark-white.png" alt="WorkUnity" height="26">
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" aria-label="Основное меню">
@@ -715,8 +715,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
     <div class="ftr__t">
       <div>
         <a class="logo" href="#top" aria-label="WorkUnity">
-          <svg viewBox="0 0 44 34" aria-hidden="true"><path d="M2 2h6.6l5 17.5L18.4 2h5.4l4.3 17.5L31.6 2H38l-7.2 30h-6.2L21 15.6 17.6 32h-6.2z" fill="currentColor"/><circle cx="36.5" cy="6.5" r="4.5" fill="#C8A254"/></svg>
-          <span>WorkUnity</span>
+          <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
         <p style="margin-top:16px;max-width:32ch">Иностранная рабочая сила для предприятий девяти стран найма.</p>
       </div>

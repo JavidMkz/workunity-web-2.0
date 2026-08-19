@@ -371,15 +371,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <img src="img/logo-mark-white.png" alt="WorkUnity" height="26">
       <span>WorkUnity</span>
     </a>
-    <nav class="nav" id="mainnav" aria-label="Основное меню">
-      <a href="index.html#net">Страны</a><a href="index.html#sol">Решения</a><a href="index.html#why">Почему мы</a><a href="index.html#proc">Процедура</a><a href="index.html#faq">Вопросы</a><a href="o-workunity.html" class="on">О нас</a>
+    <nav class="nav" id="mainnav" data-i18n-attr="aria-label:nav.aria_main_menu" aria-label="Основное меню">
+      <a href="index.html#net" data-i18n="nav.countries">Страны</a><a href="index.html#sol" data-i18n="nav.services">Решения</a><a href="index.html#why" data-i18n="nav.why">Почему мы</a><a href="index.html#proc" data-i18n="nav.process">Процедура</a><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a><a href="o-workunity.html" class="on" data-i18n="nav.about">О нас</a>
     </nav>
     <div class="hdr__tools">
       <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
-      <button class="tsw" id="tsw" type="button" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
+      <button class="tsw" id="tsw" type="button" data-i18n-attr="aria-label:header.aria_theme" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
     </div>
-    <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact">Консультация</a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
+    <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact" data-i18n="header.consultation">Консультация</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" data-i18n-attr="aria-label:header.aria_open_menu" aria-label="Открыть меню"><span></span></button>
   </div>
 </header>
 
@@ -388,18 +388,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ HERO ═══════════════════════════════════════════════ -->
 <section class="abt-hero">
   <div class="wrap">
-    <span class="tag rv">Рабочая сила · Право · Миграция · Доверие</span>
-    <h1 class="rv rv-d1">WorkUnity — больше, чем рекрутинг.</h1>
-    <p class="abt-hero__sub rv rv-d2">Мы создаём прозрачную систему для иностранцев и бизнеса в Кыргызстане: от привлечения работников и миграционного сопровождения до юридической помощи и защиты интересов иностранных граждан.</p>
+    <span class="tag rv" data-i18n="hero.tag">Рабочая сила · Право · Миграция · Доверие</span>
+    <h1 class="rv rv-d1" data-i18n="hero.h1">WorkUnity — больше, чем рекрутинг.</h1>
+    <p class="abt-hero__sub rv rv-d2" data-i18n="hero.sub">Мы создаём прозрачную систему для иностранцев и бизнеса в Кыргызстане: от привлечения работников и миграционного сопровождения до юридической помощи и защиты интересов иностранных граждан.</p>
 
     <div class="abt-dia rv rv-d3">
-      <div class="abt-dia__env">Правовая и государственная среда</div>
+      <div class="abt-dia__env" data-i18n="diagram.env">Правовая и государственная среда</div>
       <div class="abt-dia__row">
-        <div class="abt-dia__node">Иностранный<br>гражданин</div>
+        <div class="abt-dia__node" data-i18n="diagram.foreigner">Иностранный<br>гражданин</div>
         <div class="abt-dia__line" aria-hidden="true"></div>
         <div class="abt-dia__hub">WORKUNITY</div>
         <div class="abt-dia__line" aria-hidden="true"></div>
-        <div class="abt-dia__node">Работодатель</div>
+        <div class="abt-dia__node" data-i18n="diagram.employer">Работодатель</div>
       </div>
     </div>
   </div>
@@ -408,53 +408,53 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ РЫНОК ДОЛЖЕН РАБОТАТЬ ЧЕСТНО ═══════════════════════ -->
 <section class="sec" id="principle">
   <div class="wrap">
-    <div class="hd rv"><span class="ix">01 — Принцип</span><h2>Рынок должен работать честно.</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="principle.ix">01 — Принцип</span><h2 data-i18n="principle.h2">Рынок должен работать честно.</h2></div>
     <div class="risk rv">
       <div class="risk__c">
-        <h3>Для иностранного гражданина</h3>
-        <p>Иностранец часто находится в незнакомой правовой, языковой и культурной среде. Он может столкнуться с:</p>
+        <h3 data-i18n="risk.foreigner.title">Для иностранного гражданина</h3>
+        <p data-i18n="risk.foreigner.intro">Иностранец часто находится в незнакомой правовой, языковой и культурной среде. Он может столкнуться с:</p>
         <ul class="risk__l">
-          <li>мошенничеством</li>
-          <li>поддельными документами</li>
-          <li>ложными обещаниями</li>
-          <li>нарушением условий работы</li>
-          <li>отсутствием понимания местного законодательства</li>
+          <li data-i18n="risk.foreigner.item1">мошенничеством</li>
+          <li data-i18n="risk.foreigner.item2">поддельными документами</li>
+          <li data-i18n="risk.foreigner.item3">ложными обещаниями</li>
+          <li data-i18n="risk.foreigner.item4">нарушением условий работы</li>
+          <li data-i18n="risk.foreigner.item5">отсутствием понимания местного законодательства</li>
         </ul>
       </div>
       <div class="risk__c">
-        <h3>Для работодателя</h3>
-        <p>Недобросовестные посредники могут:</p>
+        <h3 data-i18n="risk.employer.title">Для работодателя</h3>
+        <p data-i18n="risk.employer.intro">Недобросовестные посредники могут:</p>
         <ul class="risk__l">
-          <li>приводить неподходящих работников</li>
-          <li>искажать информацию о кандидатах</li>
-          <li>создавать миграционные риски</li>
-          <li>создавать юридические риски</li>
+          <li data-i18n="risk.employer.item1">приводить неподходящих работников</li>
+          <li data-i18n="risk.employer.item2">искажать информацию о кандидатах</li>
+          <li data-i18n="risk.employer.item3">создавать миграционные риски</li>
+          <li data-i18n="risk.employer.item4">создавать юридические риски</li>
         </ul>
       </div>
       <div class="risk__c">
-        <h3>Для государства</h3>
-        <p>Непрозрачный рынок приводит к:</p>
+        <h3 data-i18n="risk.state.title">Для государства</h3>
+        <p data-i18n="risk.state.intro">Непрозрачный рынок приводит к:</p>
         <ul class="risk__l">
-          <li>нелегальному пребыванию</li>
-          <li>просроченным документам</li>
-          <li>фиктивной занятости</li>
-          <li>нарушениям миграционного и трудового законодательства</li>
+          <li data-i18n="risk.state.item1">нелегальному пребыванию</li>
+          <li data-i18n="risk.state.item2">просроченным документам</li>
+          <li data-i18n="risk.state.item3">фиктивной занятости</li>
+          <li data-i18n="risk.state.item4">нарушениям миграционного и трудового законодательства</li>
         </ul>
       </div>
     </div>
-    <p class="risk__end rv">WorkUnity создана, чтобы сделать эту систему прозрачнее, безопаснее и законнее.</p>
+    <p class="risk__end rv" data-i18n="risk.end">WorkUnity создана, чтобы сделать эту систему прозрачнее, безопаснее и законнее.</p>
   </div>
 </section>
 
 <!-- ══ ЧТО ДЕЛАЕТ WORKUNITY ═══════════════════════════════ -->
 <section class="sec" id="role">
   <div class="wrap">
-    <div class="hd rv"><span class="ix">02 — Роль</span><h2>Что делает WorkUnity</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="role.ix">02 — Роль</span><h2 data-i18n="role.h2">Что делает WorkUnity</h2></div>
     <div class="role rv">
-      <article class="role__c"><span class="role__num">01</span><h3 class="role__t">Защищаем</h3><p class="role__d">Помогаем иностранным гражданам понимать свои права, получать юридическую помощь и защищать свои интересы в Кыргызстане.</p></article>
-      <article class="role__c"><span class="role__num">02</span><h3 class="role__t">Проверяем</h3><p class="role__d">Проверяем работодателей, вакансии, партнёров и документы до того, как в процесс вовлекаются люди.</p></article>
-      <article class="role__c"><span class="role__num">03</span><h3 class="role__t">Организуем</h3><p class="role__d">Координируем подбор, оформление, миграционные процедуры и привлечение работников до их выхода на рабочее место.</p></article>
-      <article class="role__c"><span class="role__num">04</span><h3 class="role__t">Представляем</h3><p class="role__d">Оказываем юридические услуги и представляем интересы иностранных граждан и бизнеса в рамках законодательства Кыргызской Республики.</p></article>
+      <article class="role__c"><span class="role__num">01</span><h3 class="role__t" data-i18n="role.01.title">Защищаем</h3><p class="role__d" data-i18n="role.01.desc">Помогаем иностранным гражданам понимать свои права, получать юридическую помощь и защищать свои интересы в Кыргызстане.</p></article>
+      <article class="role__c"><span class="role__num">02</span><h3 class="role__t" data-i18n="role.02.title">Проверяем</h3><p class="role__d" data-i18n="role.02.desc">Проверяем работодателей, вакансии, партнёров и документы до того, как в процесс вовлекаются люди.</p></article>
+      <article class="role__c"><span class="role__num">03</span><h3 class="role__t" data-i18n="role.03.title">Организуем</h3><p class="role__d" data-i18n="role.03.desc">Координируем подбор, оформление, миграционные процедуры и привлечение работников до их выхода на рабочее место.</p></article>
+      <article class="role__c"><span class="role__num">04</span><h3 class="role__t" data-i18n="role.04.title">Представляем</h3><p class="role__d" data-i18n="role.04.desc">Оказываем юридические услуги и представляем интересы иностранных граждан и бизнеса в рамках законодательства Кыргызской Республики.</p></article>
     </div>
   </div>
 </section>
@@ -462,44 +462,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ КОГДА СИСТЕМА РАБОТАЕТ ПРАВИЛЬНО ═══════════════════ -->
 <section class="sec" id="win">
   <div class="wrap">
-    <div class="hd rv"><span class="ix">03 — Результат</span><h2>Когда система работает правильно, выигрывают все.</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="win.ix">03 — Результат</span><h2 data-i18n="win.h2">Когда система работает правильно, выигрывают все.</h2></div>
     <div class="win rv">
       <div class="win__c">
-        <div class="win__t">Иностранный гражданин</div>
-        <ul class="win__l"><li>Честная работа</li><li>Законный статус</li><li>Защита</li></ul>
+        <div class="win__t" data-i18n="win.foreigner.title">Иностранный гражданин</div>
+        <ul class="win__l"><li data-i18n="win.foreigner.item1">Честная работа</li><li data-i18n="win.foreigner.item2">Законный статус</li><li data-i18n="win.foreigner.item3">Защита</li></ul>
       </div>
       <div class="win__c">
-        <div class="win__t">Работодатель</div>
-        <ul class="win__l"><li>Подходящие работники</li><li>Предсказуемый процесс</li><li>Снижение рисков</li></ul>
+        <div class="win__t" data-i18n="win.employer.title">Работодатель</div>
+        <ul class="win__l"><li data-i18n="win.employer.item1">Подходящие работники</li><li data-i18n="win.employer.item2">Предсказуемый процесс</li><li data-i18n="win.employer.item3">Снижение рисков</li></ul>
       </div>
       <div class="win__c">
-        <div class="win__t">WorkUnity</div>
-        <ul class="win__l"><li>Устойчивый бизнес</li><li>Репутация</li><li>Долгосрочные отношения</li></ul>
+        <div class="win__t" data-i18n="win.workunity.title">WorkUnity</div>
+        <ul class="win__l"><li data-i18n="win.workunity.item1">Устойчивый бизнес</li><li data-i18n="win.workunity.item2">Репутация</li><li data-i18n="win.workunity.item3">Долгосрочные отношения</li></ul>
       </div>
     </div>
-    <p class="win__end rv">Государство получает больше прозрачности, законности и порядка на рынке.</p>
+    <p class="win__end rv" data-i18n="win.end">Государство получает больше прозрачности, законности и порядка на рынке.</p>
   </div>
 </section>
 
 <!-- ══ ФИРМЕННЫЙ БЛОК ══════════════════════════════════════ -->
 <section class="quote">
   <div class="wrap">
-    <p class="quote__q rv">Уезжают с контрактом, а не с обещанием.</p>
-    <p class="quote__s rv rv-d1">Мы не продаём визы, фиктивные приглашения или обещания гарантированного выезда. Мы строим реальный процесс, в котором есть проверенный работодатель, понятные условия, документы и ответственные люди.</p>
+    <p class="quote__q rv" data-i18n="quote.q">Уезжают с контрактом, а не с обещанием.</p>
+    <p class="quote__s rv rv-d1" data-i18n="quote.s">Мы не продаём визы, фиктивные приглашения или обещания гарантированного выезда. Мы строим реальный процесс, в котором есть проверенный работодатель, понятные условия, документы и ответственные люди.</p>
   </div>
 </section>
 
 <!-- ══ НАШИ КРАСНЫЕ ЛИНИИ ══════════════════════════════════ -->
 <section class="sec lines" id="lines">
   <div class="wrap">
-    <div class="hd rv narrow"><span class="ix">04 — Позиция</span><h2>Наши красные линии</h2><p>Есть вещи, которые WorkUnity не делает ни ради клиента, ни ради прибыли.</p></div>
+    <div class="hd rv narrow"><span class="ix" data-i18n="lines.ix">04 — Позиция</span><h2 data-i18n="lines.h2">Наши красные линии</h2><p data-i18n="lines.sub">Есть вещи, которые WorkUnity не делает ни ради клиента, ни ради прибыли.</p></div>
     <div class="lines__l rv">
-      <div class="lines__i"><span class="lines__x">×</span><span>Не используем серые схемы</span></div>
-      <div class="lines__i"><span class="lines__x">×</span><span>Не оформляем фиктивные документы</span></div>
-      <div class="lines__i"><span class="lines__x">×</span><span>Не продаём «гарантированные визы»</span></div>
-      <div class="lines__i"><span class="lines__x">×</span><span>Не скрываем риски ради сделки</span></div>
-      <div class="lines__i"><span class="lines__x">×</span><span>Не работаем с непроверенными посредниками ради быстрой прибыли</span></div>
-      <div class="lines__i"><span class="lines__x">×</span><span>Не закрываем глаза на нарушение прав работника</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item1">Не используем серые схемы</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item2">Не оформляем фиктивные документы</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item3">Не продаём «гарантированные визы»</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item4">Не скрываем риски ради сделки</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item5">Не работаем с непроверенными посредниками ради быстрой прибыли</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item6">Не закрываем глаза на нарушение прав работника</span></div>
     </div>
   </div>
 </section>
@@ -508,9 +508,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <section class="sec" id="kg">
   <div class="wrap kg">
     <div class="rv">
-      <span class="ix">05 — Кыргызстан</span>
-      <h2>Начинаем с Кыргызстана.</h2>
-      <p>WorkUnity построена в Кыргызстане и работает внутри его правовой и деловой среды. Мы строим компанию, которая понимает одновременно интересы иностранного гражданина, местного бизнеса и требования государства.</p>
+      <span class="ix" data-i18n="kg.ix">05 — Кыргызстан</span>
+      <h2 data-i18n="kg.h2">Начинаем с Кыргызстана.</h2>
+      <p data-i18n="kg.p">WorkUnity построена в Кыргызстане и работает внутри его правовой и деловой среды. Мы строим компанию, которая понимает одновременно интересы иностранного гражданина, местного бизнеса и требования государства.</p>
     </div>
     <div class="kg__map rv rv-d1">
       <svg viewBox="0 0 220 160" aria-hidden="true">
@@ -520,7 +520,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <line x1="150" y1="98" x2="150" y2="150" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
         <circle cx="112" cy="66" r="4" fill="var(--cyan)"/>
         <circle cx="112" cy="66" r="9" fill="none" stroke="var(--cyan)" stroke-width="1"/>
-        <text x="112" y="90" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="var(--ink)">БИШКЕК</text>
+        <text x="112" y="90" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="var(--ink)" data-i18n="kg.map_label">БИШКЕК</text>
       </svg>
     </div>
   </div>
@@ -529,16 +529,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ ОТКРЫТЫЙ ДИАЛОГ С ГОСУДАРСТВОМ ══════════════════════ -->
 <section class="sec gov" id="gov">
   <div class="wrap">
-    <div class="rv"><span class="ix">06 — Государство</span><h2>Открытый диалог с государством.</h2></div>
-    <p class="rv rv-d1">Мы заинтересованы в прозрачном и законном рынке. Поэтому WorkUnity выстраивает системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
+    <div class="rv"><span class="ix" data-i18n="gov.ix">06 — Государство</span><h2 data-i18n="gov.h2">Открытый диалог с государством.</h2></div>
+    <p class="rv rv-d1" data-i18n="gov.p">Мы заинтересованы в прозрачном и законном рынке. Поэтому WorkUnity выстраивает системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
     <div class="gov__row rv rv-d2">
-      <div class="gov__i">Миграция</div>
+      <div class="gov__i" data-i18n="gov.migration">Миграция</div>
       <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i">Труд</div>
+      <div class="gov__i" data-i18n="gov.labor">Труд</div>
       <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i">Государственные институты</div>
+      <div class="gov__i" data-i18n="gov.institutions">Государственные институты</div>
       <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i">Дипломатические связи</div>
+      <div class="gov__i" data-i18n="gov.diplomacy">Дипломатические связи</div>
     </div>
   </div>
 </section>
@@ -546,15 +546,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ ОДНО ОКНО ═══════════════════════════════════════════ -->
 <section class="sec" id="flow">
   <div class="wrap">
-    <div class="hd rv narrow"><span class="ix">07 — Процесс</span><h2>Один контакт. Вся система внутри.</h2><p>Клиент взаимодействует с одним ответственным куратором, даже если над его задачей работают юристы, миграционные специалисты, рекрутеры и специалисты по контролю.</p></div>
+    <div class="hd rv narrow"><span class="ix" data-i18n="flow.ix">07 — Процесс</span><h2 data-i18n="flow.h2">Один контакт. Вся система внутри.</h2><p data-i18n="flow.p">Клиент взаимодействует с одним ответственным куратором, даже если над его задачей работают юристы, миграционные специалисты, рекрутеры и специалисты по контролю.</p></div>
     <div class="flow rv">
-      <div class="flow__s">Клиент</div>
+      <div class="flow__s" data-i18n="flow.client">Клиент</div>
       <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
-      <div class="flow__s flow__s--hub">Куратор WorkUnity</div>
+      <div class="flow__s flow__s--hub" data-i18n="flow.curator">Куратор WorkUnity</div>
       <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
-      <div class="flow__s flow__s--wide">Юридическая помощь · Миграция · Подбор · Контроль</div>
+      <div class="flow__s flow__s--wide" data-i18n="flow.services">Юридическая помощь · Миграция · Подбор · Контроль</div>
       <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
-      <div class="flow__s">Результат</div>
+      <div class="flow__s" data-i18n="flow.result">Результат</div>
     </div>
   </div>
 </section>
@@ -562,19 +562,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ ФИНАЛЬНЫЙ CTA ═══════════════════════════════════════ -->
 <section class="sec" id="contact-cta">
   <div class="wrap">
-    <div class="hd rv"><span class="ix">08 — Контакт</span><h2>Чем WorkUnity может помочь вам?</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="cta.ix">08 — Контакт</span><h2 data-i18n="cta.h2">Чем WorkUnity может помочь вам?</h2></div>
     <div class="cta3 rv">
       <div class="cta3__c">
-        <div><div class="cta3__t">Иностранному гражданину</div><h3 class="cta3__h">Правовая защита</h3></div>
-        <a class="btn btn--navy" href="index.html#contact">Получить юридическую помощь</a>
+        <div><div class="cta3__t" data-i18n="cta.foreigner.tag">Иностранному гражданину</div><h3 class="cta3__h" data-i18n="cta.foreigner.title">Правовая защита</h3></div>
+        <a class="btn btn--navy" href="index.html#contact" data-i18n="cta.foreigner.btn">Получить юридическую помощь</a>
       </div>
       <div class="cta3__c">
-        <div><div class="cta3__t">Работодателю</div><h3 class="cta3__h">Подбор персонала</h3></div>
-        <a class="btn btn--out" href="index.html#contact">Найти работников</a>
+        <div><div class="cta3__t" data-i18n="cta.employer.tag">Работодателю</div><h3 class="cta3__h" data-i18n="cta.employer.title">Подбор персонала</h3></div>
+        <a class="btn btn--out" href="index.html#contact" data-i18n="cta.employer.btn">Найти работников</a>
       </div>
       <div class="cta3__c">
-        <div><div class="cta3__t">Партнёру</div><h3 class="cta3__h">Сотрудничество</h3></div>
-        <a class="btn btn--out" href="index.html#contact">Стать партнёром</a>
+        <div><div class="cta3__t" data-i18n="cta.partner.tag">Партнёру</div><h3 class="cta3__h" data-i18n="cta.partner.title">Сотрудничество</h3></div>
+        <a class="btn btn--out" href="index.html#contact" data-i18n="cta.partner.btn">Стать партнёром</a>
       </div>
     </div>
   </div>
@@ -584,7 +584,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 <div class="bstrip">
   <div class="bstrip__t">WorkUnity</div>
-  <div class="bstrip__s">Право · Миграция · Workforce · Доверие</div>
+  <div class="bstrip__s" data-i18n="bstrip.tagline">Право · Миграция · Workforce · Доверие</div>
 </div>
 
 <footer class="ftr">
@@ -594,19 +594,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <a class="logo" href="index.html" aria-label="WorkUnity">
           <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
-        <p style="margin-top:16px;max-width:32ch">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">Иностранная рабочая сила для предприятий девяти стран найма.</p>
       </div>
-      <div><h4>Разделы</h4><ul><li><a href="index.html#net">Страны</a></li><li><a href="index.html#sol">Решения</a></li><li><a href="index.html#proc">Процедура</a></li></ul></div>
-      <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="index.html#faq">Вопросы</a></li><li><a href="o-workunity.html">О компании</a></li></ul></div>
-      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li>Бишкек</li></ul></div>
+      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html#net" data-i18n="nav.countries">Страны</a></li><li><a href="index.html#sol" data-i18n="nav.services">Решения</a></li><li><a href="index.html#proc" data-i18n="nav.process">Процедура</a></li></ul></div>
+      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">О компании</a></li></ul></div>
+      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span>Позвонить</span></a>
-  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Написать</span></a>
+  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-i18n="mcta.call">Позвонить</span></a>
+  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="mcta.write">Написать</span></a>
 </div>
 
 <script>
@@ -648,19 +648,76 @@ nav.addEventListener('click', function(e){
   if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
 });
 
-/* ═══ LANGUAGE SWITCH ═════════════════════════════════════
-   Основной текст страницы пока не переведён (см. ТЗ: локализация
-   добавляется отдельно) — переключатель меняет только общую шапку
-   и футер, где есть data-en, унаследованные из index.html. */
+/* ═══ LOCALIZATION ════════════════════════════════════════
+   Ключевая структура переводов страницы. Русский текст — в разметке
+   (обязательный no-JS фолбэк, как и на index.html) и служит источником
+   для LANG === 'ru'. Для EN и UR ключи уже объявлены и обходятся тем
+   же кодом переключения — заполнение значений не потребует правок
+   компонентов/скрипта, только словарей ниже. */
+var I18N_EN = {
+  'nav.aria_main_menu':'', 'header.aria_theme':'', 'header.aria_open_menu':'',
+  'nav.countries':'', 'nav.services':'', 'nav.why':'', 'nav.process':'', 'nav.faq':'', 'nav.about':'',
+  'header.consultation':'',
+  'hero.tag':'', 'hero.h1':'', 'hero.sub':'',
+  'diagram.env':'', 'diagram.foreigner':'', 'diagram.employer':'',
+  'principle.ix':'', 'principle.h2':'',
+  'risk.foreigner.title':'', 'risk.foreigner.intro':'',
+  'risk.foreigner.item1':'', 'risk.foreigner.item2':'', 'risk.foreigner.item3':'', 'risk.foreigner.item4':'', 'risk.foreigner.item5':'',
+  'risk.employer.title':'', 'risk.employer.intro':'',
+  'risk.employer.item1':'', 'risk.employer.item2':'', 'risk.employer.item3':'', 'risk.employer.item4':'',
+  'risk.state.title':'', 'risk.state.intro':'',
+  'risk.state.item1':'', 'risk.state.item2':'', 'risk.state.item3':'', 'risk.state.item4':'',
+  'risk.end':'',
+  'role.ix':'', 'role.h2':'',
+  'role.01.title':'', 'role.01.desc':'', 'role.02.title':'', 'role.02.desc':'',
+  'role.03.title':'', 'role.03.desc':'', 'role.04.title':'', 'role.04.desc':'',
+  'win.ix':'', 'win.h2':'',
+  'win.foreigner.title':'', 'win.foreigner.item1':'', 'win.foreigner.item2':'', 'win.foreigner.item3':'',
+  'win.employer.title':'', 'win.employer.item1':'', 'win.employer.item2':'', 'win.employer.item3':'',
+  'win.workunity.title':'', 'win.workunity.item1':'', 'win.workunity.item2':'', 'win.workunity.item3':'',
+  'win.end':'',
+  'quote.q':'', 'quote.s':'',
+  'lines.ix':'', 'lines.h2':'', 'lines.sub':'',
+  'lines.item1':'', 'lines.item2':'', 'lines.item3':'', 'lines.item4':'', 'lines.item5':'', 'lines.item6':'',
+  'kg.ix':'', 'kg.h2':'', 'kg.p':'', 'kg.map_label':'',
+  'gov.ix':'', 'gov.h2':'', 'gov.p':'', 'gov.migration':'', 'gov.labor':'', 'gov.institutions':'', 'gov.diplomacy':'',
+  'flow.ix':'', 'flow.h2':'', 'flow.p':'', 'flow.client':'', 'flow.curator':'', 'flow.services':'', 'flow.result':'',
+  'cta.ix':'', 'cta.h2':'',
+  'cta.foreigner.tag':'', 'cta.foreigner.title':'', 'cta.foreigner.btn':'',
+  'cta.employer.tag':'', 'cta.employer.title':'', 'cta.employer.btn':'',
+  'cta.partner.tag':'', 'cta.partner.title':'', 'cta.partner.btn':'',
+  'bstrip.tagline':'',
+  'footer.tagline':'', 'footer.sections':'', 'footer.materials':'', 'footer.instructions':'',
+  'footer.contacts':'', 'footer.city':'', 'footer.about':'',
+  'mcta.call':'', 'mcta.write':''
+};
+var I18N_UR = {}; // те же ключи, что и I18N_EN — заполняются на следующем этапе
+Object.keys(I18N_EN).forEach(function(k){ I18N_UR[k] = ''; });
+var DICTS = { en: I18N_EN, ur: I18N_UR };
+var RTL_LANGS = { ur: true };
+
 var lsw = $('#lsw');
-var i18nNodes = $$('[data-en]').map(function(el){
-  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en') };
+var i18nNodes = $$('[data-i18n]').map(function(el){
+  return { el:el, key:el.getAttribute('data-i18n'), ru:el.innerHTML };
+});
+var i18nAttrNodes = $$('[data-i18n-attr]').map(function(el){
+  var parts = el.getAttribute('data-i18n-attr').split(':');
+  return { el:el, attr:parts[0], key:parts[1], ru:el.getAttribute(parts[0]) };
 });
 function setLang(lang){
-  LANG = lang === 'en' ? 'en' : 'ru';
+  LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
   document.documentElement.lang = LANG;
-  lsw.setAttribute('data-lang', LANG);
-  i18nNodes.forEach(function(n){ n.el.innerHTML = LANG === 'en' ? n.en : n.ru; });
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
+  lsw.setAttribute('data-lang', LANG === 'ur' ? 'en' : LANG);
+  var dict = DICTS[LANG];
+  i18nNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
+  i18nAttrNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.setAttribute(n.attr, (val && val.trim()) ? val : n.ru);
+  });
   try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
 }
 lsw.addEventListener('click', function(){ setLang(LANG === 'ru' ? 'en' : 'ru'); });

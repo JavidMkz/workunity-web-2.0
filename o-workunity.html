@@ -655,46 +655,100 @@ nav.addEventListener('click', function(e){
    же кодом переключения — заполнение значений не потребует правок
    компонентов/скрипта, только словарей ниже. */
 var I18N_EN = {
-  'nav.aria_main_menu':'', 'header.aria_theme':'', 'header.aria_open_menu':'',
-  'nav.countries':'', 'nav.services':'', 'nav.why':'', 'nav.process':'', 'nav.faq':'', 'nav.about':'',
-  'header.consultation':'',
-  'hero.tag':'', 'hero.h1':'', 'hero.sub':'',
-  'diagram.env':'', 'diagram.foreigner':'', 'diagram.employer':'',
-  'principle.ix':'', 'principle.h2':'',
-  'risk.foreigner.title':'', 'risk.foreigner.intro':'',
-  'risk.foreigner.item1':'', 'risk.foreigner.item2':'', 'risk.foreigner.item3':'', 'risk.foreigner.item4':'', 'risk.foreigner.item5':'',
-  'risk.employer.title':'', 'risk.employer.intro':'',
-  'risk.employer.item1':'', 'risk.employer.item2':'', 'risk.employer.item3':'', 'risk.employer.item4':'',
-  'risk.state.title':'', 'risk.state.intro':'',
-  'risk.state.item1':'', 'risk.state.item2':'', 'risk.state.item3':'', 'risk.state.item4':'',
-  'risk.end':'',
-  'role.ix':'', 'role.h2':'',
-  'role.01.title':'', 'role.01.desc':'', 'role.02.title':'', 'role.02.desc':'',
-  'role.03.title':'', 'role.03.desc':'', 'role.04.title':'', 'role.04.desc':'',
-  'win.ix':'', 'win.h2':'',
-  'win.foreigner.title':'', 'win.foreigner.item1':'', 'win.foreigner.item2':'', 'win.foreigner.item3':'',
-  'win.employer.title':'', 'win.employer.item1':'', 'win.employer.item2':'', 'win.employer.item3':'',
-  'win.workunity.title':'', 'win.workunity.item1':'', 'win.workunity.item2':'', 'win.workunity.item3':'',
-  'win.end':'',
-  'quote.q':'', 'quote.s':'',
-  'lines.ix':'', 'lines.h2':'', 'lines.sub':'',
-  'lines.item1':'', 'lines.item2':'', 'lines.item3':'', 'lines.item4':'', 'lines.item5':'', 'lines.item6':'',
-  'kg.ix':'', 'kg.h2':'', 'kg.p':'', 'kg.map_label':'',
-  'gov.ix':'', 'gov.h2':'', 'gov.p':'', 'gov.migration':'', 'gov.labor':'', 'gov.institutions':'', 'gov.diplomacy':'',
-  'flow.ix':'', 'flow.h2':'', 'flow.p':'', 'flow.client':'', 'flow.curator':'', 'flow.services':'', 'flow.result':'',
-  'cta.ix':'', 'cta.h2':'',
-  'cta.foreigner.tag':'', 'cta.foreigner.title':'', 'cta.foreigner.btn':'',
-  'cta.employer.tag':'', 'cta.employer.title':'', 'cta.employer.btn':'',
-  'cta.partner.tag':'', 'cta.partner.title':'', 'cta.partner.btn':'',
-  'bstrip.tagline':'',
-  'footer.tagline':'', 'footer.sections':'', 'footer.materials':'', 'footer.instructions':'',
-  'footer.contacts':'', 'footer.city':'', 'footer.about':'',
-  'mcta.call':'', 'mcta.write':''
+  'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
+  'nav.countries':'Countries', 'nav.services':'Solutions', 'nav.why':'Why WorkUnity', 'nav.process':'How It Works', 'nav.faq':'FAQ', 'nav.about':'About WorkUnity',
+  'header.consultation':'Book a Consultation',
+  'hero.tag':'Workforce · Legal · Migration · Trust',
+  'hero.h1':'WorkUnity — more than recruitment.',
+  'hero.sub':'We build a transparent system for foreign nationals and businesses in Kyrgyzstan — from workforce recruitment and migration support to legal assistance and protection of rights.',
+  'diagram.env':'Legal and Government Environment', 'diagram.foreigner':'Foreign National', 'diagram.employer':'Employer',
+  'principle.ix':'01 — Principle', 'principle.h2':'The market should work fairly.',
+  'risk.foreigner.title':'For Foreign Nationals',
+  'risk.foreigner.intro':'Foreign nationals often find themselves in an unfamiliar legal, linguistic and cultural environment. They may face:',
+  'risk.foreigner.item1':'fraud', 'risk.foreigner.item2':'forged documents', 'risk.foreigner.item3':'false promises',
+  'risk.foreigner.item4':'violations of agreed employment conditions', 'risk.foreigner.item5':'a lack of understanding of local laws',
+  'risk.employer.title':'For Employers', 'risk.employer.intro':'Unreliable intermediaries may:',
+  'risk.employer.item1':'bring unsuitable workers', 'risk.employer.item2':'misrepresent candidate information',
+  'risk.employer.item3':'create migration risks', 'risk.employer.item4':'create legal risks',
+  'risk.state.title':'For the Government', 'risk.state.intro':'An opaque market can lead to:',
+  'risk.state.item1':'illegal residence', 'risk.state.item2':'expired documents',
+  'risk.state.item3':'fictitious employment', 'risk.state.item4':'violations of migration and labour regulations',
+  'risk.end':'WorkUnity was created to make this system more transparent, safer and more lawful.',
+  'role.ix':'02 — Our Role', 'role.h2':'What WorkUnity does',
+  'role.01.title':'Protect', 'role.01.desc':'We help foreign nationals understand their rights, access legal assistance and protect their interests in Kyrgyzstan.',
+  'role.02.title':'Verify', 'role.02.desc':'We verify employers, vacancies, partners and documents before people become involved in the process.',
+  'role.03.title':'Organize', 'role.03.desc':'We coordinate recruitment, documentation, migration procedures and workforce mobilization through to the employee’s start at the workplace.',
+  'role.04.title':'Represent', 'role.04.desc':'We provide legal services and represent the interests of foreign nationals and businesses within the legal framework of the Kyrgyz Republic.',
+  'win.ix':'03 — The Result', 'win.h2':'When the system works properly, everyone benefits.',
+  'win.foreigner.title':'Foreign National', 'win.foreigner.item1':'Fair employment', 'win.foreigner.item2':'Lawful status', 'win.foreigner.item3':'Protection',
+  'win.employer.title':'Employer', 'win.employer.item1':'Suitable workers', 'win.employer.item2':'A predictable process', 'win.employer.item3':'Reduced risk',
+  'win.workunity.title':'WorkUnity', 'win.workunity.item1':'Sustainable business', 'win.workunity.item2':'Reputation', 'win.workunity.item3':'Long-term relationships',
+  'win.end':'The Government benefits from greater transparency, compliance and order in the market.',
+  'quote.q':'Leave with a contract, not a promise.',
+  'quote.s':'We do not sell visas, fictitious invitations or promises of guaranteed departure. We build a real process based on a verified employer, clear employment conditions, proper documentation and accountable people.',
+  'lines.ix':'04 — Our Position', 'lines.h2':'Our red lines',
+  'lines.sub':'There are things WorkUnity will never do — not for a client and not for profit.',
+  'lines.item1':'We do not use grey-area schemes.', 'lines.item2':'We do not arrange fictitious documents.',
+  'lines.item3':'We do not sell “guaranteed visas”.', 'lines.item4':'We do not hide risks to close a deal.',
+  'lines.item5':'We do not work with unverified intermediaries for the sake of short-term profit.',
+  'lines.item6':'We do not ignore violations of workers’ rights.',
+  'kg.ix':'05 — Kyrgyzstan', 'kg.h2':'We start in Kyrgyzstan.',
+  'kg.p':'WorkUnity is built in Kyrgyzstan and operates within its legal and business environment. We are building a company that understands the interests of foreign nationals, local businesses and the requirements of the state.',
+  'kg.map_label':'BISHKEK',
+  'gov.ix':'06 — Government', 'gov.h2':'An open dialogue with government.',
+  'gov.p':'We have a direct interest in a transparent and lawful market. That is why WorkUnity builds structured relationships with government institutions, industry associations and diplomatic missions.',
+  'gov.migration':'Migration', 'gov.labor':'Labour', 'gov.institutions':'Government Institutions', 'gov.diplomacy':'Diplomatic Relations',
+  'flow.ix':'07 — Process', 'flow.h2':'One point of contact. The whole system behind it.',
+  'flow.p':'The client works with one dedicated coordinator, even when lawyers, migration specialists, recruiters and compliance specialists are involved in the case.',
+  'flow.client':'Client', 'flow.curator':'WorkUnity Coordinator', 'flow.services':'Legal · Migration · Recruitment · Compliance', 'flow.result':'Result',
+  'cta.ix':'08 — Contact', 'cta.h2':'How can WorkUnity help you?',
+  'cta.foreigner.tag':'For Foreign Nationals', 'cta.foreigner.title':'Legal Protection', 'cta.foreigner.btn':'Get Legal Help',
+  'cta.employer.tag':'For Employers', 'cta.employer.title':'Workforce Recruitment', 'cta.employer.btn':'Find Workers',
+  'cta.partner.tag':'For Partners', 'cta.partner.title':'Partnership', 'cta.partner.btn':'Become a Partner',
+  'bstrip.tagline':'Legal · Migration · Workforce · Trust',
+  'footer.tagline':'International workforce solutions for businesses across our recruitment markets.',
+  'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
+  'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'About WorkUnity',
+  'mcta.call':'Call', 'mcta.write':'Message us'
 };
-var I18N_UR = {}; // те же ключи, что и I18N_EN — заполняются на следующем этапе
+var I18N_UR = {}; // те же ключи, что и I18N_EN — заполняются на следующем этапе (Urdu)
 Object.keys(I18N_EN).forEach(function(k){ I18N_UR[k] = ''; });
 var DICTS = { en: I18N_EN, ur: I18N_UR };
 var RTL_LANGS = { ur: true };
+// Языки, реально доступные через переключатель сейчас. Когда появится перевод
+// Urdu, добавление 'ur' в этот массив включает его в цикле RU→EN→UR→RU без
+// каких-либо других правок кода — кнопка и dir/lang-механика уже готовы.
+var ENABLED_LANGS = ['ru', 'en'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  if (i === -1) i = 0;
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+
+var SEO = {
+  ru: {
+    title: 'О WorkUnity — право, миграция, доверие',
+    description: 'WorkUnity создаёт прозрачную систему для иностранных граждан и бизнеса в Кыргызстане: подбор и миграционное сопровождение, проверка сторон, юридическая помощь и защита интересов.',
+    ogTitle: 'О WorkUnity — право, миграция, доверие',
+    ogDescription: 'Прозрачная система для иностранных граждан и бизнеса в Кыргызстане.'
+  },
+  en: {
+    title: 'About WorkUnity — Legal, Migration, Trust',
+    description: 'WorkUnity builds a transparent system for foreign nationals and businesses in Kyrgyzstan: workforce recruitment and migration support, verification of all parties, legal assistance and protection of rights.',
+    ogTitle: 'About WorkUnity — Legal, Migration, Trust',
+    ogDescription: 'A transparent system for foreign nationals and businesses in Kyrgyzstan.'
+  }
+};
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+}
 
 var lsw = $('#lsw');
 var i18nNodes = $$('[data-i18n]').map(function(el){
@@ -718,11 +772,13 @@ function setLang(lang){
     var val = dict && dict[n.key];
     n.el.setAttribute(n.attr, (val && val.trim()) ? val : n.ru);
   });
+  applySeo(LANG);
   try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
 }
-lsw.addEventListener('click', function(){ setLang(LANG === 'ru' ? 'en' : 'ru'); });
+lsw.addEventListener('click', function(){ setLang(nextLang(LANG)); });
 var savedLang = 'ru';
 try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+if (ENABLED_LANGS.indexOf(savedLang) === -1) savedLang = 'ru';
 setLang(savedLang);
 
 /* ═══ THEME SWITCH ════════════════════════════════════════ */

@@ -145,6 +145,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   .nav.open a:last-child{border-bottom:0}
 }
 
+/* language switch */
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en{color:var(--muted-l);transition:color .18s}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+
 /* 5 ─ SECTIONS ---------------------------------------------- */
 .sec{padding-block:var(--sec)}
 
@@ -469,9 +479,10 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" aria-label="Основное меню">
-      <a href="#net">Страны</a><a href="#sol">Решения</a><a href="#why">Почему мы</a><a href="#proc">Процедура</a><a href="#faq">Вопросы</a>
+      <a href="#net" data-en="Geography">Страны</a><a href="#sol" data-en="Services">Решения</a><a href="#why" data-en="Why Us">Почему мы</a><a href="#proc" data-en="Process">Процедура</a><a href="#faq" data-en="FAQ">Вопросы</a>
     </nav>
-    <a class="btn btn--white btn--sm hdr__cta" href="#contact">Консультация</a>
+    <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
+    <a class="btn btn--white btn--sm hdr__cta" href="#contact" data-en="Consultation">Консультация</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
   </div>
 </header>
@@ -483,11 +494,11 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="wide">
     <div class="g12 hero__g">
       <div class="hero__l">
-        <span class="ix">9 стран найма</span>
-        <h1>Международный подбор рабочих кадров <em>для вашего бизнеса.</em></h1>
-        <p class="hero__sub">Подбираем, оформляем и сопровождаем работников из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для строительства, производства, складов, логистики и других отраслей.</p>
+        <span class="ix" data-en="9 destination countries">9 стран найма</span>
+        <h1 data-en="International Workforce Recruitment &lt;em&gt;for Your Business.&lt;/em&gt;">Международный подбор рабочих кадров <em>для вашего бизнеса.</em></h1>
+        <p class="hero__sub" data-en="We recruit, process, and support workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for construction, manufacturing, warehousing, logistics, and other industries.">Подбираем, оформляем и сопровождаем работников из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для строительства, производства, складов, логистики и других отраслей.</p>
         <div class="hero__cta">
-          <a class="btn btn--navy" href="#contact">Оставить заявку<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--navy" href="#contact"><span data-en="Submit Request">Оставить заявку</span><svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
           <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
         </div>
       </div>
@@ -497,10 +508,10 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="strip">
     <div class="wide">
       <div class="strip__g">
-        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l">стран набора<br>специалистов</div></div>
-        <div class="st"><div class="st__n" data-to="9">9</div><div class="st__l">стран<br>найма</div></div>
-        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l">отраслей,<br>с которыми работаем</div></div>
-        <div class="st"><div class="st__n"><em>Полное</em></div><div class="st__l">юридическое сопровождение<br>на всех этапах</div></div>
+        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l" data-en="source&lt;br&gt;countries">стран набора<br>специалистов</div></div>
+        <div class="st"><div class="st__n" data-to="9">9</div><div class="st__l" data-en="destination&lt;br&gt;countries">стран<br>найма</div></div>
+        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l" data-en="industries&lt;br&gt;we work with">отраслей,<br>с которыми работаем</div></div>
+        <div class="st"><div class="st__n"><em data-en="Full">Полное</em></div><div class="st__l" data-en="legal support&lt;br&gt;at every stage">юридическое сопровождение<br>на всех этапах</div></div>
       </div>
     </div>
   </div>
@@ -512,19 +523,19 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <section class="sec" id="net">
   <div class="wide">
     <div class="net__hd hd--split rv">
-      <div><span class="ix">01 — География</span><h2>Пять стран набора — девять стран найма</h2></div>
-      <p>Мы связываем рынки труда Южной Азии с предприятиями девяти стран и ведём каждого работника до объекта.</p>
+      <div><span class="ix" data-en="01 — Geography">01 — География</span><h2 data-en="Five Source Countries — Nine Destination Countries">Пять стран набора — девять стран найма</h2></div>
+      <p data-en="We connect South Asian labor markets with companies in nine countries and guide every worker through to the job site.">Мы связываем рынки труда Южной Азии с предприятиями девяти стран и ведём каждого работника до объекта.</p>
     </div>
 
     <div class="mnet rv">
-      <div class="mlab">Страны набора</div>
+      <div class="mlab" data-en="Source Countries">Страны набора</div>
       <div class="mnet__col">
-        <span class="mnet__c">Индия</span><span class="mnet__c">Пакистан</span><span class="mnet__c">Бангладеш</span><span class="mnet__c">Непал</span><span class="mnet__c">Шри-Ланка</span>
+        <span class="mnet__c" data-en="India">Индия</span><span class="mnet__c" data-en="Pakistan">Пакистан</span><span class="mnet__c" data-en="Bangladesh">Бангладеш</span><span class="mnet__c" data-en="Nepal">Непал</span><span class="mnet__c" data-en="Sri Lanka">Шри-Ланка</span>
       </div>
       <div class="mnet__arrow"><span></span></div>
-      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
+      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px" data-en="RECRUITMENT · DOCUMENTS · LEGAL">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
       <div class="mnet__arrow"><span></span></div>
-      <div class="mlab">Страны найма — 9</div>
+      <div class="mlab" data-en="Destination Countries — 9">Страны найма — 9</div>
     </div>
 
     <div class="dsel rv" role="tablist" aria-label="Страна найма" id="dsel"><button type="button" role="tab" aria-selected="true">Кыргызстан</button><button type="button" role="tab" aria-selected="false">Казахстан</button><button type="button" role="tab" aria-selected="false">Узбекистан</button><button type="button" role="tab" aria-selected="false">Россия</button><button type="button" role="tab" aria-selected="false">Азербайджан</button><button type="button" role="tab" aria-selected="false">Беларусь</button><button type="button" role="tab" aria-selected="false">Таджикистан</button><button type="button" role="tab" aria-selected="false">Грузия</button><button type="button" role="tab" aria-selected="false">Украина</button></div>
@@ -536,32 +547,32 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ SOLUTIONS ══════════════════════════════════════════ -->
 <section class="sec" id="sol">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d">02 — Решения</span><h2>Что мы берём на себя</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="02 — Services">02 — Решения</span><h2 data-en="What We Take Care Of">Что мы берём на себя</h2></div>
     <div class="sol">
       <article class="sol__i rv">
         <div class="sol__n">01</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#users"/></svg><h3>Подбор персонала</h3></div>
-        <p class="sol__d">Специалисты под требования вашего производства — с <b>проверкой квалификации</b>, документов и медицинским освидетельствованием в стране набора. Финальное решение всегда за вами.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#users"/></svg><h3 data-en="Recruitment">Подбор персонала</h3></div>
+        <p class="sol__d" data-en="Specialists matched to your production requirements — with &lt;b&gt;qualification checks&lt;/b&gt;, document verification, and medical screening in the sourcing country. The final decision is always yours.">Специалисты под требования вашего производства — с <b>проверкой квалификации</b>, документов и медицинским освидетельствованием в стране набора. Финальное решение всегда за вами.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">02</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3>Разрешения и квоты</h3></div>
-        <p class="sol__d">Разрешение работодателю, квота на привлечение, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Получение квот и переписку с государственными органами ведём мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3 data-en="Permits and Quotas">Разрешения и квоты</h3></div>
+        <p class="sol__d" data-en="Employer permit, recruitment quota, work permit, visa, registration — &lt;b&gt;according to the rules of the specific destination country&lt;/b&gt;. We handle obtaining quotas and correspondence with government authorities.">Разрешение работодателю, квота на привлечение, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Получение квот и переписку с государственными органами ведём мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">03</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3>Юридические консультации</h3></div>
-        <p class="sol__d">Договоры, переписка с органами, спорные ситуации, консультации по вопросам найма иностранной рабочей силы. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3 data-en="Legal Consultations">Юридические консультации</h3></div>
+        <p class="sol__d" data-en="Contracts, correspondence with authorities, disputes, consultations on hiring foreign labor. &lt;b&gt;The employer bears responsibility for violations&lt;/b&gt; — we cover this area for you.">Договоры, переписка с органами, спорные ситуации, консультации по вопросам найма иностранной рабочей силы. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">04</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"/></svg><h3>Адаптация и сопровождение</h3></div>
-        <p class="sol__d">Помогаем работникам освоиться на месте, снимаем бытовые и рабочие вопросы, <b>занимаемся мотивацией на объекте</b>. При необходимости берём на себя и организацию питания — как опцию по запросу.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"/></svg><h3 data-en="Adaptation and Support">Адаптация и сопровождение</h3></div>
+        <p class="sol__d" data-en="We help workers settle in, resolve everyday and work-related issues, and &lt;b&gt;handle on-site motivation&lt;/b&gt;. If needed, we can also arrange meals — as an optional service on request.">Помогаем работникам освоиться на месте, снимаем бытовые и рабочие вопросы, <b>занимаемся мотивацией на объекте</b>. При необходимости берём на себя и организацию питания — как опцию по запросу.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">05</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3>Миграционный аудит</h3></div>
-        <p class="sol__d">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3 data-en="Migration Audit">Миграционный аудит</h3></div>
+        <p class="sol__d" data-en="Checking foreign workers already on staff for risks — &lt;b&gt;before an inspection does&lt;/b&gt;. We show what's wrong and in what order to fix it.">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
       </article>
     </div>
   </div>
@@ -570,22 +581,22 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ MANIFESTO ══════════════════════════════════════════ -->
 <section class="man">
   <div class="wide">
-    <p class="man__q rv">Кадровый вопрос не должен становиться <span>юридическим риском</span>.</p>
-    <p class="man__s rv rv-d1">Правила в каждой из девяти стран найма разные. Логика одна: пока документ не оформлен, отвечает работодатель. Мы закрываем эту часть.</p>
+    <p class="man__q rv" data-en="A staffing issue shouldn't become a &lt;span&gt;legal risk&lt;/span&gt;.">Кадровый вопрос не должен становиться <span>юридическим риском</span>.</p>
+    <p class="man__s rv rv-d1" data-en="The rules in each of the nine destination countries differ. The logic is the same: until a document is issued, the employer is liable. We cover that part.">Правила в каждой из девяти стран найма разные. Логика одна: пока документ не оформлен, отвечает работодатель. Мы закрываем эту часть.</p>
   </div>
 </section>
 
 <!-- ══ WHY ════════════════════════════════════════════════ -->
 <section class="sec" id="why">
   <div class="wide">
-    <div class="hd rv"><span class="ix">03 — Причины</span><h2>Почему работодатели выбирают WorkUnity</h2></div>
+    <div class="hd rv"><span class="ix" data-en="03 — Reasons">03 — Причины</span><h2 data-en="Why Employers Choose WorkUnity">Почему работодатели выбирают WorkUnity</h2></div>
     <div class="why">
-      <div class="w rv"><svg aria-hidden="true"><use href="#one"/></svg><b>Один партнёр вместо пяти</b><span>Подбор, документы, юристы и логистика в одних руках.</span></div>
-      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"/></svg><b>Только официальные процедуры</b><span>Каждый этап оформляется, проверяется и контролируется.</span></div>
-      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"/></svg><b>Девять стран найма</b><span>Один ответственный партнёр на весь процесс.</span></div>
-      <div class="w rv"><svg aria-hidden="true"><use href="#scale"/></svg><b>Юридическая защита бизнеса</b><span>Помогаем снизить миграционные риски работодателя: оформление документов, контроль сроков и обязательных уведомлений.</span></div>
-      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"/></svg><b>Нестандартные ситуации</b><span>Срочная замена, отказ, сдвиг сроков — решаем без пауз.</span></div>
-      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"/></svg><b>Прозрачность процесса</b><span>Вы видите статус по каждому работнику на каждом этапе.</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#one"/></svg><b data-en="One Partner Instead of Five">Один партнёр вместо пяти</b><span data-en="Recruitment, documents, legal support, and logistics in one place.">Подбор, документы, юристы и логистика в одних руках.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"/></svg><b data-en="Only Official Procedures">Только официальные процедуры</b><span data-en="Every stage is processed, verified, and monitored.">Каждый этап оформляется, проверяется и контролируется.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"/></svg><b data-en="Nine Destination Countries">Девять стран найма</b><span data-en="One responsible partner for the entire process.">Один ответственный партнёр на весь процесс.</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#scale"/></svg><b data-en="Legal Protection for Your Business">Юридическая защита бизнеса</b><span data-en="We help reduce employer migration risks: document processing, deadline monitoring, and mandatory notifications.">Помогаем снизить миграционные риски работодателя: оформление документов, контроль сроков и обязательных уведомлений.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"/></svg><b data-en="Non-Standard Situations">Нестандартные ситуации</b><span data-en="Urgent replacement, refusal, schedule changes — we handle them without delays.">Срочная замена, отказ, сдвиг сроков — решаем без пауз.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"/></svg><b data-en="Process Transparency">Прозрачность процесса</b><span data-en="You can see the status of every worker at every stage.">Вы видите статус по каждому работнику на каждом этапе.</span></div>
     </div>
   </div>
 </section>
@@ -595,30 +606,30 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="pstick">
     <div class="wide">
       <div class="pgrid">
-        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d">04 — Процедура</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px">Пять этапов</h2></div>
+        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d" data-en="04 — Process">04 — Процедура</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px" data-en="Five Steps">Пять этапов</h2></div>
         <div class="prail">
-          <span class="ix ix--d">04 — Процедура</span>
+          <span class="ix ix--d" data-en="04 — Process">04 — Процедура</span>
           <div class="rail" id="rail">
-            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t">Заявка</span></div>
+            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t" data-en="Application">Заявка</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Разрешение компании</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Company Permit">Разрешение компании</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Подбор</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Recruitment">Подбор</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Документы и въезд</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Documents and Entry">Документы и въезд</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t">Выход на объект</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Start at the Site">Выход на объект</span></div>
           </div>
-          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html">Подробная инструкция<svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions">Подробная инструкция</span><svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
         </div>
         <div class="plist" id="plist">
-          <div class="pi on"><div class="pi__n">Этап 01</div><h3>Заявка</h3><p>Фиксируем профессии, количество, сроки и условия. Проверяем, проходит ли ваша потребность по правилам страны найма.</p><div class="pi__meta">Вы даёте вводные — мы проверяем допустимость</div></div>
-          <div class="pi"><div class="pi__n">Этап 02</div><h3>Разрешение компании</h3><p>Готовим и подаём документы на право предприятия привлекать иностранную рабочую силу. Переписку с органами ведём мы.</p><div class="pi__meta">Разрешение на привлечение · квота · уведомления</div></div>
-          <div class="pi"><div class="pi__n">Этап 03</div><h3>Подбор</h3><p>Отбор в стране набора, проверка квалификации и документов, медицинское освидетельствование. Финальное решение — за вами.</p><div class="pi__meta">Анкеты · тесты · видеоинтервью · медкомиссия</div></div>
-          <div class="pi"><div class="pi__n">Этап 04</div><h3>Документы и въезд</h3><p>Разрешение на работу для каждого специалиста, визовые документы, перелёт и встреча.</p><div class="pi__meta">Разрешение на работу · виза · билеты · трансфер</div></div>
-          <div class="pi"><div class="pi__n">Этап 05</div><h3>Выход на объект</h3><p>Регистрация, трудовой договор, вводный инструктаж. Дальше — контроль сроков и своевременные продления.</p><div class="pi__meta">Регистрация · договор · продления по календарю</div></div>
+          <div class="pi on"><div class="pi__n" data-en="Stage 01">Этап 01</div><h3 data-en="Application">Заявка</h3><p data-en="We record professions, quantity, timeline, and conditions. We check whether your request meets the destination country's requirements.">Фиксируем профессии, количество, сроки и условия. Проверяем, проходит ли ваша потребность по правилам страны найма.</p><div class="pi__meta" data-en="You provide the details — we verify feasibility">Вы даёте вводные — мы проверяем допустимость</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 02">Этап 02</div><h3 data-en="Company Permit">Разрешение компании</h3><p data-en="We prepare and file documents for the company's right to engage foreign labor. We handle correspondence with the authorities.">Готовим и подаём документы на право предприятия привлекать иностранную рабочую силу. Переписку с органами ведём мы.</p><div class="pi__meta" data-en="Attraction permit · quota · notifications">Разрешение на привлечение · квота · уведомления</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 03">Этап 03</div><h3 data-en="Recruitment">Подбор</h3><p data-en="Selection in the sourcing country, qualification and document checks, medical screening. The final decision is yours.">Отбор в стране набора, проверка квалификации и документов, медицинское освидетельствование. Финальное решение — за вами.</p><div class="pi__meta" data-en="Applications · tests · video interviews · medical exam">Анкеты · тесты · видеоинтервью · медкомиссия</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 04">Этап 04</div><h3 data-en="Documents and Entry">Документы и въезд</h3><p data-en="Work permit for each specialist, visa documents, flight, and reception.">Разрешение на работу для каждого специалиста, визовые документы, перелёт и встреча.</p><div class="pi__meta" data-en="Work permit · visa · tickets · transfer">Разрешение на работу · виза · билеты · трансфер</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 05">Этап 05</div><h3 data-en="Start at the Site">Выход на объект</h3><p data-en="Registration, employment contract, induction briefing. After that — deadline monitoring and timely renewals.">Регистрация, трудовой договор, вводный инструктаж. Дальше — контроль сроков и своевременные продления.</p><div class="pi__meta" data-en="Registration · contract · renewals on schedule">Регистрация · договор · продления по календарю</div></div>
         </div>
-        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html">Подробная инструкция<svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions">Подробная инструкция</span><svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -630,14 +641,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
     <div class="vframe rv" id="vf" role="button" tabindex="0" aria-label="Смотреть видеообращение основателя">
       <div class="vplay">
         <div class="vplay__b"><svg aria-hidden="true"><use href="#play"/></svg></div>
-        <div><div class="vplay__t">Обращение основателя</div><div class="vplay__s">30 секунд</div></div>
+        <div><div class="vplay__t" data-en="Founder's Message">Обращение основателя</div><div class="vplay__s" data-en="30 seconds">30 секунд</div></div>
       </div>
     </div>
     <div class="rv rv-d1">
-      <span class="ix">05 — О нас</span>
-      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch">Мы работаем с людьми, а не с бумагами</h2>
-      <p style="color:var(--muted);font-size:17.5px;max-width:44ch">За каждой заявкой — предприятие, которому нужны руки, и человек, который едет за тысячи километров работать. Наша задача — чтобы обе стороны были защищены.</p>
-      <div style="margin-top:30px"><a class="btn btn--out" href="#contact">Поговорить с нами<svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <span class="ix" data-en="05 — About Us">05 — О нас</span>
+      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch" data-en="We Work with People, Not Paperwork">Мы работаем с людьми, а не с бумагами</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:44ch" data-en="Behind every request is a company that needs hands, and a person traveling thousands of kilometers to work. Our job is to make sure both sides are protected.">За каждой заявкой — предприятие, которому нужны руки, и человек, который едет за тысячи километров работать. Наша задача — чтобы обе стороны были защищены.</p>
+      <div style="margin-top:30px"><a class="btn btn--out" href="#contact"><span data-en="Talk to Us">Поговорить с нами</span><svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -645,16 +656,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ INDUSTRIES ═════════════════════════════════════════ -->
 <section class="sec" id="ind">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d">06 — Отрасли</span><h2>С кем работаем</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="06 — Industries">06 — Отрасли</span><h2 data-en="Who We Work With">С кем работаем</h2></div>
     <div class="ind rv">
-      <article class="i"><svg aria-hidden="true"><use href="#build"/></svg><h3>Строительство</h3><span class="i__n">01</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#fact"/></svg><h3>Производство</h3><span class="i__n">02</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#box"/></svg><h3>Склады и логистика</h3><span class="i__n">03</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#road"/></svg><h3>Дорожные работы</h3><span class="i__n">04</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#thread"/></svg><h3>Швейное производство</h3><span class="i__n">05</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#leaf"/></svg><h3>Сельское хозяйство</h3><span class="i__n">06</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#cup"/></svg><h3>Гостиницы и общепит</h3><span class="i__n">07</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#pick"/></svg><h3>Горнодобыча</h3><span class="i__n">08</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#build"/></svg><h3 data-en="Construction">Строительство</h3><span class="i__n">01</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#fact"/></svg><h3 data-en="Manufacturing">Производство</h3><span class="i__n">02</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#box"/></svg><h3 data-en="Warehousing and Logistics">Склады и логистика</h3><span class="i__n">03</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#road"/></svg><h3 data-en="Road Works">Дорожные работы</h3><span class="i__n">04</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#thread"/></svg><h3 data-en="Garment Production">Швейное производство</h3><span class="i__n">05</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#leaf"/></svg><h3 data-en="Agriculture">Сельское хозяйство</h3><span class="i__n">06</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#cup"/></svg><h3 data-en="Hotels and Catering">Гостиницы и общепит</h3><span class="i__n">07</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#pick"/></svg><h3 data-en="Mining">Горнодобыча</h3><span class="i__n">08</span></article>
     </div>
   </div>
 </section>
@@ -662,14 +673,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ FAQ ════════════════════════════════════════════════ -->
 <section class="sec" id="faq">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d">07 — Вопросы</span><h2>Коротко о главном</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="07 — FAQ">07 — Вопросы</span><h2 data-en="Key Questions">Коротко о главном</h2></div>
     <div class="faq rv">
-      <details class="q"><summary><span class="q__i">01</span>В каких странах вы работаете?</summary><div class="q__a">Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке.</div></details>
-      <details class="q"><summary><span class="q__i">02</span>Нужно ли работодателю отдельное разрешение?</summary><div class="q__a">Да, во всех девяти странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу. Названия документов различаются, логика одинакова. Оформляем оба.</div></details>
-      <details class="q"><summary><span class="q__i">03</span>Сколько времени занимает процесс?</summary><div class="q__a">Подбор кандидатов занимает 15–25 дней в зависимости от количества и профессии. Дальше идут разрешения, визы и перелёт, и здесь сроки зависят от страны найма и загрузки органов. Точный срок по вашей вакансии называем после разбора заявки.</div></details>
-      <details class="q"><summary><span class="q__i">04</span>Сколько это стоит?</summary><div class="q__a">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
-      <details class="q"><summary><span class="q__i">05</span>Что если работник не подойдёт?</summary><div class="q__a">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
-      <details class="q"><summary><span class="q__i">06</span>У нас уже работают иностранцы — проверите?</summary><div class="q__a">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
+      <details class="q"><summary><span class="q__i">01</span><span data-en="Which countries do you work in?">В каких странах вы работаете?</span></summary><div class="q__a" data-en="We recruit for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. We source specialists in India, Pakistan, Bangladesh, Nepal, and Sri Lanka.">Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке.</div></details>
+      <details class="q"><summary><span class="q__i">02</span><span data-en="Does the employer need a separate permit?">Нужно ли работодателю отдельное разрешение?</span></summary><div class="q__a" data-en="Yes, in all nine countries. The company needs a foreign labor attraction permit, and the worker needs a work permit. Document names differ, the logic is the same. We handle both.">Да, во всех девяти странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу. Названия документов различаются, логика одинакова. Оформляем оба.</div></details>
+      <details class="q"><summary><span class="q__i">03</span><span data-en="How long does the process take?">Сколько времени занимает процесс?</span></summary><div class="q__a" data-en="Candidate selection takes 15–25 days depending on the quantity and profession. After that come permits, visas, and the flight, and these timelines depend on the destination country and how busy the authorities are. We give you the exact timeline for your vacancy after reviewing your request.">Подбор кандидатов занимает 15–25 дней в зависимости от количества и профессии. Дальше идут разрешения, визы и перелёт, и здесь сроки зависят от страны найма и загрузки органов. Точный срок по вашей вакансии называем после разбора заявки.</div></details>
+      <details class="q"><summary><span class="q__i">04</span><span data-en="How much does it cost?">Сколько это стоит?</span></summary><div class="q__a" data-en="There's no fixed price list. The cost depends on the destination country, quantity, professions, and scope of support — we prepare an individual estimate.">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
+      <details class="q"><summary><span class="q__i">05</span><span data-en="What if a worker doesn't work out?">Что если работник не подойдёт?</span></summary><div class="q__a" data-en="Replacement terms are fixed in the contract before work begins, so there's no ambiguity later.">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
+      <details class="q"><summary><span class="q__i">06</span><span data-en="We already have foreign workers — can you check them?">У нас уже работают иностранцы — проверите?</span></summary><div class="q__a" data-en="Yes, that's a migration audit: we check documents and deadlines, and show you the risks and what to fix.">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
     </div>
   </div>
 </section>
@@ -678,9 +689,9 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <section class="sec" id="contact">
   <div class="wide lead">
     <div class="rv">
-      <span class="ix">08 — Заявка</span>
-      <h2>Расскажите о задаче</h2>
-      <p style="color:var(--muted);font-size:17.5px;max-width:42ch">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
+      <span class="ix" data-en="08 — Request">08 — Заявка</span>
+      <h2 data-en="Tell Us About Your Project">Расскажите о задаче</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:42ch" data-en="Five lines — and we'll come back with a plan: what to arrange, in what order, and how long it will take.">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
       <div class="alt">
         <a class="alt__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
         <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
@@ -688,20 +699,20 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       </div>
       <div class="qr">
         <img src="img/whatsapp-qr.png" alt="QR-код для чата WorkUnity в WhatsApp" width="180" height="168" loading="lazy">
-        <span>С компьютера — наведите камеру телефона на код</span>
+        <span data-en="On desktop — scan the QR code with your phone">С компьютера — наведите камеру телефона на код</span>
       </div>
     </div>
     <div class="fc rv rv-d1">
-      <div class="fc__t">Форма заявки</div>
-      <div class="fc__s">Ответ в течение рабочего дня</div>
+      <div class="fc__t" data-en="Application Form">Форма заявки</div>
+      <div class="fc__s" data-en="Response Within One Business Day">Ответ в течение рабочего дня</div>
       <form id="leadform" novalidate>
-        <div class="f"><label for="c0">Страна, где нужны работники</label><select id="c0" name="country"><option>Кыргызстан</option><option>Казахстан</option><option>Узбекистан</option><option>Россия</option><option>Другая страна</option></select></div>
-        <div class="f"><label for="c1">Компания и ваше имя</label><input id="c1" name="company" type="text" autocomplete="organization" required></div>
-        <div class="f"><label for="c2">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
-        <div class="f"><label for="c3">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
-        <div class="f"><label for="c4">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
-        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>Отправить в WhatsApp</button>
-        <p class="fn">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
+        <div class="f"><label for="c0" data-en="Country Where Workers Are Needed">Страна, где нужны работники</label><select id="c0" name="country"><option data-en="Kyrgyzstan">Кыргызстан</option><option data-en="Kazakhstan">Казахстан</option><option data-en="Uzbekistan">Узбекистан</option><option data-en="Russia">Россия</option><option data-en="Other Country">Другая страна</option></select></div>
+        <div class="f"><label for="c1" data-en="Company and Your Name">Компания и ваше имя</label><input id="c1" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="c2" data-en="Professions and Quantity">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
+        <div class="f"><label for="c3" data-en="When Do You Need Them">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
+        <div class="f"><label for="c4" data-en="Phone or Email">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
+        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-en="Send via WhatsApp">Отправить в WhatsApp</span></button>
+        <p class="fn" data-en="Clicking the button opens WhatsApp with a ready message — just send it.">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
         <div class="fm" id="msg" role="status"></div>
       </form>
     </div>
@@ -717,19 +728,19 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <a class="logo" href="#top" aria-label="WorkUnity">
           <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
-        <p style="margin-top:16px;max-width:32ch">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+        <p style="margin-top:16px;max-width:32ch" data-en="Foreign labor for companies in nine destination countries.">Иностранная рабочая сила для предприятий девяти стран найма.</p>
       </div>
-      <div><h4>Разделы</h4><ul><li><a href="#net">Страны</a></li><li><a href="#sol">Решения</a></li><li><a href="#proc">Процедура</a></li></ul></div>
-      <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#ind">Отрасли</a></li></ul></div>
-      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li>Бишкек</li></ul></div>
+      <div><h4 data-en="Sections">Разделы</h4><ul><li><a href="#net" data-en="Geography">Страны</a></li><li><a href="#sol" data-en="Services">Решения</a></li><li><a href="#proc" data-en="Process">Процедура</a></li></ul></div>
+      <div><h4 data-en="Resources">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions">Инструкция</a></li><li><a href="#faq" data-en="FAQ">Вопросы</a></li><li><a href="#ind" data-en="Industries">Отрасли</a></li></ul></div>
+      <div><h4 data-en="Contact">Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li data-en="Bishkek">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>Позвонить</a>
-  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Написать</a>
+  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-en="Call">Позвонить</span></a>
+  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Write">Написать</span></a>
 </div>
 
 <script type="application/ld+json">
@@ -761,40 +772,54 @@ var WA_NUMBER = '996700123445';
 var $ = function(s){ return document.querySelector(s); };
 var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
 
+var LANG = 'ru';
+
 /* ═══ DATA ═══════════════════════════════════════════════ */
 var GENERIC_DOCS = ['Разрешение на привлечение иностранной рабочей силы','Разрешение на работу для специалиста','Виза для въезда','Регистрация по месту пребывания','Трудовой договор на понятном работнику языке'];
+var GENERIC_DOCS_EN = ['Foreign Labor Attraction Permit','Work Permit for the Specialist','Entry Visa','Registration at Place of Stay','Employment Contract in a Language the Worker Understands'];
 var DEST = [
-  {id:'kg', name:'Кыргызстан', short:'Кыргызстан',
+  {id:'kg', name:'Кыргызстан', name_en:'Kyrgyzstan',
    lead:'Предприятие получает право нанимать иностранцев, затем оформляются документы на каждого работника.',
-   docs:GENERIC_DOCS, flag:null},
-  {id:'kz', name:'Казахстан', short:'Казахстан',
+   lead_en:'The company obtains the right to hire foreign workers, then documents are processed for each worker.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
+  {id:'kz', name:'Казахстан', name_en:'Kazakhstan',
    lead:'Привлечение идёт в рамках квоты, поэтому проверку возможности делаем до старта подбора.',
+   lead_en:'Recruitment takes place within a quota, so we check availability before starting the selection process.',
    docs:['Разрешение на привлечение иностранной рабочей силы','Квота на привлечение','Виза для трудовой деятельности','Регистрация по месту пребывания','Трудовой договор'],
-   flag:'Привлечение идёт <b>в рамках квоты</b>. Наличие свободного объёма проверяем до старта подбора — это влияет и на сроки, и на саму возможность найма.'},
-  {id:'uz', name:'Узбекистан', short:'Узбекистан',
+   docs_en:['Foreign Labor Attraction Permit','Recruitment Quota','Work Visa','Registration at Place of Stay','Employment Contract']},
+  {id:'uz', name:'Узбекистан', name_en:'Uzbekistan',
    lead:'Разрешительная часть проходит через уполномоченный орган по внешней трудовой миграции.',
+   lead_en:'The permit process goes through the authorized body for external labor migration.',
    docs:['Разрешение на привлечение иностранной рабочей силы','Подтверждение права на трудовую деятельность','Виза для въезда','Регистрация по месту пребывания','Трудовой договор'],
-   flag:'Разрешительная часть проходит <b>через уполномоченный орган</b> по внешней трудовой миграции — сроки зависят от его загрузки.'},
-  {id:'ru', name:'Россия', short:'Россия',
+   docs_en:['Foreign Labor Attraction Permit','Confirmation of the Right to Work','Entry Visa','Registration at Place of Stay','Employment Contract']},
+  {id:'ru', name:'Россия', name_en:'Russia',
    lead:'Для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки действует визовый порядок с уведомлением органов.',
+   lead_en:'A visa-based procedure with mandatory notification of the authorities applies to citizens of India, Pakistan, Bangladesh, Nepal, and Sri Lanka.',
    docs:['Разрешение на привлечение и использование иностранных работников','Разрешение на работу для специалиста','Приглашение и рабочая виза','Миграционный учёт по месту пребывания','Уведомление о заключении трудового договора'],
-   flag:'Действует <b>визовый порядок</b> с приглашением и обязательным уведомлением органов о заключении договора.'},
-  {id:'az', name:'Азербайджан', short:'Азербайджан',
+   docs_en:['Permit to Attract and Employ Foreign Workers','Work Permit for the Specialist','Invitation and Work Visa','Migration Registration at Place of Stay','Notification of Employment Contract Conclusion']},
+  {id:'az', name:'Азербайджан', name_en:'Azerbaijan',
    lead:'Предприятие получает право привлекать иностранных работников, затем оформляются документы на каждого специалиста.',
-   docs:GENERIC_DOCS, flag:null},
-  {id:'by', name:'Беларусь', short:'Беларусь',
+   lead_en:'The company obtains the right to engage foreign workers, then documents are processed for each specialist.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
+  {id:'by', name:'Беларусь', name_en:'Belarus',
    lead:'Сначала оформляется право предприятия привлекать иностранную рабочую силу, затем — документы на конкретного работника.',
-   docs:GENERIC_DOCS, flag:null},
-  {id:'tj', name:'Таджикистан', short:'Таджикистан',
+   lead_en:'First, the company\'s right to engage foreign labor is issued, then documents for the specific worker.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
+  {id:'tj', name:'Таджикистан', name_en:'Tajikistan',
    lead:'Привлечение иностранных специалистов проходит в разрешительном порядке: сначала предприятие, затем работник.',
-   docs:GENERIC_DOCS, flag:null},
-  {id:'ge', name:'Грузия', short:'Грузия',
+   lead_en:'Engaging foreign specialists follows a permit-based procedure: first the company, then the worker.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
+  {id:'ge', name:'Грузия', name_en:'Georgia',
    lead:'Предприятие получает разрешение на привлечение иностранной рабочей силы, затем оформляются документы работника.',
-   docs:GENERIC_DOCS, flag:null},
-  {id:'ua', name:'Украина', short:'Украина',
+   lead_en:'The company obtains a permit to engage foreign labor, then the worker\'s documents are processed.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
+  {id:'ua', name:'Украина', name_en:'Ukraine',
    lead:'Привлечение иностранных специалистов идёт по разрешительному порядку — сначала предприятие, затем работник.',
-   docs:GENERIC_DOCS, flag:null}
+   lead_en:'Engaging foreign specialists follows a permit-based procedure — first the company, then the worker.',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN}
 ];
+var DNOTE_RU = 'ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.';
+var DNOTE_EN = 'THIS LIST REFLECTS THE GENERAL PROCEDURE. THE EXACT SET OF DOCUMENTS AND TIMELINE FOR YOUR VACANCY ARE CONFIRMED DURING A CONSULTATION.';
 
 var state = { c:0 };
 
@@ -807,33 +832,37 @@ function renderSel(){
     var b = document.createElement('button');
     b.type = 'button'; b.setAttribute('role','tab');
     b.setAttribute('aria-selected', i === state.c ? 'true' : 'false');
-    b.textContent = d.name;
+    b.textContent = LANG === 'en' ? d.name_en : d.name;
     b.addEventListener('click', function(){ state.c = i; syncAll(); });
     dsel.appendChild(b);
   });
 }
 function renderPanel(){
   var d = DEST[state.c];
-  var docs = d.docs.map(function(x, n){
+  var docs = (LANG === 'en' ? d.docs_en : d.docs).map(function(x, n){
     return '<div class="doc"><span class="doc__n">' + String(n+1).padStart(2,'0') + '</span>' +
            '<svg aria-hidden="true"><use href="#tick"/></svg><span>' + x + '</span></div>';
   }).join('');
+  var titlePrefix = LANG === 'en' ? 'What Is Processed: ' : 'Что оформляется: ';
   dpanel.innerHTML =
-    '<div class="dpanel__t">Что оформляется: ' + d.name + '</div>' +
-    '<p class="dpanel__s">' + d.lead + '</p>' +
+    '<div class="dpanel__t">' + titlePrefix + (LANG === 'en' ? d.name_en : d.name) + '</div>' +
+    '<p class="dpanel__s">' + (LANG === 'en' ? d.lead_en : d.lead) + '</p>' +
     '<div class="docs">' + docs + '</div>' +
-    '<p class="dnote">ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.</p>';
+    '<p class="dnote">' + (LANG === 'en' ? DNOTE_EN : DNOTE_RU) + '</p>';
 }
 function syncAll(){
   renderSel(); renderPanel();
 }
-syncAll();
 
 /* ═══ TICKER ═════════════════════════════════════════════ */
 var trades = ['Сварщики','Монтажники металлоконструкций','Операторы ЧПУ','Швеи','Арматурщики','Бетонщики','Операторы линий','Кладовщики','Водители погрузчика','Электромонтажники','Отделочники','Разнорабочие','Плиточники','Слесари-сборщики','Дорожные рабочие'];
+var tradesEn = ['Welders','Steel Structure Installers','CNC Operators','Seamstresses','Rebar Workers','Concrete Workers','Line Operators','Warehouse Workers','Forklift Drivers','Electricians','Finishers','General Workers','Tile Layers','Assembly Fitters','Road Workers'];
 var row = $('#tickRow');
-var tickHtml = trades.map(function(t){ return '<span class="tick__i">' + t + '</span>'; }).join('');
-row.innerHTML = tickHtml + tickHtml;
+function renderTicker(){
+  var list = LANG === 'en' ? tradesEn : trades;
+  var tickHtml = list.map(function(t){ return '<span class="tick__i">' + t + '</span>'; }).join('');
+  row.innerHTML = tickHtml + tickHtml;
+}
 
 /* ═══ REVEAL ═════════════════════════════════════════════ */
 var io = new IntersectionObserver(function(es){
@@ -903,7 +932,8 @@ var vf = $('#vf');
 function playVideo(){
   if(vf.dataset.on) return;
   vf.dataset.on = '1';
-  vf.innerHTML = '<video controls autoplay playsinline preload="metadata" poster="video/ali-poster.jpg"><source src="video/ali.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>';
+  var noVideo = LANG === 'en' ? "Your browser doesn't support video." : 'Ваш браузер не поддерживает видео.';
+  vf.innerHTML = '<video controls autoplay playsinline preload="metadata" poster="video/ali-poster.jpg"><source src="video/ali.mp4" type="video/mp4">' + noVideo + '</video>';
 }
 vf.addEventListener('click', playVideo);
 vf.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); playVideo(); } });
@@ -922,19 +952,28 @@ f.addEventListener('submit', function(e){
   });
   m.classList.add('on');
   if(bad){
-    m.textContent = 'Заполните отмеченные поля.';
+    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.' : 'Заполните отмеченные поля.';
     m.style.borderLeftColor = '#B3402A';
     bad.focus();
     return;
   }
-  var text = 'Заявка с сайта WorkUnity\n\n'
-    + 'Страна найма: ' + f.elements.country.value + '\n'
-    + 'Компания: ' + v.company + '\n'
-    + 'Профессии и количество: ' + v.need + '\n'
-    + 'Сроки: ' + v.when + '\n'
-    + 'Контакт: ' + v.contact;
+  var text = LANG === 'en'
+    ? ('Request from the WorkUnity website\n\n'
+      + 'Destination country: ' + f.elements.country.value + '\n'
+      + 'Company: ' + v.company + '\n'
+      + 'Professions and quantity: ' + v.need + '\n'
+      + 'Timeline: ' + v.when + '\n'
+      + 'Contact: ' + v.contact)
+    : ('Заявка с сайта WorkUnity\n\n'
+      + 'Страна найма: ' + f.elements.country.value + '\n'
+      + 'Компания: ' + v.company + '\n'
+      + 'Профессии и количество: ' + v.need + '\n'
+      + 'Сроки: ' + v.when + '\n'
+      + 'Контакт: ' + v.contact);
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-  m.textContent = 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
+  m.textContent = LANG === 'en'
+    ? 'Opening WhatsApp with a ready message. If the window didn\'t appear — allow pop-ups or write to us directly.'
+    : 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
   m.style.borderLeftColor = 'var(--navy)';
 });
 f.addEventListener('input', function(e){ if(e.target.classList) e.target.classList.remove('err'); });
@@ -948,6 +987,38 @@ burger.addEventListener('click', function(){
 nav.addEventListener('click', function(e){
   if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
 });
+
+/* ═══ LANGUAGE SWITCH ═════════════════════════════════════ */
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-en]').map(function(el){
+  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en') };
+});
+var ATTR_I18N = [
+  { sel:'#c2', attr:'placeholder', ru:'Сварщики — 15, разнорабочие — 30', en:'Welders — 15, general workers — 30' },
+  { sel:'#c3', attr:'placeholder', ru:'К декабрю', en:'By December' },
+  { sel:'#mainnav', attr:'aria-label', ru:'Основное меню', en:'Main menu' },
+  { sel:'#burger', attr:'aria-label', ru:'Открыть меню', en:'Open menu' },
+  { sel:'#vf', attr:'aria-label', ru:'Смотреть видеообращение основателя', en:"Watch the founder's video message" },
+  { sel:'#dsel', attr:'aria-label', ru:'Страна найма', en:'Destination country' },
+  { sel:'.qr img', attr:'alt', ru:'QR-код для чата WorkUnity в WhatsApp', en:'QR code for the WorkUnity WhatsApp chat' }
+];
+function setLang(lang){
+  LANG = lang === 'en' ? 'en' : 'ru';
+  document.documentElement.lang = LANG;
+  lsw.setAttribute('data-lang', LANG);
+  i18nNodes.forEach(function(n){ n.el.innerHTML = LANG === 'en' ? n.en : n.ru; });
+  ATTR_I18N.forEach(function(a){
+    var el = $(a.sel);
+    if(el) el.setAttribute(a.attr, LANG === 'en' ? a.en : a.ru);
+  });
+  renderTicker();
+  syncAll();
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+lsw.addEventListener('click', function(){ setLang(LANG === 'ru' ? 'en' : 'ru'); });
+var savedLang = 'ru';
+try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+setLang(savedLang);
 })();
 </script>
 </body>

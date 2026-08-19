@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=" js";</script>
+<script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>О WorkUnity — право, миграция, доверие</title>
+<meta name="description" content="WorkUnity создаёт прозрачную систему для иностранных граждан и бизнеса в Кыргызстане: подбор и миграционное сопровождение, проверка сторон, юридическая помощь и защита интересов.">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorkUnity">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="О WorkUnity — право, миграция, доверие">
+<meta property="og:description" content="Прозрачная система для иностранных граждан и бизнеса в Кыргызстане.">
+<meta property="og:image" content="https://workunityglobe.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WORKUNITY — О КОМПАНИИ
+   Наследует токены и компоненты index.html (та же дизайн-система),
+   расширяет их вторичным акцентом cyan только для этой страницы.
+   ============================================================ */
+
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-line:#22355C;
+  --navy-glass:rgba(15,30,61,.9);
+  --muted-l:#93A3BF;
+
+  --green:#0E9F6E;
+
+  --paper:#FFFFFF;
+  --surface:#FFFFFF;
+  --card:#FFFFFF;
+  --bone:#F5F3EF;
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --line:#E4E1DA;
+
+  --accent:#0F1E3D;
+  --accent-deep:#070E1D;
+  --accent-rgb:15,30,61;
+
+  /* вторичный фирменный акцент — только для этой страницы, используется точечно */
+  --cyan:#2E8FB3;
+  --cyan-rgb:46,143,179;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:10px;
+  --r-lg:14px;
+  --r-sm:8px;
+  --sec:clamp(64px,9vw,140px);
+}
+
+:root[data-theme="dark"]{
+  --paper:#0D1826;
+  --surface:#101E30;
+  --card:#15273C;
+  --bone:#1B2E45;
+  --ink:#F4EFE6;
+  --muted:#A9B6C6;
+  --line:rgba(255,255,255,.08);
+
+  --accent:#7290DB;
+  --accent-deep:#93ABE8;
+  --accent-rgb:114,144,219;
+
+  --cyan:#5FC2E8;
+  --cyan-rgb:95,194,232;
+}
+
+/* 2 ─ BASE ---------------------------------------------------*/
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.04em}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+.narrow{max-width:900px}
+
+.ix,.ix--d{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;flex-wrap:wrap;row-gap:6px}
+.ix::before,.ix--d::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--navy,.btn--dark{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn--navy:hover,.btn--dark:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--sm{padding:11px 19px;font-size:14px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
+
+.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER — идентична index.html */
+.hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none;color:#fff}
+.logo img{height:26px;width:auto}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
+.nav{display:none;gap:30px}
+@media(min-width:1080px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1080px){.burger{display:none}}
+@media(max-width:1079px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    left:calc(var(--gut)*-1);right:calc(var(--gut)*-1);background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+@media(max-width:479px){.hdr__in{gap:12px}}
+
+.hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en{color:var(--muted-l);transition:color .18s}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+.tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
+.tsw:hover{border-color:#fff}
+.tsw svg{width:16px;height:16px}
+.tsw__moon{display:none}
+[data-theme="dark"] .tsw__sun{display:none}
+[data-theme="dark"] .tsw__moon{display:block}
+@media(max-width:359px){
+  .hdr .wide{padding-inline:12px}
+  .hdr__in{gap:6px}
+  .hdr__tools{gap:4px}
+  .lsw{padding:0 6px;font-size:10.5px;gap:3px}
+  .tsw{width:28px;height:28px}
+  .tsw svg{width:14px;height:14px}
+}
+
+/* SECTIONS base rhythm */
+.sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,6vw,86px)}
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(28px,4.2vw,52px);margin-top:16px;max-width:20ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:56ch;font-size:16.5px}
+
+/* 3 ─ HERO ---------------------------------------------------*/
+.abt-hero{background:var(--paper);color:var(--ink);padding-block:clamp(48px,7vw,88px) clamp(56px,7vw,96px);
+  border-bottom:1px solid var(--line)}
+.abt-hero .tag{font-family:var(--m);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.abt-hero h1{font-size:clamp(34px,5.6vw,68px);line-height:1.03;margin-block:20px 22px;max-width:15ch}
+.abt-hero__sub{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:58ch;line-height:1.6}
+
+.abt-dia{margin-top:clamp(48px,6vw,72px);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:clamp(22px,3vw,36px);background:var(--card)}
+.abt-dia__env{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-align:center;padding-bottom:18px;margin-bottom:22px;border-bottom:1px dashed var(--line)}
+.abt-dia__row{display:flex;align-items:center;justify-content:center;gap:0;max-width:760px;margin:0 auto}
+@media(max-width:659px){.abt-dia__row{flex-direction:column;gap:22px}}
+.abt-dia__node{border:1px solid var(--line);border-radius:var(--r);padding:18px 16px;text-align:center;
+  font-family:var(--h);font-weight:700;font-size:14px;letter-spacing:-.01em;background:var(--paper);
+  flex:1 1 0;min-width:0}
+.abt-dia__hub{border:1.5px solid var(--accent);border-radius:var(--r);padding:22px 20px;text-align:center;
+  font-family:var(--h);font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--accent);
+  background:var(--paper);position:relative;margin-inline:22px;flex:1.2 1 0;min-width:0}
+@media(max-width:659px){.abt-dia__node,.abt-dia__hub{width:100%;flex:none}.abt-dia__hub{margin-inline:0}}
+.abt-dia__line{height:1px;flex:0 0 40px;
+  background:linear-gradient(90deg,rgba(var(--cyan-rgb),.15),var(--cyan),rgba(var(--cyan-rgb),.15))}
+@media(max-width:659px){.abt-dia__line{width:1px;height:26px;flex:0 0 26px;
+  background:linear-gradient(180deg,rgba(var(--cyan-rgb),.15),var(--cyan),rgba(var(--cyan-rgb),.15))}}
+
+/* 4 ─ RISK (рынок должен работать честно) ---------------------*/
+.risk{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(min-width:760px){.risk{grid-template-columns:repeat(3,1fr)}}
+.risk__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,3vw,34px)}
+.risk__c h3{font-size:19px;letter-spacing:-.03em;margin-bottom:12px}
+.risk__c p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:16px}
+.risk__l{display:grid;gap:8px}
+.risk__l li{position:relative;padding-left:16px;font-size:14.5px;color:var(--ink);line-height:1.5}
+.risk__l li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--accent)}
+.risk__end{margin-top:clamp(34px,4vw,50px);text-align:center;font-family:var(--h);font-weight:700;
+  font-size:clamp(18px,2vw,22px);letter-spacing:-.02em;max-width:44ch;margin-inline:auto}
+
+/* 5 ─ ROLE (что делает WorkUnity) ------------------------------*/
+.role{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(min-width:640px){.role{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.role{grid-template-columns:repeat(4,1fr)}}
+.role__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(26px,3vw,34px) clamp(22px,2.6vw,28px);position:relative;overflow:hidden;
+  transition:background .28s ease}
+.role__c:hover{background:var(--bone)}
+.role__num{font-family:var(--h);font-weight:800;font-size:clamp(56px,6vw,84px);line-height:1;
+  color:var(--accent);opacity:.12;position:absolute;top:8px;right:14px;letter-spacing:-.03em}
+.role__t{font-size:19px;letter-spacing:-.02em;position:relative;margin-bottom:10px}
+.role__d{color:var(--muted);font-size:14.5px;line-height:1.6;max-width:32ch;position:relative}
+
+/* 6 ─ WIN (когда система работает правильно) --------------------*/
+.win{display:grid;gap:0;position:relative}
+@media(min-width:860px){.win{grid-template-columns:repeat(3,1fr);gap:0}}
+.win__c{border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3vw,32px);background:var(--card)}
+@media(min-width:860px){
+  .win__c{border-radius:0;border-left-width:0}
+  .win__c:first-child{border-left-width:1px;border-radius:var(--r-lg) 0 0 var(--r-lg)}
+  .win__c:last-child{border-radius:0 var(--r-lg) var(--r-lg) 0}
+}
+@media(max-width:859px){.win__c+.win__c{margin-top:14px}}
+.win__t{font-size:19px;letter-spacing:-.02em;margin-bottom:16px}
+.win__l{display:grid;gap:9px}
+.win__l li{font-size:15px;color:var(--muted);padding-left:16px;position:relative}
+.win__l li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--cyan)}
+.win__end{margin-top:28px;text-align:center;color:var(--muted);font-size:15px;max-width:52ch;margin-inline:auto}
+
+/* 7 ─ QUOTE (фирменный блок) -----------------------------------*/
+.quote{background:var(--navy);color:#fff;padding-block:clamp(72px,10vw,150px)}
+.quote__q{font-size:clamp(30px,5.2vw,64px);line-height:1.06;max-width:16ch;letter-spacing:-.03em}
+.quote__s{margin-top:30px;color:var(--muted-l);font-size:clamp(16px,1.5vw,18.5px);max-width:56ch;line-height:1.6}
+
+/* 8 ─ LINES (красные линии) -------------------------------------*/
+.lines{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.lines__l{display:grid;gap:0;margin-top:clamp(28px,3.5vw,40px)}
+@media(min-width:760px){.lines__l{grid-template-columns:repeat(2,1fr);column-gap:clamp(24px,3vw,48px)}}
+.lines__i{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.lines__x{font-family:var(--h);font-weight:800;color:var(--muted);flex:none;font-size:16px;line-height:1.5}
+
+/* 9 ─ KG (начинаем с Кыргызстана) --------------------------------*/
+.kg{display:grid;gap:clamp(32px,5vw,64px);align-items:center}
+@media(min-width:900px){.kg{grid-template-columns:minmax(0,1fr) minmax(0,.85fr)}}
+.kg h2{font-size:clamp(28px,3.8vw,44px);margin-block:16px 18px;max-width:16ch}
+.kg p{color:var(--muted);font-size:16.5px;max-width:52ch;line-height:1.65}
+.kg__map{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(28px,4vw,44px);display:grid;place-items:center}
+.kg__map svg{width:100%;max-width:340px;height:auto}
+
+/* 10 ─ GOV (диалог с государством) --------------------------------*/
+.gov h2{font-size:clamp(26px,3.6vw,40px);margin-block:16px 18px;max-width:18ch}
+.gov p{color:var(--muted);font-size:16.5px;max-width:60ch;line-height:1.65;margin-bottom:clamp(30px,4vw,44px)}
+.gov__row{display:flex;flex-wrap:wrap;align-items:center;gap:0;max-width:900px}
+.gov__i{border:1px solid var(--line);border-radius:var(--r);padding:14px 20px;
+  font-family:var(--m);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);background:var(--card);flex:1 1 180px;text-align:center}
+.gov__line{flex:0 0 28px;height:1px;background:var(--cyan)}
+@media(max-width:639px){
+  .gov__row{flex-direction:column;align-items:stretch}
+  .gov__line{width:1px;height:16px;margin-inline:auto}
+}
+
+/* 11 ─ FLOW (одно окно) --------------------------------------------*/
+.flow{display:grid;justify-items:center;gap:0;max-width:520px;margin:clamp(32px,4vw,48px) auto 0}
+.flow__s{border:1px solid var(--line);border-radius:var(--r);padding:16px 24px;text-align:center;
+  font-family:var(--h);font-weight:700;font-size:15px;background:var(--card);width:100%}
+.flow__s--hub{border-color:var(--accent);color:var(--accent)}
+.flow__s--wide{font-family:var(--m);font-weight:500;font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);padding:18px 20px}
+.flow__arrow{padding:10px 0;color:var(--cyan)}
+.flow__arrow svg{width:16px;height:16px;margin-inline:auto;transform:rotate(90deg)}
+
+/* 12 ─ CTA3 ----------------------------------------------------------*/
+.cta3{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+@media(min-width:760px){.cta3{grid-template-columns:repeat(3,1fr)}}
+.cta3__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(26px,3vw,34px);display:flex;flex-direction:column;gap:18px}
+.cta3__t{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cta3__h{font-size:20px;letter-spacing:-.03em;margin-top:2px}
+
+/* 13 ─ BRAND STRIP -----------------------------------------------------*/
+.bstrip{background:var(--navy);color:#fff;padding-block:44px;text-align:center}
+.bstrip__t{font-family:var(--h);font-weight:800;font-size:22px;letter-spacing:-.03em}
+.bstrip__s{margin-top:10px;font-family:var(--m);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted-l)}
+
+/* FOOTER — идентичен index.html */
+.ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
+.ftr .logo img{height:90px;filter:brightness(0)}
+[data-theme="dark"] .ftr .logo img{filter:none}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--accent)}
+.ftr a.ftr__wa{color:var(--green)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta a:first-child{background:var(--navy);color:#fff}
+.mcta a:last-child{background:var(--green);color:#fff}
+.mcta svg{width:17px;height:17px}
+@media(max-width:759px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* MOTION ---------------------------------------------------------------*/
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h14"/><path d="m5 7-3 6a3 3 0 0 0 6 0z"/><path d="m19 7 3 6a3 3 0 0 1-6 0z"/></symbol>
+  <symbol id="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wide hdr__in">
+    <a class="logo" href="index.html" aria-label="WorkUnity">
+      <img src="img/logo-mark-white.png" alt="WorkUnity" height="26">
+      <span>WorkUnity</span>
+    </a>
+    <nav class="nav" id="mainnav" aria-label="Основное меню">
+      <a href="index.html#net">Страны</a><a href="index.html#sol">Решения</a><a href="index.html#why">Почему мы</a><a href="index.html#proc">Процедура</a><a href="index.html#faq">Вопросы</a><a href="o-workunity.html" class="on">О нас</a>
+    </nav>
+    <div class="hdr__tools">
+      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
+      <button class="tsw" id="tsw" type="button" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
+    </div>
+    <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact">Консультация</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══ HERO ═══════════════════════════════════════════════ -->
+<section class="abt-hero">
+  <div class="wrap">
+    <span class="tag rv">Рабочая сила · Право · Миграция · Доверие</span>
+    <h1 class="rv rv-d1">WorkUnity — больше, чем рекрутинг.</h1>
+    <p class="abt-hero__sub rv rv-d2">Мы создаём прозрачную систему для иностранцев и бизнеса в Кыргызстане: от привлечения работников и миграционного сопровождения до юридической помощи и защиты интересов иностранных граждан.</p>
+
+    <div class="abt-dia rv rv-d3">
+      <div class="abt-dia__env">Правовая и государственная среда</div>
+      <div class="abt-dia__row">
+        <div class="abt-dia__node">Иностранный<br>гражданин</div>
+        <div class="abt-dia__line" aria-hidden="true"></div>
+        <div class="abt-dia__hub">WORKUNITY</div>
+        <div class="abt-dia__line" aria-hidden="true"></div>
+        <div class="abt-dia__node">Работодатель</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ РЫНОК ДОЛЖЕН РАБОТАТЬ ЧЕСТНО ═══════════════════════ -->
+<section class="sec" id="principle">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix">01 — Принцип</span><h2>Рынок должен работать честно.</h2></div>
+    <div class="risk rv">
+      <div class="risk__c">
+        <h3>Для иностранного гражданина</h3>
+        <p>Иностранец часто находится в незнакомой правовой, языковой и культурной среде. Он может столкнуться с:</p>
+        <ul class="risk__l">
+          <li>мошенничеством</li>
+          <li>поддельными документами</li>
+          <li>ложными обещаниями</li>
+          <li>нарушением условий работы</li>
+          <li>отсутствием понимания местного законодательства</li>
+        </ul>
+      </div>
+      <div class="risk__c">
+        <h3>Для работодателя</h3>
+        <p>Недобросовестные посредники могут:</p>
+        <ul class="risk__l">
+          <li>приводить неподходящих работников</li>
+          <li>искажать информацию о кандидатах</li>
+          <li>создавать миграционные риски</li>
+          <li>создавать юридические риски</li>
+        </ul>
+      </div>
+      <div class="risk__c">
+        <h3>Для государства</h3>
+        <p>Непрозрачный рынок приводит к:</p>
+        <ul class="risk__l">
+          <li>нелегальному пребыванию</li>
+          <li>просроченным документам</li>
+          <li>фиктивной занятости</li>
+          <li>нарушениям миграционного и трудового законодательства</li>
+        </ul>
+      </div>
+    </div>
+    <p class="risk__end rv">WorkUnity создана, чтобы сделать эту систему прозрачнее, безопаснее и законнее.</p>
+  </div>
+</section>
+
+<!-- ══ ЧТО ДЕЛАЕТ WORKUNITY ═══════════════════════════════ -->
+<section class="sec" id="role">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix">02 — Роль</span><h2>Что делает WorkUnity</h2></div>
+    <div class="role rv">
+      <article class="role__c"><span class="role__num">01</span><h3 class="role__t">Защищаем</h3><p class="role__d">Помогаем иностранным гражданам понимать свои права, получать юридическую помощь и защищать свои интересы в Кыргызстане.</p></article>
+      <article class="role__c"><span class="role__num">02</span><h3 class="role__t">Проверяем</h3><p class="role__d">Проверяем работодателей, вакансии, партнёров и документы до того, как в процесс вовлекаются люди.</p></article>
+      <article class="role__c"><span class="role__num">03</span><h3 class="role__t">Организуем</h3><p class="role__d">Координируем подбор, оформление, миграционные процедуры и привлечение работников до их выхода на рабочее место.</p></article>
+      <article class="role__c"><span class="role__num">04</span><h3 class="role__t">Представляем</h3><p class="role__d">Оказываем юридические услуги и представляем интересы иностранных граждан и бизнеса в рамках законодательства Кыргызской Республики.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ КОГДА СИСТЕМА РАБОТАЕТ ПРАВИЛЬНО ═══════════════════ -->
+<section class="sec" id="win">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix">03 — Результат</span><h2>Когда система работает правильно, выигрывают все.</h2></div>
+    <div class="win rv">
+      <div class="win__c">
+        <div class="win__t">Иностранный гражданин</div>
+        <ul class="win__l"><li>Честная работа</li><li>Законный статус</li><li>Защита</li></ul>
+      </div>
+      <div class="win__c">
+        <div class="win__t">Работодатель</div>
+        <ul class="win__l"><li>Подходящие работники</li><li>Предсказуемый процесс</li><li>Снижение рисков</li></ul>
+      </div>
+      <div class="win__c">
+        <div class="win__t">WorkUnity</div>
+        <ul class="win__l"><li>Устойчивый бизнес</li><li>Репутация</li><li>Долгосрочные отношения</li></ul>
+      </div>
+    </div>
+    <p class="win__end rv">Государство получает больше прозрачности, законности и порядка на рынке.</p>
+  </div>
+</section>
+
+<!-- ══ ФИРМЕННЫЙ БЛОК ══════════════════════════════════════ -->
+<section class="quote">
+  <div class="wrap">
+    <p class="quote__q rv">Уезжают с контрактом, а не с обещанием.</p>
+    <p class="quote__s rv rv-d1">Мы не продаём визы, фиктивные приглашения или обещания гарантированного выезда. Мы строим реальный процесс, в котором есть проверенный работодатель, понятные условия, документы и ответственные люди.</p>
+  </div>
+</section>
+
+<!-- ══ НАШИ КРАСНЫЕ ЛИНИИ ══════════════════════════════════ -->
+<section class="sec lines" id="lines">
+  <div class="wrap">
+    <div class="hd rv narrow"><span class="ix">04 — Позиция</span><h2>Наши красные линии</h2><p>Есть вещи, которые WorkUnity не делает ни ради клиента, ни ради прибыли.</p></div>
+    <div class="lines__l rv">
+      <div class="lines__i"><span class="lines__x">×</span><span>Не используем серые схемы</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span>Не оформляем фиктивные документы</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span>Не продаём «гарантированные визы»</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span>Не скрываем риски ради сделки</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span>Не работаем с непроверенными посредниками ради быстрой прибыли</span></div>
+      <div class="lines__i"><span class="lines__x">×</span><span>Не закрываем глаза на нарушение прав работника</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ НАЧИНАЕМ С КЫРГЫЗСТАНА ═════════════════════════════ -->
+<section class="sec" id="kg">
+  <div class="wrap kg">
+    <div class="rv">
+      <span class="ix">05 — Кыргызстан</span>
+      <h2>Начинаем с Кыргызстана.</h2>
+      <p>WorkUnity построена в Кыргызстане и работает внутри его правовой и деловой среды. Мы строим компанию, которая понимает одновременно интересы иностранного гражданина, местного бизнеса и требования государства.</p>
+    </div>
+    <div class="kg__map rv rv-d1">
+      <svg viewBox="0 0 220 160" aria-hidden="true">
+        <polygon points="14,96 34,66 60,70 78,50 108,54 128,36 152,44 176,38 204,58 196,84 168,80 150,98 122,92 100,110 72,102 48,116 26,110" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/>
+        <line x1="14" y1="96" x2="204" y2="58" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="60" y1="70" x2="60" y2="10" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="150" y1="98" x2="150" y2="150" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 4"/>
+        <circle cx="112" cy="66" r="4" fill="var(--cyan)"/>
+        <circle cx="112" cy="66" r="9" fill="none" stroke="var(--cyan)" stroke-width="1"/>
+        <text x="112" y="90" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" fill="var(--ink)">БИШКЕК</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ОТКРЫТЫЙ ДИАЛОГ С ГОСУДАРСТВОМ ══════════════════════ -->
+<section class="sec gov" id="gov">
+  <div class="wrap">
+    <div class="rv"><span class="ix">06 — Государство</span><h2>Открытый диалог с государством.</h2></div>
+    <p class="rv rv-d1">Мы заинтересованы в прозрачном и законном рынке. Поэтому WorkUnity выстраивает системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
+    <div class="gov__row rv rv-d2">
+      <div class="gov__i">Миграция</div>
+      <div class="gov__line" aria-hidden="true"></div>
+      <div class="gov__i">Труд</div>
+      <div class="gov__line" aria-hidden="true"></div>
+      <div class="gov__i">Государственные институты</div>
+      <div class="gov__line" aria-hidden="true"></div>
+      <div class="gov__i">Дипломатические связи</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ОДНО ОКНО ═══════════════════════════════════════════ -->
+<section class="sec" id="flow">
+  <div class="wrap">
+    <div class="hd rv narrow"><span class="ix">07 — Процесс</span><h2>Один контакт. Вся система внутри.</h2><p>Клиент взаимодействует с одним ответственным куратором, даже если над его задачей работают юристы, миграционные специалисты, рекрутеры и специалисты по контролю.</p></div>
+    <div class="flow rv">
+      <div class="flow__s">Клиент</div>
+      <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
+      <div class="flow__s flow__s--hub">Куратор WorkUnity</div>
+      <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
+      <div class="flow__s flow__s--wide">Юридическая помощь · Миграция · Подбор · Контроль</div>
+      <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
+      <div class="flow__s">Результат</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ФИНАЛЬНЫЙ CTA ═══════════════════════════════════════ -->
+<section class="sec" id="contact-cta">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix">08 — Контакт</span><h2>Чем WorkUnity может помочь вам?</h2></div>
+    <div class="cta3 rv">
+      <div class="cta3__c">
+        <div><div class="cta3__t">Иностранному гражданину</div><h3 class="cta3__h">Правовая защита</h3></div>
+        <a class="btn btn--navy" href="index.html#contact">Получить юридическую помощь</a>
+      </div>
+      <div class="cta3__c">
+        <div><div class="cta3__t">Работодателю</div><h3 class="cta3__h">Подбор персонала</h3></div>
+        <a class="btn btn--out" href="index.html#contact">Найти работников</a>
+      </div>
+      <div class="cta3__c">
+        <div><div class="cta3__t">Партнёру</div><h3 class="cta3__h">Сотрудничество</h3></div>
+        <a class="btn btn--out" href="index.html#contact">Стать партнёром</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="bstrip">
+  <div class="bstrip__t">WorkUnity</div>
+  <div class="bstrip__s">Право · Миграция · Workforce · Доверие</div>
+</div>
+
+<footer class="ftr">
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="index.html" aria-label="WorkUnity">
+          <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
+        </a>
+        <p style="margin-top:16px;max-width:32ch">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+      </div>
+      <div><h4>Разделы</h4><ul><li><a href="index.html#net">Страны</a></li><li><a href="index.html#sol">Решения</a></li><li><a href="index.html#proc">Процедура</a></li></ul></div>
+      <div><h4>Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html">Инструкция</a></li><li><a href="index.html#faq">Вопросы</a></li><li><a href="o-workunity.html">О компании</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li>Бишкек</li></ul></div>
+    </div>
+    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta">
+  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span>Позвонить</span></a>
+  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>Написать</span></a>
+</div>
+
+<script>
+(function(){
+'use strict';
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var LANG = 'ru';
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ SCROLL: progress + mobile CTA ═══════════════════════ */
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+onScroll();
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+var burger = $('#burger'), nav = $('#mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+});
+
+/* ═══ LANGUAGE SWITCH ═════════════════════════════════════
+   Основной текст страницы пока не переведён (см. ТЗ: локализация
+   добавляется отдельно) — переключатель меняет только общую шапку
+   и футер, где есть data-en, унаследованные из index.html. */
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-en]').map(function(el){
+  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en') };
+});
+function setLang(lang){
+  LANG = lang === 'en' ? 'en' : 'ru';
+  document.documentElement.lang = LANG;
+  lsw.setAttribute('data-lang', LANG);
+  i18nNodes.forEach(function(n){ n.el.innerHTML = LANG === 'en' ? n.en : n.ru; });
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+lsw.addEventListener('click', function(){ setLang(LANG === 'ru' ? 'en' : 'ru'); });
+var savedLang = 'ru';
+try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+setLang(savedLang);
+
+/* ═══ THEME SWITCH ════════════════════════════════════════ */
+var tsw = $('#tsw');
+function setTheme(theme){
+  var t = theme === 'dark' ? 'dark' : 'light';
+  if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  tsw.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  try{ localStorage.setItem('wu_theme', t); }catch(err){}
+}
+tsw.addEventListener('click', function(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+var savedTheme = 'light';
+try{ savedTheme = localStorage.getItem('wu_theme') || 'light'; }catch(err){}
+setTheme(savedTheme);
+})();
+</script>
+</body>
+</html>

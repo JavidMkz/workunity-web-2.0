@@ -345,7 +345,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(min-width:520px){.f2{grid-template-columns:1fr 1fr}}
 .fn{font-family:var(--m);font-size:11px;line-height:1.7;color:var(--muted);margin-top:14px;letter-spacing:.02em}
 .fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bone);
-  border-left:2px solid var(--accent);font-size:14.5px}
+  border-inline-start:2px solid var(--accent);font-size:14.5px}
 .fm.on{display:block}
 
 /* 12 ─ BRAND STRIP -----------------------------------------------------*/
@@ -940,11 +940,11 @@ f.addEventListener('submit', function(e){
     m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.'
       : LANG === 'ur' ? 'براہ کرم نشان زدہ خانے پُر کریں۔'
       : 'Заполните отмеченные поля.';
-    m.style.borderLeftColor = 'var(--err)';
+    m.style.borderInlineStartColor = 'var(--err)';
     bad.focus();
     return;
   }
-  m.style.borderLeftColor = 'var(--accent)';
+  m.style.borderInlineStartColor = 'var(--accent)';
   function val(n){ return f.elements[n].value.trim(); }
   var text = LANG === 'en'
     ? ('Partnership request from the WorkUnity website\n\n'

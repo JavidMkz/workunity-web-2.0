@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&family=Noto+Nastaliq+Urdu:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    WORKUNITY — INDUSTRIAL EDITORIAL
@@ -64,6 +64,7 @@
   --h:'Manrope',system-ui,-apple-system,sans-serif;
   --b:'Inter',system-ui,-apple-system,sans-serif;
   --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
 
   --gut:clamp(20px,5vw,72px);
   --r:10px;              /* buttons & tags/plaques */
@@ -94,6 +95,11 @@
 /* 2 ─ BASE -------------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix,html[lang="ur"] .ix--d{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
   font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em}
@@ -132,6 +138,7 @@ img{max-width:100%;display:block}
 .btn--wa:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px)}
 .btn--sm{padding:11px 19px;font-size:14px}
 .btn--full{width:100%;padding-block:18px}
+html[dir="rtl"] .arr{transform:scaleX(-1)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
 textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
@@ -141,14 +148,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .tex > *{position:relative;z-index:1}
 
 /* scroll progress */
-.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:200;
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
   transition:width .1s linear;pointer-events:none}
 
 /* HEADER */
 .hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
   backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
 .hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none;color:#fff}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:28px}
@@ -171,7 +178,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 @media(max-width:1039px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
-    left:calc(var(--gut)*-1);right:calc(var(--gut)*-1);background:var(--navy);
+    inset-inline:calc(var(--gut)*-1);background:var(--navy);
     border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
   .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
     font-family:var(--h);font-weight:600;color:#fff}
@@ -186,10 +193,12 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
   font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
 .lsw:hover{border-color:#fff}
-.lsw__ru,.lsw__en{color:var(--muted-l);transition:color .18s}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
 .lsw__d{color:var(--navy-line);font-weight:400}
 .lsw[data-lang="ru"] .lsw__ru{color:#fff}
 .lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
 
 .tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
   border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
@@ -198,11 +207,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .tsw__moon{display:none}
 [data-theme="dark"] .tsw__sun{display:none}
 [data-theme="dark"] .tsw__moon{display:block}
-@media(max-width:359px){
+@media(max-width:479px){
   .hdr .wide{padding-inline:12px}
   .hdr__in{gap:6px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
   .hdr__tools{gap:4px}
   .lsw{padding:0 6px;font-size:10.5px;gap:3px}
+  .lsw__ur{font-size:11px}
   .tsw{width:28px;height:28px}
   .tsw svg{width:14px;height:14px}
 }
@@ -234,9 +248,9 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   position:relative;z-index:1}
 .strip__g{display:grid;grid-template-columns:repeat(2,1fr);column-gap:24px}
 @media(min-width:820px){.strip__g{grid-template-columns:repeat(4,1fr)}}
-.st{padding:26px 20px 24px 0;border-right:1px solid var(--line)}
-.st:last-child{border-right:0}
-@media(max-width:819px){.st:nth-child(2n){border-right:0}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.st{padding-block:26px 24px;padding-inline-end:20px;border-inline-end:1px solid var(--line)}
+.st:last-child{border-inline-end:0}
+@media(max-width:819px){.st:nth-child(2n){border-inline-end:0}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 .st__n{font-family:var(--h);font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1;
   letter-spacing:-.05em;color:var(--ink)}
 .st__n em{font-style:normal;color:var(--accent)}
@@ -276,10 +290,10 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 /* country selector + doc panel */
 .dsel{display:grid;grid-template-columns:repeat(3,1fr);margin:clamp(30px,4vw,48px) auto 0;
   border:1px solid var(--line);border-radius:var(--r);overflow:hidden;max-width:660px}
-.dsel button{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--muted);
+.dsel button{border:0;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--muted);
   min-width:0;overflow-wrap:break-word;
   padding:14px 10px;font-family:var(--h);font-weight:700;font-size:14px;cursor:pointer;transition:.2s ease;text-align:center}
-.dsel button:nth-child(3n){border-right:0}
+.dsel button:nth-child(3n){border-inline-end:0}
 .dsel button:nth-last-child(-n+3){border-bottom:0}
 .dsel button:hover{color:var(--ink);background:var(--bone)}
 .dsel button[aria-selected="true"]{background:var(--accent);color:#fff}
@@ -325,15 +339,15 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .why{display:grid;gap:0;border-top:1px solid var(--line)}
 @media(min-width:760px){.why{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1100px){.why{grid-template-columns:repeat(3,1fr)}}
-.w{padding:clamp(26px,3vw,38px) clamp(20px,2.4vw,32px) clamp(26px,3vw,38px) 0;
-  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+.w{padding-block:clamp(26px,3vw,38px);padding-inline-end:clamp(20px,2.4vw,32px);padding-inline-start:0;
+  border-bottom:1px solid var(--line);border-inline-end:1px solid var(--line);
   transition:background .28s ease;position:relative}
 .w:hover{background:var(--bone)}
-@media(min-width:760px) and (max-width:1099px){.w:nth-child(2n){border-right:0;padding-right:0}
-  .w:nth-child(2n+1){padding-left:0}.w:nth-child(2n){padding-left:clamp(20px,2.4vw,32px)}}
-@media(min-width:1100px){.w:nth-child(3n){border-right:0}
-  .w:not(:nth-child(3n+1)){padding-left:clamp(20px,2.4vw,32px)}}
-@media(max-width:759px){.w{border-right:0;padding-right:0}}
+@media(min-width:760px) and (max-width:1099px){.w:nth-child(2n){border-inline-end:0;padding-inline-end:0}
+  .w:nth-child(2n+1){padding-inline-start:0}.w:nth-child(2n){padding-inline-start:clamp(20px,2.4vw,32px)}}
+@media(min-width:1100px){.w:nth-child(3n){border-inline-end:0}
+  .w:not(:nth-child(3n+1)){padding-inline-start:clamp(20px,2.4vw,32px)}}
+@media(max-width:759px){.w{border-inline-end:0;padding-inline-end:0}}
 .w svg{width:23px;height:23px;color:var(--accent);margin-bottom:16px}
 .w b{font-family:var(--h);font-size:18px;font-weight:700;letter-spacing:-.03em;display:block;margin-bottom:8px}
 .w span{font-size:14.5px;color:var(--muted);display:block;line-height:1.6;max-width:36ch}
@@ -367,7 +381,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   .rail__d{width:9px;height:9px;border:1px solid var(--accent);flex:none;transition:.35s ease}
   .rail__i.on .rail__d{background:var(--accent);transform:scale(1.3)}
   .rail__t{font-family:var(--h);font-weight:700;font-size:15.5px;letter-spacing:-.03em}
-  .rail__line{width:1px;height:26px;background:var(--line);margin-left:4px;transition:background .4s}
+  .rail__line{width:1px;height:26px;background:var(--line);margin-inline-start:4px;transition:background .4s}
   .rail__line.on{background:var(--accent)}
 }
 @media(max-width:899px){.prail{display:none}.pmob{display:block}}
@@ -390,10 +404,10 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .vplay__s{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
 /* INDUSTRIES */
-.ind{display:grid;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ind{display:grid;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
 @media(min-width:560px){.ind{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.ind{grid-template-columns:repeat(4,1fr)}}
-.i{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+.i{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:30px 24px;display:flex;flex-direction:column;gap:16px;transition:background .25s;position:relative}
 .i::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:var(--accent);
   transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
@@ -409,7 +423,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .q summary{list-style:none;cursor:pointer;padding:24px 0;font-family:var(--h);font-weight:700;
   font-size:clamp(16.5px,1.9vw,20px);letter-spacing:-.035em;display:flex;gap:20px;align-items:center}
 .q summary::-webkit-details-marker{display:none}
-.q summary::after{content:"";margin-left:auto;flex:none;width:13px;height:13px;
+.q summary::after{content:"";margin-inline-start:auto;flex:none;width:13px;height:13px;
   background:linear-gradient(var(--accent) 0 0) center/100% 1.5px no-repeat,
              linear-gradient(var(--accent) 0 0) center/1.5px 100% no-repeat;
   transition:transform .3s cubic-bezier(.2,.7,.3,1)}
@@ -424,8 +438,8 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .alt{margin-top:34px;display:grid;border-top:1px solid var(--line)}
 .alt a{display:flex;align-items:center;gap:14px;text-decoration:none;font-family:var(--h);
   font-weight:600;font-size:16px;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--line);
-  transition:color .2s,padding-left .25s}
-.alt a:hover{color:var(--accent);padding-left:8px}
+  transition:color .2s,padding-inline-start .25s}
+.alt a:hover{color:var(--accent);padding-inline-start:8px}
 .alt svg{width:19px;height:19px;color:var(--accent);flex:none}
 .alt a.alt__wa svg{color:var(--green)}
 .alt a.alt__wa:hover{color:var(--green)}
@@ -447,7 +461,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .f textarea{min-height:88px;resize:vertical}
 .fn{font-family:var(--m);font-size:11px;line-height:1.7;color:var(--muted);margin-top:14px;letter-spacing:.02em}
 .fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bone);
-  border-left:2px solid var(--accent);font-size:14.5px}
+  border-inline-start:2px solid var(--accent);font-size:14.5px}
 .fm.on{display:block}
 
 /* FOOTER */
@@ -467,7 +481,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 
 /* sticky mobile CTA */
-.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+.mcta{position:fixed;inset-inline:0;bottom:0;z-index:110;display:none;gap:1px;
   background:var(--navy-line);border-top:1px solid var(--navy-line);
   transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
 .mcta.on{transform:none}
@@ -534,13 +548,13 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" aria-label="Основное меню">
-      <a href="o-workunity.html" data-en="WorkUnity">WorkUnity</a><a href="inostrantsam.html" data-en="For Foreigners">Иностранцам</a><a href="partners.html" data-en="Partners">Партнёрам</a><a href="#faq" data-en="FAQ">Вопросы</a>
+      <a href="o-workunity.html" data-en="WorkUnity" data-ur="WorkUnity">WorkUnity</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a>
     </nav>
     <div class="hdr__tools">
-      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
+      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
       <button class="tsw" id="tsw" type="button" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
     </div>
-    <a class="btn btn--white btn--sm hdr__cta" href="#contact" data-en="Consultation">Консультация</a>
+    <a class="btn btn--white btn--sm hdr__cta" href="#contact" data-en="Consultation" data-ur="مشاورت">Консультация</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Открыть меню"><span></span></button>
   </div>
 </header>
@@ -552,11 +566,11 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="wide">
     <div class="g12 hero__g">
       <div class="hero__l">
-        <span class="ix" data-en="9 destination countries">9 стран найма</span>
-        <h1 data-en="International Workforce Recruitment &lt;em&gt;for Your Business.&lt;/em&gt;">Международный подбор рабочих кадров <em>для вашего бизнеса.</em></h1>
-        <p class="hero__sub" data-en="We recruit, process, and support workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for construction, manufacturing, warehousing, logistics, and other industries.">Подбираем, оформляем и сопровождаем работников из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для строительства, производства, складов, логистики и других отраслей.</p>
+        <span class="ix" data-en="9 destination countries" data-ur="9 ممالک میں ملازمت">9 стран найма</span>
+        <h1 data-en="International Workforce Recruitment &lt;em&gt;for Your Business.&lt;/em&gt;" data-ur="بین الاقوامی افرادی قوت کی بھرتی &lt;em&gt;آپ کے کاروبار کے لیے۔&lt;/em&gt;">Международный подбор рабочих кадров <em>для вашего бизнеса.</em></h1>
+        <p class="hero__sub" data-en="We recruit, process, and support workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for construction, manufacturing, warehousing, logistics, and other industries." data-ur="ہم تعمیرات، مینوفیکچرنگ، گوداموں، لاجسٹکس اور دیگر شعبوں کے لیے بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے کارکن بھرتی کرتے ہیں، دستاویزات مکمل کرتے ہیں اور مکمل معاونت فراہم کرتے ہیں۔">Подбираем, оформляем и сопровождаем работников из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для строительства, производства, складов, логистики и других отраслей.</p>
         <div class="hero__cta">
-          <a class="btn btn--navy" href="#contact"><span data-en="Submit Request">Оставить заявку</span><svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--navy" href="#contact"><span data-en="Submit Request" data-ur="درخواست دیں">Оставить заявку</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
           <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
         </div>
       </div>
@@ -566,10 +580,10 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="strip">
     <div class="wide">
       <div class="strip__g">
-        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l" data-en="source&lt;br&gt;countries">стран набора<br>специалистов</div></div>
-        <div class="st"><div class="st__n" data-to="9">9</div><div class="st__l" data-en="destination&lt;br&gt;countries">стран<br>найма</div></div>
-        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l" data-en="industries&lt;br&gt;we work with">отраслей,<br>с которыми работаем</div></div>
-        <div class="st"><div class="st__n"><em data-en="Full">Полное</em></div><div class="st__l" data-en="legal support&lt;br&gt;at every stage">юридическое сопровождение<br>на всех этапах</div></div>
+        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l" data-en="source&lt;br&gt;countries" data-ur="بھرتی کے&lt;br&gt;ممالک">стран набора<br>специалистов</div></div>
+        <div class="st"><div class="st__n" data-to="9">9</div><div class="st__l" data-en="destination&lt;br&gt;countries" data-ur="ملازمت کے&lt;br&gt;ممالک">стран<br>найма</div></div>
+        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l" data-en="industries&lt;br&gt;we work with" data-ur="شعبے&lt;br&gt;جن میں ہم کام کرتے ہیں">отраслей,<br>с которыми работаем</div></div>
+        <div class="st"><div class="st__n"><em data-en="Full" data-ur="مکمل">Полное</em></div><div class="st__l" data-en="legal support&lt;br&gt;at every stage" data-ur="ہر مرحلے پر&lt;br&gt;قانونی معاونت">юридическое сопровождение<br>на всех этапах</div></div>
       </div>
     </div>
   </div>
@@ -581,19 +595,19 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <section class="sec" id="net">
   <div class="wide">
     <div class="net__hd hd--split rv">
-      <div><span class="ix" data-en="01 — Geography">01 — География</span><h2 data-en="Five Source Countries — Nine Destination Countries">Пять стран набора — девять стран найма</h2></div>
-      <p data-en="We connect South Asian labor markets with companies in nine countries and guide every worker through to the job site.">Мы связываем рынки труда Южной Азии с предприятиями девяти стран и ведём каждого работника до объекта.</p>
+      <div><span class="ix" data-en="01 — Geography" data-ur="01 — جغرافیہ">01 — География</span><h2 data-en="Five Source Countries — Nine Destination Countries" data-ur="پانچ ممالک سے بھرتی — نو ممالک میں ملازمت">Пять стран набора — девять стран найма</h2></div>
+      <p data-en="We connect South Asian labor markets with companies in nine countries and guide every worker through to the job site." data-ur="ہم جنوبی ایشیا کی لیبر مارکیٹس کو نو ممالک کے کاروباروں سے جوڑتے ہیں اور ہر کارکن کو کام کی جگہ تک پہنچاتے ہیں۔">Мы связываем рынки труда Южной Азии с предприятиями девяти стран и ведём каждого работника до объекта.</p>
     </div>
 
     <div class="mnet rv">
-      <div class="mlab" data-en="Source Countries">Страны набора</div>
+      <div class="mlab" data-en="Source Countries" data-ur="بھرتی کے ممالک">Страны набора</div>
       <div class="mnet__col">
-        <span class="mnet__c" data-en="India">Индия</span><span class="mnet__c" data-en="Pakistan">Пакистан</span><span class="mnet__c" data-en="Bangladesh">Бангладеш</span><span class="mnet__c" data-en="Nepal">Непал</span><span class="mnet__c" data-en="Sri Lanka">Шри-Ланка</span>
+        <span class="mnet__c" data-en="India" data-ur="بھارت">Индия</span><span class="mnet__c" data-en="Pakistan" data-ur="پاکستان">Пакистан</span><span class="mnet__c" data-en="Bangladesh" data-ur="بنگلہ دیش">Бангладеш</span><span class="mnet__c" data-en="Nepal" data-ur="نیپال">Непал</span><span class="mnet__c" data-en="Sri Lanka" data-ur="سری لنکا">Шри-Ланка</span>
       </div>
       <div class="mnet__arrow"><span></span></div>
-      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px" data-en="RECRUITMENT · DOCUMENTS · LEGAL">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
+      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px" data-en="RECRUITMENT · DOCUMENTS · LEGAL" data-ur="بھرتی · دستاویزات · قانونی معاونت">ПОДБОР · ДОКУМЕНТЫ · ПРАВО</div></div>
       <div class="mnet__arrow"><span></span></div>
-      <div class="mlab" data-en="Destination Countries — 9">Страны найма — 9</div>
+      <div class="mlab" data-en="Destination Countries — 9" data-ur="ملازمت کے ممالک — 9">Страны найма — 9</div>
     </div>
 
     <div class="dsel rv" role="tablist" aria-label="Страна найма" id="dsel"><button type="button" role="tab" aria-selected="true">Кыргызстан</button><button type="button" role="tab" aria-selected="false">Казахстан</button><button type="button" role="tab" aria-selected="false">Узбекистан</button><button type="button" role="tab" aria-selected="false">Россия</button><button type="button" role="tab" aria-selected="false">Азербайджан</button><button type="button" role="tab" aria-selected="false">Беларусь</button><button type="button" role="tab" aria-selected="false">Таджикистан</button><button type="button" role="tab" aria-selected="false">Грузия</button><button type="button" role="tab" aria-selected="false">Украина</button></div>
@@ -605,32 +619,32 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ SOLUTIONS ══════════════════════════════════════════ -->
 <section class="sec" id="sol">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d" data-en="02 — Services">02 — Решения</span><h2 data-en="What We Take Care Of">Что мы берём на себя</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="02 — Services" data-ur="02 — خدمات">02 — Решения</span><h2 data-en="What We Take Care Of" data-ur="ہم کیا ذمہ داری لیتے ہیں">Что мы берём на себя</h2></div>
     <div class="sol">
       <article class="sol__i rv">
         <div class="sol__n">01</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#users"/></svg><h3 data-en="Recruitment">Подбор персонала</h3></div>
-        <p class="sol__d" data-en="Specialists matched to your production requirements — with &lt;b&gt;qualification checks&lt;/b&gt;, document verification, and medical screening in the sourcing country. The final decision is always yours.">Специалисты под требования вашего производства — с <b>проверкой квалификации</b>, документов и медицинским освидетельствованием в стране набора. Финальное решение всегда за вами.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#users"/></svg><h3 data-en="Recruitment" data-ur="بھرتی">Подбор персонала</h3></div>
+        <p class="sol__d" data-en="Specialists matched to your production requirements — with &lt;b&gt;qualification checks&lt;/b&gt;, document verification, and medical screening in the sourcing country. The final decision is always yours." data-ur="آپ کی پیداواری ضروریات کے مطابق ماہرین — بھرتی کے ملک میں &lt;b&gt;قابلیت کی جانچ&lt;/b&gt;، دستاویزات کی تصدیق اور طبی معائنے کے ساتھ۔ حتمی فیصلہ ہمیشہ آپ کا ہوتا ہے۔">Специалисты под требования вашего производства — с <b>проверкой квалификации</b>, документов и медицинским освидетельствованием в стране набора. Финальное решение всегда за вами.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">02</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3 data-en="Permits and Quotas">Разрешения и квоты</h3></div>
-        <p class="sol__d" data-en="Employer permit, recruitment quota, work permit, visa, registration — &lt;b&gt;according to the rules of the specific destination country&lt;/b&gt;. We handle obtaining quotas and correspondence with government authorities.">Разрешение работодателю, квота на привлечение, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Получение квот и переписку с государственными органами ведём мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"/></svg><h3 data-en="Permits and Quotas" data-ur="اجازت نامے اور کوٹے">Разрешения и квоты</h3></div>
+        <p class="sol__d" data-en="Employer permit, recruitment quota, work permit, visa, registration — &lt;b&gt;according to the rules of the specific destination country&lt;/b&gt;. We handle obtaining quotas and correspondence with government authorities." data-ur="آجر کا اجازت نامہ، بھرتی کا کوٹہ، ورک پرمٹ، ویزا، رجسٹریشن — &lt;b&gt;متعلقہ ملک کے قوانین کے مطابق&lt;/b&gt;۔ کوٹے حاصل کرنا اور سرکاری اداروں سے خط و کتابت ہم خود کرتے ہیں۔">Разрешение работодателю, квота на привлечение, разрешение на работу, виза, регистрация — <b>по правилам конкретной страны найма</b>. Получение квот и переписку с государственными органами ведём мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">03</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3 data-en="Legal Consultations">Юридические консультации</h3></div>
-        <p class="sol__d" data-en="Contracts, correspondence with authorities, disputes, consultations on hiring foreign labor. &lt;b&gt;The employer bears responsibility for violations&lt;/b&gt; — we cover this area for you.">Договоры, переписка с органами, спорные ситуации, консультации по вопросам найма иностранной рабочей силы. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"/></svg><h3 data-en="Legal Consultations" data-ur="قانونی مشاورت">Юридические консультации</h3></div>
+        <p class="sol__d" data-en="Contracts, correspondence with authorities, disputes, consultations on hiring foreign labor. &lt;b&gt;The employer bears responsibility for violations&lt;/b&gt; — we cover this area for you." data-ur="معاہدے، اداروں سے خط و کتابت، تنازعات، اور غیر ملکی افرادی قوت کی بھرتی سے متعلق مشاورت۔ &lt;b&gt;خلاف ورزی کی ذمہ داری آجر پر ہوتی ہے&lt;/b&gt; — یہ ذمہ داری ہم سنبھالتے ہیں۔">Договоры, переписка с органами, спорные ситуации, консультации по вопросам найма иностранной рабочей силы. <b>Ответственность за нарушения несёт наниматель</b> — эту зону закрываем мы.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">04</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"/></svg><h3 data-en="Adaptation and Support">Адаптация и сопровождение</h3></div>
-        <p class="sol__d" data-en="We help workers settle in, resolve everyday and work-related issues, and &lt;b&gt;handle on-site motivation&lt;/b&gt;. If needed, we can also arrange meals — as an optional service on request.">Помогаем работникам освоиться на месте, снимаем бытовые и рабочие вопросы, <b>занимаемся мотивацией на объекте</b>. При необходимости берём на себя и организацию питания — как опцию по запросу.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"/></svg><h3 data-en="Adaptation and Support" data-ur="معاونت اور رہنمائی">Адаптация и сопровождение</h3></div>
+        <p class="sol__d" data-en="We help workers settle in, resolve everyday and work-related issues, and &lt;b&gt;handle on-site motivation&lt;/b&gt;. If needed, we can also arrange meals — as an optional service on request." data-ur="ہم کارکنوں کو نئی جگہ ایڈجسٹ ہونے میں مدد دیتے ہیں، روزمرہ اور کام سے متعلق مسائل حل کرتے ہیں، اور &lt;b&gt;کام کی جگہ پر حوصلہ افزائی کا خیال رکھتے ہیں&lt;/b&gt;۔ ضرورت پڑنے پر کھانے کے انتظام کی سہولت بھی درخواست پر فراہم کرتے ہیں۔">Помогаем работникам освоиться на месте, снимаем бытовые и рабочие вопросы, <b>занимаемся мотивацией на объекте</b>. При необходимости берём на себя и организацию питания — как опцию по запросу.</p>
       </article>
       <article class="sol__i rv">
         <div class="sol__n">05</div>
-        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3 data-en="Migration Audit">Миграционный аудит</h3></div>
-        <p class="sol__d" data-en="Checking foreign workers already on staff for risks — &lt;b&gt;before an inspection does&lt;/b&gt;. We show what's wrong and in what order to fix it.">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"/></svg><h3 data-en="Migration Audit" data-ur="امیگریشن آڈٹ">Миграционный аудит</h3></div>
+        <p class="sol__d" data-en="Checking foreign workers already on staff for risks — &lt;b&gt;before an inspection does&lt;/b&gt;. We show what's wrong and in what order to fix it." data-ur="پہلے سے کام کرنے والے غیر ملکی کارکنوں کے خطرات کی جانچ — &lt;b&gt;اس سے پہلے کہ کوئی سرکاری معائنہ یہ کرے&lt;/b&gt;۔ ہم بتاتے ہیں کہاں کمی ہے اور اسے کس ترتیب سے درست کرنا ہے۔">Проверка уже работающих иностранцев на риски — <b>до того, как это сделает проверка</b>. Показываем, что не так и в каком порядке исправлять.</p>
       </article>
     </div>
   </div>
@@ -639,22 +653,22 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ MANIFESTO ══════════════════════════════════════════ -->
 <section class="man">
   <div class="wide">
-    <p class="man__q rv" data-en="A staffing issue shouldn't become a &lt;span&gt;legal risk&lt;/span&gt;.">Кадровый вопрос не должен становиться <span>юридическим риском</span>.</p>
-    <p class="man__s rv rv-d1" data-en="The rules in each of the nine destination countries differ. The logic is the same: until a document is issued, the employer is liable. We cover that part.">Правила в каждой из девяти стран найма разные. Логика одна: пока документ не оформлен, отвечает работодатель. Мы закрываем эту часть.</p>
+    <p class="man__q rv" data-en="A staffing issue shouldn't become a &lt;span&gt;legal risk&lt;/span&gt;." data-ur="افرادی قوت کا معاملہ &lt;span&gt;قانونی خطرہ&lt;/span&gt; نہیں بننا چاہیے۔">Кадровый вопрос не должен становиться <span>юридическим риском</span>.</p>
+    <p class="man__s rv rv-d1" data-en="The rules in each of the nine destination countries differ. The logic is the same: until a document is issued, the employer is liable. We cover that part." data-ur="نو ممالک میں سے ہر ایک کے قوانین مختلف ہیں۔ منطق ایک ہی ہے: جب تک دستاویز مکمل نہ ہو، ذمہ داری آجر کی ہوتی ہے۔ یہ ذمہ داری ہم سنبھالتے ہیں۔">Правила в каждой из девяти стран найма разные. Логика одна: пока документ не оформлен, отвечает работодатель. Мы закрываем эту часть.</p>
   </div>
 </section>
 
 <!-- ══ WHY ════════════════════════════════════════════════ -->
 <section class="sec" id="why">
   <div class="wide">
-    <div class="hd rv"><span class="ix" data-en="03 — Reasons">03 — Причины</span><h2 data-en="Why Employers Choose WorkUnity">Почему работодатели выбирают WorkUnity</h2></div>
+    <div class="hd rv"><span class="ix" data-en="03 — Reasons" data-ur="03 — وجوہات">03 — Причины</span><h2 data-en="Why Employers Choose WorkUnity" data-ur="آجرین WorkUnity کو کیوں منتخب کرتے ہیں">Почему работодатели выбирают WorkUnity</h2></div>
     <div class="why">
-      <div class="w rv"><svg aria-hidden="true"><use href="#one"/></svg><b data-en="One Partner Instead of Five">Один партнёр вместо пяти</b><span data-en="Recruitment, documents, legal support, and logistics in one place.">Подбор, документы, юристы и логистика в одних руках.</span></div>
-      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"/></svg><b data-en="Only Official Procedures">Только официальные процедуры</b><span data-en="Every stage is processed, verified, and monitored.">Каждый этап оформляется, проверяется и контролируется.</span></div>
-      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"/></svg><b data-en="Nine Destination Countries">Девять стран найма</b><span data-en="One responsible partner for the entire process.">Один ответственный партнёр на весь процесс.</span></div>
-      <div class="w rv"><svg aria-hidden="true"><use href="#scale"/></svg><b data-en="Legal Protection for Your Business">Юридическая защита бизнеса</b><span data-en="We help reduce employer migration risks: document processing, deadline monitoring, and mandatory notifications.">Помогаем снизить миграционные риски работодателя: оформление документов, контроль сроков и обязательных уведомлений.</span></div>
-      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"/></svg><b data-en="Non-Standard Situations">Нестандартные ситуации</b><span data-en="Urgent replacement, refusal, schedule changes — we handle them without delays.">Срочная замена, отказ, сдвиг сроков — решаем без пауз.</span></div>
-      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"/></svg><b data-en="Process Transparency">Прозрачность процесса</b><span data-en="You can see the status of every worker at every stage.">Вы видите статус по каждому работнику на каждом этапе.</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#one"/></svg><b data-en="One Partner Instead of Five" data-ur="پانچ کی بجائے ایک شراکت دار">Один партнёр вместо пяти</b><span data-en="Recruitment, documents, legal support, and logistics in one place." data-ur="بھرتی، دستاویزات، قانونی معاونت اور لاجسٹکس — سب ایک ہی جگہ۔">Подбор, документы, юристы и логистика в одних руках.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"/></svg><b data-en="Only Official Procedures" data-ur="صرف سرکاری طریقہ کار">Только официальные процедуры</b><span data-en="Every stage is processed, verified, and monitored." data-ur="ہر مرحلہ باقاعدہ دستاویزی، تصدیق شدہ اور نگرانی میں ہوتا ہے۔">Каждый этап оформляется, проверяется и контролируется.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"/></svg><b data-en="Nine Destination Countries" data-ur="نو ممالک میں ملازمت">Девять стран найма</b><span data-en="One responsible partner for the entire process." data-ur="پورے عمل کے لیے ایک ذمہ دار شراکت دار۔">Один ответственный партнёр на весь процесс.</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#scale"/></svg><b data-en="Legal Protection for Your Business" data-ur="کاروبار کا قانونی تحفظ">Юридическая защита бизнеса</b><span data-en="We help reduce employer migration risks: document processing, deadline monitoring, and mandatory notifications." data-ur="ہم آجر کے امیگریشن خطرات کم کرنے میں مدد دیتے ہیں: دستاویزات کی تیاری، مدت کی نگرانی اور لازمی اطلاعات کا خیال۔">Помогаем снизить миграционные риски работодателя: оформление документов, контроль сроков и обязательных уведомлений.</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"/></svg><b data-en="Non-Standard Situations" data-ur="غیرمعمولی حالات">Нестандартные ситуации</b><span data-en="Urgent replacement, refusal, schedule changes — we handle them without delays." data-ur="فوری تبدیلی، انکار، یا شیڈول میں تبدیلی — ہم بغیر تاخیر کے حل کرتے ہیں۔">Срочная замена, отказ, сдвиг сроков — решаем без пауз.</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"/></svg><b data-en="Process Transparency" data-ur="عمل میں شفافیت">Прозрачность процесса</b><span data-en="You can see the status of every worker at every stage." data-ur="آپ ہر مرحلے پر ہر کارکن کی صورتحال دیکھ سکتے ہیں۔">Вы видите статус по каждому работнику на каждом этапе.</span></div>
     </div>
   </div>
 </section>
@@ -664,30 +678,30 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   <div class="pstick">
     <div class="wide">
       <div class="pgrid">
-        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d" data-en="04 — Process">04 — Процедура</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px" data-en="Five Steps">Пять этапов</h2></div>
+        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d" data-en="04 — Process" data-ur="04 — طریقہ کار">04 — Процедура</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px" data-en="Five Steps" data-ur="پانچ مراحل">Пять этапов</h2></div>
         <div class="prail">
-          <span class="ix ix--d" data-en="04 — Process">04 — Процедура</span>
+          <span class="ix ix--d" data-en="04 — Process" data-ur="04 — طریقہ کار">04 — Процедура</span>
           <div class="rail" id="rail">
-            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t" data-en="Application">Заявка</span></div>
+            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t" data-en="Application" data-ur="درخواست">Заявка</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Company Permit">Разрешение компании</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Company Permit" data-ur="کمپنی کا اجازت نامہ">Разрешение компании</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Recruitment">Подбор</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Recruitment" data-ur="بھرتی">Подбор</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Documents and Entry">Документы и въезд</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Documents and Entry" data-ur="دستاویزات اور داخلہ">Документы и въезд</span></div>
             <div class="rail__line"></div>
-            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Start at the Site">Выход на объект</span></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Start at the Site" data-ur="کام کا آغاز">Выход на объект</span></div>
           </div>
-          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions">Подробная инструкция</span><svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions" data-ur="تفصیلی رہنمائی">Подробная инструкция</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
         </div>
         <div class="plist" id="plist">
-          <div class="pi on"><div class="pi__n" data-en="Stage 01">Этап 01</div><h3 data-en="Application">Заявка</h3><p data-en="We record professions, quantity, timeline, and conditions. We check whether your request meets the destination country's requirements.">Фиксируем профессии, количество, сроки и условия. Проверяем, проходит ли ваша потребность по правилам страны найма.</p><div class="pi__meta" data-en="You provide the details — we verify feasibility">Вы даёте вводные — мы проверяем допустимость</div></div>
-          <div class="pi"><div class="pi__n" data-en="Stage 02">Этап 02</div><h3 data-en="Company Permit">Разрешение компании</h3><p data-en="We prepare and file documents for the company's right to engage foreign labor. We handle correspondence with the authorities.">Готовим и подаём документы на право предприятия привлекать иностранную рабочую силу. Переписку с органами ведём мы.</p><div class="pi__meta" data-en="Attraction permit · quota · notifications">Разрешение на привлечение · квота · уведомления</div></div>
-          <div class="pi"><div class="pi__n" data-en="Stage 03">Этап 03</div><h3 data-en="Recruitment">Подбор</h3><p data-en="Selection in the sourcing country, qualification and document checks, medical screening. The final decision is yours.">Отбор в стране набора, проверка квалификации и документов, медицинское освидетельствование. Финальное решение — за вами.</p><div class="pi__meta" data-en="Applications · tests · video interviews · medical exam">Анкеты · тесты · видеоинтервью · медкомиссия</div></div>
-          <div class="pi"><div class="pi__n" data-en="Stage 04">Этап 04</div><h3 data-en="Documents and Entry">Документы и въезд</h3><p data-en="Work permit for each specialist, visa documents, flight, and reception.">Разрешение на работу для каждого специалиста, визовые документы, перелёт и встреча.</p><div class="pi__meta" data-en="Work permit · visa · tickets · transfer">Разрешение на работу · виза · билеты · трансфер</div></div>
-          <div class="pi"><div class="pi__n" data-en="Stage 05">Этап 05</div><h3 data-en="Start at the Site">Выход на объект</h3><p data-en="Registration, employment contract, induction briefing. After that — deadline monitoring and timely renewals.">Регистрация, трудовой договор, вводный инструктаж. Дальше — контроль сроков и своевременные продления.</p><div class="pi__meta" data-en="Registration · contract · renewals on schedule">Регистрация · договор · продления по календарю</div></div>
+          <div class="pi on"><div class="pi__n" data-en="Stage 01" data-ur="مرحلہ 01">Этап 01</div><h3 data-en="Application" data-ur="درخواست">Заявка</h3><p data-en="We record professions, quantity, timeline, and conditions. We check whether your request meets the destination country's requirements." data-ur="ہم پیشے، تعداد، مدت اور شرائط نوٹ کرتے ہیں۔ اور دیکھتے ہیں کہ آپ کی ضرورت متعلقہ ملک کے قوانین کے مطابق ہے یا نہیں۔">Фиксируем профессии, количество, сроки и условия. Проверяем, проходит ли ваша потребность по правилам страны найма.</p><div class="pi__meta" data-en="You provide the details — we verify feasibility" data-ur="آپ تفصیلات دیتے ہیں — ہم امکان جانچتے ہیں">Вы даёте вводные — мы проверяем допустимость</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 02" data-ur="مرحلہ 02">Этап 02</div><h3 data-en="Company Permit" data-ur="کمپنی کا اجازت نامہ">Разрешение компании</h3><p data-en="We prepare and file documents for the company's right to engage foreign labor. We handle correspondence with the authorities." data-ur="ہم کمپنی کو غیر ملکی افرادی قوت رکھنے کا حق دلانے کے لیے دستاویزات تیار کرتے اور جمع کراتے ہیں۔ اداروں سے خط و کتابت ہم خود کرتے ہیں۔">Готовим и подаём документы на право предприятия привлекать иностранную рабочую силу. Переписку с органами ведём мы.</p><div class="pi__meta" data-en="Attraction permit · quota · notifications" data-ur="بھرتی کا اجازت نامہ · کوٹہ · اطلاعات">Разрешение на привлечение · квота · уведомления</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 03" data-ur="مرحلہ 03">Этап 03</div><h3 data-en="Recruitment" data-ur="بھرتی">Подбор</h3><p data-en="Selection in the sourcing country, qualification and document checks, medical screening. The final decision is yours." data-ur="بھرتی کے ملک میں انتخاب، قابلیت اور دستاویزات کی جانچ، طبی معائنہ۔ حتمی فیصلہ آپ کا ہوتا ہے۔">Отбор в стране набора, проверка квалификации и документов, медицинское освидетельствование. Финальное решение — за вами.</p><div class="pi__meta" data-en="Applications · tests · video interviews · medical exam" data-ur="فارم · ٹیسٹ · ویڈیو انٹرویو · طبی معائنہ">Анкеты · тесты · видеоинтервью · медкомиссия</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 04" data-ur="مرحلہ 04">Этап 04</div><h3 data-en="Documents and Entry" data-ur="دستاویزات اور داخلہ">Документы и въезд</h3><p data-en="Work permit for each specialist, visa documents, flight, and reception." data-ur="ہر ماہر کے لیے ورک پرمٹ، ویزا دستاویزات، پرواز اور استقبال۔">Разрешение на работу для каждого специалиста, визовые документы, перелёт и встреча.</p><div class="pi__meta" data-en="Work permit · visa · tickets · transfer" data-ur="ورک پرمٹ · ویزا · ٹکٹ · ٹرانسفر">Разрешение на работу · виза · билеты · трансфер</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 05" data-ur="مرحلہ 05">Этап 05</div><h3 data-en="Start at the Site" data-ur="کام کا آغاز">Выход на объект</h3><p data-en="Registration, employment contract, induction briefing. After that — deadline monitoring and timely renewals." data-ur="رجسٹریشن، ملازمت کا معاہدہ، ابتدائی بریفنگ۔ اس کے بعد — مدت کی نگرانی اور بروقت تجدید۔">Регистрация, трудовой договор, вводный инструктаж. Дальше — контроль сроков и своевременные продления.</p><div class="pi__meta" data-en="Registration · contract · renewals on schedule" data-ur="رجسٹریشن · معاہدہ · شیڈول کے مطابق تجدید">Регистрация · договор · продления по календарю</div></div>
         </div>
-        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions">Подробная инструкция</span><svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="Detailed Instructions" data-ur="تفصیلی رہنمائی">Подробная инструкция</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -699,14 +713,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
     <div class="vframe rv" id="vf" role="button" tabindex="0" aria-label="Смотреть видеообращение основателя">
       <div class="vplay">
         <div class="vplay__b"><svg aria-hidden="true"><use href="#play"/></svg></div>
-        <div><div class="vplay__t" data-en="Founder's Message">Обращение основателя</div><div class="vplay__s" data-en="30 seconds">30 секунд</div></div>
+        <div><div class="vplay__t" data-en="Founder's Message" data-ur="بانی کا پیغام">Обращение основателя</div><div class="vplay__s" data-en="30 seconds" data-ur="30 سیکنڈ">30 секунд</div></div>
       </div>
     </div>
     <div class="rv rv-d1">
-      <span class="ix" data-en="05 — About Us">05 — О нас</span>
-      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch" data-en="We Work with People, Not Paperwork">Мы работаем с людьми, а не с бумагами</h2>
-      <p style="color:var(--muted);font-size:17.5px;max-width:44ch" data-en="Behind every request is a company that needs hands, and a person traveling thousands of kilometers to work. Our job is to make sure both sides are protected.">За каждой заявкой — предприятие, которому нужны руки, и человек, который едет за тысячи километров работать. Наша задача — чтобы обе стороны были защищены.</p>
-      <div style="margin-top:30px"><a class="btn btn--out" href="#contact"><span data-en="Talk to Us">Поговорить с нами</span><svg width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <span class="ix" data-en="05 — About Us" data-ur="05 — ہمارے بارے میں">05 — О нас</span>
+      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch" data-en="We Work with People, Not Paperwork" data-ur="ہم لوگوں کے ساتھ کام کرتے ہیں، صرف کاغذی کارروائی کے ساتھ نہیں">Мы работаем с людьми, а не с бумагами</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:44ch" data-en="Behind every request is a company that needs hands, and a person traveling thousands of kilometers to work. Our job is to make sure both sides are protected." data-ur="ہر درخواست کے پیچھے ایک کمپنی ہوتی ہے جسے کارکنوں کی ضرورت ہے، اور ایک شخص جو ہزاروں کلومیٹر دور کام کرنے جا رہا ہے۔ ہمارا کام یہ یقینی بنانا ہے کہ دونوں فریق محفوظ رہیں۔">За каждой заявкой — предприятие, которому нужны руки, и человек, который едет за тысячи километров работать. Наша задача — чтобы обе стороны были защищены.</p>
+      <div style="margin-top:30px"><a class="btn btn--out" href="#contact"><span data-en="Talk to Us" data-ur="ہم سے بات کریں">Поговорить с нами</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -714,16 +728,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ INDUSTRIES ═════════════════════════════════════════ -->
 <section class="sec" id="ind">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d" data-en="06 — Industries">06 — Отрасли</span><h2 data-en="Who We Work With">С кем работаем</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="06 — Industries" data-ur="06 — شعبے">06 — Отрасли</span><h2 data-en="Who We Work With" data-ur="ہم کن کے ساتھ کام کرتے ہیں">С кем работаем</h2></div>
     <div class="ind rv">
-      <article class="i"><svg aria-hidden="true"><use href="#build"/></svg><h3 data-en="Construction">Строительство</h3><span class="i__n">01</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#fact"/></svg><h3 data-en="Manufacturing">Производство</h3><span class="i__n">02</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#box"/></svg><h3 data-en="Warehousing and Logistics">Склады и логистика</h3><span class="i__n">03</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#road"/></svg><h3 data-en="Road Works">Дорожные работы</h3><span class="i__n">04</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#thread"/></svg><h3 data-en="Garment Production">Швейное производство</h3><span class="i__n">05</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#leaf"/></svg><h3 data-en="Agriculture">Сельское хозяйство</h3><span class="i__n">06</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#cup"/></svg><h3 data-en="Hotels and Catering">Гостиницы и общепит</h3><span class="i__n">07</span></article>
-      <article class="i"><svg aria-hidden="true"><use href="#pick"/></svg><h3 data-en="Mining">Горнодобыча</h3><span class="i__n">08</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#build"/></svg><h3 data-en="Construction" data-ur="تعمیرات">Строительство</h3><span class="i__n">01</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#fact"/></svg><h3 data-en="Manufacturing" data-ur="مینوفیکچرنگ">Производство</h3><span class="i__n">02</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#box"/></svg><h3 data-en="Warehousing and Logistics" data-ur="گودام اور لاجسٹکس">Склады и логистика</h3><span class="i__n">03</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#road"/></svg><h3 data-en="Road Works" data-ur="سڑکوں کی تعمیر">Дорожные работы</h3><span class="i__n">04</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#thread"/></svg><h3 data-en="Garment Production" data-ur="ملبوسات کی تیاری">Швейное производство</h3><span class="i__n">05</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#leaf"/></svg><h3 data-en="Agriculture" data-ur="زراعت">Сельское хозяйство</h3><span class="i__n">06</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#cup"/></svg><h3 data-en="Hotels and Catering" data-ur="ہوٹل اور کیٹرنگ">Гостиницы и общепит</h3><span class="i__n">07</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#pick"/></svg><h3 data-en="Mining" data-ur="کان کنی">Горнодобыча</h3><span class="i__n">08</span></article>
     </div>
   </div>
 </section>
@@ -731,14 +745,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <!-- ══ FAQ ════════════════════════════════════════════════ -->
 <section class="sec" id="faq">
   <div class="wide">
-    <div class="hd rv"><span class="ix ix--d" data-en="07 — FAQ">07 — Вопросы</span><h2 data-en="Key Questions">Коротко о главном</h2></div>
+    <div class="hd rv"><span class="ix ix--d" data-en="07 — FAQ" data-ur="07 — سوالات">07 — Вопросы</span><h2 data-en="Key Questions" data-ur="اہم سوالات، مختصراً">Коротко о главном</h2></div>
     <div class="faq rv">
-      <details class="q"><summary><span class="q__i">01</span><span data-en="Which countries do you work in?">В каких странах вы работаете?</span></summary><div class="q__a" data-en="We recruit for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. We source specialists in India, Pakistan, Bangladesh, Nepal, and Sri Lanka.">Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке.</div></details>
-      <details class="q"><summary><span class="q__i">02</span><span data-en="Does the employer need a separate permit?">Нужно ли работодателю отдельное разрешение?</span></summary><div class="q__a" data-en="Yes, in all nine countries. The company needs a foreign labor attraction permit, and the worker needs a work permit. Document names differ, the logic is the same. We handle both.">Да, во всех девяти странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу. Названия документов различаются, логика одинакова. Оформляем оба.</div></details>
-      <details class="q"><summary><span class="q__i">03</span><span data-en="How long does the process take?">Сколько времени занимает процесс?</span></summary><div class="q__a" data-en="Candidate selection takes 15–25 days depending on the quantity and profession. After that come permits, visas, and the flight, and these timelines depend on the destination country and how busy the authorities are. We give you the exact timeline for your vacancy after reviewing your request.">Подбор кандидатов занимает 15–25 дней в зависимости от количества и профессии. Дальше идут разрешения, визы и перелёт, и здесь сроки зависят от страны найма и загрузки органов. Точный срок по вашей вакансии называем после разбора заявки.</div></details>
-      <details class="q"><summary><span class="q__i">04</span><span data-en="How much does it cost?">Сколько это стоит?</span></summary><div class="q__a" data-en="There's no fixed price list. The cost depends on the destination country, quantity, professions, and scope of support — we prepare an individual estimate.">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
-      <details class="q"><summary><span class="q__i">05</span><span data-en="What if a worker doesn't work out?">Что если работник не подойдёт?</span></summary><div class="q__a" data-en="Replacement terms are fixed in the contract before work begins, so there's no ambiguity later.">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
-      <details class="q"><summary><span class="q__i">06</span><span data-en="We already have foreign workers — can you check them?">У нас уже работают иностранцы — проверите?</span></summary><div class="q__a" data-en="Yes, that's a migration audit: we check documents and deadlines, and show you the risks and what to fix.">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
+      <details class="q"><summary><span class="q__i">01</span><span data-en="Which countries do you work in?" data-ur="آپ کن ممالک میں کام کرتے ہیں؟">В каких странах вы работаете?</span></summary><div class="q__a" data-en="We recruit for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. We source specialists in India, Pakistan, Bangladesh, Nepal, and Sri Lanka." data-ur="ہم کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھرتی کرتے ہیں۔ ماہرین بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے لیے جاتے ہیں۔">Нанимаем для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Специалистов набираем в Индии, Пакистане, Бангладеш, Непале и Шри-Ланке.</div></details>
+      <details class="q"><summary><span class="q__i">02</span><span data-en="Does the employer need a separate permit?" data-ur="کیا آجر کو الگ اجازت نامہ درکار ہوتا ہے؟">Нужно ли работодателю отдельное разрешение?</span></summary><div class="q__a" data-en="Yes, in all nine countries. The company needs a foreign labor attraction permit, and the worker needs a work permit. Document names differ, the logic is the same. We handle both." data-ur="جی ہاں، تمام نو ممالک میں۔ کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ درکار ہوتا ہے، اور کارکن کو ورک پرمٹ۔ دستاویزات کے نام مختلف ہیں، لیکن منطق ایک جیسی ہے۔ دونوں ہم مکمل کرتے ہیں۔">Да, во всех девяти странах. Предприятию требуется разрешение на привлечение иностранной рабочей силы, работнику — разрешение на работу. Названия документов различаются, логика одинакова. Оформляем оба.</div></details>
+      <details class="q"><summary><span class="q__i">03</span><span data-en="How long does the process take?" data-ur="پورا عمل کتنا وقت لیتا ہے؟">Сколько времени занимает процесс?</span></summary><div class="q__a" data-en="Candidate selection takes 15–25 days depending on the quantity and profession. After that come permits, visas, and the flight, and these timelines depend on the destination country and how busy the authorities are. We give you the exact timeline for your vacancy after reviewing your request." data-ur="امیدواروں کا انتخاب تعداد اور پیشے کے لحاظ سے 15 سے 25 دن لیتا ہے۔ اس کے بعد اجازت نامے، ویزے اور پرواز کا مرحلہ آتا ہے، اور اس کی مدت متعلقہ ملک اور اداروں کے کام کے بوجھ پر منحصر ہوتی ہے۔ آپ کی اسامی کی صحیح مدت ہم درخواست کا جائزہ لینے کے بعد بتاتے ہیں۔">Подбор кандидатов занимает 15–25 дней в зависимости от количества и профессии. Дальше идут разрешения, визы и перелёт, и здесь сроки зависят от страны найма и загрузки органов. Точный срок по вашей вакансии называем после разбора заявки.</div></details>
+      <details class="q"><summary><span class="q__i">04</span><span data-en="How much does it cost?" data-ur="اس کی لاگت کتنی ہے؟">Сколько это стоит?</span></summary><div class="q__a" data-en="There's no fixed price list. The cost depends on the destination country, quantity, professions, and scope of support — we prepare an individual estimate." data-ur="کوئی مقررہ قیمت فہرست نہیں ہے۔ لاگت ملک، تعداد، پیشوں اور معاونت کے دائرہ کار پر منحصر ہوتی ہے — ہم ہر کیس کے لیے الگ تخمینہ تیار کرتے ہیں۔">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
+      <details class="q"><summary><span class="q__i">05</span><span data-en="What if a worker doesn't work out?" data-ur="اگر کارکن موزوں نہ ہو تو کیا ہوگا؟">Что если работник не подойдёт?</span></summary><div class="q__a" data-en="Replacement terms are fixed in the contract before work begins, so there's no ambiguity later." data-ur="تبدیلی کی شرائط ہم کام شروع ہونے سے پہلے ہی معاہدے میں طے کر لیتے ہیں، تاکہ بعد میں کوئی ابہام نہ رہے۔">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
+      <details class="q"><summary><span class="q__i">06</span><span data-en="We already have foreign workers — can you check them?" data-ur="ہمارے پاس پہلے سے غیر ملکی کارکن کام کر رہے ہیں — کیا آپ انہیں چیک کر سکتے ہیں؟">У нас уже работают иностранцы — проверите?</span></summary><div class="q__a" data-en="Yes, that's a migration audit: we check documents and deadlines, and show you the risks and what to fix." data-ur="جی ہاں، یہ امیگریشن آڈٹ کہلاتا ہے: ہم دستاویزات اور مدتیں چیک کرتے ہیں، اور بتاتے ہیں کہ کہاں خطرہ ہے اور کیا درست کرنا ہے۔">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
     </div>
   </div>
 </section>
@@ -747,30 +761,30 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 <section class="sec" id="contact">
   <div class="wide lead">
     <div class="rv">
-      <span class="ix" data-en="08 — Request">08 — Заявка</span>
-      <h2 data-en="Tell Us About Your Project">Расскажите о задаче</h2>
-      <p style="color:var(--muted);font-size:17.5px;max-width:42ch" data-en="Five lines — and we'll come back with a plan: what to arrange, in what order, and how long it will take.">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
+      <span class="ix" data-en="08 — Request" data-ur="08 — درخواست">08 — Заявка</span>
+      <h2 data-en="Tell Us About Your Project" data-ur="اپنی ضرورت بتائیں">Расскажите о задаче</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:42ch" data-en="Five lines — and we'll come back with a plan: what to arrange, in what order, and how long it will take." data-ur="صرف پانچ سطریں — اور ہم ایک منصوبے کے ساتھ رابطہ کریں گے: کیا تیار کرنا ہے، کس ترتیب میں، اور کتنے وقت میں۔">Пять строк — и мы вернёмся с планом: что оформить, в каком порядке, за какой срок.</p>
       <div class="alt">
         <a class="alt__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp: +996 700 123 445</a>
-        <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
-        <a href="mailto:workunityglobe@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>workunityglobe@gmail.com</a>
+        <a href="tel:+996700123445" dir="ltr"><svg aria-hidden="true"><use href="#phone"/></svg>+996 700 123 445</a>
+        <a href="mailto:workunityglobe@gmail.com" dir="ltr"><svg aria-hidden="true"><use href="#mail"/></svg>workunityglobe@gmail.com</a>
       </div>
       <div class="qr">
         <img src="img/whatsapp-qr.png" alt="QR-код для чата WorkUnity в WhatsApp" width="180" height="168" loading="lazy">
-        <span data-en="On desktop — scan the QR code with your phone">С компьютера — наведите камеру телефона на код</span>
+        <span data-en="On desktop — scan the QR code with your phone" data-ur="کمپیوٹر پر ہیں تو — فون کیمرہ کوڈ پر رکھیں">С компьютера — наведите камеру телефона на код</span>
       </div>
     </div>
     <div class="fc rv rv-d1">
-      <div class="fc__t" data-en="Application Form">Форма заявки</div>
-      <div class="fc__s" data-en="Response Within One Business Day">Ответ в течение рабочего дня</div>
+      <div class="fc__t" data-en="Application Form" data-ur="درخواست فارم">Форма заявки</div>
+      <div class="fc__s" data-en="Response Within One Business Day" data-ur="ایک کاروباری دن میں جواب">Ответ в течение рабочего дня</div>
       <form id="leadform" novalidate>
-        <div class="f"><label for="c0" data-en="Country Where Workers Are Needed">Страна, где нужны работники</label><select id="c0" name="country"><option data-en="Kyrgyzstan">Кыргызстан</option><option data-en="Kazakhstan">Казахстан</option><option data-en="Uzbekistan">Узбекистан</option><option data-en="Russia">Россия</option><option data-en="Other Country">Другая страна</option></select></div>
-        <div class="f"><label for="c1" data-en="Company and Your Name">Компания и ваше имя</label><input id="c1" name="company" type="text" autocomplete="organization" required></div>
-        <div class="f"><label for="c2" data-en="Professions and Quantity">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
-        <div class="f"><label for="c3" data-en="When Do You Need Them">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
-        <div class="f"><label for="c4" data-en="Phone or Email">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
-        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-en="Send via WhatsApp">Отправить в WhatsApp</span></button>
-        <p class="fn" data-en="Clicking the button opens WhatsApp with a ready message — just send it.">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
+        <div class="f"><label for="c0" data-en="Country Where Workers Are Needed" data-ur="وہ ملک جہاں کارکن درکار ہیں">Страна, где нужны работники</label><select id="c0" name="country"><option data-en="Kyrgyzstan" data-ur="کرغزستان">Кыргызстан</option><option data-en="Kazakhstan" data-ur="قازقستان">Казахстан</option><option data-en="Uzbekistan" data-ur="ازبکستان">Узбекистан</option><option data-en="Russia" data-ur="روس">Россия</option><option data-en="Other Country" data-ur="دیگر ملک">Другая страна</option></select></div>
+        <div class="f"><label for="c1" data-en="Company and Your Name" data-ur="کمپنی اور آپ کا نام">Компания и ваше имя</label><input id="c1" name="company" type="text" autocomplete="organization" required></div>
+        <div class="f"><label for="c2" data-en="Professions and Quantity" data-ur="پیشے اور تعداد">Профессии и количество</label><textarea id="c2" name="need" placeholder="Сварщики — 15, разнорабочие — 30" required></textarea></div>
+        <div class="f"><label for="c3" data-en="When Do You Need Them" data-ur="کب تک کارکن درکار ہیں">Когда нужны люди</label><input id="c3" name="when" type="text" placeholder="К декабрю" required></div>
+        <div class="f"><label for="c4" data-en="Phone or Email" data-ur="فون یا ای میل">Телефон или email</label><input id="c4" name="contact" type="text" autocomplete="tel" required></div>
+        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-en="Send via WhatsApp" data-ur="WhatsApp پر بھیجیں">Отправить в WhatsApp</span></button>
+        <p class="fn" data-en="Clicking the button opens WhatsApp with a ready message — just send it." data-ur="بٹن دبانے پر WhatsApp ایک تیار پیغام کے ساتھ کھل جائے گا — بس اسے بھیجنا ہوگا۔">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
         <div class="fm" id="msg" role="status"></div>
       </form>
     </div>
@@ -786,19 +800,19 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <a class="logo" href="#top" aria-label="WorkUnity">
           <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
-        <p style="margin-top:16px;max-width:32ch" data-en="Foreign labor for companies in nine destination countries.">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+        <p style="margin-top:16px;max-width:32ch" data-en="Foreign labor for companies in nine destination countries." data-ur="نو ممالک کی کمپنیوں کے لیے غیر ملکی افرادی قوت۔">Иностранная рабочая сила для предприятий девяти стран найма.</p>
       </div>
-      <div><h4 data-en="Sections">Разделы</h4><ul><li><a href="#net" data-en="Geography">Страны</a></li><li><a href="#sol" data-en="Services">Решения</a></li><li><a href="#proc" data-en="Process">Процедура</a></li><li><a href="inostrantsam.html" data-en="For Foreigners">Иностранцам</a></li><li><a href="partners.html" data-en="Partners">Партнёры</a></li></ul></div>
-      <div><h4 data-en="Resources">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions">Инструкция</a></li><li><a href="#faq" data-en="FAQ">Вопросы</a></li><li><a href="#ind" data-en="Industries">Отрасли</a></li></ul></div>
-      <div><h4 data-en="Contact">Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li data-en="Bishkek">Бишкек</li></ul></div>
+      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="#net" data-en="Geography" data-ur="ممالک">Страны</a></li><li><a href="#sol" data-en="Services" data-ur="خدمات">Решения</a></li><li><a href="#proc" data-en="Process" data-ur="طریقہ کار">Процедура</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёры</a></li></ul></div>
+      <div><h4 data-en="Resources" data-ur="وسائل">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">Инструкция</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">Отрасли</a></li></ul></div>
+      <div><h4 data-en="Contact" data-ur="رابطہ">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">Бишкек</li></ul></div>
     </div>
-    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-en="WorkUnity LLC · reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;" data-ur="WorkUnity LLC · رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span></span></div>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-en="Call">Позвонить</span></a>
-  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Write">Написать</span></a>
+  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-en="Call" data-ur="کال کریں">Позвонить</span></a>
+  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Write" data-ur="پیغام بھیجیں">Написать</span></a>
 </div>
 
 <script type="application/ld+json">
@@ -835,78 +849,96 @@ var LANG = 'ru';
 /* ═══ DATA ═══════════════════════════════════════════════ */
 var GENERIC_DOCS = ['Разрешение на привлечение иностранной рабочей силы','Разрешение на работу для специалиста','Виза для въезда','Регистрация по месту пребывания','Трудовой договор на понятном работнику языке'];
 var GENERIC_DOCS_EN = ['Foreign Labor Attraction Permit','Work Permit for the Specialist','Entry Visa','Registration at Place of Stay','Employment Contract in a Language the Worker Understands'];
+var GENERIC_DOCS_UR = ['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','ماہر کے لیے ورک پرمٹ','داخلے کے لیے ویزا','قیام کے مقام پر رجسٹریشن','کارکن کی سمجھ میں آنے والی زبان میں ملازمت کا معاہدہ'];
 var DEST = [
-  {id:'kg', name:'Кыргызстан', name_en:'Kyrgyzstan',
+  {id:'kg', name:'Кыргызстан', name_en:'Kyrgyzstan', name_ur:'کرغزستان',
    lead:'Предприятие получает право нанимать иностранцев, затем оформляются документы на каждого работника.',
    lead_en:'The company obtains the right to hire foreign workers, then documents are processed for each worker.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
-  {id:'kz', name:'Казахстан', name_en:'Kazakhstan',
+   lead_ur:'کمپنی کو غیر ملکیوں کی خدمات حاصل کرنے کا حق ملتا ہے، پھر ہر کارکن کے لیے دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'kz', name:'Казахстан', name_en:'Kazakhstan', name_ur:'قازقستان',
    lead:'Привлечение идёт в рамках квоты, поэтому проверку возможности делаем до старта подбора.',
    lead_en:'Recruitment takes place within a quota, so we check availability before starting the selection process.',
+   lead_ur:'بھرتی کوٹے کے تحت ہوتی ہے، اس لیے ہم انتخاب شروع کرنے سے پہلے امکان کی جانچ کرتے ہیں۔',
    docs:['Разрешение на привлечение иностранной рабочей силы','Квота на привлечение','Виза для трудовой деятельности','Регистрация по месту пребывания','Трудовой договор'],
-   docs_en:['Foreign Labor Attraction Permit','Recruitment Quota','Work Visa','Registration at Place of Stay','Employment Contract']},
-  {id:'uz', name:'Узбекистан', name_en:'Uzbekistan',
+   docs_en:['Foreign Labor Attraction Permit','Recruitment Quota','Work Visa','Registration at Place of Stay','Employment Contract'],
+   docs_ur:['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','بھرتی کا کوٹہ','ملازمت کا ویزا','قیام کے مقام پر رجسٹریشن','ملازمت کا معاہدہ']},
+  {id:'uz', name:'Узбекистан', name_en:'Uzbekistan', name_ur:'ازبکستان',
    lead:'Разрешительная часть проходит через уполномоченный орган по внешней трудовой миграции.',
    lead_en:'The permit process goes through the authorized body for external labor migration.',
+   lead_ur:'اجازت کا مرحلہ بیرونی لیبر امیگریشن کے مجاز ادارے کے ذریعے مکمل ہوتا ہے۔',
    docs:['Разрешение на привлечение иностранной рабочей силы','Подтверждение права на трудовую деятельность','Виза для въезда','Регистрация по месту пребывания','Трудовой договор'],
-   docs_en:['Foreign Labor Attraction Permit','Confirmation of the Right to Work','Entry Visa','Registration at Place of Stay','Employment Contract']},
-  {id:'ru', name:'Россия', name_en:'Russia',
+   docs_en:['Foreign Labor Attraction Permit','Confirmation of the Right to Work','Entry Visa','Registration at Place of Stay','Employment Contract'],
+   docs_ur:['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','ملازمت کے حق کی تصدیق','داخلے کے لیے ویزا','قیام کے مقام پر رجسٹریشن','ملازمت کا معاہدہ']},
+  {id:'ru', name:'Россия', name_en:'Russia', name_ur:'روس',
    lead:'Для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки действует визовый порядок с уведомлением органов.',
    lead_en:'A visa-based procedure with mandatory notification of the authorities applies to citizens of India, Pakistan, Bangladesh, Nepal, and Sri Lanka.',
+   lead_ur:'بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا کے شہریوں کے لیے ویزے پر مبنی طریقہ کار ہے جس میں اداروں کو لازمی اطلاع دی جاتی ہے۔',
    docs:['Разрешение на привлечение и использование иностранных работников','Разрешение на работу для специалиста','Приглашение и рабочая виза','Миграционный учёт по месту пребывания','Уведомление о заключении трудового договора'],
-   docs_en:['Permit to Attract and Employ Foreign Workers','Work Permit for the Specialist','Invitation and Work Visa','Migration Registration at Place of Stay','Notification of Employment Contract Conclusion']},
-  {id:'az', name:'Азербайджан', name_en:'Azerbaijan',
+   docs_en:['Permit to Attract and Employ Foreign Workers','Work Permit for the Specialist','Invitation and Work Visa','Migration Registration at Place of Stay','Notification of Employment Contract Conclusion'],
+   docs_ur:['غیر ملکی کارکنوں کو رکھنے اور استعمال کرنے کا اجازت نامہ','ماہر کے لیے ورک پرمٹ','دعوت نامہ اور ورک ویزا','قیام کے مقام پر امیگریشن رجسٹریشن','ملازمت کے معاہدے کی اطلاع']},
+  {id:'az', name:'Азербайджан', name_en:'Azerbaijan', name_ur:'آذربائیجان',
    lead:'Предприятие получает право привлекать иностранных работников, затем оформляются документы на каждого специалиста.',
    lead_en:'The company obtains the right to engage foreign workers, then documents are processed for each specialist.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
-  {id:'by', name:'Беларусь', name_en:'Belarus',
+   lead_ur:'کمپنی کو غیر ملکی کارکن رکھنے کا حق ملتا ہے، پھر ہر ماہر کے لیے دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'by', name:'Беларусь', name_en:'Belarus', name_ur:'بیلاروس',
    lead:'Сначала оформляется право предприятия привлекать иностранную рабочую силу, затем — документы на конкретного работника.',
    lead_en:'First, the company\'s right to engage foreign labor is issued, then documents for the specific worker.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
-  {id:'tj', name:'Таджикистан', name_en:'Tajikistan',
+   lead_ur:'پہلے کمپنی کو غیر ملکی افرادی قوت رکھنے کا حق دیا جاتا ہے، پھر متعلقہ کارکن کی دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'tj', name:'Таджикистан', name_en:'Tajikistan', name_ur:'تاجکستان',
    lead:'Привлечение иностранных специалистов проходит в разрешительном порядке: сначала предприятие, затем работник.',
    lead_en:'Engaging foreign specialists follows a permit-based procedure: first the company, then the worker.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
-  {id:'ge', name:'Грузия', name_en:'Georgia',
+   lead_ur:'غیر ملکی ماہرین کی بھرتی اجازت نامے کے طریقہ کار سے ہوتی ہے: پہلے کمپنی، پھر کارکن۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'ge', name:'Грузия', name_en:'Georgia', name_ur:'جارجیا',
    lead:'Предприятие получает разрешение на привлечение иностранной рабочей силы, затем оформляются документы работника.',
    lead_en:'The company obtains a permit to engage foreign labor, then the worker\'s documents are processed.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN},
-  {id:'ua', name:'Украина', name_en:'Ukraine',
+   lead_ur:'کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ ملتا ہے، پھر کارکن کی دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'ua', name:'Украина', name_en:'Ukraine', name_ur:'یوکرین',
    lead:'Привлечение иностранных специалистов идёт по разрешительному порядку — сначала предприятие, затем работник.',
    lead_en:'Engaging foreign specialists follows a permit-based procedure — first the company, then the worker.',
-   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN}
+   lead_ur:'غیر ملکی ماہرین کی بھرتی اجازت نامے کے طریقہ کار کے مطابق ہوتی ہے — پہلے کمپنی، پھر کارکن۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR}
 ];
 var DNOTE_RU = 'ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.';
 var DNOTE_EN = 'THIS LIST REFLECTS THE GENERAL PROCEDURE. THE EXACT SET OF DOCUMENTS AND TIMELINE FOR YOUR VACANCY ARE CONFIRMED DURING A CONSULTATION.';
+var DNOTE_UR = 'یہ فہرست عمومی طریقہ کار ظاہر کرتی ہے۔ آپ کی اسامی کے لیے دستاویزات کی صحیح تفصیل اور مدت مشاورت کے دوران بتائی جاتی ہے۔';
 
 var state = { c:0 };
 
 /* ═══ COUNTRY PANEL (section 01) ═════════════════════════ */
 var dsel = $('#dsel'), dpanel = $('#dpanel');
 
+function destName(d){ return LANG === 'en' ? d.name_en : LANG === 'ur' ? d.name_ur : d.name; }
+function destDocs(d){ return LANG === 'en' ? d.docs_en : LANG === 'ur' ? d.docs_ur : d.docs; }
+function destLead(d){ return LANG === 'en' ? d.lead_en : LANG === 'ur' ? d.lead_ur : d.lead; }
 function renderSel(){
   dsel.innerHTML = '';
   DEST.forEach(function(d, i){
     var b = document.createElement('button');
     b.type = 'button'; b.setAttribute('role','tab');
     b.setAttribute('aria-selected', i === state.c ? 'true' : 'false');
-    b.textContent = LANG === 'en' ? d.name_en : d.name;
+    b.textContent = destName(d);
     b.addEventListener('click', function(){ state.c = i; syncAll(); });
     dsel.appendChild(b);
   });
 }
 function renderPanel(){
   var d = DEST[state.c];
-  var docs = (LANG === 'en' ? d.docs_en : d.docs).map(function(x, n){
+  var docs = destDocs(d).map(function(x, n){
     return '<div class="doc"><span class="doc__n">' + String(n+1).padStart(2,'0') + '</span>' +
            '<svg aria-hidden="true"><use href="#tick"/></svg><span>' + x + '</span></div>';
   }).join('');
-  var titlePrefix = LANG === 'en' ? 'What Is Processed: ' : 'Что оформляется: ';
+  var titlePrefix = LANG === 'en' ? 'What Is Processed: ' : LANG === 'ur' ? 'کیا تیار ہوتا ہے: ' : 'Что оформляется: ';
+  var dnote = LANG === 'en' ? DNOTE_EN : LANG === 'ur' ? DNOTE_UR : DNOTE_RU;
   dpanel.innerHTML =
-    '<div class="dpanel__t">' + titlePrefix + (LANG === 'en' ? d.name_en : d.name) + '</div>' +
-    '<p class="dpanel__s">' + (LANG === 'en' ? d.lead_en : d.lead) + '</p>' +
+    '<div class="dpanel__t">' + titlePrefix + destName(d) + '</div>' +
+    '<p class="dpanel__s">' + destLead(d) + '</p>' +
     '<div class="docs">' + docs + '</div>' +
-    '<p class="dnote">' + (LANG === 'en' ? DNOTE_EN : DNOTE_RU) + '</p>';
+    '<p class="dnote">' + dnote + '</p>';
 }
 function syncAll(){
   renderSel(); renderPanel();
@@ -915,9 +947,10 @@ function syncAll(){
 /* ═══ TICKER ═════════════════════════════════════════════ */
 var trades = ['Сварщики','Монтажники металлоконструкций','Операторы ЧПУ','Швеи','Арматурщики','Бетонщики','Операторы линий','Кладовщики','Водители погрузчика','Электромонтажники','Отделочники','Разнорабочие','Плиточники','Слесари-сборщики','Дорожные рабочие'];
 var tradesEn = ['Welders','Steel Structure Installers','CNC Operators','Seamstresses','Rebar Workers','Concrete Workers','Line Operators','Warehouse Workers','Forklift Drivers','Electricians','Finishers','General Workers','Tile Layers','Assembly Fitters','Road Workers'];
+var tradesUr = ['ویلڈرز','اسٹیل اسٹرکچر انسٹالرز','سی این سی آپریٹرز','درزی','سریا فٹرز','کنکریٹ ورکرز','لائن آپریٹرز','گودام ورکرز','فورک لفٹ ڈرائیورز','الیکٹریشنز','فنشنگ ورکرز','عام مزدور','ٹائل لگانے والے','اسمبلی فٹرز','سڑک کے مزدور'];
 var row = $('#tickRow');
 function renderTicker(){
-  var list = LANG === 'en' ? tradesEn : trades;
+  var list = LANG === 'en' ? tradesEn : LANG === 'ur' ? tradesUr : trades;
   var tickHtml = list.map(function(t){ return '<span class="tick__i">' + t + '</span>'; }).join('');
   row.innerHTML = tickHtml + tickHtml;
 }
@@ -990,7 +1023,7 @@ var vf = $('#vf');
 function playVideo(){
   if(vf.dataset.on) return;
   vf.dataset.on = '1';
-  var noVideo = LANG === 'en' ? "Your browser doesn't support video." : 'Ваш браузер не поддерживает видео.';
+  var noVideo = LANG === 'en' ? "Your browser doesn't support video." : LANG === 'ur' ? 'آپ کا براؤزر ویڈیو سپورٹ نہیں کرتا۔' : 'Ваш браузер не поддерживает видео.';
   vf.innerHTML = '<video controls autoplay playsinline preload="metadata" poster="video/ali-poster.jpg"><source src="video/ali.mp4" type="video/mp4">' + noVideo + '</video>';
 }
 vf.addEventListener('click', playVideo);
@@ -1010,8 +1043,10 @@ f.addEventListener('submit', function(e){
   });
   m.classList.add('on');
   if(bad){
-    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.' : 'Заполните отмеченные поля.';
-    m.style.borderLeftColor = 'var(--err)';
+    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.'
+      : LANG === 'ur' ? 'براہ کرم نشان زدہ خانے پُر کریں۔'
+      : 'Заполните отмеченные поля.';
+    m.style.borderInlineStartColor = 'var(--err)';
     bad.focus();
     return;
   }
@@ -1022,6 +1057,13 @@ f.addEventListener('submit', function(e){
       + 'Professions and quantity: ' + v.need + '\n'
       + 'Timeline: ' + v.when + '\n'
       + 'Contact: ' + v.contact)
+    : LANG === 'ur'
+    ? ('WorkUnity ویب سائٹ سے درخواست\n\n'
+      + 'ملازمت کا ملک: ' + f.elements.country.value + '\n'
+      + 'کمپنی: ' + v.company + '\n'
+      + 'پیشے اور تعداد: ' + v.need + '\n'
+      + 'مدت: ' + v.when + '\n'
+      + 'رابطہ: ' + v.contact)
     : ('Заявка с сайта WorkUnity\n\n'
       + 'Страна найма: ' + f.elements.country.value + '\n'
       + 'Компания: ' + v.company + '\n'
@@ -1031,8 +1073,10 @@ f.addEventListener('submit', function(e){
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   m.textContent = LANG === 'en'
     ? 'Opening WhatsApp with a ready message. If the window didn\'t appear — allow pop-ups or write to us directly.'
+    : LANG === 'ur'
+    ? 'WhatsApp ایک تیار پیغام کے ساتھ کھل رہا ہے۔ اگر ونڈو ظاہر نہ ہو — پاپ اپس کی اجازت دیں یا براہ راست ہمیں لکھیں۔'
     : 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
-  m.style.borderLeftColor = 'var(--accent)';
+  m.style.borderInlineStartColor = 'var(--accent)';
 });
 f.addEventListener('input', function(e){ if(e.target.classList) e.target.classList.remove('err'); });
 
@@ -1047,35 +1091,89 @@ nav.addEventListener('click', function(e){
 });
 
 /* ═══ LANGUAGE SWITCH ═════════════════════════════════════ */
+var RTL_LANGS = { ur: true };
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  if (i === -1) i = 0;
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+
+var SEO = {
+  ru: {
+    title: 'WorkUnity — иностранные рабочие для вашего предприятия',
+    description: 'Подбор рабочих из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Разрешения, квоты, документы, юридические консультации.',
+    ogTitle: 'WorkUnity — иностранные рабочие для вашего предприятия',
+    ogDescription: 'Подбор, разрешения, документы, юридические консультации. Девять стран найма.'
+  },
+  en: {
+    title: 'WorkUnity — Foreign Workers for Your Business',
+    description: 'Recruiting workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. Permits, quotas, documents, legal consultations.',
+    ogTitle: 'WorkUnity — Foreign Workers for Your Business',
+    ogDescription: 'Recruitment, permits, documents, legal consultations. Nine destination countries.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'WorkUnity — آپ کے کاروبار کے لیے غیر ملکی کارکن',
+    description: 'کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے کارکنوں کی بھرتی۔ اجازت نامے، کوٹے، دستاویزات، قانونی مشاورت۔',
+    ogTitle: 'WorkUnity — آپ کے کاروبار کے لیے غیر ملکی کارکن',
+    ogDescription: 'بھرتی، اجازت نامے، دستاویزات، قانونی مشاورت۔ نو ممالک میں ملازمت۔',
+    locale: 'ur_PK'
+  }
+};
+SEO.ru.locale = 'ru_RU';
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
+}
+
 var lsw = $('#lsw');
 var i18nNodes = $$('[data-en]').map(function(el){
-  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en') };
+  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en'), ur:el.getAttribute('data-ur') };
 });
 var ATTR_I18N = [
-  { sel:'#c2', attr:'placeholder', ru:'Сварщики — 15, разнорабочие — 30', en:'Welders — 15, general workers — 30' },
-  { sel:'#c3', attr:'placeholder', ru:'К декабрю', en:'By December' },
-  { sel:'#mainnav', attr:'aria-label', ru:'Основное меню', en:'Main menu' },
-  { sel:'#burger', attr:'aria-label', ru:'Открыть меню', en:'Open menu' },
-  { sel:'#vf', attr:'aria-label', ru:'Смотреть видеообращение основателя', en:"Watch the founder's video message" },
-  { sel:'#dsel', attr:'aria-label', ru:'Страна найма', en:'Destination country' },
-  { sel:'.qr img', attr:'alt', ru:'QR-код для чата WorkUnity в WhatsApp', en:'QR code for the WorkUnity WhatsApp chat' }
+  { sel:'#c2', attr:'placeholder', ru:'Сварщики — 15, разнорабочие — 30', en:'Welders — 15, general workers — 30', ur:'ویلڈرز — 15، عام مزدور — 30' },
+  { sel:'#c3', attr:'placeholder', ru:'К декабрю', en:'By December', ur:'دسمبر تک' },
+  { sel:'#mainnav', attr:'aria-label', ru:'Основное меню', en:'Main menu', ur:'مرکزی مینو' },
+  { sel:'#burger', attr:'aria-label', ru:'Открыть меню', en:'Open menu', ur:'مینو کھولیں' },
+  { sel:'#vf', attr:'aria-label', ru:'Смотреть видеообращение основателя', en:"Watch the founder's video message", ur:'بانی کا ویڈیو پیغام دیکھیں' },
+  { sel:'#dsel', attr:'aria-label', ru:'Страна найма', en:'Destination country', ur:'ملازمت کا ملک' },
+  { sel:'.qr img', attr:'alt', ru:'QR-код для чата WorkUnity в WhatsApp', en:'QR code for the WorkUnity WhatsApp chat', ur:'WorkUnity WhatsApp چیٹ کے لیے QR کوڈ' },
+  { sel:'#tsw', attr:'aria-label', ru:'Тема', en:'Theme', ur:'تھیم' }
 ];
 function setLang(lang){
-  LANG = lang === 'en' ? 'en' : 'ru';
+  LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
   document.documentElement.lang = LANG;
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
   lsw.setAttribute('data-lang', LANG);
-  i18nNodes.forEach(function(n){ n.el.innerHTML = LANG === 'en' ? n.en : n.ru; });
+  i18nNodes.forEach(function(n){
+    var val = LANG === 'en' ? n.en : LANG === 'ur' ? n.ur : n.ru;
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
   ATTR_I18N.forEach(function(a){
     var el = $(a.sel);
-    if(el) el.setAttribute(a.attr, LANG === 'en' ? a.en : a.ru);
+    if(el){
+      var val = LANG === 'en' ? a.en : LANG === 'ur' ? a.ur : a.ru;
+      el.setAttribute(a.attr, (val && val.trim()) ? val : a.ru);
+    }
   });
+  applySeo(LANG);
   renderTicker();
   syncAll();
   try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
 }
-lsw.addEventListener('click', function(){ setLang(LANG === 'ru' ? 'en' : 'ru'); });
+lsw.addEventListener('click', function(){ setLang(nextLang(LANG)); });
 var savedLang = 'ru';
 try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+if (ENABLED_LANGS.indexOf(savedLang) === -1) savedLang = 'ru';
 setLang(savedLang);
 
 /* ═══ THEME SWITCH ════════════════════════════════════════ */

@@ -1060,7 +1060,7 @@ function setLang(lang){
   LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
   document.documentElement.lang = LANG;
   document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
-  lsw.setAttribute('data-lang', LANG === 'ur' ? 'en' : LANG);
+  lsw.setAttribute('data-lang', LANG);
   var dict = DICTS[LANG];
   i18nNodes.forEach(function(n){
     var val = dict && dict[n.key];

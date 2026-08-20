@@ -3,227 +3,796 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Как легально нанять иностранного работника — инструкция для работодателя (Кыргызстан, Казахстан, Узбекистан, Россия) | WorkUnity</title>
+<script>document.documentElement.className+=" js";</script>
+<script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Как легально нанять иностранного работника — инструкция для работодателя | WorkUnity</title>
 <meta name="description" content="Порядок привлечения иностранной рабочей силы в Кыргызстане, Казахстане, Узбекистане и России: разрешения, документы, обязанности работодателя, типичные ошибки.">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
-<meta name="theme-color" content="#112347">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="WorkUnity">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://workunity.pro/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="Как легально нанять иностранного работника — инструкция для работодателя">
+<meta property="og:title" content="Как легально нанять иностранного работника">
 <meta property="og:description" content="Порядок действий, документы и обязанности работодателя.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#112347;--navy-deep:#0B1730;--navy-soft:#1D3866;--gold:#C59B42;--gold-deep:#A07725;--paper:#FFFFFF;--grey:#F4F6F9;--ink:#16233C;--muted:#5C6B85;--muted-on-navy:#9FB0CC;--line:#E2E7EF;--line-on-navy:#2A4270;--h:'Manrope',system-ui,sans-serif;--b:'Inter',system-ui,sans-serif;--gut:clamp(18px,5vw,56px);--r:14px}
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-line:#22355C;
+  --navy-glass:rgba(15,30,61,.9);
+  --muted-l:#93A3BF;
+
+  --green:#0E9F6E;
+  --green-deep:#0C875E;
+
+  --paper:#FFFFFF;
+  --surface:#FFFFFF;
+  --card:#FFFFFF;
+  --bone:#F5F3EF;
+  --field-focus:#FFFFFF;
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --line:#E4E1DA;
+
+  --accent:#0F1E3D;
+  --accent-deep:#070E1D;
+  --accent-rgb:15,30,61;
+
+  --err:#B3402A;
+  --err-bg:#FCF4F2;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:10px;
+  --r-lg:14px;
+  --r-sm:8px;
+  --sec:clamp(64px,9vw,140px);
+}
+
+:root[data-theme="dark"]{
+  --paper:#0D1826;
+  --surface:#101E30;
+  --card:#15273C;
+  --bone:#1B2E45;
+  --field-focus:#21395A;
+  --ink:#F4EFE6;
+  --muted:#A9B6C6;
+  --line:rgba(255,255,255,.08);
+
+  --accent:#7290DB;
+  --accent-deep:#93ABE8;
+  --accent-rgb:114,144,219;
+
+  --err:#E5665A;
+  --err-bg:#3A2220;
+}
+
+/* 1b ─ URDU TYPOGRAPHY --------------------------------------
+   Same mechanism as o-workunity.html: swap the shared --h/--b/--m
+   tokens under html[lang="ur"] so every component picks up Nastaliq
+   automatically, with the vertical room and de-tracked spacing it
+   needs (tight letter-spacing/uppercase break its joined letterforms). */
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
+
+/* 2 ─ BASE ---------------------------------------------------*/
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--h);font-weight:700;line-height:1.2;margin:0;letter-spacing:-.02em}
-p{margin:0}ul,ol{margin:0;padding:0}svg{display:block}a{color:var(--navy-soft)}
-.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
-.narrow{max-width:760px;margin:0 auto;padding-inline:var(--gut)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border:1.5px solid transparent;border-radius:10px;font-family:var(--h);font-size:15.5px;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.btn--gold{background:var(--gold);color:#20180A;border-color:var(--gold)}
-.btn--gold:hover{background:#D6AC52;border-color:#D6AC52}
-.btn--outline-l{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn--outline-l:hover{background:rgba(255,255,255,.1);border-color:#fff}
-.btn--sm{padding:11px 18px;font-size:14.5px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.hdr{position:sticky;top:0;z-index:70;background:var(--navy);border-bottom:1px solid var(--line-on-navy)}
-.hdr__in{display:flex;align-items:center;gap:18px;height:70px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
-.logo__w{width:34px;height:26px;flex:none}
-.logo__t{font-family:var(--h);font-weight:800;font-size:19px;color:#fff;letter-spacing:-.02em}
-.back{font-size:15px;color:var(--muted-on-navy);text-decoration:none;font-weight:500}
-.back:hover{color:#fff}
-.top{background:var(--navy);color:#fff;padding-block:clamp(40px,6vw,70px) clamp(44px,6vw,74px)}
-.eyebrow{font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
-.top h1{font-size:clamp(28px,4.2vw,46px);font-weight:800;margin-block:16px 18px;max-width:20ch}
-.top p{color:var(--muted-on-navy);font-size:18px;max-width:56ch}
-.toc{margin-top:34px;border-top:1px solid var(--line-on-navy);padding-top:24px;display:grid;gap:9px}
-@media(min-width:700px){.toc{grid-template-columns:repeat(2,1fr);column-gap:32px}}
-.toc a{display:flex;gap:12px;color:var(--muted-on-navy);text-decoration:none;font-size:15px;transition:color .18s ease}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.04em}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+.narrow{max-width:900px}
+
+.ix{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;flex-wrap:wrap;row-gap:6px}
+.ix::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--navy{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn--navy:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--sm{padding:11px 19px;font-size:14px}
+.btn--full{width:100%;padding-block:18px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
+
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER — идентична index.html / o-workunity.html */
+.hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
+.logo img{height:26px;width:auto}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
+.nav{display:none;gap:28px}
+@media(min-width:1100px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1100px){.burger{display:none}}
+@media(max-width:1099px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    inset-inline:0;background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130;max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+@media(max-width:479px){.hdr__in{gap:12px}}
+
+.hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
+.tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
+.tsw:hover{border-color:#fff}
+.tsw svg{width:16px;height:16px}
+.tsw__moon{display:none}
+[data-theme="dark"] .tsw__sun{display:none}
+[data-theme="dark"] .tsw__moon{display:block}
+@media(max-width:479px){
+  .hdr .wide{padding-inline:10px}
+  .hdr__in{gap:5px}
+  .hdr__tools{gap:3px}
+  .lsw{padding:0 5px;font-size:10px;gap:3px}
+  .lsw__ur{font-size:11px}
+  .tsw{width:28px;height:28px}
+  .tsw svg{width:14px;height:14px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
+}
+
+/* SECTIONS base rhythm */
+.sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,6vw,86px)}
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(28px,4.2vw,52px);margin-top:16px;max-width:22ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:56ch;font-size:16.5px}
+
+
+
+/* GUIDE ----------------------------------------------------------------*/
+.g-top{background:var(--navy);color:#fff;padding-block:clamp(44px,6.5vw,80px) clamp(44px,6vw,74px)}
+.g-top .ix{color:var(--accent-l,#7290DB)}
+.g-top h1{font-size:clamp(30px,4.4vw,50px);margin-block:18px 20px;max-width:20ch;color:#fff}
+.g-top p{color:var(--muted-l);font-size:clamp(16px,1.6vw,18.5px);max-width:58ch;line-height:1.6}
+.toc{margin-top:clamp(30px,3.6vw,42px);border-top:1px solid var(--navy-line);padding-top:26px;
+  display:grid;gap:9px}
+@media(min-width:720px){.toc{grid-template-columns:repeat(2,1fr);column-gap:34px}}
+.toc a{display:flex;gap:12px;color:var(--muted-l);text-decoration:none;font-size:15px;
+  transition:color .18s;padding-block:3px}
 .toc a:hover{color:#fff}
-.toc b{color:var(--gold);font-family:var(--h);font-weight:700;flex:none}
-article{padding-block:clamp(44px,6vw,72px)}
-article h2{font-size:clamp(22px,2.8vw,31px);margin-top:52px;margin-bottom:16px;scroll-margin-top:90px}
-article h2:first-of-type{margin-top:0}
-article h3{font-size:19px;margin-top:30px;margin-bottom:10px}
-article p{margin-bottom:16px;color:#22314E}
-article ul{margin:0 0 20px;padding-left:0;list-style:none;display:grid;gap:10px}
-article ul li{padding-left:22px;position:relative;color:#22314E}
-article ul li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-article ol{margin:0 0 20px;padding-left:22px;display:grid;gap:10px;color:#22314E}
-.callout{background:var(--grey);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 22px;margin:26px 0}
-.callout p{margin:0;font-size:16px}
-.callout strong{font-family:var(--h)}
-.warn{background:#FDF6EC;border-left-color:var(--gold-deep)}
-.cta{background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(26px,4vw,38px);margin-top:56px;text-align:left}
-.cta h3{color:#fff;font-size:23px;margin-bottom:12px}
-.cta p{color:var(--muted-on-navy);margin-bottom:22px}
-.ftr{background:var(--navy-deep);color:var(--muted-on-navy);padding-block:34px;font-size:14.5px}
-.ftr__in{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
-.ftr a{color:var(--muted-on-navy);text-decoration:none}
-.ftr a:hover{color:var(--gold)}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms!important}}
+.toc b{color:#fff;font-family:var(--m);font-weight:500;font-size:12px;flex:none;opacity:.6;
+  padding-top:3px}
+.g-body{max-width:820px;margin:0 auto;padding-inline:var(--gut);padding-block:clamp(44px,6vw,76px)}
+.g-body h2{font-size:clamp(22px,2.8vw,31px);margin-top:clamp(44px,5vw,60px);margin-bottom:16px;
+  scroll-margin-top:96px}
+.g-body h2:first-of-type{margin-top:0}
+.g-body h3{font-size:18.5px;margin-top:30px;margin-bottom:10px}
+.g-body p{margin-bottom:16px;color:var(--ink)}
+.g-body ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:11px}
+.g-body ul li{padding-inline-start:22px;position:relative;color:var(--ink)}
+.g-body ul li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;
+  height:7px;border-radius:50%;background:var(--accent)}
+.g-call{background:var(--bone);border-inline-start:3px solid var(--accent);
+  border-radius:0 var(--r-lg) var(--r-lg) 0;padding:20px 22px;margin:26px 0}
+html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
+.g-call p{margin:0;font-size:15.5px;color:var(--ink)}
+.g-warn{border-inline-start-color:var(--err)}
+.g-tw{overflow-x:auto;margin-bottom:24px}
+.g-tab{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.g-tab th{text-align:start;padding:10px 12px;font-family:var(--h);font-weight:700;
+  border-bottom:2px solid var(--line);color:var(--ink)}
+.g-tab td{padding:12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.g-tab tr:last-child td{border-bottom:0}
+.g-tab td:first-child{color:var(--ink);font-weight:600}
+.g-cta{background:var(--navy);color:#fff;border-radius:var(--r-lg);
+  padding:clamp(26px,4vw,40px);margin-top:clamp(44px,5vw,64px)}
+.g-cta h3{color:#fff;font-size:clamp(20px,2.3vw,25px);margin-bottom:12px}
+.g-cta p{color:var(--muted-l);margin-bottom:22px;max-width:56ch}
+
+/* FOOTER — идентичен index.html / o-workunity.html */
+.ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
+.ftr .logo img{height:90px;filter:brightness(0)}
+[data-theme="dark"] .ftr .logo img{filter:none}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--accent)}
+.ftr a.ftr__wa{color:var(--green)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* MOTION ---------------------------------------------------------------*/
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+
 </style>
 </head>
-<body>
+<body data-page="guide">
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2 7 10 6 10-6"/></symbol>
+</svg>
+
 
 <header class="hdr">
-  <div class="wrap hdr__in">
+  <div class="wide hdr__in">
     <a class="logo" href="index.html" aria-label="WorkUnity">
-      <svg class="logo__w" viewBox="0 0 44 34" aria-hidden="true"><path d="M2 2h6.6l5 17.5L18.4 2h5.4l4.3 17.5L31.6 2H38l-7.2 30h-6.2L21 15.6 17.6 32h-6.2z" fill="#fff"/><circle cx="36.5" cy="6.5" r="4.5" fill="#fff"/></svg>
-      <span class="logo__t">WorkUnity</span>
+      <img src="img/logo-mark-white.png" alt="WorkUnity" height="26">
+      <span>WorkUnity</span>
     </a>
-    <a class="back" href="index.html">← На главную</a>
-    <a class="btn btn--gold btn--sm" href="index.html#contact">Консультация</a>
+    <nav class="nav" id="mainnav" data-i18n-attr="aria-label:nav.aria_main_menu" aria-label="Основное меню">
+      <a href="index.html" class="on" aria-current="page" data-i18n="nav.employers">Работодателям</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" data-i18n="nav.partners">Партнёрам</a><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a>
+    </nav>
+    <div class="hdr__tools">
+      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
+      <button class="tsw" id="tsw" type="button" data-i18n-attr="aria-label:header.aria_theme" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
+    </div>
+    <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact" data-i18n="header.consultation">Консультация</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" data-i18n-attr="aria-label:header.aria_open_menu" aria-label="Открыть меню"><span></span></button>
   </div>
 </header>
 
-<section class="top">
+<main id="top">
+
+<section class="g-top">
   <div class="wrap">
-    <span class="eyebrow">Инструкция для работодателя</span>
-    <h1>Как легально нанять иностранного работника</h1>
-    <p>Порядок действий, документы и обязанности нанимателя в Кыргызстане, Казахстане, Узбекистане и России. Логика одна во всех четырёх странах — различаются названия документов и сроки.</p>
-    <nav class="toc" aria-label="Содержание">
-      <a href="#kto"><b>01</b><span>Кто считается иностранным работником</span></a>
-      <a href="#poryadok"><b>02</b><span>Общий порядок: два разрешения</span></a>
-      <a href="#rabotodatel"><b>03</b><span>Разрешение для работодателя</span></a>
-      <a href="#rabotnik"><b>04</b><span>Разрешение на работу для специалиста</span></a>
-      <a href="#vjezd"><b>05</b><span>Въезд, регистрация, договор</span></a>
-      <a href="#obyazannosti"><b>06</b><span>Обязанности после трудоустройства</span></a>
-      <a href="#oshibki"><b>07</b><span>Типичные ошибки</span></a>
-      <a href="#voprosy"><b>08</b><span>Короткие ответы</span></a>
-    </nav>
+    <span class="ix" data-i18n="g.eyebrow">Инструкция для работодателя</span>
+    <h1 data-i18n="g.h1">Как легально нанять иностранного работника</h1>
+    <p data-i18n="g.lead">Порядок действий, документы и обязанности нанимателя в Кыргызстане, Казахстане, Узбекистане и России. Логика одна во всех четырёх странах — различаются названия документов и сроки.</p>
+      <nav class="toc" aria-label="Содержание" data-i18n-attr="aria-label:g.tocaria">
+        <a href="#kto"><b>01</b><span data-i18n="g.toc1">Кто считается иностранным работником</span></a>
+        <a href="#poryadok"><b>02</b><span data-i18n="g.toc2">Общий порядок: два разрешения</span></a>
+        <a href="#rabotodatel"><b>03</b><span data-i18n="g.toc3">Разрешение для работодателя</span></a>
+        <a href="#rabotnik"><b>04</b><span data-i18n="g.toc4">Разрешение на работу для специалиста</span></a>
+        <a href="#vjezd"><b>05</b><span data-i18n="g.toc5">Въезд, регистрация, договор</span></a>
+        <a href="#obyazannosti"><b>06</b><span data-i18n="g.toc6">Обязанности после трудоустройства</span></a>
+        <a href="#oshibki"><b>07</b><span data-i18n="g.toc7">Типичные ошибки</span></a>
+        <a href="#voprosy"><b>08</b><span data-i18n="g.toc8">Короткие ответы</span></a>
+      </nav>
   </div>
 </section>
 
-<article class="narrow">
-
-  <h2 id="kto">01. Кто считается иностранным работником</h2>
-  <p>Иностранный работник — это гражданин другого государства или лицо без гражданства, которого предприятие нанимает по трудовому договору. Правила привлечения таких работников отличаются от найма собственных граждан, и разница касается не самого трудового договора, а разрешительной части, которая идёт до него.</p>
-  <p>Гражданство работника определяет процедуру. Для граждан государств Евразийского экономического союза порядок один, для граждан остальных стран — включая Индию, Пакистан, Бангладеш, Непал и Шри-Ланку — другой, более длинный. Эта инструкция описывает второй случай.</p>
-
-  <h2 id="poryadok">02. Общий порядок: два разрешения, а не одно</h2>
-  <p>Самое частое заблуждение работодателей: считать, что достаточно оформить документы работнику. На деле разрешений два, и они разные по адресату.</p>
+<article class="g-body">
+  <h2 id="kto" data-i18n="g.h.kto">01. Кто считается иностранным работником</h2>
+  <p data-i18n="g.kto.p1">Иностранный работник — это гражданин другого государства или лицо без гражданства, которого предприятие нанимает по трудовому договору. Правила привлечения таких работников отличаются от найма собственных граждан, и разница касается не самого трудового договора, а разрешительной части, которая идёт до него.</p>
+  <p data-i18n="g.kto.p2">Гражданство работника определяет процедуру. Для граждан государств Евразийского экономического союза порядок один, для граждан остальных стран — включая Индию, Пакистан, Бангладеш, Непал и Шри-Ланку — другой, более длинный. Эта инструкция описывает второй случай.</p>
+  <h2 id="poryadok" data-i18n="g.h.poryadok">02. Общий порядок: два разрешения, а не одно</h2>
+  <p data-i18n="g.por.p1">Самое частое заблуждение работодателей: считать, что достаточно оформить документы работнику. На деле разрешений два, и они разные по адресату.</p>
   <ul>
-    <li><strong>Разрешение на привлечение иностранной рабочей силы</strong> — получает предприятие. Это право нанимать иностранцев в принципе, на определённое количество мест.</li>
-    <li><strong>Разрешение на работу</strong> — получает конкретный специалист. Это право этого человека работать у этого работодателя.</li>
+    <li data-i18n="g.por.li1"><strong>Разрешение на привлечение иностранной рабочей силы</strong> — получает предприятие. Это право нанимать иностранцев в принципе, на определённое количество мест.</li>
+    <li data-i18n="g.por.li2"><strong>Разрешение на работу</strong> — получает конкретный специалист. Это право этого человека работать у этого работодателя.</li>
   </ul>
-  <p>Порядок имеет значение: сначала право у компании, затем документы у людей. Попытка сделать наоборот приводит к тому, что работник приезжает, а работать легально не может.</p>
-
-  <div class="callout">
-    <p><strong>Коротко:</strong> сначала разрешение предприятию, потом разрешение работнику, потом виза и въезд, потом регистрация и трудовой договор. Каждый следующий шаг зависит от предыдущего.</p>
+  <p data-i18n="g.por.p2">Порядок имеет значение: сначала право у компании, затем документы у людей. Попытка сделать наоборот приводит к тому, что работник приезжает, а работать легально не может.</p>
+  <div class="g-call"><p data-i18n="g.por.call"><strong>Коротко:</strong> сначала разрешение предприятию, потом разрешение работнику, потом виза и въезд, потом регистрация и трудовой договор. Каждый следующий шаг зависит от предыдущего.</p></div>
+  <h3 data-i18n="g.por.tabh">Как это называется в каждой стране</h3>
+  <div class="g-tw">
+    <table class="g-tab">
+      <thead><tr><th data-i18n="g.tab.c">Страна</th><th data-i18n="g.tab.e">Документ предприятия</th><th data-i18n="g.tab.w">Документ работника</th></tr></thead>
+      <tbody>
+        <tr><td data-i18n="g.tab.kg">Кыргызстан</td><td data-i18n="g.tab.kg.e">Разрешение на привлечение иностранной рабочей силы</td><td data-i18n="g.tab.kg.w">Разрешение на работу</td></tr>
+        <tr><td data-i18n="g.tab.kz">Казахстан</td><td data-i18n="g.tab.kz.e">Разрешение на привлечение в рамках квоты</td><td data-i18n="g.tab.kz.w">Разрешение на работу</td></tr>
+        <tr><td data-i18n="g.tab.uz">Узбекистан</td><td data-i18n="g.tab.uz.e">Разрешение на привлечение иностранной рабочей силы</td><td data-i18n="g.tab.uz.w">Подтверждение права на трудовую деятельность</td></tr>
+        <tr><td data-i18n="g.tab.ru">Россия</td><td data-i18n="g.tab.ru.e">Разрешение на привлечение и использование иностранных работников</td><td data-i18n="g.tab.ru.w">Разрешение на работу</td></tr>
+      </tbody>
+    </table>
   </div>
-
-
-  <h3>Как это называется в каждой стране</h3>
-  <div style="overflow-x:auto;margin-bottom:22px">
-  <table style="width:100%;border-collapse:collapse;font-size:15px;min-width:560px">
-    <thead><tr style="text-align:left;border-bottom:2px solid var(--line)">
-      <th style="padding:10px 12px 10px 0;font-family:var(--h)">Страна</th>
-      <th style="padding:10px 12px;font-family:var(--h)">Документ предприятия</th>
-      <th style="padding:10px 0 10px 12px;font-family:var(--h)">Документ работника</th></tr></thead>
-    <tbody>
-      <tr style="border-bottom:1px solid var(--line)"><td style="padding:12px 12px 12px 0"><b>Кыргызстан</b></td><td style="padding:12px">Разрешение на привлечение иностранной рабочей силы</td><td style="padding:12px 0 12px 12px">Разрешение на работу</td></tr>
-      <tr style="border-bottom:1px solid var(--line)"><td style="padding:12px 12px 12px 0"><b>Казахстан</b></td><td style="padding:12px">Разрешение на привлечение в рамках квоты</td><td style="padding:12px 0 12px 12px">Разрешение на работу</td></tr>
-      <tr style="border-bottom:1px solid var(--line)"><td style="padding:12px 12px 12px 0"><b>Узбекистан</b></td><td style="padding:12px">Разрешение на привлечение иностранной рабочей силы</td><td style="padding:12px 0 12px 12px">Подтверждение права на трудовую деятельность</td></tr>
-      <tr><td style="padding:12px 12px 12px 0"><b>Россия</b></td><td style="padding:12px">Разрешение на привлечение и использование иностранных работников</td><td style="padding:12px 0 12px 12px">Разрешение на работу</td></tr>
-    </tbody>
-  </table></div>
-  <p>Названия и порядок подачи различаются, но принцип везде один: сначала право у компании, затем документы у людей.</p>
-
-  <h2 id="rabotodatel">03. Разрешение для работодателя</h2>
-  <p>Первый шаг делает компания, ещё до того как выбран конкретный человек. Работодатель обращается в уполномоченный государственный орган с обоснованием: какие должности, сколько мест, почему эти работы не закрываются местными кадрами.</p>
-  <h3>Что обычно требуется подготовить</h3>
+  <p data-i18n="g.por.p3">Названия и порядок подачи различаются, но принцип везде один: сначала право у компании, затем документы у людей.</p>
+  <h2 id="rabotodatel" data-i18n="g.h.rabotodatel">03. Разрешение для работодателя</h2>
+  <p data-i18n="g.rd.p1">Первый шаг делает компания, ещё до того как выбран конкретный человек. Работодатель обращается в уполномоченный государственный орган с обоснованием: какие должности, сколько мест, почему эти работы не закрываются местными кадрами.</p>
+  <h3 data-i18n="g.rd.h">Что обычно требуется подготовить</h3>
   <ul>
-    <li>Учредительные документы предприятия и подтверждение регистрации</li>
-    <li>Обоснование потребности в иностранных работниках с перечнем должностей и количеством мест</li>
-    <li>Сведения о характере работ и условиях труда</li>
-    <li>Подтверждение условий проживания работников, если предприятие их обеспечивает</li>
-    <li>Документ об оплате установленного сбора</li>
+    <li data-i18n="g.rd.li1">Учредительные документы предприятия и подтверждение регистрации</li>
+    <li data-i18n="g.rd.li2">Обоснование потребности в иностранных работниках с перечнем должностей и количеством мест</li>
+    <li data-i18n="g.rd.li3">Сведения о характере работ и условиях труда</li>
+    <li data-i18n="g.rd.li4">Подтверждение условий проживания работников, если предприятие их обеспечивает</li>
+    <li data-i18n="g.rd.li5">Документ об оплате установленного сбора</li>
   </ul>
-  <p>Разрешение выдаётся на срок и на определённое количество мест. Если потребность выросла — оформляется дополнительно, «про запас» получить его нельзя.</p>
-
-  <div class="callout warn">
-    <p><strong>Точный перечень документов, размеры сборов и сроки рассмотрения устанавливаются нормативными актами каждой страны и периодически меняются.</strong> Перед подачей их нужно сверять с актуальной редакцией — это часть работы, которую мы берём на себя.</p>
-  </div>
-
-  <h2 id="rabotnik">04. Разрешение на работу для специалиста</h2>
-  <p>После того как у предприятия есть право нанимать, оформляются документы на конкретных людей. На этом этапе кандидат уже выбран, проверен и прошёл медицинское освидетельствование.</p>
+  <p data-i18n="g.rd.p2">Разрешение выдаётся на срок и на определённое количество мест. Если потребность выросла — оформляется дополнительно, «про запас» получить его нельзя.</p>
+  <div class="g-call g-warn"><p data-i18n="g.rd.warn"><strong>Точный перечень документов, размеры сборов и сроки рассмотрения устанавливаются нормативными актами каждой страны и периодически меняются.</strong> Перед подачей их нужно сверять с актуальной редакцией — это часть работы, которую мы берём на себя.</p></div>
+  <h2 id="rabotnik" data-i18n="g.h.rabotnik">04. Разрешение на работу для специалиста</h2>
+  <p data-i18n="g.rb.p1">После того как у предприятия есть право нанимать, оформляются документы на конкретных людей. На этом этапе кандидат уже выбран, проверен и прошёл медицинское освидетельствование.</p>
   <ul>
-    <li>Паспорт со сроком действия с запасом относительно планируемого периода работы</li>
-    <li>Документы о квалификации, при необходимости — с переводом и легализацией</li>
-    <li>Медицинское заключение</li>
-    <li>Фотографии и заполненные заявления установленной формы</li>
-    <li>Реквизиты разрешения, полученного работодателем</li>
+    <li data-i18n="g.rb.li1">Паспорт со сроком действия с запасом относительно планируемого периода работы</li>
+    <li data-i18n="g.rb.li2">Документы о квалификации, при необходимости — с переводом и легализацией</li>
+    <li data-i18n="g.rb.li3">Медицинское заключение</li>
+    <li data-i18n="g.rb.li4">Фотографии и заполненные заявления установленной формы</li>
+    <li data-i18n="g.rb.li5">Реквизиты разрешения, полученного работодателем</li>
   </ul>
-  <p>Разрешение на работу привязано к конкретному работодателю. Это значит, что работник не может по нему свободно перейти на другое предприятие — при смене нанимателя документы оформляются заново.</p>
-
-  <h2 id="vjezd">05. Въезд, регистрация и трудовой договор</h2>
-  <p>Когда разрешение на работу получено, оформляется виза соответствующей категории. В России для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки дополнительно оформляется приглашение. Далее — перелёт, встреча и въезд.</p>
-  <p>После прибытия отсчитывается срок, в течение которого иностранец обязан встать на регистрационный учёт по месту пребывания. Пропуск этого срока — одно из самых частых нарушений и самая обидная причина штрафа, потому что она не связана ни с чем содержательным.</p>
-  <p>Трудовой договор заключается в письменной форме. Работник должен понимать, что подписывает: если он не владеет языком страны найма, договор сопровождается переводом.</p>
-
-  <h2 id="obyazannosti">06. Что обязан делать работодатель после трудоустройства</h2>
-  <p>Разрешение — не разовое действие, а состояние, которое нужно поддерживать.</p>
+  <p data-i18n="g.rb.p2">Разрешение на работу привязано к конкретному работодателю. Это значит, что работник не может по нему свободно перейти на другое предприятие — при смене нанимателя документы оформляются заново.</p>
+  <h2 id="vjezd" data-i18n="g.h.vjezd">05. Въезд, регистрация и трудовой договор</h2>
+  <p data-i18n="g.vj.p1">Когда разрешение на работу получено, оформляется виза соответствующей категории. В России для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки дополнительно оформляется приглашение. Далее — перелёт, встреча и въезд.</p>
+  <p data-i18n="g.vj.p2">После прибытия отсчитывается срок, в течение которого иностранец обязан встать на регистрационный учёт по месту пребывания. Пропуск этого срока — одно из самых частых нарушений и самая обидная причина штрафа, потому что она не связана ни с чем содержательным.</p>
+  <p data-i18n="g.vj.p3">Трудовой договор заключается в письменной форме. Работник должен понимать, что подписывает: если он не владеет языком страны найма, договор сопровождается переводом.</p>
+  <h2 id="obyazannosti" data-i18n="g.h.obyazannosti">06. Что обязан делать работодатель после трудоустройства</h2>
+  <p data-i18n="g.ob.p1">Разрешение — не разовое действие, а состояние, которое нужно поддерживать.</p>
   <ul>
-    <li>Следить за сроками действия разрешений, виз и регистрации и продлевать их заблаговременно</li>
-    <li>Уведомлять уполномоченные органы о заключении и расторжении трудового договора в установленные сроки</li>
-    <li>Обеспечивать условия труда и оплаты не хуже, чем для граждан страны на аналогичных должностях</li>
-    <li>Хранить документы работников и быть готовым предъявить их при проверке</li>
-    <li>При увольнении иностранного работника — выполнить процедуры, связанные с прекращением его пребывания в этом статусе</li>
+    <li data-i18n="g.ob.li1">Следить за сроками действия разрешений, виз и регистрации и продлевать их заблаговременно</li>
+    <li data-i18n="g.ob.li2">Уведомлять уполномоченные органы о заключении и расторжении трудового договора в установленные сроки</li>
+    <li data-i18n="g.ob.li3">Обеспечивать условия труда и оплаты не хуже, чем для граждан страны на аналогичных должностях</li>
+    <li data-i18n="g.ob.li4">Хранить документы работников и быть готовым предъявить их при проверке</li>
+    <li data-i18n="g.ob.li5">При увольнении иностранного работника — выполнить процедуры, связанные с прекращением его пребывания в этом статусе</li>
   </ul>
-
-  <h2 id="oshibki">07. Типичные ошибки</h2>
-  <h3>Работник приступил к работе до получения разрешения</h3>
-  <p>Даже если человек уже находится в стране на законных основаниях, работать без разрешения он не вправе. Ответственность за это несёт наниматель.</p>
-  <h3>Разрешение получено на одну должность, а человек работает на другой</h3>
-  <p>Фактическая должность должна совпадать с той, что указана в документах. Расхождение трактуется как нарушение.</p>
-  <h3>Пропущен срок регистрации после въезда</h3>
-  <p>Срок короткий, и он начинает течь сразу. Это ответственность, о которой чаще всего забывают в первые дни, когда все заняты размещением людей.</p>
-  <h3>Разрешения не продлены вовремя</h3>
-  <p>Продление требует времени. Начинать за неделю до истечения срока — значит почти наверняка выйти за него.</p>
-  <h3>Работник переведён на другое предприятие группы</h3>
-  <p>Разрешение привязано к конкретному работодателю. Перевод внутри группы компаний без переоформления — нарушение, даже если собственник один.</p>
-
-  <h2 id="voprosy">08. Короткие ответы</h2>
-  <h3>Можно ли нанять иностранца, который уже находится в стране?</h3>
-  <p>Зависит от того, на каком основании он здесь находится и есть ли у него разрешение на работу. Само по себе законное пребывание права работать не даёт.</p>
-  <h3>Нужно ли разрешение, если работник нужен на месяц?</h3>
-  <p>Краткосрочность не отменяет разрешительный порядок. Нюансы зависят от характера работ — этот случай стоит разбирать отдельно.</p>
-  <h3>Кто платит сборы и пошлины — компания или работник?</h3>
-  <p>Распределение расходов определяется договорённостью сторон, но обязанность получить разрешение на привлечение лежит на работодателе.</p>
-  <h3>Что будет при проверке, если документы не в порядке?</h3>
-  <p>Последствия зависят от характера нарушения и страны и могут затрагивать как предприятие, так и право работника оставаться в стране. Именно поэтому имеет смысл проверять документы до проверки, а не после.</p>
-
-  <div class="callout">
-    <p>Эта инструкция описывает общий порядок и не заменяет юридическую консультацию по вашей ситуации. Требования и сроки устанавливаются законодательством страны найма и могут изменяться.</p>
+  <h2 id="oshibki" data-i18n="g.h.oshibki">07. Типичные ошибки</h2>
+  <h3 data-i18n="g.os.h1">Работник приступил к работе до получения разрешения</h3>
+  <p data-i18n="g.os.p1">Даже если человек уже находится в стране на законных основаниях, работать без разрешения он не вправе. Ответственность за это несёт наниматель.</p>
+  <h3 data-i18n="g.os.h2">Разрешение получено на одну должность, а человек работает на другой</h3>
+  <p data-i18n="g.os.p2">Фактическая должность должна совпадать с той, что указана в документах. Расхождение трактуется как нарушение.</p>
+  <h3 data-i18n="g.os.h3">Пропущен срок регистрации после въезда</h3>
+  <p data-i18n="g.os.p3">Срок короткий, и он начинает течь сразу. Это ответственность, о которой чаще всего забывают в первые дни, когда все заняты размещением людей.</p>
+  <h3 data-i18n="g.os.h4">Разрешения не продлены вовремя</h3>
+  <p data-i18n="g.os.p4">Продление требует времени. Начинать за неделю до истечения срока — значит почти наверняка выйти за него.</p>
+  <h3 data-i18n="g.os.h5">Работник переведён на другое предприятие группы</h3>
+  <p data-i18n="g.os.p5">Разрешение привязано к конкретному работодателю. Перевод внутри группы компаний без переоформления — нарушение, даже если собственник один.</p>
+  <h2 id="voprosy" data-i18n="g.h.voprosy">08. Короткие ответы</h2>
+  <h3 data-i18n="g.vo.h1">Можно ли нанять иностранца, который уже находится в стране?</h3>
+  <p data-i18n="g.vo.p1">Зависит от того, на каком основании он здесь находится и есть ли у него разрешение на работу. Само по себе законное пребывание права работать не даёт.</p>
+  <h3 data-i18n="g.vo.h2">Нужно ли разрешение, если работник нужен на месяц?</h3>
+  <p data-i18n="g.vo.p2">Краткосрочность не отменяет разрешительный порядок. Нюансы зависят от характера работ — этот случай стоит разбирать отдельно.</p>
+  <h3 data-i18n="g.vo.h3">Кто платит сборы и пошлины — компания или работник?</h3>
+  <p data-i18n="g.vo.p3">Распределение расходов определяется договорённостью сторон, но обязанность получить разрешение на привлечение лежит на работодателе.</p>
+  <h3 data-i18n="g.vo.h4">Что будет при проверке, если документы не в порядке?</h3>
+  <p data-i18n="g.vo.p4">Последствия зависят от характера нарушения и страны и могут затрагивать как предприятие, так и право работника оставаться в стране. Именно поэтому имеет смысл проверять документы до проверки, а не после.</p>
+  <div class="g-call"><p data-i18n="g.disclaimer">Эта инструкция описывает общий порядок и не заменяет юридическую консультацию по вашей ситуации. Требования и сроки устанавливаются законодательством страны найма и могут изменяться.</p></div>
+  <div class="g-cta">
+  <h3 data-i18n="g.cta.h">Разберём вашу ситуацию</h3>
+  <p data-i18n="g.cta.p">Расскажите, кто вам нужен и в каком количестве — вернёмся с планом: какие разрешения потребуются, в каком порядке и что нужно от вас.</p>
+    <a class="btn btn--white" href="index.html#contact" data-i18n="g.cta.btn">Получить консультацию</a>
   </div>
-
-  <div class="cta">
-    <h3>Разберём вашу ситуацию</h3>
-    <p>Расскажите, кто вам нужен и в каком количестве — вернёмся с планом: какие разрешения потребуются, в каком порядке и что нужно от вас.</p>
-    <a class="btn btn--gold" href="index.html#contact">Получить консультацию</a>
-  </div>
-
 </article>
 
+</main>
+
 <footer class="ftr">
-  <div class="wrap ftr__in">
-    <span>© 2026 WorkUnity</span>
-    <span><a href="index.html">На главную</a> · <a href="index.html#contact">Контакты</a></span>
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="index.html" aria-label="WorkUnity">
+          <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
+        </a>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
+      </div>
+      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
+      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
+      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
+    </div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
   </div>
 </footer>
 
+<div class="mcta" id="mcta">
+  <a class="mcta__go" href="index.html#contact" data-i18n="mcta.primary">Получить консультацию</a>
+  <a class="mcta__ico" href="tel:+996700123445" aria-label="Позвонить" data-i18n-attr="aria-label:mcta.call"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+</div>
+
+<script>
+(function(){
+'use strict';
+var WA_NUMBER = '996700123445';
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var LANG = 'ru';
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ SCROLL: progress + mobile CTA ═══════════════════════ */
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+onScroll();
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+var burger = $('#burger'), nav = $('#mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+});
+
+/* ═══ LOCALIZATION ════════════════════════════════════════ */
+var I18N_EN = {
+  'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
+  'nav.faq':'FAQ', 'nav.about':'About WorkUnity', 'nav.employers':'For Employers', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
+  'header.consultation2':'Become a Partner',
+  'footer.tagline':'WorkUnity — legal employment and migration support infrastructure.',
+  'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
+  'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic',
+  'mcta.call':'Call', 'mcta.primary':'Request a consultation',
+  'g.cta.btn':'Request a consultation',
+  'g.cta.h':'Let’s look at your situation',
+  'g.cta.p':'Tell us who you need and how many — we will come back with a plan: which permits are required, in what order, and what is needed from you.',
+  'g.disclaimer':'This guide describes the general order of things and does not replace legal advice on your situation. Requirements and deadlines are set by the law of the destination country and may change.',
+  'g.eyebrow':'An employer’s guide',
+  'g.h.kto':'01. Who counts as a foreign worker',
+  'g.h.obyazannosti':'06. What the employer must do after hiring',
+  'g.h.oshibki':'07. Common mistakes',
+  'g.h.poryadok':'02. The general order: two permits, not one',
+  'g.h.rabotnik':'04. The worker’s work permit',
+  'g.h.rabotodatel':'03. The employer’s permit',
+  'g.h.vjezd':'05. Entry, registration and the employment contract',
+  'g.h.voprosy':'08. Short answers',
+  'g.h1':'How to hire a foreign worker legally',
+  'g.kto.p1':'A foreign worker is a citizen of another state, or a stateless person, hired by a company under an employment contract. The rules for engaging such workers differ from hiring your own nationals, and the difference lies not in the employment contract itself but in the permit stage that comes before it.',
+  'g.kto.p2':'The worker’s citizenship determines the procedure. For citizens of the Eurasian Economic Union states there is one route; for citizens of all other countries — including India, Pakistan, Bangladesh, Nepal and Sri Lanka — there is another, longer one. This guide describes the second case.',
+  'g.lead':'The order of steps, the documents, and the employer’s obligations in Kyrgyzstan, Kazakhstan, Uzbekistan and Russia. The logic is the same in all four countries — only the names of the documents and the deadlines differ.',
+  'g.ob.li1':'Track the validity of permits, visas and registrations, and renew them well in advance',
+  'g.ob.li2':'Notify the authorised bodies of the conclusion and termination of employment contracts within the set deadlines',
+  'g.ob.li3':'Provide working and pay conditions no worse than those for nationals in comparable positions',
+  'g.ob.li4':'Keep workers’ documents and be ready to produce them during an inspection',
+  'g.ob.li5':'On dismissing a foreign worker, complete the procedures relating to the end of their stay in that status',
+  'g.ob.p1':'A permit is not a one-off act but a status that has to be maintained.',
+  'g.os.h1':'The worker started before the permit was issued',
+  'g.os.h2':'The permit is for one position and the person works in another',
+  'g.os.h3':'The registration deadline after entry was missed',
+  'g.os.h4':'Permits were not renewed in time',
+  'g.os.h5':'The worker was moved to another company in the group',
+  'g.os.p1':'Even if the person is already in the country lawfully, they have no right to work without a permit. The employer bears the responsibility.',
+  'g.os.p2':'The actual position must match the one stated in the documents. A discrepancy is treated as a violation.',
+  'g.os.p3':'The deadline is short and starts running immediately. It is the obligation most often forgotten in the first days, when everyone is busy settling people in.',
+  'g.os.p4':'Renewal takes time. Starting a week before expiry almost guarantees running past it.',
+  'g.os.p5':'The permit is tied to a specific employer. A transfer within a group of companies without new paperwork is a violation, even if the owner is the same.',
+  'g.por.call':'<strong>In short:</strong> first the company’s permit, then the worker’s permit, then the visa and entry, then registration and the employment contract. Each step depends on the one before it.',
+  'g.por.li1':'<strong>The permit to engage foreign labour</strong> is obtained by the company. It is the right to hire foreign nationals at all, for a set number of positions.',
+  'g.por.li2':'<strong>The work permit</strong> is obtained by the individual specialist. It is that person’s right to work for that employer.',
+  'g.por.p1':'The most common employer misconception is that it is enough to process the worker’s paperwork. In reality there are two permits, and they are issued to different parties.',
+  'g.por.p2':'The order matters: first the company’s right, then the individuals’ documents. Doing it the other way round ends with a worker who has arrived but cannot legally work.',
+  'g.por.p3':'The names and the filing order differ, but the principle is the same everywhere: first the company’s right, then the individuals’ documents.',
+  'g.por.tabh':'What it is called in each country',
+  'g.rb.li1':'A passport valid well beyond the planned period of work',
+  'g.rb.li2':'Qualification documents, translated and legalised where required',
+  'g.rb.li3':'A medical certificate',
+  'g.rb.li4':'Photographs and completed application forms',
+  'g.rb.li5':'The reference details of the permit obtained by the employer',
+  'g.rb.p1':'Once the company has the right to hire, documents are prepared for specific individuals. By this stage the candidate has been selected, checked and medically examined.',
+  'g.rb.p2':'A work permit is tied to a specific employer. The worker cannot move freely to another company on it — changing employer means the documents are prepared again.',
+  'g.rd.h':'What is usually required',
+  'g.rd.li1':'The company’s constitutional documents and proof of registration',
+  'g.rd.li2':'A justification of the need for foreign workers, listing positions and the number of places',
+  'g.rd.li3':'Details of the nature of the work and the working conditions',
+  'g.rd.li4':'Confirmation of workers’ accommodation, where the company provides it',
+  'g.rd.li5':'Proof of payment of the prescribed fee',
+  'g.rd.p1':'The first step is taken by the company, before any individual has been chosen. The employer applies to the authorised state body with a justification: which positions, how many places, and why the work cannot be covered by local staff.',
+  'g.rd.p2':'The permit is issued for a period and for a set number of places. If the need grows, a further permit is applied for; it cannot be obtained "in reserve".',
+  'g.rd.warn':'<strong>The exact list of documents, the fees and the processing times are set by each country’s regulations and change from time to time.</strong> They must be checked against the current version before filing — that is part of the work we take on.',
+  'g.tab.c':'Country',
+  'g.tab.e':'Company document',
+  'g.tab.kg':'Kyrgyzstan',
+  'g.tab.kg.e':'Permit to engage foreign labour',
+  'g.tab.kg.w':'Work permit',
+  'g.tab.kz':'Kazakhstan',
+  'g.tab.kz.e':'Permit to engage within the quota',
+  'g.tab.kz.w':'Work permit',
+  'g.tab.ru':'Russia',
+  'g.tab.ru.e':'Permit to engage and employ foreign workers',
+  'g.tab.ru.w':'Work permit',
+  'g.tab.uz':'Uzbekistan',
+  'g.tab.uz.e':'Permit to engage foreign labour',
+  'g.tab.uz.w':'Confirmation of the right to work',
+  'g.tab.w':'Worker document',
+  'g.toc1':'Who counts as a foreign worker',
+  'g.toc2':'The general order: two permits',
+  'g.toc3':'The employer’s permit',
+  'g.toc4':'The worker’s work permit',
+  'g.toc5':'Entry, registration, contract',
+  'g.toc6':'Obligations after hiring',
+  'g.toc7':'Common mistakes',
+  'g.toc8':'Short answers',
+  'g.vj.p1':'Once the work permit is issued, a visa of the appropriate category is arranged. In Russia, an invitation is additionally issued for citizens of India, Pakistan, Bangladesh, Nepal and Sri Lanka. Then come the flight, the meeting on arrival, and entry.',
+  'g.vj.p2':'On arrival a deadline starts running within which the foreign national must register at their place of stay. Missing it is one of the most common violations and the most galling reason for a fine, because nothing of substance lies behind it.',
+  'g.vj.p3':'The employment contract is concluded in writing. The worker must understand what they are signing: if they do not speak the language of the destination country, the contract is accompanied by a translation.',
+  'g.vo.h1':'Can I hire a foreign national who is already in the country?',
+  'g.vo.h2':'Is a permit needed if the worker is only needed for a month?',
+  'g.vo.h3':'Who pays the fees and duties — the company or the worker?',
+  'g.vo.h4':'What happens during an inspection if the documents are not in order?',
+  'g.vo.p1':'It depends on the basis of their stay and whether they hold a work permit. Lawful presence by itself does not confer the right to work.',
+  'g.vo.p2':'A short term does not remove the permit requirement. The details depend on the nature of the work — this case is worth reviewing separately.',
+  'g.vo.p3':'How costs are shared is a matter of agreement between the parties, but the obligation to obtain the engagement permit rests with the employer.',
+  'g.vo.p4':'The consequences depend on the nature of the violation and the country, and may affect both the company and the worker’s right to remain. That is precisely why it is worth checking documents before an inspection rather than after one.',
+  'g.tocaria':'Contents',
+  'header.consultation':'Consultation',
+};
+var I18N_UR = {
+  'nav.aria_main_menu':'مرکزی مینیو', 'header.aria_theme':'تھیم', 'header.aria_open_menu':'مینیو کھولیں',
+  'nav.faq':'سوالات', 'nav.about':'WorkUnity کے بارے میں', 'nav.employers':'آجروں کے لیے', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
+  'header.consultation2':'شراکت دار بنیں',
+  'footer.tagline':'WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔',
+  'footer.sections':'حصے', 'footer.materials':'وسائل', 'footer.instructions':'ہدایات',
+  'footer.contacts':'رابطہ', 'footer.city':'بشکیک', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان',
+  'mcta.call':'کال کریں', 'mcta.primary':'مشاورت حاصل کریں',
+  'g.cta.btn':'مشاورت حاصل کریں',
+  'g.cta.h':'آئیے آپ کی صورتحال دیکھتے ہیں',
+  'g.cta.p':'ہمیں بتائیں کہ آپ کو کون اور کتنے چاہئیں — ہم ایک منصوبے کے ساتھ واپس آئیں گے: کون سے اجازت نامے درکار ہوں گے، کس ترتیب سے، اور آپ سے کیا درکار ہے۔',
+  'g.disclaimer':'یہ رہنما عمومی ترتیب بیان کرتا ہے اور آپ کی صورتحال پر قانونی مشورے کا متبادل نہیں۔ شرائط اور مدتیں ملازمت والے ملک کے قانون سے طے ہوتی ہیں اور بدل سکتی ہیں۔',
+  'g.eyebrow':'آجر کے لیے رہنما',
+  'g.h.kto':'01. غیر ملکی کارکن کون شمار ہوتا ہے',
+  'g.h.obyazannosti':'06. بھرتی کے بعد آجر کو کیا کرنا ہوتا ہے',
+  'g.h.oshibki':'07. عام غلطیاں',
+  'g.h.poryadok':'02. عمومی ترتیب: ایک نہیں، دو اجازت نامے',
+  'g.h.rabotnik':'04. کارکن کا ورک پرمٹ',
+  'g.h.rabotodatel':'03. آجر کا اجازت نامہ',
+  'g.h.vjezd':'05. داخلہ، رجسٹریشن اور ملازمت کا معاہدہ',
+  'g.h.voprosy':'08. مختصر جوابات',
+  'g.h1':'غیر ملکی کارکن کو قانونی طور پر کیسے بھرتی کریں',
+  'g.kto.p1':'غیر ملکی کارکن سے مراد کسی دوسرے ملک کا شہری یا بے وطن شخص ہے جسے ادارہ ملازمت کے معاہدے پر رکھتا ہے۔ ایسے کارکنوں کو لانے کے قواعد اپنے شہریوں کی بھرتی سے مختلف ہیں، اور فرق خود ملازمت کے معاہدے میں نہیں بلکہ اُس اجازت نامے کے مرحلے میں ہے جو اس سے پہلے آتا ہے۔',
+  'g.kto.p2':'کارکن کی شہریت طریقۂ کار طے کرتی ہے۔ یوریشیائی اقتصادی یونین کے شہریوں کے لیے ایک راستہ ہے؛ باقی تمام ممالک کے شہریوں کے لیے — بشمول بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا — دوسرا، زیادہ طویل راستہ۔ یہ رہنما دوسری صورت بیان کرتا ہے۔',
+  'g.lead':'کرغزستان، قازقستان، ازبکستان اور روس میں مراحل کی ترتیب، دستاویزات اور آجر کی ذمہ داریاں۔ چاروں ممالک میں منطق ایک ہی ہے — صرف دستاویزات کے نام اور مدتیں مختلف ہیں۔',
+  'g.ob.li1':'اجازت ناموں، ویزوں اور رجسٹریشن کی مدت پر نظر رکھیں اور بروقت تجدید کرائیں',
+  'g.ob.li2':'مقررہ مدت کے اندر مجاز اداروں کو ملازمت کے معاہدے کے آغاز اور اختتام کی اطلاع دیں',
+  'g.ob.li3':'اسی نوعیت کی اسامیوں پر ملکی شہریوں سے کم درجے کے حالاتِ کار اور اجرت نہ رکھیں',
+  'g.ob.li4':'کارکنوں کی دستاویزات محفوظ رکھیں اور معائنے کے وقت پیش کرنے کے لیے تیار رہیں',
+  'g.ob.li5':'غیر ملکی کارکن کو فارغ کرتے وقت اُس حیثیت میں قیام ختم ہونے سے متعلق کارروائی مکمل کریں',
+  'g.ob.p1':'اجازت نامہ ایک بار کا کام نہیں بلکہ ایک حیثیت ہے جسے برقرار رکھنا پڑتا ہے۔',
+  'g.os.h1':'کارکن نے اجازت نامے سے پہلے کام شروع کر دیا',
+  'g.os.h2':'اجازت نامہ ایک اسامی کا ہے اور شخص کسی اور پر کام کر رہا ہے',
+  'g.os.h3':'داخلے کے بعد رجسٹریشن کی مدت گزر گئی',
+  'g.os.h4':'اجازت نامے بروقت تجدید نہیں ہوئے',
+  'g.os.h5':'کارکن کو گروپ کے کسی دوسرے ادارے میں منتقل کر دیا گیا',
+  'g.os.p1':'خواہ شخص پہلے سے قانونی طور پر ملک میں موجود ہو، اجازت نامے کے بغیر کام کرنے کا حق نہیں رکھتا۔ اس کی ذمہ داری آجر پر ہے۔',
+  'g.os.p2':'اصل اسامی وہی ہونی چاہیے جو دستاویزات میں درج ہے۔ فرق کو خلاف ورزی سمجھا جاتا ہے۔',
+  'g.os.p3':'مدت مختصر ہے اور فوراً شروع ہو جاتی ہے۔ یہی وہ ذمہ داری ہے جو پہلے دنوں میں سب سے زیادہ بھول جاتی ہے، جب سب لوگوں کو ٹھہرانے میں مصروف ہوتے ہیں۔',
+  'g.os.p4':'تجدید میں وقت لگتا ہے۔ میعاد ختم ہونے سے ایک ہفتہ پہلے شروع کرنے کا مطلب تقریباً یقینی طور پر مدت سے آگے نکل جانا ہے۔',
+  'g.os.p5':'اجازت نامہ ایک مخصوص آجر سے منسلک ہے۔ کاغذات دوبارہ بنائے بغیر گروپ کے اندر منتقلی خلاف ورزی ہے، خواہ مالک ایک ہی ہو۔',
+  'g.por.call':'<strong>مختصراً:</strong> پہلے ادارے کا اجازت نامہ، پھر کارکن کا اجازت نامہ، پھر ویزا اور داخلہ، پھر رجسٹریشن اور ملازمت کا معاہدہ۔ ہر اگلا قدم پچھلے پر منحصر ہے۔',
+  'g.por.li1':'<strong>غیر ملکی افرادی قوت لانے کا اجازت نامہ</strong> ادارہ حاصل کرتا ہے۔ یہ سرے سے غیر ملکیوں کو، ایک مقررہ تعداد میں، بھرتی کرنے کا حق ہے۔',
+  'g.por.li2':'<strong>ورک پرمٹ</strong> متعلقہ کارکن خود حاصل کرتا ہے۔ یہ اُس شخص کا اُس آجر کے پاس کام کرنے کا حق ہے۔',
+  'g.por.p1':'آجروں کی سب سے عام غلط فہمی یہ ہے کہ صرف کارکن کے کاغذات مکمل کرنا کافی ہے۔ حقیقت میں دو اجازت نامے ہوتے ہیں، اور وہ الگ الگ فریقوں کو جاری ہوتے ہیں۔',
+  'g.por.p2':'ترتیب اہم ہے: پہلے ادارے کا حق، پھر افراد کی دستاویزات۔ اُلٹا کرنے کا نتیجہ یہ نکلتا ہے کہ کارکن پہنچ جاتا ہے مگر قانونی طور پر کام نہیں کر سکتا۔',
+  'g.por.p3':'نام اور جمع کرانے کی ترتیب مختلف ہے، مگر اصول ہر جگہ ایک ہے: پہلے ادارے کا حق، پھر افراد کی دستاویزات۔',
+  'g.por.tabh':'ہر ملک میں اسے کیا کہتے ہیں',
+  'g.rb.li1':'پاسپورٹ جس کی مدت مجوزہ عرصۂ کار سے خاصی زیادہ ہو',
+  'g.rb.li2':'قابلیت کی دستاویزات، ضرورت پڑنے پر ترجمے اور تصدیق کے ساتھ',
+  'g.rb.li3':'طبی سرٹیفکیٹ',
+  'g.rb.li4':'تصاویر اور مقررہ فارم پر مکمل درخواستیں',
+  'g.rb.li5':'آجر کے حاصل کردہ اجازت نامے کی تفصیلات',
+  'g.rb.p1':'جب ادارے کو بھرتی کا حق مل جائے تو مخصوص افراد کے کاغذات تیار کیے جاتے ہیں۔ اس مرحلے تک امیدوار منتخب، جانچا اور طبی معائنے سے گزر چکا ہوتا ہے۔',
+  'g.rb.p2':'ورک پرمٹ ایک مخصوص آجر سے منسلک ہوتا ہے۔ کارکن اس پر آزادانہ طور پر کسی دوسرے ادارے میں نہیں جا سکتا — آجر بدلنے پر دستاویزات نئے سرے سے بنتی ہیں۔',
+  'g.rd.h':'عام طور پر کیا تیار کرنا ہوتا ہے',
+  'g.rd.li1':'ادارے کی بنیادی دستاویزات اور رجسٹریشن کا ثبوت',
+  'g.rd.li2':'غیر ملکی کارکنوں کی ضرورت کا جواز، اسامیوں کی فہرست اور جگہوں کی تعداد کے ساتھ',
+  'g.rd.li3':'کام کی نوعیت اور حالاتِ کار کی تفصیل',
+  'g.rd.li4':'کارکنوں کی رہائش کی تصدیق، اگر ادارہ فراہم کرتا ہے',
+  'g.rd.li5':'مقررہ فیس کی ادائیگی کا ثبوت',
+  'g.rd.p1':'پہلا قدم ادارہ اٹھاتا ہے، اس سے پہلے کہ کوئی فرد منتخب ہو۔ آجر مجاز سرکاری ادارے کو جواز کے ساتھ درخواست دیتا ہے: کون سی اسامیاں، کتنی جگہیں، اور یہ کام مقامی عملے سے کیوں پورا نہیں ہو سکتا۔',
+  'g.rd.p2':'اجازت نامہ ایک مدت اور مقررہ تعداد کی جگہوں کے لیے جاری ہوتا ہے۔ ضرورت بڑھنے پر مزید درخواست دی جاتی ہے؛ اسے «ذخیرے کے طور پر» حاصل نہیں کیا جا سکتا۔',
+  'g.rd.warn':'<strong>دستاویزات کی درست فہرست، فیسیں اور کارروائی کی مدت ہر ملک کے ضوابط طے کرتے ہیں اور یہ وقتاً فوقتاً بدلتے رہتے ہیں۔</strong> درخواست سے پہلے انہیں موجودہ نسخے سے ملانا ضروری ہے — یہ اُس کام کا حصہ ہے جو ہم اپنے ذمے لیتے ہیں۔',
+  'g.tab.c':'ملک',
+  'g.tab.e':'ادارے کی دستاویز',
+  'g.tab.kg':'کرغزستان',
+  'g.tab.kg.e':'غیر ملکی افرادی قوت لانے کا اجازت نامہ',
+  'g.tab.kg.w':'ورک پرمٹ',
+  'g.tab.kz':'قازقستان',
+  'g.tab.kz.e':'کوٹے کے اندر لانے کا اجازت نامہ',
+  'g.tab.kz.w':'ورک پرمٹ',
+  'g.tab.ru':'روس',
+  'g.tab.ru.e':'غیر ملکی کارکنوں کو لانے اور ملازمت دینے کا اجازت نامہ',
+  'g.tab.ru.w':'ورک پرمٹ',
+  'g.tab.uz':'ازبکستان',
+  'g.tab.uz.e':'غیر ملکی افرادی قوت لانے کا اجازت نامہ',
+  'g.tab.uz.w':'کام کے حق کی تصدیق',
+  'g.tab.w':'کارکن کی دستاویز',
+  'g.toc1':'غیر ملکی کارکن کون شمار ہوتا ہے',
+  'g.toc2':'عمومی ترتیب: دو اجازت نامے',
+  'g.toc3':'آجر کا اجازت نامہ',
+  'g.toc4':'کارکن کا ورک پرمٹ',
+  'g.toc5':'داخلہ، رجسٹریشن، معاہدہ',
+  'g.toc6':'بھرتی کے بعد ذمہ داریاں',
+  'g.toc7':'عام غلطیاں',
+  'g.toc8':'مختصر جوابات',
+  'g.vj.p1':'ورک پرمٹ جاری ہونے کے بعد متعلقہ قسم کا ویزا بنایا جاتا ہے۔ روس میں بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا کے شہریوں کے لیے مزید ایک دعوت نامہ بھی جاری ہوتا ہے۔ اس کے بعد پرواز، آمد پر استقبال اور داخلہ۔',
+  'g.vj.p2':'آمد کے ساتھ ہی ایک مدت شروع ہو جاتی ہے جس کے اندر غیر ملکی کو اپنے قیام کی جگہ پر رجسٹریشن کرانی ہوتی ہے۔ یہ مدت گنوا دینا سب سے عام خلاف ورزیوں میں سے ہے اور جرمانے کی سب سے تکلیف دہ وجہ، کیونکہ اس کے پیچھے کوئی حقیقی سبب نہیں ہوتا۔',
+  'g.vj.p3':'ملازمت کا معاہدہ تحریری صورت میں ہوتا ہے۔ کارکن کو سمجھنا چاہیے کہ وہ کس چیز پر دستخط کر رہا ہے: اگر وہ ملازمت والے ملک کی زبان نہیں جانتا تو معاہدے کے ساتھ ترجمہ منسلک کیا جاتا ہے۔',
+  'g.vo.h1':'کیا ایسے غیر ملکی کو بھرتی کیا جا سکتا ہے جو پہلے سے ملک میں ہو؟',
+  'g.vo.h2':'اگر کارکن صرف ایک ماہ کے لیے چاہیے تو کیا اجازت نامہ ضروری ہے؟',
+  'g.vo.h3':'فیسیں اور محصولات کون ادا کرتا ہے — ادارہ یا کارکن؟',
+  'g.vo.h4':'اگر دستاویزات درست نہ ہوں تو معائنے میں کیا ہوگا؟',
+  'g.vo.p1':'یہ اس پر منحصر ہے کہ وہ کس بنیاد پر یہاں ہے اور آیا اس کے پاس ورک پرمٹ ہے۔ محض قانونی قیام کام کرنے کا حق نہیں دیتا۔',
+  'g.vo.p2':'مختصر مدت اجازت نامے کی شرط ختم نہیں کرتی۔ تفصیلات کام کی نوعیت پر منحصر ہیں — اس صورت کا الگ جائزہ لینا چاہیے۔',
+  'g.vo.p3':'اخراجات کی تقسیم فریقین کے معاہدے پر منحصر ہے، لیکن لانے کا اجازت نامہ حاصل کرنے کی ذمہ داری آجر پر ہے۔',
+  'g.vo.p4':'نتائج خلاف ورزی کی نوعیت اور ملک پر منحصر ہیں، اور ادارے کے ساتھ کارکن کے قیام کے حق کو بھی متاثر کر سکتے ہیں۔ اسی لیے دستاویزات معائنے کے بعد نہیں، پہلے جانچنا سمجھ داری ہے۔',
+  'g.tocaria':'فہرست',
+  'header.consultation':'مشاورت',
+};
+var DICTS = { en: I18N_EN, ur: I18N_UR };
+var RTL_LANGS = { ur: true };
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  if (i === -1) i = 0;
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+
+
+var SEO = {
+  ru: {
+    title: 'Как легально нанять иностранного работника — инструкция для работодателя | WorkUnity',
+    description: 'Порядок привлечения иностранной рабочей силы в Кыргызстане, Казахстане, Узбекистане и России: разрешения, документы, обязанности работодателя, типичные ошибки.',
+    ogTitle: 'Как легально нанять иностранного работника',
+    ogDescription: 'Порядок действий, документы и обязанности работодателя.',
+    locale: 'ru_RU'
+  },
+  en: {
+    title: 'How to Hire a Foreign Worker Legally — An Employer’s Guide | WorkUnity',
+    description: 'How foreign labour is engaged in Kyrgyzstan, Kazakhstan, Uzbekistan and Russia: permits, documents, employer obligations and the mistakes that cost the most.',
+    ogTitle: 'How to Hire a Foreign Worker Legally',
+    ogDescription: 'The order of steps, the documents, and what the employer is responsible for.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'غیر ملکی کارکن کو قانونی طور پر کیسے بھرتی کریں — آجر کے لیے رہنما | WorkUnity',
+    description: 'کرغزستان، قازقستان، ازبکستان اور روس میں غیر ملکی افرادی قوت لانے کا طریقہ: اجازت نامے، دستاویزات، آجر کی ذمہ داریاں اور عام غلطیاں۔',
+    ogTitle: 'غیر ملکی کارکن کو قانونی طور پر کیسے بھرتی کریں',
+    ogDescription: 'مراحل کی ترتیب، دستاویزات، اور آجر کی ذمہ داریاں۔',
+    locale: 'ur_PK'
+  }
+};
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
+}
+
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-i18n]').map(function(el){
+  return { el:el, key:el.getAttribute('data-i18n'), ru:el.innerHTML };
+});
+var i18nAttrNodes = $$('[data-i18n-attr]').map(function(el){
+  var parts = el.getAttribute('data-i18n-attr').split(':');
+  return { el:el, attr:parts[0], key:parts[1], ru:el.getAttribute(parts[0]) };
+});
+function setLang(lang){
+  LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
+  lsw.setAttribute('data-lang', LANG);
+  var dict = DICTS[LANG];
+  i18nNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
+  i18nAttrNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.setAttribute(n.attr, (val && val.trim()) ? val : n.ru);
+  });
+  applySeo(LANG);
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+lsw.addEventListener('click', function(){ setLang(nextLang(LANG)); });
+var savedLang = 'ru';
+try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+if (ENABLED_LANGS.indexOf(savedLang) === -1) savedLang = 'ru';
+setLang(savedLang);
+
+/* ═══ THEME SWITCH ════════════════════════════════════════ */
+var tsw = $('#tsw');
+function setTheme(theme){
+  var t = theme === 'dark' ? 'dark' : 'light';
+  if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  tsw.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  try{ localStorage.setItem('wu_theme', t); }catch(err){}
+}
+tsw.addEventListener('click', function(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+var savedTheme = 'light';
+try{ savedTheme = localStorage.getItem('wu_theme') || 'light'; }catch(err){}
+setTheme(savedTheme);
+
+
+})();
+</script>
 </body>
 </html>

@@ -937,7 +937,9 @@ f.addEventListener('submit', function(e){
   });
   m.classList.add('on');
   if(bad){
-    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.' : 'Заполните отмеченные поля.';
+    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.'
+      : LANG === 'ur' ? 'براہ کرم نشان زدہ خانے پُر کریں۔'
+      : 'Заполните отмеченные поля.';
     m.style.borderLeftColor = 'var(--err)';
     bad.focus();
     return;
@@ -955,6 +957,17 @@ f.addEventListener('submit', function(e){
       + 'Website: ' + val('website') + '\n'
       + 'About: ' + val('about') + '\n'
       + 'Collaboration idea: ' + val('collab'))
+    : LANG === 'ur'
+    ? ('WorkUnity ویب سائٹ سے شراکت داری کی درخواست\n\n'
+      + 'نام: ' + val('name') + '\n'
+      + 'کمپنی: ' + val('company') + '\n'
+      + 'عہدہ: ' + val('role') + '\n'
+      + 'ای میل: ' + val('email') + '\n'
+      + 'ملک / علاقہ: ' + val('country') + '\n'
+      + 'شراکت داری کی قسم: ' + f.elements.ptype.value + '\n'
+      + 'ویب سائٹ: ' + val('website') + '\n'
+      + 'تعارف: ' + val('about') + '\n'
+      + 'تعاون کا خیال: ' + val('collab'))
     : ('Заявка партнёра с сайта WorkUnity\n\n'
       + 'Имя: ' + val('name') + '\n'
       + 'Компания: ' + val('company') + '\n'
@@ -968,6 +981,8 @@ f.addEventListener('submit', function(e){
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   m.textContent = LANG === 'en'
     ? 'Opening WhatsApp with a ready message. If the window didn\'t appear — allow pop-ups or write to us directly.'
+    : LANG === 'ur'
+    ? 'WhatsApp ایک تیار پیغام کے ساتھ کھل رہا ہے۔ اگر ونڈو ظاہر نہ ہو — پاپ اپس کی اجازت دیں یا براہ راست ہمیں لکھیں۔'
     : 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
 });
 })();

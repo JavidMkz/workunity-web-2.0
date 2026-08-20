@@ -380,12 +380,15 @@ html[dir="rtl"] .prob__a:hover svg{transform:scaleX(-1) translateX(3px)}
   background:var(--navy-line);border-top:1px solid var(--navy-line);
   transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
 .mcta.on{transform:none}
-.mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
   font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
-.mcta a:first-child{background:var(--navy);color:#fff}
-.mcta a:last-child{background:var(--green);color:#fff}
-.mcta svg{width:17px;height:17px}
-@media(max-width:759px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1039px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
 /* MOTION ---------------------------------------------------------------*/
 .js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
@@ -398,7 +401,7 @@ html[dir="rtl"] .prob__a:hover svg{transform:scaleX(-1) translateX(3px)}
 }
 </style>
 </head>
-<body>
+<body data-page="foreigners">
 <div class="prog" id="prog" aria-hidden="true"></div>
 
 <svg style="display:none" aria-hidden="true">
@@ -614,19 +617,20 @@ html[dir="rtl"] .prob__a:hover svg{transform:scaleX(-1) translateX(3px)}
         <a class="logo" href="index.html" aria-label="WorkUnity">
           <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
-        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html#net" data-i18n="nav.countries">Страны</a></li><li><a href="index.html#sol" data-i18n="nav.services">Решения</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li></ul></div>
+      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li></ul></div>
       <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
       <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
-    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span></span></div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-i18n="mcta.call">Позвонить</span></a>
-  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="mcta.write">Написать</span></a>
+  <a class="mcta__go" href="#cta-form" data-i18n="mcta.primary">Получить помощь</a>
+  <a class="mcta__ico" href="tel:+996700123445" aria-label="Позвонить" data-i18n-attr="aria-label:mcta.call"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
 </div>
 
 <script>
@@ -671,7 +675,7 @@ nav.addEventListener('click', function(e){
 /* ═══ LOCALIZATION ════════════════════════════════════════ */
 var I18N_EN = {
   'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
-  'nav.countries':'Countries', 'nav.services':'Solutions', 'nav.why':'Why WorkUnity', 'nav.process':'How It Works', 'nav.faq':'FAQ', 'nav.about':'WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
+  'nav.faq':'FAQ', 'nav.about':'WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
   'header.get_help':'Get Help',
   'hero.tag':'For Foreigners',
   'hero.h1':'You are in Kyrgyzstan. WorkUnity is here.',
@@ -733,15 +737,15 @@ var I18N_EN = {
   'form.contact':'How to reach you', 'form.situation':'What happened?',
   'form.submit':'Get a Consultation', 'form.note':'Clicking the button opens WhatsApp with a ready message — just send it.',
   'bstrip.tagline':'Legal · Migration · Workforce · Trust',
-  'footer.tagline':'International workforce solutions for businesses across our recruitment markets.',
+  'footer.tagline':'WorkUnity — legal employment and migration support infrastructure.',
   'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
   'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
-  'footer.legal':'WorkUnity LLC · reg. No. <span dir="ltr">00408202610480</span>',
-  'mcta.call':'Call', 'mcta.write':'Message us'
+  'footer.legal':'WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic',
+  'mcta.call':'Call', 'mcta.primary':'Get help'
 };
 var I18N_UR = {
   'nav.aria_main_menu':'مرکزی مینیو', 'header.aria_theme':'تھیم', 'header.aria_open_menu':'مینیو کھولیں',
-  'nav.countries':'ممالک', 'nav.services':'خدمات', 'nav.why':'WorkUnity کیوں؟', 'nav.process':'طریقہ کار', 'nav.faq':'سوالات', 'nav.about':'WorkUnity', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
+  'nav.faq':'سوالات', 'nav.about':'WorkUnity', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
   'header.get_help':'مدد حاصل کریں',
   'hero.tag':'غیر ملکیوں کے لیے',
   'hero.h1':'آپ کرغزستان میں ہیں۔ WorkUnity آپ کے ساتھ ہے۔',
@@ -803,11 +807,11 @@ var I18N_UR = {
   'form.contact':'آپ سے کیسے رابطہ کریں', 'form.situation':'کیا ہوا؟',
   'form.submit':'مشاورت حاصل کریں', 'form.note':'بٹن دبانے سے WhatsApp ایک تیار پیغام کے ساتھ کھل جائے گا — بس اسے بھیج دیں۔',
   'bstrip.tagline':'قانون · امیگریشن · ورک فورس · اعتماد',
-  'footer.tagline':'ہماری بھرتی مارکیٹس میں کاروباروں کے لیے بین الاقوامی افرادی قوت کے حل۔',
+  'footer.tagline':'WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔',
   'footer.sections':'حصے', 'footer.materials':'وسائل', 'footer.instructions':'ہدایات',
   'footer.contacts':'رابطہ', 'footer.city':'بشکیک', 'footer.about':'WorkUnity',
-  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span>',
-  'mcta.call':'کال کریں', 'mcta.write':'پیغام بھیجیں'
+  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان',
+  'mcta.call':'کال کریں', 'mcta.primary':'مدد حاصل کریں'
 };
 var DICTS = { en: I18N_EN, ur: I18N_UR };
 var RTL_LANGS = { ur: true };

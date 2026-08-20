@@ -485,12 +485,15 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   background:var(--navy-line);border-top:1px solid var(--navy-line);
   transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
 .mcta.on{transform:none}
-.mcta a{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
   font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
-.mcta a:first-child{background:var(--navy);color:#fff}
-.mcta a:last-child{background:var(--green);color:#fff}
-.mcta svg{width:17px;height:17px}
-@media(max-width:759px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1039px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
 /* 7 ─ MOTION ------------------------------------------------ */
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
@@ -507,7 +510,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 }
 </style>
 </head>
-<body>
+<body data-page="employers">
 <div class="prog" id="prog" aria-hidden="true"></div>
 
 <svg style="display:none" aria-hidden="true">
@@ -800,19 +803,20 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
         <a class="logo" href="#top" aria-label="WorkUnity">
           <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
         </a>
-        <p style="margin-top:16px;max-width:32ch" data-en="Foreign labor for companies in nine destination countries." data-ur="نو ممالک کی کمپنیوں کے لیے غیر ملکی افرادی قوت۔">Иностранная рабочая сила для предприятий девяти стран найма.</p>
+        <p style="margin-top:16px;max-width:32ch" data-en="WorkUnity — legal employment and migration support infrastructure." data-ur="WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="#net" data-en="Geography" data-ur="ممالک">Страны</a></li><li><a href="#sol" data-en="Services" data-ur="خدمات">Решения</a></li><li><a href="#proc" data-en="Process" data-ur="طریقہ کار">Процедура</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёры</a></li></ul></div>
+      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёры</a></li></ul></div>
       <div><h4 data-en="Resources" data-ur="وسائل">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">Инструкция</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">Отрасли</a></li></ul></div>
       <div><h4 data-en="Contact" data-ur="رابطہ">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">Бишкек</li></ul></div>
     </div>
-    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-en="WorkUnity LLC · reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;" data-ur="WorkUnity LLC · رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span></span></div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-en="WorkUnity LLC · Reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · Bishkek, Kyrgyz Republic" data-ur="WorkUnity LLC · رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · بشکیک، جمہوریہ کرغزستان">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <a href="tel:+996700123445"><svg aria-hidden="true"><use href="#phone"/></svg><span data-en="Call" data-ur="کال کریں">Позвонить</span></a>
-  <a href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-en="Write" data-ur="پیغام بھیجیں">Написать</span></a>
+  <a class="mcta__go" href="#contact" data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">Консультация для работодателя</a>
+  <a class="mcta__ico" id="mctaCall" href="tel:+996700123445" aria-label="Позвонить"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
 </div>
 
 <script type="application/ld+json">
@@ -1147,7 +1151,8 @@ var ATTR_I18N = [
   { sel:'#vf', attr:'aria-label', ru:'Смотреть видеообращение основателя', en:"Watch the founder's video message", ur:'بانی کا ویڈیو پیغام دیکھیں' },
   { sel:'#dsel', attr:'aria-label', ru:'Страна найма', en:'Destination country', ur:'ملازمت کا ملک' },
   { sel:'.qr img', attr:'alt', ru:'QR-код для чата WorkUnity в WhatsApp', en:'QR code for the WorkUnity WhatsApp chat', ur:'WorkUnity WhatsApp چیٹ کے لیے QR کوڈ' },
-  { sel:'#tsw', attr:'aria-label', ru:'Тема', en:'Theme', ur:'تھیم' }
+  { sel:'#tsw', attr:'aria-label', ru:'Тема', en:'Theme', ur:'تھیم' },
+  { sel:'#mctaCall', attr:'aria-label', ru:'Позвонить', en:'Call', ur:'کال کریں' }
 ];
 function setLang(lang){
   LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';

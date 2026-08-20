@@ -144,10 +144,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:28px}
-@media(min-width:1040px){.nav{display:flex}}
+@media(min-width:1100px){.nav{display:flex}}
 .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px;white-space:nowrap}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
   transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
 .nav a:hover{color:#fff}
 .nav a:hover::after{transform:scaleX(1)}
 .nav a.on{color:#fff}
@@ -160,11 +161,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .burger[aria-expanded="true"] span{background:transparent}
 .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-@media(min-width:1040px){.burger{display:none}}
-@media(max-width:1039px){
+@media(min-width:1100px){.burger{display:none}}
+@media(max-width:1099px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
-    inset-inline:calc(var(--gut)*-1);background:var(--navy);
+    inset-inline:0;background:var(--navy);
     border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130;max-height:calc(100vh - 72px);overflow-y:auto}
   .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
     font-family:var(--h);font-weight:600;color:#fff}
@@ -354,6 +355,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .bstrip__s{margin-top:10px;font-family:var(--m);font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--muted-l)}
 
+/* FAQ ------------------------------------------------------------------*/
+.faq{display:grid;border-top:1px solid var(--line)}
+.q{border-bottom:1px solid var(--line);overflow:hidden}
+.q summary{list-style:none;cursor:pointer;padding:24px 0;font-family:var(--h);font-weight:700;
+  font-size:clamp(16.5px,1.9vw,20px);letter-spacing:-.035em;display:flex;gap:20px;align-items:center}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"";margin-inline-start:auto;flex:none;width:13px;height:13px;
+  background:linear-gradient(var(--accent) 0 0) center/100% 1.5px no-repeat,
+             linear-gradient(var(--accent) 0 0) center/1.5px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.q[open] summary::after{transform:rotate(135deg)}
+.q__a{padding:0 0 26px;font-size:16px;color:var(--muted);max-width:68ch;line-height:1.65}
+.q__i{font-family:var(--m);font-size:11px;color:var(--accent);letter-spacing:.18em;flex:none}
+html[lang="ur"] .q summary{letter-spacing:0}
+
 /* FOOTER — идентичен index.html / o-workunity.html */
 .ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
 .ftr .logo img{height:90px;filter:brightness(0)}
@@ -381,7 +397,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .mcta__ico--wa{background:var(--green)}
 .mcta svg{width:17px;height:17px;flex:none}
 @media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
-@media(max-width:1039px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
 /* MOTION ---------------------------------------------------------------*/
 .js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
@@ -413,7 +429,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" data-i18n-attr="aria-label:nav.aria_main_menu" aria-label="Основное меню">
-      <a href="o-workunity.html" data-i18n="nav.about">WorkUnity</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" class="on" data-i18n="nav.partners">Партнёрам</a><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="index.html" data-i18n="nav.employers">Работодателям</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" class="on" aria-current="page" data-i18n="nav.partners">Партнёрам</a><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a>
     </nav>
     <div class="hdr__tools">
       <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
@@ -590,6 +606,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </section>
 
 <!-- ══ CTA + FORM ═══════════════════════════════════════════ -->
+<!-- ══ FAQ ════════════════════════════════════════════════ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix" data-i18n="faq.ix">09 — Вопросы</span><h2 data-i18n="faq.h2">Частые вопросы</h2></div>
+    <div class="faq rv">
+      <details class="q"><summary><span class="q__i">01</span><span data-i18n="faq.q1">Как стать партнёром WorkUnity?</span></summary><div class="q__a" data-i18n="faq.a1">Заполните форму. Мы проведём проверку, интервью и при положительном решении подпишем соглашение.</div></details>
+      <details class="q"><summary><span class="q__i">02</span><span data-i18n="faq.q2">Что я получаю как партнёр?</span></summary><div class="q__a" data-i18n="faq.a2">Доступ к проверенным вакансиям или кандидатам, стандарты, обучение и прозрачную комиссионную модель.</div></details>
+      <details class="q"><summary><span class="q__i">03</span><span data-i18n="faq.q3">Когда я получу вознаграждение?</span></summary><div class="q__a" data-i18n="faq.a3">После результата: кандидат доехал и отработал испытательный срок.</div></details>
+      <details class="q"><summary><span class="q__i">04</span><span data-i18n="faq.q4">Могу ли я приводить и работодателей, и кандидатов?</span></summary><div class="q__a" data-i18n="faq.a4">Да, после аккредитации вы можете работать в обоих направлениях.</div></details>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="cta-form">
   <div class="wide lead">
     <div class="rv">
@@ -655,7 +684,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         </a>
         <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li></ul></div>
+      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
       <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
       <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
@@ -711,7 +740,7 @@ nav.addEventListener('click', function(e){
 /* ═══ LOCALIZATION ════════════════════════════════════════ */
 var I18N_EN = {
   'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
-  'nav.faq':'FAQ', 'nav.about':'WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
+  'nav.faq':'FAQ', 'nav.about':'About WorkUnity', 'nav.employers':'For Employers', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
   'header.become_partner':'Become a Partner',
   'hero.tag':'Partners',
   'hero.h1':'Build the ecosystem with us.',
@@ -770,11 +799,20 @@ var I18N_EN = {
   'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
   'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
   'footer.legal':'WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic',
+  'faq.ix':'09 — FAQ', 'faq.h2':'Common questions',
+  'faq.q1':'How do I become a WorkUnity partner?',
+  'faq.a1':'Fill in the form. We carry out a check and an interview, and sign an agreement if the outcome is positive.',
+  'faq.q2':'What do I get as a partner?',
+  'faq.a2':'Access to verified vacancies or candidates, standards, training and a transparent commission model.',
+  'faq.q3':'When am I paid?',
+  'faq.a3':'On the result: once the candidate has arrived and completed the probation period.',
+  'faq.q4':'Can I bring both employers and candidates?',
+  'faq.a4':'Yes — once accredited, you can work in both directions.',
   'mcta.call':'Call', 'mcta.primary':'Become a partner'
 };
 var I18N_UR = {
   'nav.aria_main_menu':'مرکزی مینیو', 'header.aria_theme':'تھیم', 'header.aria_open_menu':'مینیو کھولیں',
-  'nav.faq':'سوالات', 'nav.about':'WorkUnity', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
+  'nav.faq':'سوالات', 'nav.about':'WorkUnity کے بارے میں', 'nav.employers':'آجروں کے لیے', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
   'header.become_partner':'شراکت دار بنیں',
   'hero.tag':'شراکت دار',
   'hero.h1':'ہمارے ساتھ مل کر ایکو سسٹم بنائیں۔',
@@ -833,6 +871,15 @@ var I18N_UR = {
   'footer.sections':'حصے', 'footer.materials':'وسائل', 'footer.instructions':'ہدایات',
   'footer.contacts':'رابطہ', 'footer.city':'بشکیک', 'footer.about':'WorkUnity',
   'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان',
+  'faq.ix':'09 — سوالات', 'faq.h2':'عام سوالات',
+  'faq.q1':'WorkUnity کا شراکت دار کیسے بنا جائے؟',
+  'faq.a1':'فارم پُر کریں۔ ہم جانچ اور انٹرویو کرتے ہیں، اور مثبت فیصلے کی صورت میں معاہدہ کرتے ہیں۔',
+  'faq.q2':'شراکت دار کے طور پر مجھے کیا ملتا ہے؟',
+  'faq.a2':'تصدیق شدہ آسامیوں یا امیدواروں تک رسائی، معیارات، تربیت اور شفاف کمیشن ماڈل۔',
+  'faq.q3':'مجھے معاوضہ کب ملے گا؟',
+  'faq.a3':'نتیجے کے بعد: جب امیدوار پہنچ جائے اور آزمائشی مدت مکمل کر لے۔',
+  'faq.q4':'کیا میں آجر اور امیدوار دونوں لا سکتا ہوں؟',
+  'faq.a4':'جی ہاں، اعتماد نامہ ملنے کے بعد آپ دونوں سمتوں میں کام کر سکتے ہیں۔',
   'mcta.call':'کال کریں', 'mcta.primary':'شراکت دار بنیں'
 };
 var DICTS = { en: I18N_EN, ur: I18N_UR };

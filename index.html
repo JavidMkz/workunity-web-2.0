@@ -159,12 +159,14 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:28px}
-@media(min-width:1040px){.nav{display:flex}}
+@media(min-width:1100px){.nav{display:flex}}
 .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
   transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
 .nav a:hover{color:#fff}
 .nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
 .burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
   border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
 .burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
@@ -174,11 +176,11 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .burger[aria-expanded="true"] span{background:transparent}
 .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-@media(min-width:1040px){.burger{display:none}}
-@media(max-width:1039px){
+@media(min-width:1100px){.burger{display:none}}
+@media(max-width:1099px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
-    inset-inline:calc(var(--gut)*-1);background:var(--navy);
+    inset-inline:0;background:var(--navy);
     border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
   .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
     font-family:var(--h);font-weight:600;color:#fff}
@@ -539,7 +541,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 .mcta__ico--wa{background:var(--green)}
 .mcta svg{width:17px;height:17px;flex:none}
 @media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
-@media(max-width:1039px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
 /* 7 ─ MOTION ------------------------------------------------ */
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
@@ -597,7 +599,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" aria-label="Основное меню">
-      <a href="o-workunity.html" data-en="WorkUnity" data-ur="WorkUnity">WorkUnity</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a>
+      <a href="index.html" class="on" aria-current="page" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a>
     </nav>
     <div class="hdr__tools">
       <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
@@ -934,7 +936,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
         </a>
         <p style="margin-top:16px;max-width:32ch" data-en="WorkUnity — legal employment and migration support infrastructure." data-ur="WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёры</a></li></ul></div>
+      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="index.html" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a></li><li><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a></li></ul></div>
       <div><h4 data-en="Resources" data-ur="وسائل">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">Инструкция</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">Отрасли</a></li></ul></div>
       <div><h4 data-en="Contact" data-ur="رابطہ">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">Бишкек</li></ul></div>
     </div>

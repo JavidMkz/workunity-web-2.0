@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500;600&family=Noto+Nastaliq+Urdu:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    WORKUNITY — О КОМПАНИИ
@@ -59,6 +59,7 @@
   --h:'Manrope',system-ui,-apple-system,sans-serif;
   --b:'Inter',system-ui,-apple-system,sans-serif;
   --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
 
   --gut:clamp(20px,5vw,72px);
   --r:10px;
@@ -83,6 +84,17 @@
   --cyan:#5FC2E8;
   --cyan-rgb:95,194,232;
 }
+
+/* 1b ─ URDU TYPOGRAPHY --------------------------------------
+   Nastaliq needs real vertical room (diagonal stroke flow) —
+   swap the font family via the same --h/--b/--m tokens every
+   rule already uses, so no component CSS has to change, and
+   loosen line-height only where Urdu is active. RU/EN untouched. */
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix,html[lang="ur"] .ix--d{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
 
 /* 2 ─ BASE ---------------------------------------------------*/
 *,*::before,*::after{box-sizing:border-box}
@@ -117,14 +129,14 @@ img{max-width:100%;display:block}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
 
-.prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:200;
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
   transition:width .1s linear;pointer-events:none}
 
 /* HEADER — идентична index.html */
 .hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
   backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
 .hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
-.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none;color:#fff}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:28px}
@@ -148,24 +160,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(max-width:899px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
-    left:calc(var(--gut)*-1);right:calc(var(--gut)*-1);background:var(--navy);
+    inset-inline:calc(var(--gut)*-1);background:var(--navy);
     border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
   .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
     font-family:var(--h);font-weight:600;color:#fff}
   .nav.open a::after{display:none}
   .nav.open a:last-child{border-bottom:0}
 }
-@media(max-width:479px){.hdr__in{gap:12px}}
 
 .hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
 .lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
   border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
   font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
 .lsw:hover{border-color:#fff}
-.lsw__ru,.lsw__en{color:var(--muted-l);transition:color .18s}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
 .lsw__d{color:var(--navy-line);font-weight:400}
 .lsw[data-lang="ru"] .lsw__ru{color:#fff}
 .lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
 .tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
   border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
 .tsw:hover{border-color:#fff}
@@ -173,13 +186,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .tsw__moon{display:none}
 [data-theme="dark"] .tsw__sun{display:none}
 [data-theme="dark"] .tsw__moon{display:block}
-@media(max-width:359px){
-  .hdr .wide{padding-inline:12px}
-  .hdr__in{gap:6px}
-  .hdr__tools{gap:4px}
-  .lsw{padding:0 6px;font-size:10.5px;gap:3px}
+@media(max-width:479px){
+  .hdr .wide{padding-inline:10px}
+  .hdr__in{gap:5px}
+  .hdr__tools{gap:3px}
+  .lsw{padding:0 5px;font-size:10px;gap:3px}
+  .lsw__ur{font-size:11px}
   .tsw{width:28px;height:28px}
   .tsw svg{width:14px;height:14px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
 }
 
 /* SECTIONS base rhythm */
@@ -231,9 +249,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   max-width:56ch;margin-inline:auto}
 
 /* 4 ─ RISK (рынок должен работать честно) ---------------------*/
-.risk{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.risk{display:grid;gap:0;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
 @media(min-width:760px){.risk{grid-template-columns:repeat(3,1fr)}}
-.risk__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,3vw,34px)}
+.risk__c{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,3vw,34px)}
 .risk__c h3{font-size:19px;letter-spacing:-.03em;margin-bottom:12px}
 .risk__c p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:16px}
 .risk__l{display:grid;gap:8px}
@@ -246,12 +264,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .role{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 @media(min-width:640px){.role{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1100px){.role{grid-template-columns:repeat(4,1fr)}}
-.role__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+.role__c{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:clamp(26px,3vw,34px) clamp(22px,2.6vw,28px);position:relative;overflow:hidden;
   transition:background .28s ease}
 .role__c:hover{background:var(--bone)}
 .role__num{font-family:var(--h);font-weight:800;font-size:clamp(56px,6vw,84px);line-height:1;
-  color:var(--accent);opacity:.12;position:absolute;top:8px;right:14px;letter-spacing:-.03em}
+  color:var(--accent);opacity:.12;position:absolute;top:8px;inset-inline-end:14px;letter-spacing:-.03em}
 .role__t{font-size:19px;letter-spacing:-.02em;position:relative;margin-bottom:10px}
 .role__d{color:var(--muted);font-size:14.5px;line-height:1.6;max-width:32ch;position:relative}
 
@@ -276,12 +294,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .win__c{border-radius:0;border-left-width:0}
   .win__c:first-child{border-left-width:1px;border-radius:var(--r-lg) 0 0 var(--r-lg)}
   .win__c:last-child{border-radius:0 var(--r-lg) var(--r-lg) 0}
+  html[dir="rtl"] .win__c{border-left-width:1px;border-right-width:0}
+  html[dir="rtl"] .win__c:first-child{border-left-width:0;border-right-width:1px;border-radius:0 var(--r-lg) var(--r-lg) 0}
+  html[dir="rtl"] .win__c:last-child{border-radius:var(--r-lg) 0 0 var(--r-lg)}
 }
 @media(max-width:859px){.win__c+.win__c{margin-top:14px}}
 .win__t{font-size:19px;letter-spacing:-.02em;margin-bottom:16px}
 .win__l{display:grid;gap:9px}
-.win__l li{font-size:15px;color:var(--muted);padding-left:16px;position:relative}
-.win__l li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--cyan)}
+.win__l li{font-size:15px;color:var(--muted);padding-inline-start:16px;position:relative}
+.win__l li::before{content:"";position:absolute;inset-inline-start:0;top:8px;width:5px;height:5px;background:var(--cyan)}
 .win__end{margin-top:28px;text-align:center;color:var(--muted);font-size:15px;max-width:52ch;margin-inline:auto}
 
 /* 7 ─ QUOTE (фирменный блок) -----------------------------------*/
@@ -299,11 +320,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   margin-top:-6px;margin-bottom:clamp(20px,2.5vw,28px)}
 
 /* 8b ─ TRUST (как мы создаём доверие) ----------------------------*/
-.trust{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
+.trust{display:grid;gap:0;border-top:1px solid var(--line);border-inline-start:1px solid var(--line);
   margin-top:clamp(28px,3.5vw,40px)}
 @media(min-width:640px){.trust{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1100px){.trust{grid-template-columns:repeat(4,1fr)}}
-.trust__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+.trust__c{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:clamp(22px,2.6vw,28px)}
 .trust__ix{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--accent);margin-bottom:12px}
 .trust__t{font-size:16.5px;letter-spacing:-.02em;margin-bottom:8px}
@@ -368,12 +389,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .bridge__a{display:inline-flex;align-items:center;gap:8px;font-family:var(--h);font-weight:700;
   font-size:14.5px;color:var(--accent);text-decoration:none}
 .bridge__a svg{width:14px;height:14px;transition:transform .2s}
+html[dir="rtl"] .bridge__a svg{transform:scaleX(-1)}
+html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 .bridge__a:hover svg{transform:translateX(3px)}
 
 /* 12 ─ CTA3 ----------------------------------------------------------*/
 .cta3{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 @media(min-width:760px){.cta3{grid-template-columns:repeat(3,1fr)}}
-.cta3__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+.cta3__c{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:clamp(26px,3vw,34px);display:flex;flex-direction:column;gap:18px}
 .cta3__t{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .cta3__h{font-size:20px;letter-spacing:-.03em;margin-top:2px}
@@ -446,7 +469,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <a href="o-workunity.html" class="on" data-i18n="nav.about">WorkUnity</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" data-i18n="nav.partners">Партнёрам</a><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a>
     </nav>
     <div class="hdr__tools">
-      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
+      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
       <button class="tsw" id="tsw" type="button" data-i18n-attr="aria-label:header.aria_theme" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
     </div>
     <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact" data-i18n="header.consultation">Консультация</a>
@@ -751,9 +774,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       </div>
       <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html#net" data-i18n="nav.countries">Страны</a></li><li><a href="index.html#sol" data-i18n="nav.services">Решения</a></li><li><a href="index.html#proc" data-i18n="nav.process">Процедура</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li></ul></div>
       <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
-      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
+      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
-    <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span></span></div>
   </div>
 </footer>
 
@@ -889,16 +912,100 @@ var I18N_EN = {
   'footer.tagline':'International workforce solutions for businesses across our recruitment markets.',
   'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
   'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · reg. No. <span dir="ltr">00408202610480</span>',
   'mcta.call':'Call', 'mcta.write':'Message us'
 };
-var I18N_UR = {}; // те же ключи, что и I18N_EN — заполняются на следующем этапе (Urdu)
-Object.keys(I18N_EN).forEach(function(k){ I18N_UR[k] = ''; });
+var I18N_UR = {
+  'nav.aria_main_menu':'مرکزی مینیو', 'header.aria_theme':'تھیم', 'header.aria_open_menu':'مینیو کھولیں',
+  'nav.countries':'ممالک', 'nav.services':'خدمات', 'nav.why':'WorkUnity کیوں؟', 'nav.process':'طریقہ کار', 'nav.faq':'سوالات', 'nav.about':'WorkUnity', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
+  'header.consultation':'مشاورت کے لیے رابطہ کریں',
+  'hero.tag':'ورک فورس · قانون · امیگریشن · اعتماد',
+  'hero.h1':'WorkUnity — صرف بھرتی نہیں۔',
+  'hero.sub':'ہم کرغزستان میں غیر ملکی شہریوں اور کاروباروں کے لیے ایک شفاف نظام بناتے ہیں — کارکنوں کی بھرتی اور امیگریشن معاونت سے لے کر قانونی مدد اور حقوق کے تحفظ تک۔',
+  'diagram.env':'قانونی اور سرکاری ماحول', 'diagram.foreigner':'غیر ملکی شہری', 'diagram.employer':'آجر',
+  'unite.ix':'01 — ایکو سسٹم', 'unite.h2':'WorkUnity کیا جوڑتا ہے', 'unite.sub':'ہم غیر ملکی شہریوں، آجرین اور شراکت داروں کے لیے ایک واحد نظام بناتے ہیں۔',
+  'unite.foreigner.title':'غیر ملکی شہری', 'unite.foreigner.desc':'کرغزستان میں قانونی مدد، امیگریشن معاونت، مفادات کا تحفظ اور معاونت۔',
+  'unite.employer.title':'آجرین', 'unite.employer.desc':'کارکنوں کی بھرتی، دستاویزات کی تیاری، معاونت اور عمل پر نگرانی۔',
+  'unite.partner.title':'شراکت دار', 'unite.partner.desc':'WorkUnity کے تصدیق شدہ شراکت دار نیٹ ورک کے ذریعے آجرین اور امیدواروں کے ساتھ کام۔',
+  'unite.end':'حکومت اور ادارہ جاتی تنظیمیں اس ایکو سسٹم کا ایک اہم حصہ ہیں۔',
+  'principle.ix':'02 — اصول', 'principle.h2':'مارکیٹ کو منصفانہ طریقے سے کام کرنا چاہیے۔',
+  'risk.foreigner.title':'غیر ملکی شہریوں کے لیے',
+  'risk.foreigner.intro':'غیر ملکی شہری اکثر ایک اجنبی قانونی، لسانی اور ثقافتی ماحول میں خود کو پاتے ہیں۔ انہیں درپیش ہو سکتا ہے:',
+  'risk.foreigner.item1':'دھوکہ دہی', 'risk.foreigner.item2':'جعلی دستاویزات', 'risk.foreigner.item3':'جھوٹے وعدے',
+  'risk.foreigner.item4':'طے شدہ ملازمت کی شرائط کی خلاف ورزی', 'risk.foreigner.item5':'مقامی قوانین کی معلومات کی کمی',
+  'risk.employer.title':'آجرین کے لیے', 'risk.employer.intro':'غیر معتبر بیچوان یہ کر سکتے ہیں:',
+  'risk.employer.item1':'نامناسب کارکن لانا', 'risk.employer.item2':'امیدواروں کی معلومات میں غلط بیانی',
+  'risk.employer.item3':'امیگریشن کے خطرات پیدا کرنا', 'risk.employer.item4':'قانونی خطرات پیدا کرنا',
+  'risk.state.title':'حکومت کے لیے', 'risk.state.intro':'ایک غیر شفاف مارکیٹ اس کا باعث بن سکتی ہے:',
+  'risk.state.item1':'غیر قانونی قیام', 'risk.state.item2':'میعاد ختم دستاویزات',
+  'risk.state.item3':'فرضی ملازمت', 'risk.state.item4':'امیگریشن اور لیبر قوانین کی خلاف ورزی',
+  'risk.end':'WorkUnity کو اس نظام کو زیادہ شفاف، محفوظ اور قانونی بنانے کے لیے بنایا گیا ہے۔',
+  'role.ix':'03 — ہمارا کردار', 'role.h2':'WorkUnity کیا کرتا ہے',
+  'role.01.title':'تحفظ', 'role.01.desc':'ہم غیر ملکی شہریوں کو ان کے حقوق سمجھنے، قانونی مدد حاصل کرنے اور کرغزستان میں اپنے مفادات کا تحفظ کرنے میں مدد کرتے ہیں۔',
+  'role.02.title':'تصدیق', 'role.02.desc':'لوگوں کے عمل میں شامل ہونے سے پہلے ہم آجرین، نوکریوں، شراکت داروں اور دستاویزات کی تصدیق کرتے ہیں۔',
+  'role.03.title':'انتظام', 'role.03.desc':'ہم بھرتی، دستاویزات، امیگریشن کے مراحل اور افرادی قوت کی نقل و حرکت کو کارکن کے کام کے آغاز تک مربوط کرتے ہیں۔',
+  'role.04.title':'نمائندگی', 'role.04.desc':'ہم قانونی خدمات فراہم کرتے ہیں اور کرغز جمہوریہ کے قانونی دائرہ کار میں غیر ملکی شہریوں اور کاروباروں کے مفادات کی نمائندگی کرتے ہیں۔',
+  'dir.ix':'04 — شعبے', 'dir.h2':'ایک کمپنی — کئی شعبے',
+  'dir.sub':'WorkUnity کئی جڑے ہوئے شعبوں کو یکجا کرتا ہے، تاکہ کلائنٹ کو کام کے ہر حصے کے لیے الگ ٹھیکیدار تلاش نہ کرنا پڑے۔',
+  'dir.01.title':'Workforce Solutions', 'dir.01.desc':'کاروبار کے لیے غیر ملکی کارکنوں کی تلاش اور بھرتی۔',
+  'dir.02.title':'Legal Services', 'dir.02.desc':'قانونی مشورہ، دستاویزات، معاملات، نمائندگی اور مفادات کا تحفظ۔',
+  'dir.03.title':'Migration Services', 'dir.03.desc':'امیگریشن دستاویزات، اجازت نامے، رجسٹریشن اور طریقہ کار میں معاونت۔',
+  'dir.04.title':'غیر ملکی شہریوں کے لیے خدمات', 'dir.04.desc':'کرغزستان میں پہلے سے موجود غیر ملکی شہریوں کے لیے قانونی اور انتظامی مدد۔',
+  'dir.05.title':'Trust &amp; Compliance', 'dir.05.desc':'آجرین، نوکریوں، شراکت داروں اور دستاویزات کی تصدیق، اور خطرات پر قابو۔',
+  'win.ix':'05 — نتیجہ', 'win.h2':'جب نظام صحیح طریقے سے کام کرتا ہے، تو ہر کوئی فائدہ اٹھاتا ہے۔',
+  'win.foreigner.title':'غیر ملکی شہری', 'win.foreigner.item1':'منصفانہ ملازمت', 'win.foreigner.item2':'قانونی حیثیت', 'win.foreigner.item3':'تحفظ',
+  'win.employer.title':'آجر', 'win.employer.item1':'موزوں کارکن', 'win.employer.item2':'قابلِ پیش گوئی عمل', 'win.employer.item3':'کم خطرہ',
+  'win.workunity.title':'WorkUnity', 'win.workunity.item1':'مستحکم کاروبار', 'win.workunity.item2':'ساکھ', 'win.workunity.item3':'دیرپا تعلقات',
+  'win.end':'حکومت کو مارکیٹ میں زیادہ شفافیت، تعمیل اور نظم و ضبط سے فائدہ ہوتا ہے۔',
+  'quote.q':'معاہدے کے ساتھ جائیں، وعدے کے ساتھ نہیں۔',
+  'quote.s':'ہم ویزے، جعلی دعوت نامے یا یقینی روانگی کے وعدے فروخت نہیں کرتے۔ ہم ایک تصدیق شدہ آجر، واضح ملازمت کی شرائط، مناسب دستاویزات اور ذمہ دار لوگوں پر مبنی ایک حقیقی عمل بناتے ہیں۔',
+  'lines.ix':'06 — ہمارا موقف', 'lines.h2':'ہماری حدود',
+  'lines.sub':'کچھ چیزیں ایسی ہیں جو WorkUnity کبھی نہیں کرے گا — نہ کلائنٹ کی خاطر، نہ منافع کی خاطر۔',
+  'lines.pre':'ہمارے لیے ساکھ اور قانونی حیثیت تیزی سے سودا کرنے سے زیادہ اہم ہیں۔',
+  'trust.ix':'07 — اعتماد', 'trust.h2':'اعتماد قابلِ تصدیق ہونا چاہیے۔',
+  'trust.sub':'ہم آپ سے ہماری بات پر یقین کرنے کو نہیں کہتے — ہم جانچ اور جوابدہی کا ایک نظام بناتے ہیں۔',
+  'trust.01.title':'تصدیق شدہ آجر', 'trust.01.desc':'ہم عمل شروع ہونے سے پہلے کمپنی، نوکری اور شرائط کی تصدیق کرتے ہیں۔',
+  'trust.02.title':'تصدیق شدہ نوکری', 'trust.02.desc':'امیدواروں کو شامل کرنے سے پہلے کام کی جگہ اور اس کی شرائط کی تصدیق ہونی چاہیے۔',
+  'trust.03.title':'تصدیق شدہ شراکت دار', 'trust.03.desc':'شراکت دار WorkUnity کے ساتھ کام شروع کرنے سے پہلے جانچے جاتے ہیں۔',
+  'trust.04.title':'تصدیق شدہ دستاویزات', 'trust.04.desc':'اہم دستاویزات اور عمل کے مراحل جانچ سے گزرتے ہیں۔',
+  'trust.end':'WorkUnity بین الاقوامی افرادی قوت اور امیگریشن سرگرمی کے لیے اعتماد کا اپنا معیار قائم کر رہا ہے۔',
+  'lines.item1':'ہم مبہم یا غیر قانونی طریقے استعمال نہیں کرتے۔', 'lines.item2':'ہم جعلی دستاویزات کا انتظام نہیں کرتے۔',
+  'lines.item3':'ہم "یقینی ویزے" فروخت نہیں کرتے۔', 'lines.item4':'ہم سودا مکمل کرنے کے لیے خطرات نہیں چھپاتے۔',
+  'lines.item5':'ہم قلیل مدتی منافع کے لیے غیر تصدیق شدہ بیچوانوں کے ساتھ کام نہیں کرتے۔',
+  'lines.item6':'ہم کارکنوں کے حقوق کی خلاف ورزی کو نظر انداز نہیں کرتے۔',
+  'kg.ix':'08 — کرغزستان', 'kg.h2':'ہم نے کرغزستان سے شروعات کی۔ ہم ایک بین الاقوامی نیٹ ورک بنا رہے ہیں۔',
+  'kg.p':'کرغزستان وہ جگہ ہے جہاں WorkUnity اپنا ماڈل بناتا اور آزماتا ہے۔ لیکن یہ نظام صرف ایک ملک تک محدود نہیں ہے۔ ہم ایک بین الاقوامی نیٹ ورک تیار کر رہے ہیں جو آجرین، غیر ملکی کارکنوں، مقامی شراکت داروں، اور قانونی و امیگریشن انفراسٹرکچر کو جوڑتا ہے۔',
+  'kg.map_label':'بشکیک',
+  'kg.net.source':'ماخذ ممالک', 'kg.net.c1':'بھارت', 'kg.net.c2':'پاکستان', 'kg.net.c3':'بنگلہ دیش', 'kg.net.c4':'نیپال', 'kg.net.c5':'سری لنکا',
+  'kg.net.source_note':'وہ ممالک جہاں سے ہم امیدوار حاصل کرتے ہیں۔',
+  'kg.net.dest':'وہ ممالک اور شعبے جہاں ہم کام کرتے ہیں', 'kg.net.dest_list':'کرغزستان · دیگر شعبے',
+  'gov.ix':'09 — حکومت', 'gov.h2':'حکومت کے ساتھ کھلا مکالمہ۔',
+  'gov.p':'ہمیں ایک شفاف اور قانونی مارکیٹ میں براہ راست دلچسپی ہے۔ اسی لیے ہم سرکاری اداروں، صنعتی انجمنوں اور سفارتی مشنز کے ساتھ منظم تعلقات استوار کرتے ہیں۔',
+  'gov.migration':'امیگریشن', 'gov.labor':'لیبر', 'gov.institutions':'سرکاری ادارے', 'gov.diplomacy':'سفارتی تعلقات',
+  'flow.ix':'10 — عمل', 'flow.h2':'ایک رابطہ۔ اس کے پیچھے پورا نظام۔',
+  'flow.p':'کلائنٹ کو خود کئی ماہرین کو مربوط کرنے کی ضرورت نہیں ہونی چاہیے۔ ایک مخصوص کوآرڈینیٹر کیس چلاتا ہے اور WorkUnity کے اندر صحیح لوگوں کو شامل کرتا ہے۔',
+  'flow.client':'کلائنٹ', 'flow.curator':'WorkUnity کوآرڈینیٹر', 'flow.services':'قانونی مدد · امیگریشن · بھرتی · تعمیل', 'flow.result':'نتیجہ',
+  'bridge.ix':'11 — رہنمائی', 'bridge.h2':'ایک WorkUnity — مختلف ضروریات',
+  'bridge.employer.title':'اگر آپ آجر ہیں', 'bridge.employer.desc':'ہم آپ کو کارکن تلاش کرنے اور ان کی بھرتی کا انتظام کرنے میں مدد کریں گے۔', 'bridge.employer.btn':'کارکن تلاش کریں',
+  'bridge.foreigner.title':'اگر آپ غیر ملکی شہری ہیں', 'bridge.foreigner.desc':'ہم آپ کی قانونی، امیگریشن اور انتظامی سوالات حل کرنے میں مدد کریں گے۔', 'bridge.foreigner.btn':'مدد حاصل کریں',
+  'bridge.partner.title':'اگر آپ شراکت دار ہیں', 'bridge.partner.desc':'ہم آپ کے ساتھ آجرین اور امیدواروں کے حوالے سے ایک شفاف شراکت داری بنا سکتے ہیں۔', 'bridge.partner.btn':'شراکت دار بنیں',
+  'cta.ix':'12 — رابطہ', 'cta.h2':'WorkUnity آپ کی کیسے مدد کر سکتا ہے؟',
+  'cta.foreigner.tag':'غیر ملکی شہریوں کے لیے', 'cta.foreigner.title':'قانونی تحفظ', 'cta.foreigner.btn':'قانونی مدد حاصل کریں',
+  'cta.employer.tag':'آجرین کے لیے', 'cta.employer.title':'افرادی قوت کی بھرتی', 'cta.employer.btn':'کارکن تلاش کریں',
+  'cta.partner.tag':'شراکت داروں کے لیے', 'cta.partner.title':'شراکت داری', 'cta.partner.btn':'شراکت دار بنیں',
+  'bstrip.tagline':'قانون · امیگریشن · ورک فورس · اعتماد',
+  'footer.tagline':'ہماری بھرتی مارکیٹس میں کاروباروں کے لیے بین الاقوامی افرادی قوت کے حل۔',
+  'footer.sections':'حصے', 'footer.materials':'وسائل', 'footer.instructions':'ہدایات',
+  'footer.contacts':'رابطہ', 'footer.city':'بشکیک', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span>',
+  'mcta.call':'کال کریں', 'mcta.write':'پیغام بھیجیں'
+};
 var DICTS = { en: I18N_EN, ur: I18N_UR };
 var RTL_LANGS = { ur: true };
 // Языки, реально доступные через переключатель сейчас. Когда появится перевод
 // Urdu, добавление 'ur' в этот массив включает его в цикле RU→EN→UR→RU без
 // каких-либо других правок кода — кнопка и dir/lang-механика уже готовы.
-var ENABLED_LANGS = ['ru', 'en'];
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
 function nextLang(cur){
   var i = ENABLED_LANGS.indexOf(cur);
   if (i === -1) i = 0;
@@ -916,18 +1023,29 @@ var SEO = {
     title: 'About WorkUnity — Legal, Migration, Trust',
     description: 'WorkUnity builds a transparent system for foreign nationals and businesses in Kyrgyzstan: workforce recruitment and migration support, verification of all parties, legal assistance and protection of rights.',
     ogTitle: 'About WorkUnity — Legal, Migration, Trust',
-    ogDescription: 'A transparent system for foreign nationals and businesses in Kyrgyzstan.'
+    ogDescription: 'A transparent system for foreign nationals and businesses in Kyrgyzstan.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'WorkUnity کے بارے میں — قانون، امیگریشن، اعتماد',
+    description: 'WorkUnity کرغزستان میں غیر ملکی شہریوں اور کاروباروں کے لیے ایک شفاف نظام بناتا ہے: بھرتی اور امیگریشن معاونت، فریقین کی تصدیق، قانونی مدد اور حقوق کا تحفظ۔',
+    ogTitle: 'WorkUnity کے بارے میں — قانون، امیگریشن، اعتماد',
+    ogDescription: 'کرغزستان میں غیر ملکی شہریوں اور کاروباروں کے لیے ایک شفاف نظام۔',
+    locale: 'ur_PK'
   }
 };
+SEO.ru.locale = 'ru_RU';
 var metaDescEl = document.querySelector('meta[name="description"]');
 var ogTitleEl = document.querySelector('meta[property="og:title"]');
 var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
 function applySeo(lang){
   var seo = SEO[lang] || SEO.ru;
   document.title = seo.title;
   if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
   if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
   if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
 }
 
 var lsw = $('#lsw');

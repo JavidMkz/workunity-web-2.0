@@ -102,7 +102,7 @@ html[lang="ur"] .ix,html[lang="ur"] .ix--d{letter-spacing:0;text-transform:none}
 html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
   font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em;overflow-wrap:break-word}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
 img{max-width:100%;display:block}
 ::selection{background:var(--accent);color:#fff}
@@ -240,6 +240,32 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .hero h1{font-size:clamp(38px,7.4vw,92px);line-height:.98;margin-block:24px 26px;max-width:13ch}
 .hero h1 em{font-style:normal;color:var(--accent);display:block}
 .hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted);max-width:46ch;line-height:1.58}
+
+/* Trust & Compliance matrix -------------------------------------------*/
+.tcm{display:grid;gap:14px;margin-top:clamp(24px,3vw,34px)}
+@media(min-width:820px){.tcm{grid-template-columns:repeat(3,1fr);gap:20px}}
+.tcm__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(20px,2.4vw,26px)}
+.tcm__t{font-size:15px;letter-spacing:-.01em;margin-bottom:14px;padding-bottom:12px;
+  border-bottom:1px solid var(--line)}
+.tcm__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.tcm__l li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);
+  font-size:14px;line-height:1.5}
+.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green)}
+.tcm__note{margin-top:clamp(20px,2.6vw,28px);padding:18px 20px;
+  border-inline-start:3px solid var(--accent);background:var(--bone);
+  color:var(--ink);font-size:14.5px;line-height:1.6}
+.tcm__intro{max-width:70ch;color:var(--muted);line-height:1.65}
+.tcm__intro + .tcm__intro{margin-top:12px}
+.tcm__intro b{color:var(--ink);font-weight:600}
+
+/* other-country prompt -------------------------------------------------*/
+.elsew{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bone);
+  padding:clamp(24px,3vw,34px);display:flex;flex-wrap:wrap;gap:18px 34px;
+  align-items:center;justify-content:space-between}
+.elsew__b{max-width:62ch}
+.elsew__t{font-size:clamp(18px,1.9vw,22px);letter-spacing:-.02em;margin-bottom:9px}
+.elsew__d{color:var(--muted);font-size:15px;line-height:1.6}
 .hero__pts{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;
   max-width:52ch}
 .hero__pts li{position:relative;padding-inline-start:19px;color:var(--muted);
@@ -643,6 +669,47 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
   </div>
 </section>
 
+<!-- ══ TRUST & COMPLIANCE ═════════════════════════════════ -->
+<section class="sec" id="trust-compliance">
+  <div class="wide">
+    <div class="hd rv"><span class="ix" data-en="Trust &amp; Compliance" data-ur="Trust &amp; Compliance">Trust &amp; Compliance</span><h2 data-en="Trust &amp; Compliance: How We Work" data-ur="Trust &amp; Compliance: ہم کیسے کام کرتے ہیں">Trust & Compliance: как мы работаем</h2></div>
+    <div class="rv">
+      <p class="tcm__intro" data-en="WorkUnity is registered as an LLC in the Kyrgyz Republic (Reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;). &lt;b&gt;We start with Kyrgyzstan and build infrastructure for the entire region&lt;/b&gt; — with a single verification and support standard in every country of presence." data-ur="WorkUnity جمہوریہ کرغزستان میں ایک ایل ایل سی کے طور پر رجسٹرڈ ہے (رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;)۔ &lt;b&gt;ہم کرغزستان سے آغاز کر رہے ہیں اور پورے خطے کے لیے بنیادی ڈھانچہ تعمیر کر رہے ہیں&lt;/b&gt; — ہر اُس ملک میں تصدیق اور نگرانی کا ایک ہی معیار جہاں ہم موجود ہیں۔">WorkUnity зарегистрирована как ОсОО в Кыргызской Республике (рег. № <span dir="ltr">00408202610480</span>). <b>Мы начинаем с Кыргызстана и строим инфраструктуру для всего региона</b> — с единым стандартом проверки и сопровождения в каждой стране присутствия.</p>
+      <p class="tcm__intro" data-en="Our standard is not minimal legal compliance, but active protection of all participants." data-ur="ہمارا معیار قانون کی کم سے کم پابندی نہیں، بلکہ عمل میں شامل تمام فریقوں کا فعال تحفظ ہے۔">Наш стандарт — не минимальное соответствие закону, а активная защита всех участников процесса.</p>
+    </div>
+    <div class="tcm rv">
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For Employers" data-ur="آجر کے لیے">Для работодателя</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Every candidate verified before placement" data-ur="کام شروع کرنے سے پہلے ہر امیدوار کی جانچ">Проверка каждого кандидата до выхода на работу</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Full documentation and migration support" data-ur="دستاویزات کا مکمل پیکیج اور نقل مکانی کی نگرانی">Полный пакет документов и миграционное сопровождение</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Replacement guarantee in case of mismatch (within the contract)" data-ur="عدم مطابقت کی صورت میں تبدیلی کی ضمانت (معاہدے کے دائرے میں)">Гарантия замены при несоответствии (в рамках договора)</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Legal protection during inspections" data-ur="معائنوں کے دوران قانونی تحفظ">Юридическая защита при проверках</span></li>
+        </ul>
+      </div>
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For Workers" data-ur="کارکن کے لیے">Для работника</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Employer verified before departure from home country" data-ur="ملک سے روانگی سے پہلے آجر کی جانچ">Проверка работодателя до выезда из страны</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Honest conditions, fixed in writing" data-ur="منصفانہ شرائط، تحریری طور پر طے شدہ">Честные условия, зафиксированные письменно</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="A direct channel to WorkUnity (bypassing agents)" data-ur="WorkUnity سے براہِ راست رابطے کا ذریعہ (ایجنٹوں کے بغیر)">Прямой канал связи с WorkUnity (минуя агентов)</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Organised departure upon termination of work" data-ur="کام ختم ہونے پر منظم واپسی">Организованный выезд при прекращении работы</span></li>
+        </ul>
+      </div>
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For the State" data-ur="ریاست کے لیے">Для государства</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Timely submission of all documents" data-ur="تمام دستاویزات کی بروقت جمع آوری">Своевременная подача всех документов</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Transparent financial flows" data-ur="شفاف مالی لین دین">Прозрачные финансовые потоки</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Organised departure upon termination of employment" data-ur="ملازمت ختم ہونے پر منظم واپسی">Организованный выезд при прекращении трудовых отношений</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-en="Readiness for inspections and openness to dialogue" data-ur="معائنوں کے لیے تیاری اور مکالمے کے لیے کھلا پن">Готовность к проверкам и открытость для диалога</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="tcm__note rv" data-en="We do not guarantee a visa or permit — that decision belongs to state authorities. But we guarantee that every stage of the process will comply with the law." data-ur="ہم ویزا یا اجازت نامے کی ضمانت نہیں دیتے — یہ فیصلہ سرکاری اداروں کا ہوتا ہے۔ لیکن ہم اس بات کی ضمانت دیتے ہیں کہ عمل کا ہر مرحلہ قانون کے مطابق ہوگا۔">Мы не гарантируем визу или разрешение — это решение государственных органов. Но мы гарантируем, что каждый этап процесса пройдёт в соответствии с законом.</p>
+  </div>
+</section>
+
 <!-- ══ NETWORK ════════════════════════════════════════════ -->
 <section class="sec" id="net">
   <div class="wide">
@@ -805,6 +872,19 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
       <details class="q"><summary><span class="q__i">04</span><span data-en="How much does it cost?" data-ur="اس کی لاگت کتنی ہے؟">Сколько это стоит?</span></summary><div class="q__a" data-en="There's no fixed price list. The cost depends on the destination country, quantity, professions, and scope of support — we prepare an individual estimate." data-ur="کوئی مقررہ قیمت فہرست نہیں ہے۔ لاگت ملک، تعداد، پیشوں اور معاونت کے دائرہ کار پر منحصر ہوتی ہے — ہم ہر کیس کے لیے الگ تخمینہ تیار کرتے ہیں۔">Единого прайса нет. Стоимость зависит от страны найма, количества, профессий и объёма сопровождения — расчёт готовим индивидуально.</div></details>
       <details class="q"><summary><span class="q__i">05</span><span data-en="What if a worker doesn't work out?" data-ur="اگر کارکن موزوں نہ ہو تو کیا ہوگا؟">Что если работник не подойдёт?</span></summary><div class="q__a" data-en="Replacement terms are fixed in the contract before work begins, so there's no ambiguity later." data-ur="تبدیلی کی شرائط ہم کام شروع ہونے سے پہلے ہی معاہدے میں طے کر لیتے ہیں، تاکہ بعد میں کوئی ابہام نہ رہے۔">Условия замены фиксируем в договоре до начала работы, чтобы не было разночтений потом.</div></details>
       <details class="q"><summary><span class="q__i">06</span><span data-en="We already have foreign workers — can you check them?" data-ur="ہمارے پاس پہلے سے غیر ملکی کارکن کام کر رہے ہیں — کیا آپ انہیں چیک کر سکتے ہیں؟">У нас уже работают иностранцы — проверите?</span></summary><div class="q__a" data-en="Yes, that's a migration audit: we check documents and deadlines, and show you the risks and what to fix." data-ur="جی ہاں، یہ امیگریشن آڈٹ کہلاتا ہے: ہم دستاویزات اور مدتیں چیک کرتے ہیں، اور بتاتے ہیں کہ کہاں خطرہ ہے اور کیا درست کرنا ہے۔">Да, это миграционный аудит: проверяем документы и сроки, показываем риски и что исправить.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OTHER COUNTRIES ════════════════════════════════════ -->
+<section class="sec" id="elsewhere">
+  <div class="wide">
+    <div class="elsew rv">
+      <div class="elsew__b">
+        <h2 class="elsew__t" data-en="Operating in another country?" data-ur="کسی اور ملک میں کام کر رہے ہیں؟">Работаете в другой стране?</h2>
+        <p class="elsew__d" data-en="We are expanding our presence and building legal employment infrastructure across CIS countries. Tell us about your needs — we will let you know what we can offer in your jurisdiction." data-ur="ہم اپنی موجودگی کا دائرہ بڑھا رہے ہیں اور سی آئی ایس ممالک میں قانونی روزگار کا بنیادی ڈھانچہ تعمیر کر رہے ہیں۔ ہمیں اپنی ضرورت بتائیں — ہم آپ کو بتائیں گے کہ آپ کے دائرۂ اختیار میں ہم کیا پیش کر سکتے ہیں۔">Мы расширяем географию присутствия и выстраиваем инфраструктуру легального трудоустройства в странах СНГ. Расскажите о вашей потребности — мы сообщим, что можем предложить в вашей юрисдикции.</p>
+      </div>
+      <a class="btn btn--navy" href="#contact"><span data-en="Contact us" data-ur="ہمیں لکھیں">Написать нам</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
     </div>
   </div>
 </section>

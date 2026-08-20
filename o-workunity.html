@@ -101,7 +101,7 @@ html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
   font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.04em}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.04em;overflow-wrap:break-word}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
 img{max-width:100%;display:block}
 ::selection{background:var(--accent);color:#fff}
@@ -212,6 +212,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   border-bottom:1px solid var(--line)}
 .abt-hero .tag{font-family:var(--m);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .abt-hero h1{font-size:clamp(34px,5.6vw,68px);line-height:1.03;margin-block:20px 22px;max-width:15ch}
+@media(max-width:379px){.abt-hero h1{font-size:29px}}
 .abt-hero__sub{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:58ch;line-height:1.6}
 
 .abt-dia{margin-top:clamp(48px,6vw,72px);border:1px solid var(--line);border-radius:var(--r-lg);
@@ -359,15 +360,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 /* 10 ─ GOV (диалог с государством) --------------------------------*/
 .gov h2{font-size:clamp(26px,3.6vw,40px);margin-block:16px 18px;max-width:18ch}
 .gov p{color:var(--muted);font-size:16.5px;max-width:60ch;line-height:1.65;margin-bottom:clamp(30px,4vw,44px)}
-.gov__row{display:flex;flex-wrap:wrap;align-items:center;gap:0;max-width:900px}
-.gov__i{border:1px solid var(--line);border-radius:var(--r);padding:14px 20px;
-  font-family:var(--m);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink);background:var(--card);flex:1 1 180px;text-align:center}
-.gov__line{flex:0 0 28px;height:1px;background:var(--cyan)}
-@media(max-width:639px){
-  .gov__row{flex-direction:column;align-items:stretch}
-  .gov__line{width:1px;height:16px;margin-inline:auto}
-}
 
 /* 11 ─ FLOW (одно окно) --------------------------------------------*/
 .flow{display:grid;justify-items:center;gap:0;max-width:520px;margin:clamp(32px,4vw,48px) auto 0}
@@ -380,6 +372,50 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .flow__arrow svg{width:16px;height:16px;margin-inline:auto;transform:rotate(90deg)}
 
 /* 11b ─ BRIDGE (один WorkUnity — разные задачи) ----------------------*/
+
+/* Trust & Compliance matrix -------------------------------------------*/
+.tcm{display:grid;gap:14px;margin-top:clamp(24px,3vw,34px)}
+@media(min-width:820px){.tcm{grid-template-columns:repeat(3,1fr);gap:20px}}
+.tcm__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(20px,2.4vw,26px)}
+.tcm__t{font-size:15px;letter-spacing:-.01em;margin-bottom:14px;padding-bottom:12px;
+  border-bottom:1px solid var(--line)}
+.tcm__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.tcm__l li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);
+  font-size:14px;line-height:1.5}
+.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green)}
+.tcm__note{margin-top:clamp(20px,2.6vw,28px);padding:18px 20px;
+  border-inline-start:3px solid var(--accent);background:var(--bone);
+  color:var(--ink);font-size:14.5px;line-height:1.6}
+.tcm__intro{max-width:70ch;color:var(--muted);line-height:1.65}
+.tcm__intro + .tcm__intro{margin-top:12px}
+.tcm__intro b{color:var(--ink);font-weight:600}
+
+/* government relations levels -----------------------------------------*/
+.govl{display:grid;gap:14px;margin-top:clamp(24px,3vw,34px)}
+@media(min-width:760px){.govl{grid-template-columns:1fr 1fr;gap:18px}}
+.govl__c{border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:clamp(20px,2.4vw,26px);background:var(--card)}
+.govl__t{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;font-weight:500}
+.govl__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.govl__l li{position:relative;padding-inline-start:16px;font-size:14px;line-height:1.55;
+  color:var(--muted)}
+.govl__l li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+  width:7px;height:1.5px;background:var(--accent)}
+.govl__end{margin-top:clamp(22px,2.8vw,30px);font-size:15px;line-height:1.65;
+  color:var(--ink);max-width:66ch;font-weight:600}
+html[lang="ur"] .govl__t{letter-spacing:0;text-transform:none}
+
+/* credentials badge ----------------------------------------------------*/
+.creds{display:flex;flex-wrap:wrap;gap:12px 30px;padding:16px 20px;
+  margin-top:clamp(26px,3vw,36px);border:1px solid var(--line);
+  border-radius:var(--r);background:var(--card)}
+.creds__i{display:flex;flex-direction:column;gap:3px}
+.creds__k{font-family:var(--m);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted)}
+.creds__v{font-family:var(--h);font-weight:700;font-size:14px;color:var(--ink)}
+html[lang="ur"] .creds__k{letter-spacing:0;text-transform:none}
 .bridge{display:grid;gap:14px;margin-top:clamp(28px,3.5vw,40px)}
 @media(min-width:760px){.bridge{grid-template-columns:repeat(3,1fr);gap:20px}}
 .bridge__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
@@ -451,6 +487,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 <div class="prog" id="prog" aria-hidden="true"></div>
 
 <svg style="display:none" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-2 5-5 2 2-5z"/></symbol>
@@ -486,8 +523,8 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 <section class="abt-hero">
   <div class="wrap">
     <span class="tag rv" data-i18n="hero.tag">Рабочая сила · Право · Миграция · Доверие</span>
-    <h1 class="rv rv-d1" data-i18n="hero.h1">WorkUnity — больше, чем рекрутинг.</h1>
-    <p class="abt-hero__sub rv rv-d2" data-i18n="hero.sub">Мы создаём прозрачную систему для иностранцев и бизнеса в Кыргызстане: от привлечения работников и миграционного сопровождения до юридической помощи и защиты интересов иностранных граждан.</p>
+    <h1 class="rv rv-d1" data-i18n="hero.h1">WorkUnity — инфраструктура, а не посредник.</h1>
+    <p class="abt-hero__sub rv rv-d2" data-i18n="hero.sub">Мы создаём прозрачную систему для иностранных граждан и бизнеса: от привлечения работников и миграционного сопровождения до юридической помощи и защиты интересов. Начали с Кыргызстана — строим инфраструктуру для всего региона.</p>
 
     <div class="abt-dia rv rv-d3">
       <div class="abt-dia__env" data-i18n="diagram.env">Правовая и государственная среда</div>
@@ -500,7 +537,13 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
       </div>
     </div>
   </div>
-</section>
+    <div class="creds rv rv-d3">
+      <div class="creds__i"><span class="creds__k" data-i18n="creds.entity">Юридическое лицо</span><span class="creds__v" dir="ltr">ОсОО «WorkUnity»</span></div>
+      <div class="creds__i"><span class="creds__k" data-i18n="creds.reg">Регистрационный номер</span><span class="creds__v" dir="ltr">00408202610480</span></div>
+      <div class="creds__i"><span class="creds__k" data-i18n="creds.jur">Юрисдикция</span><span class="creds__v" data-i18n="creds.jurv">Кыргызская Республика</span></div>
+      <div class="creds__i"><span class="creds__k" data-i18n="creds.city">Город</span><span class="creds__v" data-i18n="creds.cityv">Бишкек</span></div>
+    </div>
+  </section>
 
 <!-- ══ ЧТО ОБЪЕДИНЯЕТ WORKUNITY ═══════════════════════════ -->
 <section class="sec sec--tight" id="unite">
@@ -642,6 +685,41 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
       <div class="trust__c"><div class="trust__ix">04</div><h3 class="trust__t" data-i18n="trust.04.title">Проверенные документы</h3><p class="trust__d" data-i18n="trust.04.desc">Ключевые документы и этапы процесса проходят контроль.</p></div>
     </div>
     <p class="trust__end rv" data-i18n="trust.end">WorkUnity строит собственный стандарт доверия для международной рабочей и миграционной деятельности.</p>
+    <div class="hd rv" style="margin-top:clamp(46px,5vw,74px)"><h2 data-i18n="tc.h2">Trust & Compliance: как мы работаем</h2></div>
+      <div class="rv">
+        <p class="tcm__intro" data-i18n="tc.in1">WorkUnity зарегистрирована как ОсОО в Кыргызской Республике (рег. № <span dir="ltr">00408202610480</span>). <b>Мы начинаем с Кыргызстана и строим инфраструктуру для всего региона</b> — с единым стандартом проверки и сопровождения в каждой стране присутствия.</p>
+        <p class="tcm__intro" data-i18n="tc.in2">Наш стандарт — не минимальное соответствие закону, а активная защита всех участников процесса.</p>
+      </div>
+      <div class="tcm rv">
+        <div class="tcm__c">
+          <h3 class="tcm__t" data-i18n="tc.c1t">Для работодателя</h3>
+          <ul class="tcm__l">
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c1a">Проверка каждого кандидата до выхода на работу</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c1b">Полный пакет документов и миграционное сопровождение</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c1c">Гарантия замены при несоответствии (в рамках договора)</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c1d">Юридическая защита при проверках</span></li>
+          </ul>
+        </div>
+        <div class="tcm__c">
+          <h3 class="tcm__t" data-i18n="tc.c2t">Для работника</h3>
+          <ul class="tcm__l">
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c2a">Проверка работодателя до выезда из страны</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c2b">Честные условия, зафиксированные письменно</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c2c">Прямой канал связи с WorkUnity (минуя агентов)</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c2d">Организованный выезд при прекращении работы</span></li>
+          </ul>
+        </div>
+        <div class="tcm__c">
+          <h3 class="tcm__t" data-i18n="tc.c3t">Для государства</h3>
+          <ul class="tcm__l">
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c3a">Своевременная подача всех документов</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c3b">Прозрачные финансовые потоки</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c3c">Организованный выезд при прекращении трудовых отношений</span></li>
+          <li><svg aria-hidden="true"><use href="#tick"/></svg><span data-i18n="tc.c3d">Готовность к проверкам и открытость для диалога</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="tcm__note rv" data-i18n="tc.note">Мы не гарантируем визу или разрешение — это решение государственных органов. Но мы гарантируем, что каждый этап процесса пройдёт в соответствии с законом.</p>
   </div>
 </section>
 
@@ -684,17 +762,40 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 <!-- ══ ОТКРЫТЫЙ ДИАЛОГ С ГОСУДАРСТВОМ ══════════════════════ -->
 <section class="sec gov" id="gov">
   <div class="wrap">
-    <div class="rv"><span class="ix" data-i18n="gov.ix">09 — Государство</span><h2 data-i18n="gov.h2">Открытый диалог с государством.</h2></div>
-    <p class="rv rv-d1" data-i18n="gov.p">Мы заинтересованы в прозрачном и законном рынке. Поэтому выстраиваем системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
-    <div class="gov__row rv rv-d2">
-      <div class="gov__i" data-i18n="gov.migration">Миграция</div>
-      <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i" data-i18n="gov.labor">Труд</div>
-      <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i" data-i18n="gov.institutions">Государственные институты</div>
-      <div class="gov__line" aria-hidden="true"></div>
-      <div class="gov__i" data-i18n="gov.diplomacy">Дипломатические связи</div>
+    <div class="rv"><span class="ix" data-i18n="gov.ix">09 — Государство</span><h2 data-i18n="gov.h2">Государственные отношения.</h2></div>
+    <p class="rv rv-d1" data-i18n="gov.p">WorkUnity строит системные отношения с государственными органами — начиная с Кыргызской Республики и по мере расширения географии. Отношения строятся на прозрачности процессов, а не на личных связях.</p>
+    <div class="govl rv rv-d2">
+      <div class="govl__c">
+        <div class="govl__t" data-i18n="gov.l1">Институциональный уровень</div>
+        <ul class="govl__l">
+          <li data-i18n="gov.l1a">Миграционная служба: своевременная подача документов, организованная миграция</li>
+          <li data-i18n="gov.l1b">Министерство труда: соблюдение квот и требований к иностранной рабочей силе</li>
+          <li data-i18n="gov.l1c">Налоговые органы: полностью прозрачная отчётность</li>
+        </ul>
+      </div>
+      <div class="govl__c">
+        <div class="govl__t" data-i18n="gov.l2">Отраслевой уровень</div>
+        <ul class="govl__l">
+          <li data-i18n="gov.l2a">Участие в отраслевых ассоциациях (строительство, лёгкая промышленность, логистика)</li>
+          <li data-i18n="gov.l2b">Готовность предоставлять агрегированную статистику по запросу профильных ведомств</li>
+        </ul>
+      </div>
+      <div class="govl__c">
+        <div class="govl__t" data-i18n="gov.l3">Дипломатический уровень</div>
+        <ul class="govl__l">
+          <li data-i18n="gov.l3a">Сотрудничество с посольствами стран-источников для защиты граждан</li>
+          <li data-i18n="gov.l3b">Прямой канал связи с консульскими отделами по трудовым вопросам</li>
+        </ul>
+      </div>
+      <div class="govl__c">
+        <div class="govl__t" data-i18n="gov.l4">Публичный уровень</div>
+        <ul class="govl__l">
+          <li data-i18n="gov.l4a">Позиционирование как добросовестного и прозрачного участника рынка</li>
+          <li data-i18n="gov.l4b">Открытость к диалогу с регуляторами и СМИ</li>
+        </ul>
+      </div>
     </div>
+    <p class="govl__end rv rv-d3" data-i18n="gov.end">Мы не просим особых условий. Мы предлагаем предсказуемость и прозрачность — то, что нужно государству для эффективного регулирования рынка.</p>
   </div>
 </section>
 
@@ -839,8 +940,8 @@ var I18N_EN = {
   'nav.faq':'FAQ', 'nav.about':'WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
   'header.consultation':'Book a Consultation',
   'hero.tag':'Workforce · Legal · Migration · Trust',
-  'hero.h1':'WorkUnity — more than recruitment.',
-  'hero.sub':'We build a transparent system for foreign nationals and businesses in Kyrgyzstan — from workforce recruitment and migration support to legal assistance and protection of rights.',
+  'hero.h1':'WorkUnity — infrastructure, not an intermediary.',
+  'hero.sub':'We build a transparent system for foreign nationals and businesses: from sourcing workers and migration support to legal assistance and protection of interests. We started with Kyrgyzstan — we are building infrastructure for the whole region.',
   'diagram.env':'Legal and Government Environment', 'diagram.foreigner':'Foreign National', 'diagram.employer':'Employer',
   'unite.ix':'01 — Ecosystem', 'unite.h2':'What WorkUnity brings together', 'unite.sub':'We build one system for foreign nationals, employers and partners.',
   'unite.foreigner.title':'Foreign Nationals', 'unite.foreigner.desc':'Legal assistance, migration support, protection of interests and support in Kyrgyzstan.',
@@ -898,9 +999,47 @@ var I18N_EN = {
   'kg.net.source':'Source countries', 'kg.net.c1':'India', 'kg.net.c2':'Pakistan', 'kg.net.c3':'Bangladesh', 'kg.net.c4':'Nepal', 'kg.net.c5':'Sri Lanka',
   'kg.net.source_note':'Countries we source candidates from.',
   'kg.net.dest':'Countries and directions we work in', 'kg.net.dest_list':'Kyrgyzstan · other directions',
-  'gov.ix':'09 — Government', 'gov.h2':'An open dialogue with government.',
-  'gov.p':'We have a direct interest in a transparent and lawful market. That is why we build structured relationships with government institutions, industry associations and diplomatic missions.',
-  'gov.migration':'Migration', 'gov.labor':'Labour', 'gov.institutions':'Government Institutions', 'gov.diplomacy':'Diplomatic Relations',
+  'gov.ix':'09 — Government', 'gov.h2':'Government relations.',
+  'gov.p':'WorkUnity builds structured relationships with government institutions — starting with the Kyrgyz Republic and extending as our geography grows. Those relationships rest on transparent processes, not personal connections.',
+  'tc.h2':'Trust & Compliance: How We Work',
+  'tc.in1':'WorkUnity is registered as an LLC in the Kyrgyz Republic (Reg. No. <span dir="ltr">00408202610480</span>). <b>We start with Kyrgyzstan and build infrastructure for the entire region</b> — with a single verification and support standard in every country of presence.',
+  'tc.in2':'Our standard is not minimal legal compliance, but active protection of all participants.',
+  'tc.c1t':'For Employers',
+  'tc.c1a':'Every candidate verified before placement',
+  'tc.c1b':'Full documentation and migration support',
+  'tc.c1c':'Replacement guarantee in case of mismatch (within the contract)',
+  'tc.c1d':'Legal protection during inspections',
+  'tc.c2t':'For Workers',
+  'tc.c2a':'Employer verified before departure from home country',
+  'tc.c2b':'Honest conditions, fixed in writing',
+  'tc.c2c':'A direct channel to WorkUnity (bypassing agents)',
+  'tc.c2d':'Organised departure upon termination of work',
+  'tc.c3t':'For the State',
+  'tc.c3a':'Timely submission of all documents',
+  'tc.c3b':'Transparent financial flows',
+  'tc.c3c':'Organised departure upon termination of employment',
+  'tc.c3d':'Readiness for inspections and openness to dialogue',
+  'tc.note':'We do not guarantee a visa or permit — that decision belongs to state authorities. But we guarantee that every stage of the process will comply with the law.',
+  'creds.city':'City',
+  'creds.cityv':'Bishkek',
+  'creds.entity':'Legal entity',
+  'creds.jur':'Jurisdiction',
+  'creds.jurv':'Kyrgyz Republic',
+  'creds.reg':'Registration number',
+  'gov.end':'We are not asking for special treatment. We offer predictability and transparency — what the state needs to regulate the market effectively.',
+  'gov.l1':'Institutional level',
+  'gov.l1a':'Migration service: timely submission of documents, organised migration',
+  'gov.l1b':'Ministry of Labour: compliance with quotas and foreign workforce requirements',
+  'gov.l1c':'Tax authorities: fully transparent reporting',
+  'gov.l2':'Industry level',
+  'gov.l2a':'Participation in industry associations (construction, light manufacturing, logistics)',
+  'gov.l2b':'Readiness to provide aggregated statistics at the request of relevant authorities',
+  'gov.l3':'Diplomatic level',
+  'gov.l3a':'Cooperation with embassies of source countries to protect their citizens',
+  'gov.l3b':'A direct channel to consular departments on labour matters',
+  'gov.l4':'Public level',
+  'gov.l4a':'Positioning as a conscientious and transparent market participant',
+  'gov.l4b':'Openness to dialogue with regulators and the media',
   'flow.ix':'10 — Process', 'flow.h2':'One point of contact. The whole system behind it.',
   'flow.p':'The client should not have to coordinate several specialists on their own. One dedicated coordinator runs the case and brings in the right people within WorkUnity.',
   'flow.client':'Client', 'flow.curator':'WorkUnity Coordinator', 'flow.services':'Legal · Migration · Recruitment · Compliance', 'flow.result':'Result',
@@ -924,8 +1063,8 @@ var I18N_UR = {
   'nav.faq':'سوالات', 'nav.about':'WorkUnity', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
   'header.consultation':'مشاورت کے لیے رابطہ کریں',
   'hero.tag':'ورک فورس · قانون · امیگریشن · اعتماد',
-  'hero.h1':'WorkUnity — صرف بھرتی نہیں۔',
-  'hero.sub':'ہم کرغزستان میں غیر ملکی شہریوں اور کاروباروں کے لیے ایک شفاف نظام بناتے ہیں — کارکنوں کی بھرتی اور امیگریشن معاونت سے لے کر قانونی مدد اور حقوق کے تحفظ تک۔',
+  'hero.h1':'WorkUnity — بنیادی ڈھانچہ، محض ثالث نہیں۔',
+  'hero.sub':'ہم غیر ملکی شہریوں اور کاروباروں کے لیے ایک شفاف نظام بناتے ہیں: کارکنوں کی فراہمی اور نقل مکانی کی معاونت سے لے کر قانونی مدد اور مفادات کے تحفظ تک۔ ہم نے کرغزستان سے آغاز کیا — اور پورے خطے کے لیے بنیادی ڈھانچہ تعمیر کر رہے ہیں۔',
   'diagram.env':'قانونی اور سرکاری ماحول', 'diagram.foreigner':'غیر ملکی شہری', 'diagram.employer':'آجر',
   'unite.ix':'01 — ایکو سسٹم', 'unite.h2':'WorkUnity کیا جوڑتا ہے', 'unite.sub':'ہم غیر ملکی شہریوں، آجرین اور شراکت داروں کے لیے ایک واحد نظام بناتے ہیں۔',
   'unite.foreigner.title':'غیر ملکی شہری', 'unite.foreigner.desc':'کرغزستان میں قانونی مدد، امیگریشن معاونت، مفادات کا تحفظ اور معاونت۔',
@@ -983,9 +1122,47 @@ var I18N_UR = {
   'kg.net.source':'ماخذ ممالک', 'kg.net.c1':'بھارت', 'kg.net.c2':'پاکستان', 'kg.net.c3':'بنگلہ دیش', 'kg.net.c4':'نیپال', 'kg.net.c5':'سری لنکا',
   'kg.net.source_note':'وہ ممالک جہاں سے ہم امیدوار حاصل کرتے ہیں۔',
   'kg.net.dest':'وہ ممالک اور شعبے جہاں ہم کام کرتے ہیں', 'kg.net.dest_list':'کرغزستان · دیگر شعبے',
-  'gov.ix':'09 — حکومت', 'gov.h2':'حکومت کے ساتھ کھلا مکالمہ۔',
-  'gov.p':'ہمیں ایک شفاف اور قانونی مارکیٹ میں براہ راست دلچسپی ہے۔ اسی لیے ہم سرکاری اداروں، صنعتی انجمنوں اور سفارتی مشنز کے ساتھ منظم تعلقات استوار کرتے ہیں۔',
-  'gov.migration':'امیگریشن', 'gov.labor':'لیبر', 'gov.institutions':'سرکاری ادارے', 'gov.diplomacy':'سفارتی تعلقات',
+  'gov.ix':'09 — حکومت', 'gov.h2':'حکومتی تعلقات۔',
+  'gov.p':'WorkUnity سرکاری اداروں کے ساتھ منظم تعلقات استوار کرتا ہے — جمہوریہ کرغزستان سے آغاز کرتے ہوئے اور جیسے جیسے ہمارا دائرہ بڑھتا ہے۔ یہ تعلقات ذاتی روابط پر نہیں، شفاف طریقۂ کار پر قائم ہیں۔',
+  'tc.h2':'Trust & Compliance: ہم کیسے کام کرتے ہیں',
+  'tc.in1':'WorkUnity جمہوریہ کرغزستان میں ایک ایل ایل سی کے طور پر رجسٹرڈ ہے (رجسٹریشن نمبر <span dir="ltr">00408202610480</span>)۔ <b>ہم کرغزستان سے آغاز کر رہے ہیں اور پورے خطے کے لیے بنیادی ڈھانچہ تعمیر کر رہے ہیں</b> — ہر اُس ملک میں تصدیق اور نگرانی کا ایک ہی معیار جہاں ہم موجود ہیں۔',
+  'tc.in2':'ہمارا معیار قانون کی کم سے کم پابندی نہیں، بلکہ عمل میں شامل تمام فریقوں کا فعال تحفظ ہے۔',
+  'tc.c1t':'آجر کے لیے',
+  'tc.c1a':'کام شروع کرنے سے پہلے ہر امیدوار کی جانچ',
+  'tc.c1b':'دستاویزات کا مکمل پیکیج اور نقل مکانی کی نگرانی',
+  'tc.c1c':'عدم مطابقت کی صورت میں تبدیلی کی ضمانت (معاہدے کے دائرے میں)',
+  'tc.c1d':'معائنوں کے دوران قانونی تحفظ',
+  'tc.c2t':'کارکن کے لیے',
+  'tc.c2a':'ملک سے روانگی سے پہلے آجر کی جانچ',
+  'tc.c2b':'منصفانہ شرائط، تحریری طور پر طے شدہ',
+  'tc.c2c':'WorkUnity سے براہِ راست رابطے کا ذریعہ (ایجنٹوں کے بغیر)',
+  'tc.c2d':'کام ختم ہونے پر منظم واپسی',
+  'tc.c3t':'ریاست کے لیے',
+  'tc.c3a':'تمام دستاویزات کی بروقت جمع آوری',
+  'tc.c3b':'شفاف مالی لین دین',
+  'tc.c3c':'ملازمت ختم ہونے پر منظم واپسی',
+  'tc.c3d':'معائنوں کے لیے تیاری اور مکالمے کے لیے کھلا پن',
+  'tc.note':'ہم ویزا یا اجازت نامے کی ضمانت نہیں دیتے — یہ فیصلہ سرکاری اداروں کا ہوتا ہے۔ لیکن ہم اس بات کی ضمانت دیتے ہیں کہ عمل کا ہر مرحلہ قانون کے مطابق ہوگا۔',
+  'creds.city':'شہر',
+  'creds.cityv':'بشکیک',
+  'creds.entity':'قانونی ادارہ',
+  'creds.jur':'دائرۂ اختیار',
+  'creds.jurv':'جمہوریہ کرغزستان',
+  'creds.reg':'رجسٹریشن نمبر',
+  'gov.end':'ہم خصوصی رعایت نہیں مانگتے۔ ہم پیش گوئی اور شفافیت پیش کرتے ہیں — وہی جو ریاست کو مارکیٹ کے مؤثر ضابطے کے لیے درکار ہے۔',
+  'gov.l1':'ادارہ جاتی سطح',
+  'gov.l1a':'امیگریشن سروس: دستاویزات کی بروقت جمع آوری، منظم نقل مکانی',
+  'gov.l1b':'وزارتِ محنت: کوٹوں اور غیر ملکی افرادی قوت کی شرائط کی پابندی',
+  'gov.l1c':'ٹیکس ادارے: مکمل شفاف رپورٹنگ',
+  'gov.l2':'شعبہ جاتی سطح',
+  'gov.l2a':'شعبہ جاتی انجمنوں میں شرکت (تعمیرات، ہلکی صنعت، لاجسٹکس)',
+  'gov.l2b':'متعلقہ اداروں کی درخواست پر مجموعی اعداد و شمار فراہم کرنے کے لیے تیاری',
+  'gov.l3':'سفارتی سطح',
+  'gov.l3a':'شہریوں کے تحفظ کے لیے بھیجنے والے ممالک کے سفارت خانوں کے ساتھ تعاون',
+  'gov.l3b':'محنت کے معاملات پر قونصلر شعبوں سے براہِ راست رابطہ',
+  'gov.l4':'عوامی سطح',
+  'gov.l4a':'ایک دیانت دار اور شفاف مارکیٹ شریک کے طور پر شناخت',
+  'gov.l4b':'ریگولیٹرز اور ذرائع ابلاغ کے ساتھ مکالمے کے لیے کھلا پن',
   'flow.ix':'10 — عمل', 'flow.h2':'ایک رابطہ۔ اس کے پیچھے پورا نظام۔',
   'flow.p':'کلائنٹ کو خود کئی ماہرین کو مربوط کرنے کی ضرورت نہیں ہونی چاہیے۔ ایک مخصوص کوآرڈینیٹر کیس چلاتا ہے اور WorkUnity کے اندر صحیح لوگوں کو شامل کرتا ہے۔',
   'flow.client':'کلائنٹ', 'flow.curator':'WorkUnity کوآرڈینیٹر', 'flow.services':'قانونی مدد · امیگریشن · بھرتی · تعمیل', 'flow.result':'نتیجہ',

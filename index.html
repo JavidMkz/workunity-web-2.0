@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.className+=" js";</script>
 <script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
-<title>WorkUnity — иностранные рабочие для вашего предприятия</title>
-<meta name="description" content="Подбор рабочих из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Разрешения, квоты, документы, юридические консультации.">
+<title>WorkUnity — легальное трудоустройство иностранных работников</title>
+<meta name="description" content="Инфраструктура легального трудоустройства и миграционного сопровождения. Работодателям — подбор, разрешения, документы и юридическая защита. Иностранным гражданам — правовая помощь и защита прав. Специалисты из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки.">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
@@ -14,8 +14,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="WorkUnity">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="WorkUnity — иностранные рабочие для вашего предприятия">
-<meta property="og:description" content="Подбор, разрешения, документы, юридические консультации. Девять стран найма.">
+<meta property="og:title" content="WorkUnity — легальное трудоустройство иностранных работников">
+<meta property="og:description" content="Предсказуемый процесс, проверенные документы, юридическая защита. Работодателям, иностранным гражданам и партнёрам.">
 <meta property="og:image" content="https://workunityglobe.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -240,7 +240,27 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .hero h1{font-size:clamp(38px,7.4vw,92px);line-height:.98;margin-block:24px 26px;max-width:13ch}
 .hero h1 em{font-style:normal;color:var(--accent);display:block}
 .hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted);max-width:46ch;line-height:1.58}
+.hero__pts{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;
+  max-width:52ch}
+.hero__pts li{position:relative;padding-inline-start:19px;color:var(--muted);
+  font-size:clamp(14.5px,1.25vw,16px);line-height:1.5}
+.hero__pts li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+  width:7px;height:1.5px;background:var(--accent)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* three-route band ------------------------------------------------------*/
+.bridge{display:grid;gap:14px}
+@media(min-width:760px){.bridge{grid-template-columns:repeat(3,1fr);gap:20px}}
+.bridge__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(22px,2.6vw,28px);display:flex;flex-direction:column;gap:14px}
+.bridge__t{font-size:17.5px;letter-spacing:-.02em}
+.bridge__d{color:var(--muted);font-size:14.5px;line-height:1.6;flex:1}
+.bridge__a{display:inline-flex;align-items:center;gap:8px;font-family:var(--h);font-weight:700;
+  font-size:14.5px;color:var(--accent);text-decoration:none}
+.bridge__a svg{width:14px;height:14px;transition:transform .2s}
+.bridge__a:hover svg{transform:translateX(3px)}
+html[dir="rtl"] .bridge__a svg{transform:scaleX(-1)}
+html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 .hero__cta .btn{flex:1 1 200px}
 
 /* hero stat strip */
@@ -570,11 +590,16 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
     <div class="g12 hero__g">
       <div class="hero__l">
         <span class="ix" data-en="9 destination countries" data-ur="9 ممالک میں ملازمت">9 стран найма</span>
-        <h1 data-en="International Workforce Recruitment &lt;em&gt;for Your Business.&lt;/em&gt;" data-ur="بین الاقوامی افرادی قوت کی بھرتی &lt;em&gt;آپ کے کاروبار کے لیے۔&lt;/em&gt;">Международный подбор рабочих кадров <em>для вашего бизнеса.</em></h1>
-        <p class="hero__sub" data-en="We recruit, process, and support workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for construction, manufacturing, warehousing, logistics, and other industries." data-ur="ہم تعمیرات، مینوفیکچرنگ، گوداموں، لاجسٹکس اور دیگر شعبوں کے لیے بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے کارکن بھرتی کرتے ہیں، دستاویزات مکمل کرتے ہیں اور مکمل معاونت فراہم کرتے ہیں۔">Подбираем, оформляем и сопровождаем работников из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для строительства, производства, складов, логистики и других отраслей.</p>
+        <h1 data-en="Legal Employment Infrastructure &lt;em&gt;for Foreign Workers.&lt;/em&gt;" data-ur="قانونی روزگار کا بنیادی ڈھانچہ &lt;em&gt;غیر ملکی کارکنوں کے لیے۔&lt;/em&gt;">Инфраструктура легального трудоустройства <em>иностранных работников.</em></h1>
+        <p class="hero__sub" data-en="We don&#39;t sell people — we remove risk." data-ur="ہم لوگ نہیں بیچتے — ہم خطرہ ختم کرتے ہیں۔">Мы продаём не людей — мы снимаем риск.</p>
+        <ul class="hero__pts">
+          <li data-en="Employers get a predictable process and legal protection." data-ur="آجروں کو قابلِ پیشگوئی عمل اور قانونی تحفظ ملتا ہے۔">Работодатель получает предсказуемый процесс и юридическую защиту.</li>
+          <li data-en="Workers get honest conditions and a guarantee of what was promised." data-ur="کارکنوں کو منصفانہ شرائط اور وعدے کی ضمانت ملتی ہے۔">Работник — честные условия и гарантию обещанного.</li>
+          <li data-en="The state gets transparent migration." data-ur="ریاست کو شفاف نقل مکانی ملتی ہے۔">Государство — прозрачную миграцию.</li>
+        </ul>
         <div class="hero__cta">
-          <a class="btn btn--navy" href="#contact"><span data-en="Submit Request" data-ur="درخواست دیں">Оставить заявку</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
-          <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+          <a class="btn btn--navy" href="#contact"><span data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">Консультация для работодателя</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="btn btn--out" href="inostrantsam.html#cta-form"><span data-en="Foreign national assistance" data-ur="غیر ملکی شہری کی مدد">Помощь иностранному гражданину</span></a>
         </div>
       </div>
     </div>
@@ -592,6 +617,30 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
   </div>
 
   <div class="tick" aria-hidden="true"><div class="tick__row" id="tickRow"></div></div>
+</section>
+
+<!-- ══ THREE ROUTES ═══════════════════════════════════════ -->
+<section class="sec" id="bridge">
+  <div class="wide">
+    <div class="hd rv"><span class="ix" data-en="Navigation" data-ur="رہنمائی">Навигация</span><h2 data-en="One WorkUnity — different needs" data-ur="ایک WorkUnity — مختلف ضروریات">Один WorkUnity — разные задачи</h2></div>
+    <div class="bridge rv">
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</h3>
+        <p class="bridge__d" data-en="Sourcing, documentation and support for foreign workers. A predictable process, verified documents, legal protection." data-ur="غیر ملکی کارکنوں کی بھرتی، دستاویزات اور نگرانی۔ قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔">Подбор, оформление и сопровождение иностранных работников. Предсказуемый процесс, проверенные документы, юридическая защита.</p>
+        <a class="bridge__a" href="#contact"><span data-en="Submit a request" data-ur="درخواست دیں">Оставить заявку</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Foreign Nationals" data-ur="غیر ملکی شہریوں کے لیے">Иностранным гражданам</h3>
+        <p class="bridge__d" data-en="Legal assistance, migration matters, protection of your rights. Verify a job offer before you pay." data-ur="قانونی مدد، نقل مکانی کے معاملات، آپ کے حقوق کا تحفظ۔ ادائیگی سے پہلے روزگار کی پیشکش کی تصدیق کریں۔">Правовая помощь, миграционные вопросы, защита ваших прав. Проверьте предложение о работе, прежде чем платить.</p>
+        <a class="bridge__a" href="inostrantsam.html#cta-form"><span data-en="Get help" data-ur="مدد حاصل کریں">Получить помощь</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Partners" data-ur="شراکت داروں کے لیے">Партнёрам</h3>
+        <p class="bridge__d" data-en="Join the network of verified partners. Infrastructure, standards, a transparent commission model." data-ur="تصدیق شدہ شراکت داروں کے نیٹ ورک میں شامل ہوں۔ بنیادی ڈھانچہ، معیارات، شفاف کمیشن ماڈل۔">Присоединяйтесь к сети проверенных партнёров. Инфраструктура, стандарты, прозрачная комиссионная модель.</p>
+        <a class="bridge__a" href="partners.html#cta-form"><span data-en="Become a partner" data-ur="شراکت دار بنیں">Стать партнёром</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ NETWORK ════════════════════════════════════════════ -->
@@ -1105,23 +1154,23 @@ function nextLang(cur){
 
 var SEO = {
   ru: {
-    title: 'WorkUnity — иностранные рабочие для вашего предприятия',
-    description: 'Подбор рабочих из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки для предприятий Кыргызстана, Казахстана, Узбекистана, России, Азербайджана, Беларуси, Таджикистана, Грузии и Украины. Разрешения, квоты, документы, юридические консультации.',
-    ogTitle: 'WorkUnity — иностранные рабочие для вашего предприятия',
-    ogDescription: 'Подбор, разрешения, документы, юридические консультации. Девять стран найма.'
+    title: 'WorkUnity — легальное трудоустройство иностранных работников',
+    description: 'Инфраструктура легального трудоустройства и миграционного сопровождения. Работодателям — подбор, разрешения, документы и юридическая защита. Иностранным гражданам — правовая помощь и защита прав. Специалисты из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки.',
+    ogTitle: 'WorkUnity — легальное трудоустройство иностранных работников',
+    ogDescription: 'Предсказуемый процесс, проверенные документы, юридическая защита. Работодателям, иностранным гражданам и партнёрам.'
   },
   en: {
-    title: 'WorkUnity — Foreign Workers for Your Business',
-    description: 'Recruiting workers from India, Pakistan, Bangladesh, Nepal, and Sri Lanka for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. Permits, quotas, documents, legal consultations.',
-    ogTitle: 'WorkUnity — Foreign Workers for Your Business',
-    ogDescription: 'Recruitment, permits, documents, legal consultations. Nine destination countries.',
+    title: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
+    description: 'Legal employment and migration support infrastructure. For employers — sourcing, permits, documents and legal protection. For foreign nationals — legal assistance and protection of rights. Specialists from India, Pakistan, Bangladesh, Nepal and Sri Lanka.',
+    ogTitle: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
+    ogDescription: 'A predictable process, verified documents, legal protection. For employers, foreign nationals and partners.',
     locale: 'en_US'
   },
   ur: {
-    title: 'WorkUnity — آپ کے کاروبار کے لیے غیر ملکی کارکن',
-    description: 'کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے کارکنوں کی بھرتی۔ اجازت نامے، کوٹے، دستاویزات، قانونی مشاورت۔',
-    ogTitle: 'WorkUnity — آپ کے کاروبار کے لیے غیر ملکی کارکن',
-    ogDescription: 'بھرتی، اجازت نامے، دستاویزات، قانونی مشاورت۔ نو ممالک میں ملازمت۔',
+    title: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
+    description: 'قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔ آجروں کے لیے — بھرتی، اجازت نامے، دستاویزات اور قانونی تحفظ۔ غیر ملکی شہریوں کے لیے — قانونی مدد اور حقوق کا تحفظ۔ بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے ماہرین۔',
+    ogTitle: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
+    ogDescription: 'قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔ آجروں، غیر ملکی شہریوں اور شراکت داروں کے لیے۔',
     locale: 'ur_PK'
   }
 };

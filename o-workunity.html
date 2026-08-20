@@ -214,6 +214,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(max-width:659px){.abt-dia__line{width:1px;height:26px;flex:0 0 26px;
   background:linear-gradient(180deg,rgba(var(--cyan-rgb),.15),var(--cyan),rgba(var(--cyan-rgb),.15))}}
 
+/* 3b ─ UNITE (что объединяет WorkUnity) -----------------------*/
+.unite{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:clamp(28px,3.5vw,40px)}
+.unite__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(24px,3vw,32px);flex:1 1 260px;min-width:0}
+.unite__t{font-size:19px;letter-spacing:-.02em;margin-bottom:10px}
+.unite__d{color:var(--muted);font-size:15px;line-height:1.6}
+.unite__line{flex:0 0 32px;align-self:center;height:1px;
+  background:linear-gradient(90deg,rgba(var(--accent-rgb),.1),var(--accent),rgba(var(--accent-rgb),.1))}
+@media(max-width:759px){
+  .unite{flex-direction:column;align-items:stretch}
+  .unite__line{width:1px;height:22px;flex:0 0 22px;margin-inline:auto;
+    background:linear-gradient(180deg,rgba(var(--accent-rgb),.1),var(--accent),rgba(var(--accent-rgb),.1))}
+}
+.unite__end{margin-top:clamp(24px,3vw,32px);text-align:center;color:var(--muted);font-size:15px;
+  max-width:56ch;margin-inline:auto}
+
 /* 4 ─ RISK (рынок должен работать честно) ---------------------*/
 .risk{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 @media(min-width:760px){.risk{grid-template-columns:repeat(3,1fr)}}
@@ -238,6 +254,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   color:var(--accent);opacity:.12;position:absolute;top:8px;right:14px;letter-spacing:-.03em}
 .role__t{font-size:19px;letter-spacing:-.02em;position:relative;margin-bottom:10px}
 .role__d{color:var(--muted);font-size:14.5px;line-height:1.6;max-width:32ch;position:relative}
+
+/* 5b ─ DIRECTIONS (направления WorkUnity) -----------------------*/
+.dir{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dir__g{display:grid;gap:14px;margin-top:clamp(28px,3.5vw,40px)}
+@media(min-width:640px){.dir__g{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.dir__g{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1240px){.dir__g{grid-template-columns:repeat(5,1fr)}}
+.dir__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(22px,2.6vw,26px);position:relative;overflow:hidden}
+.dir__num{font-family:var(--h);font-weight:800;font-size:clamp(34px,3.6vw,44px);line-height:1;
+  color:var(--accent);opacity:.16;letter-spacing:-.03em;display:block;margin-bottom:14px}
+.dir__t{font-size:16.5px;letter-spacing:-.02em;margin-bottom:8px}
+.dir__d{color:var(--muted);font-size:14px;line-height:1.6}
 
 /* 6 ─ WIN (когда система работает правильно) --------------------*/
 .win{display:grid;gap:0;position:relative}
@@ -266,6 +295,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(min-width:760px){.lines__l{grid-template-columns:repeat(2,1fr);column-gap:clamp(24px,3vw,48px)}}
 .lines__i{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 .lines__x{font-family:var(--h);font-weight:800;color:var(--muted);flex:none;font-size:16px;line-height:1.5}
+.lines__pre{font-family:var(--h);font-weight:700;font-size:16px;letter-spacing:-.01em;color:var(--accent);
+  margin-top:-6px;margin-bottom:clamp(20px,2.5vw,28px)}
+
+/* 8b ─ TRUST (как мы создаём доверие) ----------------------------*/
+.trust{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
+  margin-top:clamp(28px,3.5vw,40px)}
+@media(min-width:640px){.trust{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.trust{grid-template-columns:repeat(4,1fr)}}
+.trust__c{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(22px,2.6vw,28px)}
+.trust__ix{font-family:var(--m);font-size:11px;letter-spacing:.14em;color:var(--accent);margin-bottom:12px}
+.trust__t{font-size:16.5px;letter-spacing:-.02em;margin-bottom:8px}
+.trust__d{color:var(--muted);font-size:14px;line-height:1.6}
+.trust__end{margin-top:clamp(24px,3vw,32px);text-align:center;color:var(--muted);font-size:15px;
+  max-width:56ch;margin-inline:auto}
 
 /* 9 ─ KG (начинаем с Кыргызстана) --------------------------------*/
 .kg{display:grid;gap:clamp(32px,5vw,64px);align-items:center}
@@ -275,6 +319,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .kg__map{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
   padding:clamp(28px,4vw,44px);display:grid;place-items:center}
 .kg__map svg{width:100%;max-width:340px;height:auto}
+
+/* 9b ─ NETFLOW (международная сеть внутри блока KG) ----------------*/
+.netflow{display:grid;justify-items:center;gap:0;max-width:440px;margin:clamp(48px,6vw,72px) auto 0}
+.netflow__s{border:1px solid var(--line);border-radius:var(--r);padding:14px 22px;text-align:center;
+  font-family:var(--m);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);background:var(--card);width:100%}
+.netflow__s--hub{border-color:var(--accent);color:var(--accent);font-family:var(--h);font-weight:800;
+  font-size:15px;letter-spacing:-.02em;text-transform:none}
+.netflow__arrow{padding:8px 0;color:var(--accent)}
+.netflow__arrow svg{width:14px;height:14px;margin-inline:auto;transform:rotate(90deg)}
+.netflow__tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px;max-width:420px}
+.netflow__tag{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;
+  color:var(--ink);background:var(--paper)}
+.netflow__note{margin-top:12px;text-align:center;color:var(--muted);font-size:12.5px;max-width:36ch;line-height:1.5}
+.netflow__soft{margin-top:12px;text-align:center;color:var(--muted);font-size:13.5px;font-style:italic}
 
 /* 10 ─ GOV (диалог с государством) --------------------------------*/
 .gov h2{font-size:clamp(26px,3.6vw,40px);margin-block:16px 18px;max-width:18ch}
@@ -298,6 +357,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   text-transform:uppercase;color:var(--muted);padding:18px 20px}
 .flow__arrow{padding:10px 0;color:var(--cyan)}
 .flow__arrow svg{width:16px;height:16px;margin-inline:auto;transform:rotate(90deg)}
+
+/* 11b ─ BRIDGE (один WorkUnity — разные задачи) ----------------------*/
+.bridge{display:grid;gap:14px;margin-top:clamp(28px,3.5vw,40px)}
+@media(min-width:760px){.bridge{grid-template-columns:repeat(3,1fr);gap:20px}}
+.bridge__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(22px,2.6vw,28px);display:flex;flex-direction:column;gap:14px}
+.bridge__t{font-size:17.5px;letter-spacing:-.02em}
+.bridge__d{color:var(--muted);font-size:14.5px;line-height:1.6;flex:1}
+.bridge__a{display:inline-flex;align-items:center;gap:8px;font-family:var(--h);font-weight:700;
+  font-size:14.5px;color:var(--accent);text-decoration:none}
+.bridge__a svg{width:14px;height:14px;transition:transform .2s}
+.bridge__a:hover svg{transform:translateX(3px)}
 
 /* 12 ─ CTA3 ----------------------------------------------------------*/
 .cta3{display:grid;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
@@ -405,10 +476,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+<!-- ══ ЧТО ОБЪЕДИНЯЕТ WORKUNITY ═══════════════════════════ -->
+<section class="sec sec--tight" id="unite">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix" data-i18n="unite.ix">01 — Экосистема</span><h2 data-i18n="unite.h2">Что объединяет WorkUnity</h2><p data-i18n="unite.sub">Мы создаём единую систему для иностранных граждан, работодателей и партнёров.</p></div>
+    <div class="unite rv">
+      <div class="unite__c"><h3 class="unite__t" data-i18n="unite.foreigner.title">Иностранные граждане</h3><p class="unite__d" data-i18n="unite.foreigner.desc">Юридическая помощь, миграционное сопровождение, защита интересов и поддержка в Кыргызстане.</p></div>
+      <div class="unite__line" aria-hidden="true"></div>
+      <div class="unite__c"><h3 class="unite__t" data-i18n="unite.employer.title">Работодатели</h3><p class="unite__d" data-i18n="unite.employer.desc">Подбор и привлечение работников, оформление, сопровождение и контроль процесса.</p></div>
+      <div class="unite__line" aria-hidden="true"></div>
+      <div class="unite__c"><h3 class="unite__t" data-i18n="unite.partner.title">Партнёры</h3><p class="unite__d" data-i18n="unite.partner.desc">Работа с работодателями и кандидатами через проверенную партнёрскую сеть WorkUnity.</p></div>
+    </div>
+    <p class="unite__end rv" data-i18n="unite.end">Государство и институциональные организации являются важной частью этой экосистемы.</p>
+  </div>
+</section>
+
 <!-- ══ РЫНОК ДОЛЖЕН РАБОТАТЬ ЧЕСТНО ═══════════════════════ -->
 <section class="sec" id="principle">
   <div class="wrap">
-    <div class="hd rv"><span class="ix" data-i18n="principle.ix">01 — Принцип</span><h2 data-i18n="principle.h2">Рынок должен работать честно.</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="principle.ix">02 — Принцип</span><h2 data-i18n="principle.h2">Рынок должен работать честно.</h2></div>
     <div class="risk rv">
       <div class="risk__c">
         <h3 data-i18n="risk.foreigner.title">Для иностранного гражданина</h3>
@@ -449,7 +535,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ ЧТО ДЕЛАЕТ WORKUNITY ═══════════════════════════════ -->
 <section class="sec" id="role">
   <div class="wrap">
-    <div class="hd rv"><span class="ix" data-i18n="role.ix">02 — Роль</span><h2 data-i18n="role.h2">Что делает WorkUnity</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="role.ix">03 — Роль</span><h2 data-i18n="role.h2">Что делает WorkUnity</h2></div>
     <div class="role rv">
       <article class="role__c"><span class="role__num">01</span><h3 class="role__t" data-i18n="role.01.title">Защищаем</h3><p class="role__d" data-i18n="role.01.desc">Помогаем иностранным гражданам понимать свои права, получать юридическую помощь и защищать свои интересы в Кыргызстане.</p></article>
       <article class="role__c"><span class="role__num">02</span><h3 class="role__t" data-i18n="role.02.title">Проверяем</h3><p class="role__d" data-i18n="role.02.desc">Проверяем работодателей, вакансии, партнёров и документы до того, как в процесс вовлекаются люди.</p></article>
@@ -459,10 +545,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+<!-- ══ НАПРАВЛЕНИЯ WORKUNITY ══════════════════════════════ -->
+<section class="sec dir" id="dir">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix" data-i18n="dir.ix">04 — Направления</span><h2 data-i18n="dir.h2">Одной компанией — несколько направлений</h2><p data-i18n="dir.sub">WorkUnity объединяет несколько взаимосвязанных направлений, чтобы клиенту не приходилось искать разных подрядчиков для каждой части задачи.</p></div>
+    <div class="dir__g rv">
+      <article class="dir__c"><span class="dir__num">01</span><h3 class="dir__t" data-i18n="dir.01.title">Workforce Solutions</h3><p class="dir__d" data-i18n="dir.01.desc">Подбор и привлечение иностранных работников для бизнеса.</p></article>
+      <article class="dir__c"><span class="dir__num">02</span><h3 class="dir__t" data-i18n="dir.02.title">Legal Services</h3><p class="dir__d" data-i18n="dir.02.desc">Юридические консультации, документы, сделки, представительство и защита интересов.</p></article>
+      <article class="dir__c"><span class="dir__num">03</span><h3 class="dir__t" data-i18n="dir.03.title">Migration Services</h3><p class="dir__d" data-i18n="dir.03.desc">Миграционные документы, разрешения, регистрация и сопровождение процедур.</p></article>
+      <article class="dir__c"><span class="dir__num">04</span><h3 class="dir__t" data-i18n="dir.04.title">Услуги для иностранцев</h3><p class="dir__d" data-i18n="dir.04.desc">Юридическая и административная помощь иностранным гражданам, уже находящимся в Кыргызстане.</p></article>
+      <article class="dir__c"><span class="dir__num">05</span><h3 class="dir__t" data-i18n="dir.05.title">Trust &amp; Compliance</h3><p class="dir__d" data-i18n="dir.05.desc">Проверка работодателей, вакансий, партнёров, документов и контроль рисков.</p></article>
+    </div>
+  </div>
+</section>
+
 <!-- ══ КОГДА СИСТЕМА РАБОТАЕТ ПРАВИЛЬНО ═══════════════════ -->
 <section class="sec" id="win">
   <div class="wrap">
-    <div class="hd rv"><span class="ix" data-i18n="win.ix">03 — Результат</span><h2 data-i18n="win.h2">Когда система работает правильно, выигрывают все.</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="win.ix">05 — Результат</span><h2 data-i18n="win.h2">Когда система работает правильно, выигрывают все.</h2></div>
     <div class="win rv">
       <div class="win__c">
         <div class="win__t" data-i18n="win.foreigner.title">Иностранный гражданин</div>
@@ -492,7 +592,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ НАШИ КРАСНЫЕ ЛИНИИ ══════════════════════════════════ -->
 <section class="sec lines" id="lines">
   <div class="wrap">
-    <div class="hd rv narrow"><span class="ix" data-i18n="lines.ix">04 — Позиция</span><h2 data-i18n="lines.h2">Наши красные линии</h2><p data-i18n="lines.sub">Есть вещи, которые WorkUnity не делает ни ради клиента, ни ради прибыли.</p></div>
+    <div class="hd rv narrow"><span class="ix" data-i18n="lines.ix">06 — Позиция</span><h2 data-i18n="lines.h2">Наши красные линии</h2><p data-i18n="lines.sub">Есть вещи, которые WorkUnity не делает ни ради клиента, ни ради прибыли.</p></div>
+    <p class="lines__pre rv" data-i18n="lines.pre">Репутация и законность для нас важнее быстрой сделки.</p>
     <div class="lines__l rv">
       <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item1">Не используем серые схемы</span></div>
       <div class="lines__i"><span class="lines__x">×</span><span data-i18n="lines.item2">Не оформляем фиктивные документы</span></div>
@@ -504,13 +605,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+<!-- ══ КАК МЫ СОЗДАЁМ ДОВЕРИЕ ══════════════════════════════ -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix" data-i18n="trust.ix">07 — Доверие</span><h2 data-i18n="trust.h2">Доверие должно быть проверяемым.</h2><p data-i18n="trust.sub">Мы не просим верить нам на слово — мы выстраиваем систему проверок и ответственности.</p></div>
+    <div class="trust rv">
+      <div class="trust__c"><div class="trust__ix">01</div><h3 class="trust__t" data-i18n="trust.01.title">Проверенный работодатель</h3><p class="trust__d" data-i18n="trust.01.desc">Проверяем компанию, вакансию и условия до запуска процесса.</p></div>
+      <div class="trust__c"><div class="trust__ix">02</div><h3 class="trust__t" data-i18n="trust.02.title">Проверенная вакансия</h3><p class="trust__d" data-i18n="trust.02.desc">Рабочее место и условия должны быть подтверждены до привлечения кандидатов.</p></div>
+      <div class="trust__c"><div class="trust__ix">03</div><h3 class="trust__t" data-i18n="trust.03.title">Проверенный партнёр</h3><p class="trust__d" data-i18n="trust.03.desc">Партнёры проходят проверку перед началом работы с WorkUnity.</p></div>
+      <div class="trust__c"><div class="trust__ix">04</div><h3 class="trust__t" data-i18n="trust.04.title">Проверенные документы</h3><p class="trust__d" data-i18n="trust.04.desc">Ключевые документы и этапы процесса проходят контроль.</p></div>
+    </div>
+    <p class="trust__end rv" data-i18n="trust.end">WorkUnity строит собственный стандарт доверия для международной рабочей и миграционной деятельности.</p>
+  </div>
+</section>
+
 <!-- ══ НАЧИНАЕМ С КЫРГЫЗСТАНА ═════════════════════════════ -->
 <section class="sec" id="kg">
   <div class="wrap kg">
     <div class="rv">
-      <span class="ix" data-i18n="kg.ix">05 — Кыргызстан</span>
-      <h2 data-i18n="kg.h2">Начинаем с Кыргызстана.</h2>
-      <p data-i18n="kg.p">WorkUnity построена в Кыргызстане и работает внутри его правовой и деловой среды. Мы строим компанию, которая понимает одновременно интересы иностранного гражданина, местного бизнеса и требования государства.</p>
+      <span class="ix" data-i18n="kg.ix">08 — Кыргызстан</span>
+      <h2 data-i18n="kg.h2">Начали с Кыргызстана. Строим международную сеть.</h2>
+      <p data-i18n="kg.p">Кыргызстан — точка, где WorkUnity строит и отрабатывает свою модель. Но сама система не ограничивается одной страной. Мы развиваем международную сеть, которая соединяет работодателей, иностранных работников, локальных партнёров, юридическую и миграционную инфраструктуру.</p>
     </div>
     <div class="kg__map rv rv-d1">
       <svg viewBox="0 0 220 160" aria-hidden="true">
@@ -524,13 +639,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       </svg>
     </div>
   </div>
+  <div class="wrap">
+    <div class="netflow rv rv-d2">
+      <div class="netflow__s" data-i18n="kg.net.source">Страны источников</div>
+      <div class="netflow__tags">
+        <span class="netflow__tag" data-i18n="kg.net.c1">Индия</span><span class="netflow__tag" data-i18n="kg.net.c2">Пакистан</span><span class="netflow__tag" data-i18n="kg.net.c3">Бангладеш</span><span class="netflow__tag" data-i18n="kg.net.c4">Непал</span><span class="netflow__tag" data-i18n="kg.net.c5">Шри-Ланка</span>
+      </div>
+      <p class="netflow__note" data-i18n="kg.net.source_note">Страны, из которых мы привлекаем кандидатов.</p>
+      <div class="netflow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
+      <div class="netflow__s netflow__s--hub">WORKUNITY</div>
+      <div class="netflow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
+      <div class="netflow__s" data-i18n="kg.net.dest">Страны и направления работы</div>
+      <p class="netflow__soft" data-i18n="kg.net.dest_list">Кыргызстан · другие направления</p>
+    </div>
+  </div>
 </section>
 
 <!-- ══ ОТКРЫТЫЙ ДИАЛОГ С ГОСУДАРСТВОМ ══════════════════════ -->
 <section class="sec gov" id="gov">
   <div class="wrap">
-    <div class="rv"><span class="ix" data-i18n="gov.ix">06 — Государство</span><h2 data-i18n="gov.h2">Открытый диалог с государством.</h2></div>
-    <p class="rv rv-d1" data-i18n="gov.p">Мы заинтересованы в прозрачном и законном рынке. Поэтому WorkUnity выстраивает системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
+    <div class="rv"><span class="ix" data-i18n="gov.ix">09 — Государство</span><h2 data-i18n="gov.h2">Открытый диалог с государством.</h2></div>
+    <p class="rv rv-d1" data-i18n="gov.p">Мы заинтересованы в прозрачном и законном рынке. Поэтому выстраиваем системное взаимодействие с государственными органами, отраслевыми объединениями и дипломатическими представительствами.</p>
     <div class="gov__row rv rv-d2">
       <div class="gov__i" data-i18n="gov.migration">Миграция</div>
       <div class="gov__line" aria-hidden="true"></div>
@@ -546,7 +675,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <!-- ══ ОДНО ОКНО ═══════════════════════════════════════════ -->
 <section class="sec" id="flow">
   <div class="wrap">
-    <div class="hd rv narrow"><span class="ix" data-i18n="flow.ix">07 — Процесс</span><h2 data-i18n="flow.h2">Один контакт. Вся система внутри.</h2><p data-i18n="flow.p">Клиент взаимодействует с одним ответственным куратором, даже если над его задачей работают юристы, миграционные специалисты, рекрутеры и специалисты по контролю.</p></div>
+    <div class="hd rv narrow"><span class="ix" data-i18n="flow.ix">10 — Процесс</span><h2 data-i18n="flow.h2">Один контакт. Вся система внутри.</h2><p data-i18n="flow.p">Клиент не должен самостоятельно координировать работу нескольких специалистов. Один ответственный куратор ведёт кейс и подключает нужные направления внутри WorkUnity.</p></div>
     <div class="flow rv">
       <div class="flow__s" data-i18n="flow.client">Клиент</div>
       <div class="flow__arrow" aria-hidden="true"><svg><use href="#arrow-d"/></svg></div>
@@ -559,10 +688,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+<!-- ══ ОДИН WORKUNITY — РАЗНЫЕ ЗАДАЧИ ═══════════════════════ -->
+<section class="sec sec--tight" id="bridge">
+  <div class="wrap">
+    <div class="hd rv"><span class="ix" data-i18n="bridge.ix">11 — Навигация</span><h2 data-i18n="bridge.h2">Один WorkUnity — разные задачи</h2></div>
+    <div class="bridge rv">
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-i18n="bridge.employer.title">Если вы работодатель</h3>
+        <p class="bridge__d" data-i18n="bridge.employer.desc">Мы поможем найти работников и организовать их привлечение.</p>
+        <a class="bridge__a" href="index.html#contact"><span data-i18n="bridge.employer.btn">Найти работников</span><svg aria-hidden="true"><use href="#arrow-d"/></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-i18n="bridge.foreigner.title">Если вы иностранный гражданин</h3>
+        <p class="bridge__d" data-i18n="bridge.foreigner.desc">Мы поможем разобраться с юридическими, миграционными и административными вопросами.</p>
+        <a class="bridge__a" href="index.html#contact"><span data-i18n="bridge.foreigner.btn">Получить помощь</span><svg aria-hidden="true"><use href="#arrow-d"/></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-i18n="bridge.partner.title">Если вы партнёр</h3>
+        <p class="bridge__d" data-i18n="bridge.partner.desc">Мы можем выстроить с вами прозрачное партнёрство по работодателям и кандидатам.</p>
+        <a class="bridge__a" href="index.html#contact"><span data-i18n="bridge.partner.btn">Стать партнёром</span><svg aria-hidden="true"><use href="#arrow-d"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ ФИНАЛЬНЫЙ CTA ═══════════════════════════════════════ -->
 <section class="sec" id="contact-cta">
   <div class="wrap">
-    <div class="hd rv"><span class="ix" data-i18n="cta.ix">08 — Контакт</span><h2 data-i18n="cta.h2">Чем WorkUnity может помочь вам?</h2></div>
+    <div class="hd rv"><span class="ix" data-i18n="cta.ix">12 — Контакт</span><h2 data-i18n="cta.h2">Чем WorkUnity может помочь вам?</h2></div>
     <div class="cta3 rv">
       <div class="cta3__c">
         <div><div class="cta3__t" data-i18n="cta.foreigner.tag">Иностранному гражданину</div><h3 class="cta3__h" data-i18n="cta.foreigner.title">Правовая защита</h3></div>
@@ -662,7 +815,12 @@ var I18N_EN = {
   'hero.h1':'WorkUnity — more than recruitment.',
   'hero.sub':'We build a transparent system for foreign nationals and businesses in Kyrgyzstan — from workforce recruitment and migration support to legal assistance and protection of rights.',
   'diagram.env':'Legal and Government Environment', 'diagram.foreigner':'Foreign National', 'diagram.employer':'Employer',
-  'principle.ix':'01 — Principle', 'principle.h2':'The market should work fairly.',
+  'unite.ix':'01 — Ecosystem', 'unite.h2':'What WorkUnity brings together', 'unite.sub':'We build one system for foreign nationals, employers and partners.',
+  'unite.foreigner.title':'Foreign Nationals', 'unite.foreigner.desc':'Legal assistance, migration support, protection of interests and support in Kyrgyzstan.',
+  'unite.employer.title':'Employers', 'unite.employer.desc':'Recruitment and sourcing of workers, documentation, support and process control.',
+  'unite.partner.title':'Partners', 'unite.partner.desc':'Working with employers and candidates through WorkUnity’s verified partner network.',
+  'unite.end':'Government and institutional organizations are an important part of this ecosystem.',
+  'principle.ix':'02 — Principle', 'principle.h2':'The market should work fairly.',
   'risk.foreigner.title':'For Foreign Nationals',
   'risk.foreigner.intro':'Foreign nationals often find themselves in an unfamiliar legal, linguistic and cultural environment. They may face:',
   'risk.foreigner.item1':'fraud', 'risk.foreigner.item2':'forged documents', 'risk.foreigner.item3':'false promises',
@@ -674,34 +832,56 @@ var I18N_EN = {
   'risk.state.item1':'illegal residence', 'risk.state.item2':'expired documents',
   'risk.state.item3':'fictitious employment', 'risk.state.item4':'violations of migration and labour regulations',
   'risk.end':'WorkUnity was created to make this system more transparent, safer and more lawful.',
-  'role.ix':'02 — Our Role', 'role.h2':'What WorkUnity does',
+  'role.ix':'03 — Our Role', 'role.h2':'What WorkUnity does',
   'role.01.title':'Protect', 'role.01.desc':'We help foreign nationals understand their rights, access legal assistance and protect their interests in Kyrgyzstan.',
   'role.02.title':'Verify', 'role.02.desc':'We verify employers, vacancies, partners and documents before people become involved in the process.',
   'role.03.title':'Organize', 'role.03.desc':'We coordinate recruitment, documentation, migration procedures and workforce mobilization through to the employee’s start at the workplace.',
   'role.04.title':'Represent', 'role.04.desc':'We provide legal services and represent the interests of foreign nationals and businesses within the legal framework of the Kyrgyz Republic.',
-  'win.ix':'03 — The Result', 'win.h2':'When the system works properly, everyone benefits.',
+  'dir.ix':'04 — Directions', 'dir.h2':'One company — several directions',
+  'dir.sub':'WorkUnity brings together several connected directions, so the client doesn’t have to find a different contractor for every part of the task.',
+  'dir.01.title':'Workforce Solutions', 'dir.01.desc':'Sourcing and recruitment of foreign workers for business.',
+  'dir.02.title':'Legal Services', 'dir.02.desc':'Legal consultations, documents, transactions, representation and protection of interests.',
+  'dir.03.title':'Migration Services', 'dir.03.desc':'Migration documents, permits, registration and procedural support.',
+  'dir.04.title':'Services for Foreign Nationals', 'dir.04.desc':'Legal and administrative assistance for foreign nationals already in Kyrgyzstan.',
+  'dir.05.title':'Trust &amp; Compliance', 'dir.05.desc':'Verification of employers, vacancies, partners and documents, and risk control.',
+  'win.ix':'05 — The Result', 'win.h2':'When the system works properly, everyone benefits.',
   'win.foreigner.title':'Foreign National', 'win.foreigner.item1':'Fair employment', 'win.foreigner.item2':'Lawful status', 'win.foreigner.item3':'Protection',
   'win.employer.title':'Employer', 'win.employer.item1':'Suitable workers', 'win.employer.item2':'A predictable process', 'win.employer.item3':'Reduced risk',
   'win.workunity.title':'WorkUnity', 'win.workunity.item1':'Sustainable business', 'win.workunity.item2':'Reputation', 'win.workunity.item3':'Long-term relationships',
   'win.end':'The Government benefits from greater transparency, compliance and order in the market.',
   'quote.q':'Leave with a contract, not a promise.',
   'quote.s':'We do not sell visas, fictitious invitations or promises of guaranteed departure. We build a real process based on a verified employer, clear employment conditions, proper documentation and accountable people.',
-  'lines.ix':'04 — Our Position', 'lines.h2':'Our red lines',
+  'lines.ix':'06 — Our Position', 'lines.h2':'Our red lines',
   'lines.sub':'There are things WorkUnity will never do — not for a client and not for profit.',
+  'lines.pre':'Reputation and lawfulness matter more to us than closing a deal fast.',
+  'trust.ix':'07 — Trust', 'trust.h2':'Trust has to be verifiable.',
+  'trust.sub':'We do not ask you to take our word for it — we build a system of checks and accountability.',
+  'trust.01.title':'Verified employer', 'trust.01.desc':'We verify the company, the vacancy and the conditions before the process starts.',
+  'trust.02.title':'Verified vacancy', 'trust.02.desc':'The workplace and its conditions must be confirmed before candidates are engaged.',
+  'trust.03.title':'Verified partner', 'trust.03.desc':'Partners are vetted before they start working with WorkUnity.',
+  'trust.04.title':'Verified documents', 'trust.04.desc':'Key documents and process stages go through control.',
+  'trust.end':'WorkUnity is building its own standard of trust for international workforce and migration activity.',
   'lines.item1':'We do not use grey-area schemes.', 'lines.item2':'We do not arrange fictitious documents.',
   'lines.item3':'We do not sell “guaranteed visas”.', 'lines.item4':'We do not hide risks to close a deal.',
   'lines.item5':'We do not work with unverified intermediaries for the sake of short-term profit.',
   'lines.item6':'We do not ignore violations of workers’ rights.',
-  'kg.ix':'05 — Kyrgyzstan', 'kg.h2':'We start in Kyrgyzstan.',
-  'kg.p':'WorkUnity is built in Kyrgyzstan and operates within its legal and business environment. We are building a company that understands the interests of foreign nationals, local businesses and the requirements of the state.',
+  'kg.ix':'08 — Kyrgyzstan', 'kg.h2':'We started in Kyrgyzstan. We are building an international network.',
+  'kg.p':'Kyrgyzstan is where WorkUnity builds and tests its model. But the system itself is not limited to one country. We are developing an international network that connects employers, foreign workers, local partners, and legal and migration infrastructure.',
   'kg.map_label':'BISHKEK',
-  'gov.ix':'06 — Government', 'gov.h2':'An open dialogue with government.',
-  'gov.p':'We have a direct interest in a transparent and lawful market. That is why WorkUnity builds structured relationships with government institutions, industry associations and diplomatic missions.',
+  'kg.net.source':'Source countries', 'kg.net.c1':'India', 'kg.net.c2':'Pakistan', 'kg.net.c3':'Bangladesh', 'kg.net.c4':'Nepal', 'kg.net.c5':'Sri Lanka',
+  'kg.net.source_note':'Countries we source candidates from.',
+  'kg.net.dest':'Countries and directions we work in', 'kg.net.dest_list':'Kyrgyzstan · other directions',
+  'gov.ix':'09 — Government', 'gov.h2':'An open dialogue with government.',
+  'gov.p':'We have a direct interest in a transparent and lawful market. That is why we build structured relationships with government institutions, industry associations and diplomatic missions.',
   'gov.migration':'Migration', 'gov.labor':'Labour', 'gov.institutions':'Government Institutions', 'gov.diplomacy':'Diplomatic Relations',
-  'flow.ix':'07 — Process', 'flow.h2':'One point of contact. The whole system behind it.',
-  'flow.p':'The client works with one dedicated coordinator, even when lawyers, migration specialists, recruiters and compliance specialists are involved in the case.',
+  'flow.ix':'10 — Process', 'flow.h2':'One point of contact. The whole system behind it.',
+  'flow.p':'The client should not have to coordinate several specialists on their own. One dedicated coordinator runs the case and brings in the right people within WorkUnity.',
   'flow.client':'Client', 'flow.curator':'WorkUnity Coordinator', 'flow.services':'Legal · Migration · Recruitment · Compliance', 'flow.result':'Result',
-  'cta.ix':'08 — Contact', 'cta.h2':'How can WorkUnity help you?',
+  'bridge.ix':'11 — Navigation', 'bridge.h2':'One WorkUnity — different tasks',
+  'bridge.employer.title':'If you are an employer', 'bridge.employer.desc':'We will help you find workers and organize their recruitment.', 'bridge.employer.btn':'Find Workers',
+  'bridge.foreigner.title':'If you are a foreign national', 'bridge.foreigner.desc':'We will help you sort out legal, migration and administrative questions.', 'bridge.foreigner.btn':'Get Help',
+  'bridge.partner.title':'If you are a partner', 'bridge.partner.desc':'We can build a transparent partnership with you around employers and candidates.', 'bridge.partner.btn':'Become a Partner',
+  'cta.ix':'12 — Contact', 'cta.h2':'How can WorkUnity help you?',
   'cta.foreigner.tag':'For Foreign Nationals', 'cta.foreigner.title':'Legal Protection', 'cta.foreigner.btn':'Get Legal Help',
   'cta.employer.tag':'For Employers', 'cta.employer.title':'Workforce Recruitment', 'cta.employer.btn':'Find Workers',
   'cta.partner.tag':'For Partners', 'cta.partner.title':'Partnership', 'cta.partner.btn':'Become a Partner',

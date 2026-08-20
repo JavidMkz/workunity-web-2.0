@@ -131,8 +131,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;flex:none;color:#fff}
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
-.nav{display:none;gap:22px}
-@media(min-width:1300px){.nav{display:flex}}
+.nav{display:none;gap:28px}
+@media(min-width:900px){.nav{display:flex}}
 .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px;white-space:nowrap}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
   transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
@@ -148,8 +148,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .burger[aria-expanded="true"] span{background:transparent}
 .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-@media(min-width:1300px){.burger{display:none}}
-@media(max-width:1299px){
+@media(min-width:900px){.burger{display:none}}
+@media(max-width:899px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
     left:calc(var(--gut)*-1);right:calc(var(--gut)*-1);background:var(--navy);
@@ -391,7 +391,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" data-i18n-attr="aria-label:nav.aria_main_menu" aria-label="Основное меню">
-      <a href="index.html#net" data-i18n="nav.countries">Страны</a><a href="index.html#sol" data-i18n="nav.services">Решения</a><a href="index.html#why" data-i18n="nav.why">Почему мы</a><a href="index.html#proc" data-i18n="nav.process">Процедура</a><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a><a href="o-workunity.html" data-i18n="nav.about">О нас</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" class="on" data-i18n="nav.partners">Партнёры</a>
+      <a href="o-workunity.html" data-i18n="nav.about">WorkUnity</a><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a><a href="partners.html" class="on" data-i18n="nav.partners">Партнёрам</a><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a>
     </nav>
     <div class="hdr__tools">
       <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span></button>
@@ -634,7 +634,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">Иностранная рабочая сила для предприятий девяти стран найма.</p>
       </div>
       <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html#net" data-i18n="nav.countries">Страны</a></li><li><a href="index.html#sol" data-i18n="nav.services">Решения</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li></ul></div>
-      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">О компании</a></li></ul></div>
+      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
       <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span>© 2026 WorkUnity</span><span>ОсОО «WorkUnity» · рег. № 00408202610480</span></div>
@@ -688,7 +688,7 @@ nav.addEventListener('click', function(e){
 /* ═══ LOCALIZATION ════════════════════════════════════════ */
 var I18N_EN = {
   'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
-  'nav.countries':'Countries', 'nav.services':'Solutions', 'nav.why':'Why WorkUnity', 'nav.process':'How It Works', 'nav.faq':'FAQ', 'nav.about':'About WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
+  'nav.countries':'Countries', 'nav.services':'Solutions', 'nav.why':'Why WorkUnity', 'nav.process':'How It Works', 'nav.faq':'FAQ', 'nav.about':'WorkUnity', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
   'header.become_partner':'Become a Partner',
   'hero.tag':'Partners',
   'hero.h1':'Build the ecosystem with us.',
@@ -745,7 +745,7 @@ var I18N_EN = {
   'bstrip.tagline':'Legal · Migration · Workforce · Trust',
   'footer.tagline':'International workforce solutions for businesses across our recruitment markets.',
   'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
-  'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'About WorkUnity',
+  'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
   'mcta.call':'Call', 'mcta.write':'Message us'
 };
 var I18N_UR = {};

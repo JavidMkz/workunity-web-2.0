@@ -240,8 +240,8 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
   background:linear-gradient(180deg,rgba(var(--accent-rgb),.12),var(--accent),rgba(var(--accent-rgb),.12))}}
 
 /* 3b ─ URGENT ALERT + SUPPORT LANGUAGES ---------------------------*/
-.f-urgent{padding-block:clamp(30px,4vw,44px);border-bottom:1px solid var(--line)}
-.f-alert{background:var(--err-bg);border:1px solid var(--err);border-radius:var(--r-lg);
+.f-urgent{padding-block:clamp(22px,3vw,32px);border-bottom:1px solid var(--line)}
+.f-alert{margin-top:clamp(28px,3.6vw,36px);background:var(--err-bg);border:1px solid var(--err);border-radius:var(--r-lg);
   padding:clamp(20px,2.6vw,28px) clamp(20px,3vw,30px);display:flex;flex-wrap:wrap;
   align-items:center;justify-content:space-between;gap:18px 28px}
 .f-alert__body{flex:1 1 380px;min-width:0}
@@ -257,7 +257,7 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
   .f-alert__actions{flex-direction:column}
   .f-alert__actions .btn{width:100%}
 }
-.f-langs{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.f-langs{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
 .f-langs__d{color:var(--muted);font-size:14.5px;line-height:1.5}
 .f-langs__row{font-family:var(--h);font-weight:700;font-size:14.5px;color:var(--ink);letter-spacing:.01em}
 html[lang="ur"] .f-alert__t{letter-spacing:0}
@@ -487,6 +487,16 @@ html[lang="ur"] .q summary{letter-spacing:0}
         <a href="#problems" data-i18n="hero.q3">Мне нужна помощь с документами</a>
       </div>
     </div>
+    <div class="f-alert rv">
+      <div class="f-alert__body">
+        <h2 class="f-alert__t" data-i18n="alert.t">Вас обманули?</h2>
+        <p class="f-alert__d" data-i18n="alert.d">Не платят зарплату, забрали документы, обманули с работой или условиями — напишите нам. Поможем разобраться.</p>
+      </div>
+      <div class="f-alert__actions">
+        <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="alert.wa">Написать в WhatsApp</span></a>
+        <a class="btn btn--out" href="tel:+996700123445" dir="ltr"><svg aria-hidden="true"><use href="#phone"/></svg><span data-i18n="alert.call">Позвонить</span></a>
+      </div>
+    </div>
     <div class="f-dia rv rv-d3">
       <div class="f-dia__row">
         <div class="f-dia__node" data-i18n="dia.you">Вы</div>
@@ -499,19 +509,9 @@ html[lang="ur"] .q summary{letter-spacing:0}
   </div>
 </section>
 
-<!-- ══ СРОЧНАЯ ПОМОЩЬ + ЯЗЫКИ ПОДДЕРЖКИ ═══════════════════════ -->
+<!-- ══ ЯЗЫКИ ПОДДЕРЖКИ ═════════════════════════════════════════ -->
 <section class="f-urgent">
   <div class="wrap">
-    <div class="f-alert rv">
-      <div class="f-alert__body">
-        <h2 class="f-alert__t" data-i18n="alert.t">Вас обманули?</h2>
-        <p class="f-alert__d" data-i18n="alert.d">Не платят зарплату, забрали документы, обманули с работой или условиями — напишите нам. Поможем разобраться.</p>
-      </div>
-      <div class="f-alert__actions">
-        <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="alert.wa">Написать в WhatsApp</span></a>
-        <a class="btn btn--out" href="tel:+996700123445" dir="ltr"><svg aria-hidden="true"><use href="#phone"/></svg><span data-i18n="alert.call">Позвонить</span></a>
-      </div>
-    </div>
     <div class="f-langs rv rv-d1">
       <p class="f-langs__d" data-i18n="langs.d">Говорим на вашем языке. Отвечаем на русском, английском, хинди и урду.</p>
       <div class="f-langs__row" dir="ltr">Русский · English · <span lang="hi">हिन्दी</span> · <span lang="ur" dir="rtl">اردو</span></div>

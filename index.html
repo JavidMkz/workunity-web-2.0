@@ -102,7 +102,8 @@ html[lang="ur"] .ix,html[lang="ur"] .ix--d{letter-spacing:0;text-transform:none}
 html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
   font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em;overflow-wrap:break-word}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.04;margin:0;letter-spacing:-.045em}
+@media(max-width:479px){h1,h2,h3,h4{overflow-wrap:break-word}}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
 img{max-width:100%;display:block}
 ::selection{background:var(--accent);color:#fff}
@@ -240,6 +241,12 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 .hero__g{align-items:end;padding-bottom:clamp(38px,5vw,62px)}
 .hero__l{grid-column:1/-1}
 .hero h1{font-size:clamp(38px,7.4vw,92px);line-height:.98;margin-block:24px 26px;max-width:13ch}
+/* long Russian compounds need the full column and a lower floor on phones,
+   otherwise the 13ch box forces mid-word breaks */
+@media(max-width:479px){.hero h1{font-size:clamp(29px,8.6vw,38px);max-width:none}}
+/* Nastaliq renders much larger than Latin at the same px and the 13ch box
+   is measured on its very wide "0", so Urdu needs its own hero sizing */
+html[lang="ur"] .hero h1{font-size:clamp(25px,4.4vw,56px);max-width:19ch}
 .hero h1 em{font-style:normal;color:var(--accent);display:block}
 .hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted);max-width:46ch;line-height:1.58}
 
@@ -618,12 +625,12 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
     <div class="g12 hero__g">
       <div class="hero__l">
         <span class="ix" data-en="9 destination countries" data-ur="9 ممالک میں ملازمت">9 стран найма</span>
-        <h1 data-en="Legal Employment Infrastructure &lt;em&gt;for Foreign Workers.&lt;/em&gt;" data-ur="قانونی روزگار کا بنیادی ڈھانچہ &lt;em&gt;غیر ملکی کارکنوں کے لیے۔&lt;/em&gt;">Инфраструктура легального трудоустройства <em>иностранных работников.</em></h1>
-        <p class="hero__sub" data-en="We don&#39;t sell people — we remove risk." data-ur="ہم لوگ نہیں بیچتے — ہم خطرہ ختم کرتے ہیں۔">Мы продаём не людей — мы снимаем риск.</p>
+        <h1 data-en="Legal Employment Infrastructure &lt;em&gt;for Foreign Workers&lt;/em&gt;" data-ur="غیر ملکی کارکنوں کے قانونی روزگار کا &lt;em&gt;بنیادی ڈھانچہ&lt;/em&gt;">Инфраструктура легального трудоустройства <em>иностранных работников</em></h1>
+        <p class="hero__sub" data-en="We help employers close workforce gaps through verified foreign workers, legal documentation and support after placement." data-ur="ہم آجروں کو تصدیق شدہ غیر ملکی کارکنوں، قانونی دستاویزات اور کام شروع ہونے کے بعد مسلسل معاونت کے ذریعے افرادی قوت کی کمی پوری کرنے میں مدد دیتے ہیں۔">Помогаем работодателям закрывать кадровый дефицит через проверенных иностранных работников, законное оформление и сопровождение после выхода на работу.</p>
         <ul class="hero__pts">
           <li data-en="Employers get a predictable process and legal protection." data-ur="آجروں کو قابلِ پیشگوئی عمل اور قانونی تحفظ ملتا ہے۔">Работодатель получает предсказуемый процесс и юридическую защиту.</li>
-          <li data-en="Workers get honest conditions and a guarantee of what was promised." data-ur="کارکنوں کو منصفانہ شرائط اور وعدے کی ضمانت ملتی ہے۔">Работник — честные условия и гарантию обещанного.</li>
-          <li data-en="The state gets transparent migration." data-ur="ریاست کو شفاف نقل مکانی ملتی ہے۔">Государство — прозрачную миграцию.</li>
+          <li data-en="Workers get honest conditions and a direct support channel." data-ur="کارکنوں کو منصفانہ شرائط اور براہِ راست معاونت کا ذریعہ ملتا ہے۔">Работник — честные условия и прямой канал поддержки.</li>
+          <li data-en="The state gets transparent migration, proper documentation and reduced risks of illegal employment." data-ur="ریاست کو شفاف نقل مکانی، درست دستاویزات اور غیر قانونی روزگار کے خطرات میں کمی ملتی ہے۔">Государство — прозрачную миграцию, порядок в документах и снижение рисков нелегального труда.</li>
         </ul>
         <div class="hero__cta">
           <a class="btn btn--navy" href="#contact"><span data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">Консультация для работодателя</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>

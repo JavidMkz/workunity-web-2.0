@@ -239,6 +239,29 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 @media(max-width:539px){.f-dia__line{width:1px;height:20px;flex:0 0 20px;
   background:linear-gradient(180deg,rgba(var(--accent-rgb),.12),var(--accent),rgba(var(--accent-rgb),.12))}}
 
+/* 3b ─ URGENT ALERT + SUPPORT LANGUAGES ---------------------------*/
+.f-urgent{padding-block:clamp(30px,4vw,44px);border-bottom:1px solid var(--line)}
+.f-alert{background:var(--err-bg);border:1px solid var(--err);border-radius:var(--r-lg);
+  padding:clamp(20px,2.6vw,28px) clamp(20px,3vw,30px);display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:18px 28px}
+.f-alert__body{flex:1 1 380px;min-width:0}
+.f-alert__t{font-size:clamp(18px,2vw,22px);letter-spacing:-.02em;color:var(--err);margin-bottom:6px}
+.f-alert__d{color:var(--ink);font-size:15px;line-height:1.55;max-width:60ch}
+.f-alert__actions{display:flex;flex-wrap:wrap;gap:12px;flex:none}
+.f-alert__actions svg{width:17px;height:17px;flex:none}
+.f-alert__actions .btn--out{color:var(--err);border-color:var(--err)}
+.f-alert__actions .btn--out:hover{background:var(--err);color:#fff}
+@media(max-width:560px){
+  .f-alert{flex-direction:column;align-items:stretch}
+  .f-alert__body{flex-basis:auto}
+  .f-alert__actions{flex-direction:column}
+  .f-alert__actions .btn{width:100%}
+}
+.f-langs{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.f-langs__d{color:var(--muted);font-size:14.5px;line-height:1.5}
+.f-langs__row{font-family:var(--h);font-weight:700;font-size:14.5px;color:var(--ink);letter-spacing:.01em}
+html[lang="ur"] .f-alert__t{letter-spacing:0}
+
 /* 4 ─ PROBLEM CARDS ("с чем к нам обращаются") -------------------*/
 .prob{display:grid;gap:14px;margin-top:clamp(28px,3.5vw,40px)}
 @media(min-width:640px){.prob{grid-template-columns:repeat(2,1fr)}}
@@ -454,7 +477,7 @@ html[lang="ur"] .q summary{letter-spacing:0}
 <section class="f-hero">
   <div class="wrap">
     <span class="tag rv" data-i18n="hero.tag">Иностранцам</span>
-    <h1 class="rv rv-d1" data-i18n="hero.h1">Вы в Кыргызстане. WorkUnity рядом.</h1>
+    <h1 class="rv rv-d1" data-i18n="hero.h1">Вы не одни. WorkUnity рядом.</h1>
     <p class="f-hero__sub rv rv-d2" data-i18n="hero.sub">Помогаем иностранным гражданам решать юридические, миграционные и административные вопросы в Кыргызстане.</p>
     <div class="f-hero__actions rv rv-d3">
       <a class="btn btn--navy" href="#cta-form" data-i18n="hero.cta">Получить помощь</a>
@@ -472,6 +495,26 @@ html[lang="ur"] .q summary{letter-spacing:0}
         <div class="f-dia__line" aria-hidden="true"></div>
         <div class="f-dia__node" data-i18n="dia.solution">Решение</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ СРОЧНАЯ ПОМОЩЬ + ЯЗЫКИ ПОДДЕРЖКИ ═══════════════════════ -->
+<section class="f-urgent">
+  <div class="wrap">
+    <div class="f-alert rv">
+      <div class="f-alert__body">
+        <h2 class="f-alert__t" data-i18n="alert.t">Вас обманули?</h2>
+        <p class="f-alert__d" data-i18n="alert.d">Не платят зарплату, забрали документы, обманули с работой или условиями — напишите нам. Поможем разобраться.</p>
+      </div>
+      <div class="f-alert__actions">
+        <a class="btn btn--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="alert.wa">Написать в WhatsApp</span></a>
+        <a class="btn btn--out" href="tel:+996700123445" dir="ltr"><svg aria-hidden="true"><use href="#phone"/></svg><span data-i18n="alert.call">Позвонить</span></a>
+      </div>
+    </div>
+    <div class="f-langs rv rv-d1">
+      <p class="f-langs__d" data-i18n="langs.d">Говорим на вашем языке. Отвечаем на русском, английском, хинди и урду.</p>
+      <div class="f-langs__row" dir="ltr">Русский · English · <span lang="hi">हिन्दी</span> · <span lang="ur" dir="rtl">اردو</span></div>
     </div>
   </div>
 </section>
@@ -707,10 +750,14 @@ var I18N_EN = {
   'nav.faq':'FAQ', 'nav.about':'About WorkUnity', 'nav.employers':'For Employers', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
   'header.get_help':'Get Help',
   'hero.tag':'For Foreigners',
-  'hero.h1':'You are in Kyrgyzstan. WorkUnity is here.',
+  'hero.h1':'You are not alone. WorkUnity is by your side.',
   'hero.sub':'We help foreign nationals handle legal, migration and administrative matters in Kyrgyzstan.',
   'hero.cta':'Get Help',
   'hero.q1':'I need legal help', 'hero.q2':'I have a migration question', 'hero.q3':'I need help with documents',
+  'alert.t':'Have you been deceived?',
+  'alert.d':'Unpaid wages, confiscated documents, false promises about work or conditions — message us. We will help you sort it out.',
+  'alert.wa':'Message on WhatsApp', 'alert.call':'Call',
+  'langs.d':'We speak your language. We reply in Russian, English, Hindi, and Urdu.',
   'dia.you':'You', 'dia.solution':'Solution',
   'prob.ix':'01 — Your Situation', 'prob.h2':'What people come to us with',
   'prob.01.t':'I am not being paid my salary', 'prob.01.d':'We help you understand the situation and identify possible lawful ways to protect yourself.',
@@ -786,10 +833,14 @@ var I18N_UR = {
   'nav.faq':'سوالات', 'nav.about':'WorkUnity کے بارے میں', 'nav.employers':'آجروں کے لیے', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
   'header.get_help':'مدد حاصل کریں',
   'hero.tag':'غیر ملکیوں کے لیے',
-  'hero.h1':'آپ کرغزستان میں ہیں۔ WorkUnity آپ کے ساتھ ہے۔',
+  'hero.h1':'آپ اکیلے نہیں ہیں۔ WorkUnity آپ کے ساتھ ہے۔',
   'hero.sub':'ہم غیر ملکی شہریوں کو کرغزستان میں قانونی، امیگریشن اور انتظامی معاملات حل کرنے میں مدد دیتے ہیں۔',
   'hero.cta':'مدد حاصل کریں',
   'hero.q1':'مجھے قانونی مدد چاہیے', 'hero.q2':'میرا امیگریشن سے متعلق سوال ہے', 'hero.q3':'مجھے دستاویزات میں مدد چاہیے',
+  'alert.t':'کیا آپ کے ساتھ دھوکہ ہوا ہے؟',
+  'alert.d':'تنخواہ ادا نہیں کی جا رہی، دستاویزات ضبط کر لی گئیں، کام یا شرائط کے بارے میں جھوٹ بولا گیا — ہمیں پیغام بھیجیں۔ ہم آپ کی مدد کریں گے۔',
+  'alert.wa':'WhatsApp پر پیغام بھیجیں', 'alert.call':'کال کریں',
+  'langs.d':'ہم آپ کی زبان بولتے ہیں۔ ہم روسی، انگریزی، ہندی اور اردو میں جواب دیتے ہیں۔',
   'dia.you':'آپ', 'dia.solution':'حل',
   'prob.ix':'01 — آپ کی صورتحال', 'prob.h2':'لوگ ہمارے پاس کن مسائل کے ساتھ آتے ہیں',
   'prob.01.t':'مجھے تنخواہ نہیں مل رہی', 'prob.01.d':'ہم آپ کو صورتحال سمجھنے اور خود کو بچانے کے ممکنہ قانونی طریقے بتانے میں مدد کرتے ہیں۔',

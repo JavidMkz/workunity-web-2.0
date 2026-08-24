@@ -21,7 +21,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const DICT_PAGES = ['o-workunity.html', 'partners.html', 'inostrantsam.html', 'kak-nanyat-inostrannogo-rabotnika.html'];
+const DICT_PAGES = ['o-workunity.html', 'partners.html', 'inostrantsam.html', 'kak-nanyat-inostrannogo-rabotnika.html', 'audit.html'];
 const ATTR_PAGES = ['index.html'];
 
 let issues = 0;

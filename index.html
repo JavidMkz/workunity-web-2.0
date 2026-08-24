@@ -61,6 +61,10 @@
   --err:#B3402A;
   --err-bg:#FCF4F2;
 
+  --amber:#9A6B12;
+  --amber-bg:#FBF3E1;
+  --amber-border:#E7CE9A;
+
   --h:'Manrope',system-ui,-apple-system,sans-serif;
   --b:'Inter',system-ui,-apple-system,sans-serif;
   --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
@@ -90,6 +94,10 @@
 
   --err:#E5665A;
   --err-bg:#3A2220;
+
+  --amber:#D9AE5C;
+  --amber-bg:#2E2712;
+  --amber-border:#5C4B22;
 }
 
 /* 2 ─ BASE -------------------------------------------------- */
@@ -160,7 +168,7 @@ textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px s
 .logo img{height:26px;width:auto}
 .logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
 .nav{display:none;gap:28px}
-@media(min-width:1100px){.nav{display:flex}}
+@media(min-width:1200px){.nav{display:flex}}
 .nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
   transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
@@ -177,8 +185,8 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 .burger[aria-expanded="true"] span{background:transparent}
 .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-@media(min-width:1100px){.burger{display:none}}
-@media(max-width:1099px){
+@media(min-width:1200px){.burger{display:none}}
+@media(max-width:1199px){
   .hdr__cta{display:none}
   .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
     inset-inline:0;background:var(--navy);
@@ -226,6 +234,7 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 
 /* 5 ─ SECTIONS ---------------------------------------------- */
 .sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,6vw,86px)}
 
 .hd{margin-bottom:clamp(34px,4.5vw,62px)}
 .hd h2{font-size:clamp(30px,4.6vw,60px);margin-top:16px;max-width:19ch}
@@ -297,6 +306,25 @@ html[lang="ur"] .hero h1{font-size:clamp(25px,4.4vw,56px);max-width:19ch}
 html[dir="rtl"] .bridge__a svg{transform:scaleX(-1)}
 html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 .hero__cta .btn{flex:1 1 200px}
+
+/* audit teaser — restrained warm accent, no border-bar drama */
+.audit-teaser{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--r-lg);
+  padding:clamp(24px,3vw,34px);display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:20px 32px}
+.audit-teaser__body{flex:1 1 380px;min-width:0}
+.audit-teaser__t{font-size:clamp(19px,2.1vw,24px);letter-spacing:-.02em;color:var(--amber);margin-bottom:8px}
+.audit-teaser__d{color:var(--ink);font-size:15.5px;line-height:1.6;max-width:60ch}
+.audit-teaser__actions{display:flex;flex-wrap:wrap;gap:12px;flex:none}
+.audit-teaser__actions svg{width:16px;height:16px;flex:none}
+.audit-teaser .btn--out{color:var(--amber);border-color:var(--amber-border)}
+.audit-teaser .btn--out:hover{background:var(--amber);border-color:var(--amber);color:#fff}
+@media(max-width:560px){
+  .audit-teaser{flex-direction:column;align-items:stretch}
+  .audit-teaser__body{flex-basis:auto}
+  .audit-teaser__actions{flex-direction:column}
+  .audit-teaser__actions .btn{width:100%}
+}
+html[lang="ur"] .audit-teaser__t{letter-spacing:0}
 
 /* hero stat strip */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -548,7 +576,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 .mcta__ico--wa{background:var(--green)}
 .mcta svg{width:17px;height:17px;flex:none}
 @media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
-@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+@media(max-width:1199px){.mcta{display:flex}.ftr{padding-bottom:86px}}
 
 /* 7 ─ MOTION ------------------------------------------------ */
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
@@ -606,7 +634,7 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
       <span>WorkUnity</span>
     </a>
     <nav class="nav" id="mainnav" aria-label="Основное меню">
-      <a href="index.html" class="on" aria-current="page" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a>
+      <a href="index.html" class="on" aria-current="page" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a><a href="audit.html" data-en="Document Audit" data-ur="دستاویزات کا آڈٹ">Аудит документов</a>
     </nav>
     <div class="hdr__tools">
       <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
@@ -673,6 +701,22 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
         <h3 class="bridge__t" data-en="For Partners" data-ur="شراکت داروں کے لیے">Партнёрам</h3>
         <p class="bridge__d" data-en="Join the network of verified partners. Infrastructure, standards, a transparent commission model." data-ur="تصدیق شدہ شراکت داروں کے نیٹ ورک میں شامل ہوں۔ بنیادی ڈھانچہ، معیارات، شفاف کمیشن ماڈل۔">Присоединяйтесь к сети проверенных партнёров. Инфраструктура, стандарты, прозрачная комиссионная модель.</p>
         <a class="bridge__a" href="partners.html#cta-form"><span data-en="Become a partner" data-ur="شراکت دار بنیں">Стать партнёром</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AUDIT TEASER ═══════════════════════════════════════ -->
+<section class="sec sec--tight">
+  <div class="wide">
+    <div class="audit-teaser rv">
+      <div class="audit-teaser__body">
+        <h2 class="audit-teaser__t" data-en="Free Document Audit for Your Foreign Workers" data-ur="غیر ملکی کارکنوں کی دستاویزات کا مفت آڈٹ">Бесплатный аудит документов иностранных работников</h2>
+        <p class="audit-teaser__d" data-en="We&#39;ll check before the inspection does. We come to your site, review the documents in about an hour, and give you a written report." data-ur="معائنے سے پہلے ہم خود جانچ لیں گے۔ ہم آپ کی جگہ آ کر تقریباً ایک گھنٹے میں دستاویزات دیکھیں گے اور تحریری رپورٹ دیں گے۔">Проверим раньше, чем придёт проверка. Приедем на объект, за час посмотрим документы и выдадим письменный отчёт.</p>
+      </div>
+      <div class="audit-teaser__actions">
+        <a class="btn btn--navy" href="audit.html"><span data-en="Request an Audit" data-ur="آڈٹ کی درخواست دیں">Заказать аудит</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="btn btn--out" href="audit.html#process"><span data-en="How It Works" data-ur="یہ کیسے کام کرتا ہے">Как это работает</span></a>
       </div>
     </div>
   </div>

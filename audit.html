@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=" js";</script>
+<script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>Бесплатный аудит документов иностранных работников | WorkUnity</title>
+<meta name="description" content="Приедем на объект, за час проверим документы иностранных работников и выдадим письменный отчёт. Бесплатно, конфиденциально, без обязательств.">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorkUnity">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://workunity.pro/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Бесплатный аудит документов иностранных работников">
+<meta property="og:description" content="Проверим раньше, чем придёт проверка. Приедем на объект, за час посмотрим документы и выдадим письменный отчёт.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-line:#22355C;
+  --navy-glass:rgba(15,30,61,.9);
+  --muted-l:#93A3BF;
+
+  --green:#0E9F6E;
+  --green-deep:#0C875E;
+
+  --paper:#FFFFFF;
+  --surface:#FFFFFF;
+  --card:#FFFFFF;
+  --bone:#F5F3EF;
+  --field-focus:#FFFFFF;
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --line:#E4E1DA;
+
+  --accent:#0F1E3D;
+  --accent-deep:#070E1D;
+  --accent-rgb:15,30,61;
+
+  --err:#B3402A;
+  --err-bg:#FCF4F2;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:10px;
+  --r-lg:14px;
+  --r-sm:8px;
+  --sec:clamp(64px,9vw,140px);
+}
+
+:root[data-theme="dark"]{
+  --paper:#0D1826;
+  --surface:#101E30;
+  --card:#15273C;
+  --bone:#1B2E45;
+  --field-focus:#21395A;
+  --ink:#F4EFE6;
+  --muted:#A9B6C6;
+  --line:rgba(255,255,255,.08);
+
+  --accent:#7290DB;
+  --accent-deep:#93ABE8;
+  --accent-rgb:114,144,219;
+
+  --err:#E5665A;
+  --err-bg:#3A2220;
+}
+
+/* 1b ─ URDU TYPOGRAPHY --------------------------------------
+   Same mechanism as o-workunity.html: swap the shared --h/--b/--m
+   tokens under html[lang="ur"] so every component picks up Nastaliq
+   automatically, with the vertical room and de-tracked spacing it
+   needs (tight letter-spacing/uppercase break its joined letterforms). */
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
+
+/* 2 ─ BASE ---------------------------------------------------*/
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.04em}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+.narrow{max-width:900px}
+
+.ix{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;flex-wrap:wrap;row-gap:6px}
+.ix::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--navy{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn--navy:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--sm{padding:11px 19px;font-size:14px}
+.btn--full{width:100%;padding-block:18px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
+
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER — идентична index.html / o-workunity.html */
+.hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
+.logo img{height:26px;width:auto}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
+.nav{display:none;gap:28px}
+@media(min-width:1100px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1100px){.burger{display:none}}
+@media(max-width:1099px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    inset-inline:0;background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130;max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+@media(max-width:479px){.hdr__in{gap:12px}}
+
+.hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
+.tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
+.tsw:hover{border-color:#fff}
+.tsw svg{width:16px;height:16px}
+.tsw__moon{display:none}
+[data-theme="dark"] .tsw__sun{display:none}
+[data-theme="dark"] .tsw__moon{display:block}
+@media(max-width:479px){
+  .hdr .wide{padding-inline:10px}
+  .hdr__in{gap:5px}
+  .hdr__tools{gap:3px}
+  .lsw{padding:0 5px;font-size:10px;gap:3px}
+  .lsw__ur{font-size:11px}
+  .tsw{width:28px;height:28px}
+  .tsw svg{width:14px;height:14px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
+}
+
+/* SECTIONS base rhythm */
+.sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,6vw,86px)}
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(28px,4.2vw,52px);margin-top:16px;max-width:22ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:56ch;font-size:16.5px}
+
+
+
+
+/* GUIDE ----------------------------------------------------------------*/
+.g-top{background:var(--navy);color:#fff;padding-block:clamp(44px,6.5vw,80px) clamp(44px,6vw,74px)}
+.g-top .ix{color:var(--accent-l,#7290DB)}
+.g-top h1{font-size:clamp(30px,4.4vw,50px);margin-block:18px 20px;max-width:20ch;color:#fff}
+.g-top p{color:var(--muted-l);font-size:clamp(16px,1.6vw,18.5px);max-width:58ch;line-height:1.6}
+.toc{margin-top:clamp(30px,3.6vw,42px);border-top:1px solid var(--navy-line);padding-top:26px;
+  display:grid;gap:9px}
+@media(min-width:720px){.toc{grid-template-columns:repeat(2,1fr);column-gap:34px}}
+.toc a{display:flex;gap:12px;color:var(--muted-l);text-decoration:none;font-size:15px;
+  transition:color .18s;padding-block:3px}
+.toc a:hover{color:#fff}
+.toc b{color:#fff;font-family:var(--m);font-weight:500;font-size:12px;flex:none;opacity:.6;
+  padding-top:3px}
+.g-body{max-width:820px;margin:0 auto;padding-inline:var(--gut);padding-block:clamp(44px,6vw,76px)}
+.g-body h2{font-size:clamp(22px,2.8vw,31px);margin-top:clamp(44px,5vw,60px);margin-bottom:16px;
+  scroll-margin-top:96px}
+.g-body h2:first-of-type{margin-top:0}
+.g-body h3{font-size:18.5px;margin-top:30px;margin-bottom:10px}
+.g-body p{margin-bottom:16px;color:var(--ink)}
+.g-body ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:11px}
+.g-body ul li{padding-inline-start:22px;position:relative;color:var(--ink)}
+.g-body ul li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;
+  height:7px;border-radius:50%;background:var(--accent)}
+.g-call{background:var(--bone);border-inline-start:3px solid var(--accent);
+  border-radius:0 var(--r-lg) var(--r-lg) 0;padding:20px 22px;margin:26px 0}
+html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
+.g-call p{margin:0;font-size:15.5px;color:var(--ink)}
+.g-warn{border-inline-start-color:var(--err)}
+.g-tw{overflow-x:auto;margin-bottom:24px}
+.g-tab{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.g-tab th{text-align:start;padding:10px 12px;font-family:var(--h);font-weight:700;
+  border-bottom:2px solid var(--line);color:var(--ink)}
+.g-tab td{padding:12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.g-tab tr:last-child td{border-bottom:0}
+.g-tab td:first-child{color:var(--ink);font-weight:600}
+.g-cta{background:var(--navy);color:#fff;border-radius:var(--r-lg);
+  padding:clamp(26px,4vw,40px);margin-top:clamp(44px,5vw,64px)}
+.g-cta h3{color:#fff;font-size:clamp(20px,2.3vw,25px);margin-bottom:12px}
+.g-cta p{color:var(--muted-l);margin-bottom:22px;max-width:56ch}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.4vw,40px);color:var(--ink)}
+.fc__t{font-family:var(--h);font-weight:800;font-size:20px;letter-spacing:-.04em;margin-bottom:4px}
+.fc__s{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:24px}
+.f{margin-bottom:16px}
+.f label{display:block;font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px}
+.f input,.f select,.f textarea{width:100%;padding:14px 15px;font-family:var(--b);font-size:16px;
+  color:var(--ink);background:var(--bone);border:1px solid var(--line);border-radius:var(--r-sm);transition:.18s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--accent);background:var(--field-focus);outline:none;
+  box-shadow:0 0 0 3px rgba(var(--accent-rgb),.08)}
+.f input.err,.f textarea.err{border-color:var(--err);background:var(--err-bg)}
+.f textarea{min-height:80px;resize:vertical}
+.f2{display:grid;gap:16px}
+@media(min-width:520px){.f2{grid-template-columns:1fr 1fr}}
+.fn{font-family:var(--m);font-size:11px;line-height:1.7;color:var(--muted);margin-top:14px;letter-spacing:.02em}
+.fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bone);
+  border-inline-start:2px solid var(--accent);font-size:14.5px}
+.fm.on{display:block}
+
+/* minimal header back-link (this page has no primary nav) --------------*/
+.a-back{display:flex;align-items:center;gap:7px;font-family:var(--h);font-weight:600;
+  font-size:14.5px;color:var(--muted-l);text-decoration:none;white-space:nowrap;padding:6px 0}
+.a-back:hover{color:#fff}
+.a-back__a{display:inline-block;font-size:16px}
+html[dir="rtl"] .a-back__a{transform:scaleX(-1)}
+@media(max-width:600px){.a-back__t{display:none}}
+
+/* numbered list — shared by "what we check" and "how it works" ---------*/
+.numlist{margin-top:clamp(24px,3vw,32px);border-top:1px solid var(--line)}
+.numlist__i{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.numlist__n{font-family:var(--h);font-weight:800;font-size:19px;color:var(--accent);opacity:.4;flex:none;width:30px}
+.numlist__t{font-size:16.5px;letter-spacing:-.01em;margin-bottom:4px}
+.numlist__d{color:var(--muted);font-size:15px;line-height:1.55;margin:0}
+
+/* confidentiality card --------------------------------------------------*/
+.priv{margin-top:clamp(24px,3vw,32px);border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--card);padding:clamp(22px,3vw,30px);display:flex;gap:20px;align-items:flex-start}
+.priv__ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--bone);
+  display:grid;place-items:center;color:var(--accent)}
+.priv__ic svg{width:21px;height:21px}
+.priv__b{min-width:0}
+.priv__t{font-size:18px;letter-spacing:-.015em;margin-bottom:8px;color:var(--ink)}
+.priv__p{color:var(--muted);font-size:15px;line-height:1.6;margin:0}
+@media(max-width:560px){.priv{flex-direction:column}}
+
+/* FOOTER — идентичен index.html / o-workunity.html */
+.ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
+.ftr .logo img{height:90px;filter:brightness(0)}
+[data-theme="dark"] .ftr .logo img{filter:none}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--accent)}
+.ftr a.ftr__wa{color:var(--green)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* MOTION ---------------------------------------------------------------*/
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+
+
+</style>
+</head>
+<body data-page="audit">
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2 7 10 6 10-6"/></symbol>
+  <symbol id="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wide hdr__in">
+    <a class="logo" href="index.html" aria-label="WorkUnity">
+      <img src="img/logo-mark-white.png" alt="WorkUnity" height="26">
+      <span>WorkUnity</span>
+    </a>
+    <a class="a-back" href="index.html" data-i18n-attr="aria-label:back.aria" aria-label="На главную">
+      <span class="a-back__a" aria-hidden="true">&#8592;</span>
+      <span class="a-back__t" data-i18n="back.home">На главную</span>
+    </a>
+    <div class="hdr__tools">
+      <button class="lsw" id="lsw" type="button" data-lang="ru" aria-label="RU / EN / اردو"><span class="lsw__ru">RU</span><span class="lsw__d">/</span><span class="lsw__en">EN</span><span class="lsw__d">/</span><span class="lsw__ur" lang="ur" dir="rtl">اردو</span></button>
+      <button class="tsw" id="tsw" type="button" aria-label="Тема"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"/></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"/></svg></button>
+    </div>
+    <a class="btn btn--white btn--sm hdr__cta" href="index.html#contact" data-i18n="header.consultation">Консультация</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="g-top">
+  <div class="wrap">
+  <h1 data-i18n="a.h1">Проверим документы ваших иностранных работников. Бесплатно.</h1>
+  <p data-i18n="a.sub">Приедем на объект, за час посмотрим документы по каждому работнику и выдадим письменный отчёт: что в порядке, а что станет проблемой при проверке. Ни к чему не обязывает.</p>
+    <div style="margin-top:clamp(26px,3vw,34px)"><a class="btn btn--white" href="#form" id="heroCta"><span data-i18n="a.cta">Заказать бесплатный аудит</span></a></div>
+  </div>
+</section>
+
+<article class="g-body">
+  <div class="hd" style="margin-bottom:0"><span class="ix" data-i18n="b.ix">01 — Проверка</span><h2 id="check" data-i18n="b.h2">Что проверяем</h2></div>
+  <div class="numlist">
+    <div class="numlist__i"><div class="numlist__n">01</div><div><h3 class="numlist__t" data-i18n="b.1.t">Единое разрешение и резидент-карта</h3><p class="numlist__d" data-i18n="b.1.d">Действуют ли, не истёк ли срок.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">02</div><div><h3 class="numlist__t" data-i18n="b.2.t">Регистрация по месту пребывания</h3><p class="numlist__d" data-i18n="b.2.d">Есть ли, не просрочена ли.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">03</div><div><h3 class="numlist__t" data-i18n="b.3.t">Привязка к работодателю</h3><p class="numlist__d" data-i18n="b.3.d">Тот ли работодатель в документах, у кого человек работает фактически.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">04</div><div><h3 class="numlist__t" data-i18n="b.4.t">Трудовой договор</h3><p class="numlist__d" data-i18n="b.4.d">Заключён ли, совпадают ли условия.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">05</div><div><h3 class="numlist__t" data-i18n="b.5.t">Сроки продления</h3><p class="numlist__d" data-i18n="b.5.d">Не пора ли подавать на продление, чтобы не получить просрочку.</p></div></div>
+  </div>
+  <p style="margin-top:18px;color:var(--ink);font-weight:600" data-i18n="b.note">По каждому работнику скажем прямо: в порядке, скоро истекает или уже просрочено.</p>
+  <div class="hd" style="margin-bottom:0"><span class="ix" data-i18n="c.ix">02 — Процесс</span><h2 id="process" data-i18n="c.h2">Как это проходит</h2></div>
+  <div class="numlist">
+    <div class="numlist__i"><div class="numlist__n">01</div><div><h3 class="numlist__t" data-i18n="c.1.t">Вы оставляете заявку</h3><p class="numlist__d" data-i18n="c.1.d">Имя, телефон, адрес объекта, сколько иностранцев работает.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">02</div><div><h3 class="numlist__t" data-i18n="c.2.t">Договариваемся о времени</h3><p class="numlist__d" data-i18n="c.2.d">Обычно в течение 2–3 дней.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">03</div><div><h3 class="numlist__t" data-i18n="c.3.t">Приезжаем на объект</h3><p class="numlist__d" data-i18n="c.3.d">Смотрим документы. Занимает около часа.</p></div></div>
+    <div class="numlist__i"><div class="numlist__n">04</div><div><h3 class="numlist__t" data-i18n="c.4.t">Вы получаете письменный отчёт</h3><p class="numlist__d" data-i18n="c.4.d">Что в порядке, где риск и сколько стоит исправить. Бесплатно и без обязательств.</p></div></div>
+  </div>
+  <div class="priv">
+    <div class="priv__ic"><svg aria-hidden="true"><use href="#lock"/></svg></div>
+    <div class="priv__b">
+      <h2 class="priv__t" data-i18n="d.h2">Мы не госорган. И никому ничего не передаём.</h2>
+      <p class="priv__p" data-i18n="d.p">Аудит полностью конфиденциален. Наша работа — помочь навести порядок до проверки, а не сообщать о нарушениях. Всё, что увидим, остаётся между нами. Если хотите — подпишем соглашение о конфиденциальности.</p>
+    </div>
+  </div>
+  <div class="hd" style="margin-bottom:0"><span class="ix" data-i18n="e.ix">04 — Результат</span><h2 data-i18n="e.h2">Что вы получите</h2></div>
+  <ul>
+    <li data-i18n="e.1">Полную картину по каждому иностранному работнику</li>
+    <li data-i18n="e.2">Список проблем и чем каждая грозит</li>
+    <li data-i18n="e.3">Понятный план: что исправить и сколько это стоит</li>
+    <li data-i18n="e.4">Спокойствие — проверка не застанет врасплох</li>
+  </ul>
+  <div class="hd" style="margin-bottom:0"><span class="ix" data-i18n="f.ix">05 — Почему это важно</span><h2 data-i18n="f.h2">Просроченные документы — это не мелочь.</h2></div>
+  <p data-i18n="f.p">Для работника: штраф, выдворение, запрет на въезд. Для работодателя: штрафы за привлечение иностранцев без разрешения и риск попасть в Реестр недобросовестных работодателей. После этого оформить новых работников будет сильно сложнее. Проще проверить заранее, чем разбираться после проверки.</p>
+  <div class="hd" style="margin-bottom:0"><span class="ix" data-i18n="g.ix">06 — Деньги</span><h2 data-i18n="g.h2">Аудит бесплатный. Устранение нарушений — платное.</h2></div>
+  <p data-i18n="g.p">Если найдём проблемы, предложим их исправить: продлить регистрацию, оформить разрешение, привести в порядок договоры. Вы сами решаете — с нами или с кем угодно. Отчёт останется у вас в любом случае.</p>
+</article>
+
+<section class="sec" id="form">
+  <div class="wrap narrow">
+    <div class="fc rv">
+      <h2 class="fc__t" data-i18n="h.h2">Заказать бесплатный аудит</h2>
+      <div class="fc__s" data-i18n="h.ix">07 — Заявка</div>
+      <form id="auditform" novalidate>
+        <div class="f"><label for="aName" data-i18n="h.name">Ваше имя</label><input id="aName" name="name" type="text" autocomplete="name" required></div>
+        <div class="f"><label for="aPhone" data-i18n="h.phone">Телефон / WhatsApp</label><input id="aPhone" name="phone" type="text" autocomplete="tel" required></div>
+        <div class="f"><label for="aAddress" data-i18n="h.address">Адрес объекта</label><input id="aAddress" name="address" type="text"></div>
+        <div class="f"><label for="aCount" data-i18n="h.count">Сколько иностранцев работает</label><input id="aCount" name="count" type="text"></div>
+        <button class="btn btn--wa btn--full" type="submit" style="text-transform:uppercase"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-i18n="h.submit">Заказать бесплатный аудит</span></button>
+        <p class="fn" data-i18n="h.note">Ответим в течение рабочего дня. Это бесплатно и ни к чему не обязывает.</p>
+        <div class="fm" id="auditmsg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="index.html" aria-label="WorkUnity">
+          <img src="img/logo-full-white.png" alt="WorkUnity" height="90">
+        </a>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
+      </div>
+      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
+      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
+      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
+    </div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta">
+  <a class="mcta__go" href="#form" data-i18n="mcta.primary">Заказать аудит</a>
+  <a class="mcta__ico" href="tel:+996700123445" aria-label="Позвонить" data-i18n-attr="aria-label:mcta.call"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+</div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,c){return (c||document).querySelector(s);};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+var WA_NUMBER = '996700123445';
+var LANG = 'ru';
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ SCROLL: progress + mobile CTA ═══════════════════════ */
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+onScroll();
+
+
+var RU_SRC = {
+  'a.cta':'Заказать бесплатный аудит',
+  'a.h1':'Проверим документы ваших иностранных работников. Бесплатно.',
+  'a.sub':'Приедем на объект, за час посмотрим документы по каждому работнику и выдадим письменный отчёт: что в порядке, а что станет проблемой при проверке. Ни к чему не обязывает.',
+  'b.1.d':'Действуют ли, не истёк ли срок.',
+  'b.1.t':'Единое разрешение и резидент-карта',
+  'b.2.d':'Есть ли, не просрочена ли.',
+  'b.2.t':'Регистрация по месту пребывания',
+  'b.3.d':'Тот ли работодатель в документах, у кого человек работает фактически.',
+  'b.3.t':'Привязка к работодателю',
+  'b.4.d':'Заключён ли, совпадают ли условия.',
+  'b.4.t':'Трудовой договор',
+  'b.5.d':'Не пора ли подавать на продление, чтобы не получить просрочку.',
+  'b.5.t':'Сроки продления',
+  'b.h2':'Что проверяем',
+  'b.ix':'01 — Проверка',
+  'b.note':'По каждому работнику скажем прямо: в порядке, скоро истекает или уже просрочено.',
+  'back.aria':'На главную',
+  'back.home':'На главную',
+  'c.1.d':'Имя, телефон, адрес объекта, сколько иностранцев работает.',
+  'c.1.t':'Вы оставляете заявку',
+  'c.2.d':'Обычно в течение 2–3 дней.',
+  'c.2.t':'Договариваемся о времени',
+  'c.3.d':'Смотрим документы. Занимает около часа.',
+  'c.3.t':'Приезжаем на объект',
+  'c.4.d':'Что в порядке, где риск и сколько стоит исправить. Бесплатно и без обязательств.',
+  'c.4.t':'Вы получаете письменный отчёт',
+  'c.h2':'Как это проходит',
+  'c.ix':'02 — Процесс',
+  'd.h2':'Мы не госорган. И никому ничего не передаём.',
+  'd.ix':'03 — Конфиденциальность',
+  'd.p':'Аудит полностью конфиденциален. Наша работа — помочь навести порядок до проверки, а не сообщать о нарушениях. Всё, что увидим, остаётся между нами. Если хотите — подпишем соглашение о конфиденциальности.',
+  'e.1':'Полную картину по каждому иностранному работнику',
+  'e.2':'Список проблем и чем каждая грозит',
+  'e.3':'Понятный план: что исправить и сколько это стоит',
+  'e.4':'Спокойствие — проверка не застанет врасплох',
+  'e.h2':'Что вы получите',
+  'e.ix':'04 — Результат',
+  'f.h2':'Просроченные документы — это не мелочь.',
+  'f.ix':'05 — Почему это важно',
+  'f.p':'Для работника: штраф, выдворение, запрет на въезд. Для работодателя: штрафы за привлечение иностранцев без разрешения и риск попасть в Реестр недобросовестных работодателей. После этого оформить новых работников будет сильно сложнее. Проще проверить заранее, чем разбираться после проверки.',
+  'g.h2':'Аудит бесплатный. Устранение нарушений — платное.',
+  'g.ix':'06 — Деньги',
+  'g.p':'Если найдём проблемы, предложим их исправить: продлить регистрацию, оформить разрешение, привести в порядок договоры. Вы сами решаете — с нами или с кем угодно. Отчёт останется у вас в любом случае.',
+  'h.address':'Адрес объекта',
+  'h.count':'Сколько иностранцев работает',
+  'h.err':'Заполните имя и телефон.',
+  'h.h2':'Заказать бесплатный аудит',
+  'h.ix':'07 — Заявка',
+  'h.name':'Ваше имя',
+  'h.note':'Ответим в течение рабочего дня. Это бесплатно и ни к чему не обязывает.',
+  'h.phone':'Телефон / WhatsApp',
+  'h.sent':'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.',
+  'h.submit':'Заказать бесплатный аудит',
+  'header.consultation':'Консультация',
+  'mcta.call':'Позвонить',
+  'mcta.primary':'Заказать аудит',
+  'wa.address':'Адрес объекта',
+  'wa.count':'Количество иностранцев',
+  'wa.name':'Имя',
+  'wa.notspecified':'не указано',
+  'wa.phone':'Телефон',
+  'wa.title':'Заявка на бесплатный аудит документов с сайта WorkUnity',
+};
+var SEO = {
+  ru: {
+    title: 'Бесплатный аудит документов иностранных работников | WorkUnity',
+    description: 'Приедем на объект, за час проверим документы иностранных работников и выдадим письменный отчёт. Бесплатно, конфиденциально, без обязательств.',
+    ogTitle: 'Бесплатный аудит документов иностранных работников',
+    ogDescription: 'Проверим раньше, чем придёт проверка. Приедем на объект, за час посмотрим документы и выдадим письменный отчёт.',
+    locale: 'ru_RU'
+  },
+  en: {
+    title: 'Free Foreign Worker Document Audit | WorkUnity',
+    description: 'We’ll come to your site, check your foreign workers’ documents in about an hour, and give you a written report. Free, confidential, no obligation.',
+    ogTitle: 'Free Foreign Worker Document Audit',
+    ogDescription: 'We’ll check before the inspection does. We come to the site, review the documents, and give you a written report.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'غیر ملکی کارکنوں کی دستاویزات کا مفت آڈٹ | WorkUnity',
+    description: 'ہم آپ کی جگہ آ کر ایک گھنٹے میں غیر ملکی کارکنوں کی دستاویزات چیک کریں گے اور تحریری رپورٹ دیں گے۔ مفت، خفیہ، بغیر کسی پابندی کے۔',
+    ogTitle: 'غیر ملکی کارکنوں کی دستاویزات کا مفت آڈٹ',
+    ogDescription: 'معائنے سے پہلے ہم خود جانچ لیں گے۔ ہم جگہ پر آ کر دستاویزات دیکھیں گے اور تحریری رپورٹ دیں گے۔',
+    locale: 'ur_PK'
+  }
+};
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
+}
+
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-i18n]').map(function(el){
+  return { el:el, key:el.getAttribute('data-i18n'), ru:el.innerHTML };
+});
+var i18nAttrNodes = $$('[data-i18n-attr]').map(function(el){
+  var parts = el.getAttribute('data-i18n-attr').split(':');
+  return { el:el, attr:parts[0], key:parts[1], ru:el.getAttribute(parts[0]) };
+});
+var I18N_EN = {
+  'nav.aria_main_menu':'Main navigation', 'header.aria_theme':'Theme', 'header.aria_open_menu':'Open menu',
+  'nav.faq':'FAQ', 'nav.about':'About WorkUnity', 'nav.employers':'For Employers', 'nav.foreigners':'For Foreigners', 'nav.partners':'Partners',
+  'footer.tagline':'WorkUnity — legal employment and migration support infrastructure.',
+  'footer.sections':'Sections', 'footer.materials':'Resources', 'footer.instructions':'Guide',
+  'footer.contacts':'Contacts', 'footer.city':'Bishkek', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic',
+  'a.cta':'Request a free audit',
+  'a.h1':'We’ll check your foreign workers’ documents. Free.',
+  'a.sub':'We’ll come to the site, review each worker’s documents in about an hour, and give you a written report: what’s fine and what will become a problem during an inspection. No obligation.',
+  'b.1.d':'Whether they’re still valid, and when they expire.',
+  'b.1.t':'Unified work permit and resident card',
+  'b.2.d':'Whether it exists, and whether it’s overdue.',
+  'b.2.t':'Registration at place of stay',
+  'b.3.d':'Whether the employer on paper is the one the person actually works for.',
+  'b.3.t':'Employer match',
+  'b.4.d':'Whether it’s signed, and whether the terms match reality.',
+  'b.4.t':'Employment contract',
+  'b.5.d':'Whether it’s time to file for renewal, so nothing lapses.',
+  'b.5.t':'Renewal deadlines',
+  'b.h2':'What We Check',
+  'b.ix':'01 — What We Check',
+  'b.note':'For each worker, we’ll tell you plainly: fine, expiring soon, or already overdue.',
+  'back.aria':'Back to home',
+  'back.home':'Back to home',
+  'c.1.d':'Name, phone number, site address, how many foreign workers you have.',
+  'c.1.t':'You submit a request',
+  'c.2.d':'Usually within 2–3 days.',
+  'c.2.t':'We agree on a time',
+  'c.3.d':'We review the documents. Takes about an hour.',
+  'c.3.t':'We come to the site',
+  'c.4.d':'What’s fine, where the risk is, and what it costs to fix. Free, no obligation.',
+  'c.4.t':'You get a written report',
+  'c.h2':'How It Works',
+  'c.ix':'02 — The Process',
+  'd.h2':'We’re not a government body. And we don’t report anything to anyone.',
+  'd.ix':'03 — Confidentiality',
+  'd.p':'The audit is completely confidential. Our job is to help you get things in order before an inspection — not to report violations. Whatever we see stays between us. If you want, we’ll sign a confidentiality agreement.',
+  'e.1':'The full picture for each foreign worker',
+  'e.2':'A list of problems and what each one risks',
+  'e.3':'A clear plan: what to fix and what it costs',
+  'e.4':'Peace of mind — the inspection won’t catch you off guard',
+  'e.h2':'What You Get',
+  'e.ix':'04 — What You Get',
+  'f.h2':'Expired documents aren’t a small thing.',
+  'f.ix':'05 — Why It Matters',
+  'f.p':'For the worker: a fine, deportation, an entry ban. For the employer: fines for employing foreign workers without a permit, and the risk of ending up on the Unreliable Employers Register. After that, hiring new workers gets a lot harder. It’s easier to check now than to sort it out after an inspection.',
+  'g.h2':'The audit is free. Fixing violations isn’t.',
+  'g.ix':'06 — About the Money',
+  'g.p':'If we find problems, we’ll offer to fix them: renew the registration, arrange the permit, put the contracts in order. You decide — with us or with anyone else. The report is yours either way.',
+  'h.address':'Site address',
+  'h.count':'How many foreign workers',
+  'h.err':'Please fill in your name and phone.',
+  'h.h2':'Request a Free Audit',
+  'h.ix':'07 — Request',
+  'h.name':'Your name',
+  'h.note':'We’ll reply within one business day. It’s free and no obligation.',
+  'h.phone':'Phone / WhatsApp',
+  'h.sent':'Opening WhatsApp with a ready message. If the window didn’t appear — allow pop-ups or write to us directly.',
+  'h.submit':'Request a free audit',
+  'header.consultation':'Consultation',
+  'mcta.call':'Call',
+  'mcta.primary':'Request an audit',
+  'wa.address':'Site address',
+  'wa.count':'Number of foreign workers',
+  'wa.name':'Name',
+  'wa.notspecified':'not specified',
+  'wa.phone':'Phone',
+  'wa.title':'Request for a free document audit from the WorkUnity website',
+};
+var I18N_UR = {
+  'nav.aria_main_menu':'مرکزی مینیو', 'header.aria_theme':'تھیم', 'header.aria_open_menu':'مینیو کھولیں',
+  'nav.faq':'سوالات', 'nav.about':'WorkUnity کے بارے میں', 'nav.employers':'آجروں کے لیے', 'nav.foreigners':'غیر ملکیوں کے لیے', 'nav.partners':'شراکت دار',
+  'footer.tagline':'WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔',
+  'footer.sections':'حصے', 'footer.materials':'وسائل', 'footer.instructions':'ہدایات',
+  'footer.contacts':'رابطہ', 'footer.city':'بشکیک', 'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان',
+  'a.cta':'مفت آڈٹ کی درخواست دیں',
+  'a.h1':'ہم آپ کے غیر ملکی کارکنوں کی دستاویزات چیک کریں گے۔ بالکل مفت۔',
+  'a.sub':'ہم آپ کی جگہ آئیں گے، تقریباً ایک گھنٹے میں ہر کارکن کی دستاویزات دیکھیں گے اور تحریری رپورٹ دیں گے: کیا ٹھیک ہے اور معائنے میں کیا مسئلہ بن سکتا ہے۔ کوئی پابندی نہیں۔',
+  'b.1.d':'کیا یہ نافذ ہیں، میعاد تو ختم نہیں ہوئی۔',
+  'b.1.t':'یکجا اجازت نامہ اور ریزیڈنٹ کارڈ',
+  'b.2.d':'موجود ہے یا نہیں، میعاد تو نہیں گزری۔',
+  'b.2.t':'قیام کی جگہ پر رجسٹریشن',
+  'b.3.d':'دستاویزات میں درج آجر وہی ہے جس کے لیے شخص واقعی کام کر رہا ہے۔',
+  'b.3.t':'آجر سے تعلق',
+  'b.4.d':'طے ہوا ہے یا نہیں، شرائط حقیقت سے میل کھاتی ہیں یا نہیں۔',
+  'b.4.t':'ملازمت کا معاہدہ',
+  'b.5.d':'توسیع کے لیے درخواست دینے کا وقت تو نہیں آ گیا، تاکہ میعاد نہ گزرے۔',
+  'b.5.t':'توسیع کی مدت',
+  'b.h2':'ہم کیا چیک کرتے ہیں',
+  'b.ix':'01 — ہم کیا چیک کرتے ہیں',
+  'b.note':'ہر کارکن کے بارے میں ہم صاف بتائیں گے: ٹھیک ہے، جلد ختم ہونے والا ہے، یا پہلے ہی میعاد گزر چکی ہے۔',
+  'back.aria':'مرکزی صفحہ',
+  'back.home':'مرکزی صفحہ',
+  'c.1.d':'نام، فون نمبر، جگہ کا پتا، کتنے غیر ملکی کام کرتے ہیں۔',
+  'c.1.t':'آپ درخواست دیتے ہیں',
+  'c.2.d':'عام طور پر 2 سے 3 دن میں۔',
+  'c.2.t':'ہم وقت طے کرتے ہیں',
+  'c.3.d':'دستاویزات دیکھتے ہیں۔ تقریباً ایک گھنٹہ لگتا ہے۔',
+  'c.3.t':'ہم جگہ پر آتے ہیں',
+  'c.4.d':'کیا ٹھیک ہے، خطرہ کہاں ہے، اور ٹھیک کرنے میں کتنا خرچ آئے گا۔ مفت اور بغیر کسی پابندی کے۔',
+  'c.4.t':'آپ کو تحریری رپورٹ ملتی ہے',
+  'c.h2':'یہ کیسے ہوتا ہے',
+  'c.ix':'02 — یہ کیسے ہوتا ہے',
+  'd.h2':'ہم سرکاری ادارہ نہیں ہیں۔ اور کسی کو کچھ نہیں بتاتے۔',
+  'd.ix':'03 — رازداری',
+  'd.p':'آڈٹ مکمل طور پر خفیہ ہے۔ ہمارا کام معائنے سے پہلے معاملات ٹھیک کرنے میں مدد دینا ہے، خلاف ورزیوں کی اطلاع دینا نہیں۔ جو کچھ ہم دیکھیں گے، وہ ہمارے درمیان ہی رہے گا۔ اگر آپ چاہیں تو ہم رازداری کا معاہدہ بھی کر سکتے ہیں۔',
+  'e.1':'ہر غیر ملکی کارکن کی مکمل تصویر',
+  'e.2':'مسائل کی فہرست اور ہر ایک کا خطرہ',
+  'e.3':'واضح منصوبہ: کیا ٹھیک کرنا ہے اور اس کا خرچ کتنا ہے',
+  'e.4':'ذہنی سکون — معائنہ آپ کو غافل نہیں پکڑے گا',
+  'e.h2':'آپ کو کیا ملے گا',
+  'e.ix':'04 — آپ کو کیا ملے گا',
+  'f.h2':'میعاد ختم دستاویزات کوئی معمولی بات نہیں۔',
+  'f.ix':'05 — یہ کیوں اہم ہے',
+  'f.p':'کارکن کے لیے: جرمانہ، ملک بدری، داخلے پر پابندی۔ آجر کے لیے: بغیر اجازت نامے کے غیر ملکیوں کو کام دینے پر جرمانے اور غیر معتبر آجروں کی فہرست میں شامل ہونے کا خطرہ۔ اس کے بعد نئے کارکن رکھنا کہیں زیادہ مشکل ہو جاتا ہے۔ پہلے سے جانچ لینا معائنے کے بعد معاملات سلجھانے سے آسان ہے۔',
+  'g.h2':'آڈٹ مفت ہے۔ خلاف ورزیاں دور کرنا مفت نہیں۔',
+  'g.ix':'06 — پیسوں کی بات صاف',
+  'g.p':'اگر ہمیں مسائل ملیں تو ہم انہیں ٹھیک کرنے کی تجویز دیں گے: رجسٹریشن میں توسیع، اجازت نامہ بنوانا، معاہدے درست کرنا۔ فیصلہ آپ کا ہے — ہمارے ساتھ یا کسی اور کے ساتھ۔ رپورٹ بہرحال آپ کے پاس رہے گی۔',
+  'h.address':'جگہ کا پتا',
+  'h.count':'کتنے غیر ملکی کام کرتے ہیں',
+  'h.err':'براہ کرم نام اور فون نمبر پُر کریں۔',
+  'h.h2':'مفت آڈٹ کی درخواست دیں',
+  'h.ix':'07 — درخواست',
+  'h.name':'آپ کا نام',
+  'h.note':'ہم ایک کاروباری دن کے اندر جواب دیں گے۔ یہ مفت ہے اور کوئی پابندی نہیں۔',
+  'h.phone':'فون / WhatsApp',
+  'h.sent':'WhatsApp ایک تیار پیغام کے ساتھ کھل رہا ہے۔ اگر ونڈو ظاہر نہ ہو — پاپ اپس کی اجازت دیں یا براہ راست ہمیں لکھیں۔',
+  'h.submit':'مفت آڈٹ کی درخواست دیں',
+  'header.consultation':'مشاورت',
+  'mcta.call':'کال کریں',
+  'mcta.primary':'آڈٹ کی درخواست دیں',
+  'wa.address':'جگہ کا پتا',
+  'wa.count':'غیر ملکی کارکنوں کی تعداد',
+  'wa.name':'نام',
+  'wa.notspecified':'درج نہیں',
+  'wa.phone':'فون',
+  'wa.title':'WorkUnity ویب سائٹ سے دستاویزات کے مفت آڈٹ کی درخواست',
+};
+var DICTS = { en: I18N_EN, ur: I18N_UR };
+var RTL_LANGS = { ur: true };
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+function setLang(lang){
+  LANG = ENABLED_LANGS.indexOf(lang) !== -1 ? lang : 'ru';
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
+  lsw.setAttribute('data-lang', LANG === 'ur' ? 'en' : LANG);
+  var dict = DICTS[LANG];
+  i18nNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
+  i18nAttrNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.setAttribute(n.attr, (val && val.trim()) ? val : n.ru);
+  });
+  applySeo(LANG);
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+lsw.addEventListener('click', function(){ setLang(nextLang(LANG)); });
+var savedLang = 'ru';
+try{ savedLang = localStorage.getItem('wu_lang') || 'ru'; }catch(err){}
+if (ENABLED_LANGS.indexOf(savedLang) === -1) savedLang = 'ru';
+setLang(savedLang);
+
+/* ═══ THEME SWITCH ════════════════════════════════ */
+var tsw = $('#tsw');
+function setTheme(theme){
+  var t = theme === 'dark' ? 'dark' : 'light';
+  if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  tsw.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  try{ localStorage.setItem('wu_theme', t); }catch(err){}
+}
+tsw.addEventListener('click', function(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+var savedTheme = 'light';
+try{ savedTheme = localStorage.getItem('wu_theme') || 'light'; }catch(err){}
+setTheme(savedTheme);
+
+function I18N_UI(key){
+  var dict = DICTS[LANG];
+  var val = dict && dict[key];
+  return (val && val.trim()) ? val : (RU_SRC[key] || key);
+}
+
+/* ═══ AUDIT REQUEST FORM ════════════════════════════ */
+var af = $('#auditform'), am = $('#auditmsg');
+af.addEventListener('submit', function(e){
+  e.preventDefault();
+  var required = ['name','phone'], bad = null;
+  required.forEach(function(n){
+    var el = af.elements[n];
+    var ok = el.value.trim().length > 1;
+    el.classList.toggle('err', !ok);
+    if(!ok && !bad) bad = el;
+  });
+  am.classList.add('on');
+  if(bad){
+    am.textContent = I18N_UI('h.err');
+    am.style.borderInlineStartColor = 'var(--err)';
+    bad.focus();
+    return;
+  }
+  am.style.borderInlineStartColor = 'var(--accent)';
+  function val(n){ return af.elements[n].value.trim(); }
+  var notSpec = I18N_UI('wa.notspecified');
+  var text = I18N_UI('wa.title') + '\n\n'
+    + I18N_UI('wa.name') + ': ' + val('name') + '\n'
+    + I18N_UI('wa.phone') + ': ' + val('phone') + '\n'
+    + I18N_UI('wa.address') + ': ' + (val('address') || notSpec) + '\n'
+    + I18N_UI('wa.count') + ': ' + (val('count') || notSpec);
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  am.textContent = I18N_UI('h.sent');
+});
+af.addEventListener('input', function(e){ if(e.target.classList) e.target.classList.remove('err'); });
+
+$$('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+})();
+</script>
+</body>
+</html>

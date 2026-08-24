@@ -13,14 +13,20 @@ function guaranteePromises(text){
     .map(x => x.trim())
     .filter(x => G_WORD.test(x) && G_TARGET.test(x) && !G_NEG.test(x));
 }
+const NAV_HREFS = ['index.html','inostrantsam.html','partners.html','o-workunity.html'];
+// index.html carries one extra nav item (Аудит документов) that the other
+// dict-based pages deliberately don't — see PAGES comment below.
+const NAV_HREFS_HOME = [...NAV_HREFS, 'audit.html'];
 const PAGES = [
-  ['index.html',        'employers',  '#contact'],
+  ['index.html',        'employers',  '#contact', undefined, NAV_HREFS_HOME],
   ['o-workunity.html',  'about',      '#bridge'],
   ['partners.html',     'partners',   '#cta-form'],
   ['inostrantsam.html', 'foreigners', '#cta-form'],
   ['kak-nanyat-inostrannogo-rabotnika.html', 'guide', 'index.html#contact'],
+  // audit.html: minimal header (no #mainnav), so nav/navOn checks are skipped for it;
+  // its mobile CTA points at the on-page form, not the shared consultation anchor.
+  ['audit.html', 'audit', 'index.html#contact', '#form', null],
 ];
-const NAV_HREFS = ['index.html','inostrantsam.html','partners.html','o-workunity.html'];
 
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
@@ -29,7 +35,8 @@ const NAV_HREFS = ['index.html','inostrantsam.html','partners.html','o-workunity
   const ok  = () => { checks++; };
 
   // ── per page × language × theme ─────────────────────────────────────
-  for (const [page, slug, ctaHref] of PAGES) {
+  for (const [page, slug, ctaHref, mctaHrefOverride, navHrefsOverride = NAV_HREFS] of PAGES) {
+    const mctaHref = mctaHrefOverride !== undefined ? mctaHrefOverride : ctaHref;
     console.log('\n── ' + page);
     for (const theme of ['light','dark']) {
       for (const lang of ['ru','en','ur']) {
@@ -74,10 +81,14 @@ const NAV_HREFS = ['index.html','inostrantsam.html','partners.html','o-workunity
         if (r.theme !== theme) bad(`${tag} theme=${r.theme}`); else ok();
         if (r.dataPage !== slug) bad(`${tag} data-page=${r.dataPage}`); else ok();
         if (r.ogLocale !== {ru:'ru_RU',en:'en_US',ur:'ur_PK'}[lang]) bad(`${tag} og:locale=${r.ogLocale}`); else ok();
-        if (JSON.stringify(r.nav) !== JSON.stringify(NAV_HREFS)) bad(`${tag} nav=${r.nav}`); else ok();
-        if (r.navOn !== 1) bad(`${tag} active nav items=${r.navOn}`); else ok();
+        if (navHrefsOverride === null) {
+          if (r.nav.length) bad(`${tag} expected no #mainnav, found ${r.nav}`); else ok();
+        } else {
+          if (JSON.stringify(r.nav) !== JSON.stringify(navHrefsOverride)) bad(`${tag} nav=${r.nav}`); else ok();
+          if (r.navOn !== 1) bad(`${tag} active nav items=${r.navOn}`); else ok();
+        }
         if (r.ctaHref !== ctaHref) bad(`${tag} header CTA=${r.ctaHref} want ${ctaHref}`); else ok();
-        if (r.mctaHref !== ctaHref) bad(`${tag} mobile CTA=${r.mctaHref} want ${ctaHref}`); else ok();
+        if (r.mctaHref !== mctaHref) bad(`${tag} mobile CTA=${r.mctaHref} want ${mctaHref}`); else ok();
         if (!r.footReg) bad(`${tag} reg number missing in footer`); else ok();
         if (r.copyright !== '© 2026 WorkUnity') bad(`${tag} copyright bidi: "${r.copyright}"`); else ok();
         if (r.shadowNav.length) bad(`${tag} shadow nav: ${r.shadowNav}`); else ok();

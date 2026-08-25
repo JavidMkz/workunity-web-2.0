@@ -675,8 +675,8 @@ html[lang="ur"] .q summary{letter-spacing:0}
       <div class="fc__t" data-i18n="form.t">Заявка на консультацию</div>
       <div class="fc__s" data-i18n="form.s">Ответ в течение одного рабочего дня</div>
       <form id="helpform" novalidate>
-        <div class="f"><label for="q0" data-i18n="form.contact">Как с вами связаться</label><input id="q0" name="contact" type="text" placeholder="Телефон, WhatsApp или email" required></div>
-        <div class="f"><label for="q1" data-i18n="form.situation">Что случилось?</label><textarea id="q1" name="situation" placeholder="Опишите ситуацию своими словами" required></textarea></div>
+        <div class="f"><label for="q0" data-i18n="form.contact">Как с вами связаться</label><input id="q0" name="contact" type="text" data-i18n-attr="placeholder:form.contact_ph" placeholder="Телефон, WhatsApp или email" required></div>
+        <div class="f"><label for="q1" data-i18n="form.situation">Что случилось?</label><textarea id="q1" name="situation" data-i18n-attr="placeholder:form.situation_ph" placeholder="Опишите ситуацию своими словами" required></textarea></div>
         <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-i18n="form.submit">Получить консультацию</span></button>
         <p class="fn" data-i18n="form.note">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется отправить.</p>
         <div class="fm" id="qmsg" role="status"></div>
@@ -836,6 +836,7 @@ var I18N_EN = {
   'cta.p':'Even if you don’t know exactly which service you need, just describe the situation. We will help you figure out the next step.',
   'form.t':'Consultation Request', 'form.s':'Response within one business day',
   'form.contact':'How to reach you', 'form.situation':'What happened?',
+  'form.contact_ph':'Phone, WhatsApp or email', 'form.situation_ph':'Describe your situation in your own words',
   'form.submit':'Get a Consultation', 'form.note':'Clicking the button opens WhatsApp with a ready message — just send it.',
   'bstrip.tagline':'Legal · Migration · Workforce · Trust',
   'footer.tagline':'WorkUnity — legal employment and migration support infrastructure.',
@@ -919,6 +920,7 @@ var I18N_UR = {
   'cta.p':'چاہے آپ کو یہ معلوم نہ ہو کہ آپ کو کون سی سروس چاہیے، بس اپنی صورتحال بتائیں۔ ہم اگلا قدم طے کرنے میں مدد کریں گے۔',
   'form.t':'مشاورت کی درخواست', 'form.s':'ایک کاروباری دن میں جواب',
   'form.contact':'آپ سے کیسے رابطہ کریں', 'form.situation':'کیا ہوا؟',
+  'form.contact_ph':'فون، واٹس ایپ یا ای میل', 'form.situation_ph':'اپنی صورتحال اپنے الفاظ میں بیان کریں',
   'form.submit':'مشاورت حاصل کریں', 'form.note':'بٹن دبانے سے WhatsApp ایک تیار پیغام کے ساتھ کھل جائے گا — بس اسے بھیج دیں۔',
   'bstrip.tagline':'قانون · امیگریشن · ورک فورس · اعتماد',
   'footer.tagline':'WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔',

@@ -41,6 +41,9 @@
 
   --green:#0E9F6E;
   --green-deep:#0C875E;
+  --wa-brand:#25D366;
+  --wa-brand-border:#128C7E;
+  --wa-brand-hover:#1EBE57;
 
   --paper:#FFFFFF;
   --surface:#FFFFFF;
@@ -138,6 +141,8 @@ img{max-width:100%;display:block}
 .btn--white{background:#fff;color:var(--navy);border-color:#fff}
 .btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
 .btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--wa-brand{background:var(--wa-brand);color:#fff;border-color:var(--wa-brand-border)}
+.btn--wa-brand:hover{background:var(--wa-brand-hover);border-color:var(--wa-brand-border)}
 .btn--sm{padding:11px 19px;font-size:14px}
 .btn--full{width:100%;padding-block:18px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -230,10 +235,10 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 .p-hero h1{font-size:clamp(36px,6vw,72px);line-height:1.2;margin-block:20px 22px;max-width:16ch}
 .p-hero__sub{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:56ch;line-height:1.6}
 .p-hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:clamp(30px,4vw,40px)}
-.p-hero__talk{display:inline-flex;align-items:center;gap:9px;font-family:var(--h);font-weight:700;
-  font-size:15px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:.2s}
-.p-hero__talk:hover{color:var(--accent);border-color:var(--accent)}
-.p-hero__talk svg{width:16px;height:16px;color:var(--green)}
+@media(max-width:560px){
+  .p-hero__actions{flex-direction:column;align-items:stretch}
+  .p-hero__actions .btn{width:100%}
+}
 
 /* 4 ─ JOURNEY (не просто работодатели) ------------------------*/
 .journey{margin-top:clamp(30px,4vw,44px)}
@@ -460,7 +465,7 @@ html[lang="ur"] .q summary{letter-spacing:0}
     <p class="p-hero__sub rv rv-d2" data-i18n="hero.sub">Мы соединяем людей, работодателей и необходимые сервисы на всём пути — от возможности к трудоустройству, переезду и обустройству.</p>
     <div class="p-hero__actions rv rv-d3">
       <a class="btn btn--navy" href="#cta-form" data-i18n="hero.cta">Стать партнёром</a>
-      <a class="p-hero__talk" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span data-i18n="hero.talk">Написать нам</span></a>
+      <a class="btn btn--wa-brand" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#wa"/></svg><span data-i18n="hero.talk">Написать нам</span></a>
     </div>
   </div>
 </section>

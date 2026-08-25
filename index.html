@@ -122,6 +122,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
 h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:var(--lh-heading);margin:0;letter-spacing:-.045em}
 @media(max-width:479px){h1,h2,h3,h4{overflow-wrap:break-word}}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+[id]{scroll-margin-top:96px}
 img{max-width:100%;display:block}
 ::selection{background:var(--accent);color:#fff}
 
@@ -671,7 +672,7 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
         </ul>
         <div class="hero__cta">
           <a class="btn btn--navy" href="#contact"><span data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">Консультация для работодателя</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"/></svg></a>
-          <a class="btn btn--out" href="inostrantsam.html#cta-form"><span data-en="Foreign national assistance" data-ur="غیر ملکی شہری کی مدد">Помощь иностранному гражданину</span></a>
+          <a class="btn btn--out" href="inostrantsam.html"><span data-en="Foreign national assistance" data-ur="غیر ملکی شہری کی مدد">Помощь иностранному гражданину</span></a>
         </div>
       </div>
     </div>
@@ -704,12 +705,12 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
       <div class="bridge__c">
         <h3 class="bridge__t" data-en="For Foreign Nationals" data-ur="غیر ملکی شہریوں کے لیے">Иностранным гражданам</h3>
         <p class="bridge__d" data-en="Legal assistance, migration matters, protection of your rights. Verify a job offer before you pay." data-ur="قانونی مدد، نقل مکانی کے معاملات، آپ کے حقوق کا تحفظ۔ ادائیگی سے پہلے روزگار کی پیشکش کی تصدیق کریں۔">Правовая помощь, миграционные вопросы, защита ваших прав. Проверьте предложение о работе, прежде чем платить.</p>
-        <a class="bridge__a" href="inostrantsam.html#cta-form"><span data-en="Get help" data-ur="مدد حاصل کریں">Получить помощь</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="bridge__a" href="inostrantsam.html"><span data-en="Get help" data-ur="مدد حاصل کریں">Получить помощь</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
       <div class="bridge__c">
         <h3 class="bridge__t" data-en="For Partners" data-ur="شراکت داروں کے لیے">Партнёрам</h3>
         <p class="bridge__d" data-en="Join the network of verified partners. Infrastructure, standards, a transparent commission model." data-ur="تصدیق شدہ شراکت داروں کے نیٹ ورک میں شامل ہوں۔ بنیادی ڈھانچہ، معیارات، شفاف کمیشن ماڈل۔">Присоединяйтесь к сети проверенных партнёров. Инфраструктура, стандарты, прозрачная комиссионная модель.</p>
-        <a class="bridge__a" href="partners.html#cta-form"><span data-en="Become a partner" data-ur="شراکت دار بنیں">Стать партнёром</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a class="bridge__a" href="partners.html"><span data-en="Become a partner" data-ur="شراکت دار بنیں">Стать партнёром</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
       </div>
     </div>
   </div>
@@ -725,7 +726,7 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
       </div>
       <div class="audit-teaser__actions">
         <a class="btn btn--navy" href="audit.html"><span data-en="Request an Audit" data-ur="آڈٹ کی درخواست دیں">Заказать аудит</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a>
-        <a class="btn btn--out" href="audit.html#process"><span data-en="How It Works" data-ur="یہ کیسے کام کرتا ہے">Как это работает</span></a>
+        <a class="btn btn--out" href="audit.html"><span data-en="How It Works" data-ur="یہ کیسے کام کرتا ہے">Как это работает</span></a>
       </div>
     </div>
   </div>
@@ -1197,6 +1198,21 @@ function onProcess(){
 }
 
 /* ═══ SCROLL: progress + mobile CTA + process ════════════ */
+/* ═══ SCROLL RESTORATION ══════════════════ */
+history.scrollRestoration = "manual";
+if (window.location.hash) {
+  document.documentElement.style.scrollBehavior = "auto";
+  document.addEventListener("DOMContentLoaded", function () {
+    var el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({ block: "start" });
+    document.documentElement.style.scrollBehavior = "";
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+}
+
 var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
 function onScroll(){
   var h = document.documentElement;

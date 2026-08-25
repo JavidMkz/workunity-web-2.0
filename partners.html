@@ -115,6 +115,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
   font-size:16.5px;line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:var(--lh-heading);margin:0;letter-spacing:-.04em}
 p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+[id]{scroll-margin-top:96px}
 img{max-width:100%;display:block}
 ::selection{background:var(--accent);color:#fff}
 
@@ -694,7 +695,7 @@ html[lang="ur"] .q summary{letter-spacing:0}
         <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
       <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
-      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html#faq" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
+      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
       <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
@@ -722,6 +723,21 @@ var io = new IntersectionObserver(function(es){
 $$('.rv').forEach(function(el){ io.observe(el); });
 
 /* ═══ SCROLL: progress + mobile CTA ═══════════════════════ */
+/* ═══ SCROLL RESTORATION ══════════════════ */
+history.scrollRestoration = "manual";
+if (window.location.hash) {
+  document.documentElement.style.scrollBehavior = "auto";
+  document.addEventListener("DOMContentLoaded", function () {
+    var el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({ block: "start" });
+    document.documentElement.style.scrollBehavior = "";
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+}
+
 var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
 function onScroll(){
   var h = document.documentElement;

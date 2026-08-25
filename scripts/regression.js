@@ -22,10 +22,10 @@ const PAGES = [
   ['o-workunity.html',  'about',      '#bridge'],
   ['partners.html',     'partners',   '#cta-form'],
   ['inostrantsam.html', 'foreigners', '#cta-form'],
-  ['kak-nanyat-inostrannogo-rabotnika.html', 'guide', 'index.html#contact'],
+  ['kak-nanyat-inostrannogo-rabotnika.html', 'guide', 'index.html'],
   // audit.html: minimal header (no #mainnav), so nav/navOn checks are skipped for it;
   // its mobile CTA points at the on-page form, not the shared consultation anchor.
-  ['audit.html', 'audit', 'index.html#contact', '#form', null],
+  ['audit.html', 'audit', 'index.html', '#form', null],
 ];
 
 (async () => {

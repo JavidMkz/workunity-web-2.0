@@ -314,7 +314,7 @@ tbody tr:hover{background:var(--surface-2)}
   gap:8px;flex:none;flex-wrap:wrap}
 
 /* ============================================================
-   8 — GATES (rules/training) & LOGIN
+   8 — GATES (rules) & LOGIN
    ============================================================ */
 .login-wrap{min-height:100vh;display:flex;position:relative}
 .login-theme-toggle{position:fixed;top:14px;right:14px;z-index:10;
@@ -346,15 +346,6 @@ tbody tr:hover{background:var(--surface-2)}
   display:grid;place-items:center;font-weight:800;font-size:12px}
 .gate-rule b{display:block;margin-bottom:2px;font-size:13.5px}
 .gate-rule span{font-size:12.5px;color:var(--muted)}
-.quiz-q{border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:12px;background:var(--surface)}
-.quiz-q__title{font-weight:700;font-size:13.5px;margin-bottom:10px}
-.quiz-opt{display:block;padding:9px 11px;border:1px solid var(--border);border-radius:var(--radius-sm);
-  margin-bottom:7px;cursor:pointer;font-size:13px;background:var(--surface)}
-.quiz-opt:hover{background:var(--surface-2)}
-.quiz-opt.selected{border-color:var(--teal);background:var(--blue-bg)}
-.quiz-opt.correct{border-color:var(--green-line);background:var(--green-bg);font-weight:700}
-.quiz-opt.wrong{border-color:var(--red-line);background:var(--red-bg)}
-.quiz-opt input{margin-inline-end:8px}
 
 /* ============================================================
    9 — TOASTS
@@ -458,13 +449,6 @@ var RULES = [
   { t:'Only WorkUnity changes a candidate status', d:'Agents submit candidates and information. Only WorkUnity admin/compliance staff can change a candidate\'s status or compliance flag. This keeps the process fair and auditable.' },
   { t:'Candidates must be able to reach WorkUnity directly', d:'Every candidate gets a direct confirmation channel with WorkUnity, separate from the agent, so they always have someone official to contact.' },
   { t:'Only open and verified vacancies can be filled', d:'You will only ever see vacancies that are open and compliance-verified. A vacancy that is not verified cannot be submitted to, even if you know about it.' }
-];
-var QUIZ = [
-  { q:'If a candidate offers to pay you directly for helping them get the job, you should:', opts:['Accept a small amount, it is normal','Refuse — all payments go through official WorkUnity accounts only','Ask your coordinator if you can keep it'], correct:1 },
-  { q:'When do you earn a commission for a candidate?', opts:['As soon as you submit the candidate','Only when they Arrive, and again at 30/90-day retention','Once their status changes to Screening'], correct:1 },
-  { q:'You discover a candidate\'s passport number is already in the system under someone else. What happens?', opts:['The new submission is blocked as a duplicate','It is allowed, WorkUnity will sort it out later','You can edit the old record yourself'], correct:0 },
-  { q:'Who is allowed to change a candidate\'s status (e.g. from New to Approved)?', opts:['Any agent who submitted a candidate','Only WorkUnity admin / compliance staff','Whoever notices first'], correct:1 },
-  { q:'Can you submit a candidate to a vacancy that is not yet verified by compliance?', opts:['Yes, if the employer is trustworthy','No — only open and verified vacancies are ever shown to agents','Yes, but flag it afterwards'], correct:1 }
 ];
 var REGIONS = ['Asia','Gulf','Europe'];
 var AGENT_LEVELS = ['Candidate Agent','Agent','Corridor Partner'];
@@ -571,15 +555,15 @@ function seedDB(){
   var agents = [
     { id:'a1', name:'Ahmed Khan', country:'Pakistan', phone:'+92 300 1234567', whatsapp:'+92 300 1234567',
       email:'agent@workunity.com', level:'Candidate Agent', status:'Active',
-      rulesAcceptedAt:null, trainingCompletedAt:null,
+      rulesAcceptedAt:null,
       coordinator:{ name:'Elena Sharipova', whatsapp:'+996700123445' }, violations:0 },
     { id:'a2', name:'Priya Sharma', country:'India', phone:'+91 98765 43210', whatsapp:'+91 98765 43210',
       email:'priya.sharma@example.com', level:'Corridor Partner', status:'Active',
-      rulesAcceptedAt:dOff(-380), trainingCompletedAt:dOff(-379),
+      rulesAcceptedAt:dOff(-380),
       coordinator:{ name:'Elena Sharipova', whatsapp:'+996700123445' }, violations:0 },
     { id:'a3', name:'Rashed Islam', country:'Bangladesh', phone:'+880 1712 345678', whatsapp:'+880 1712 345678',
       email:'rashed.islam@example.com', level:'Agent', status:'Active',
-      rulesAcceptedAt:dOff(-120), trainingCompletedAt:dOff(-119),
+      rulesAcceptedAt:dOff(-120),
       coordinator:{ name:'Bakyt Osmonov', whatsapp:'+996700123446' }, violations:0 }
   ];
 
@@ -797,9 +781,7 @@ var state = {
   view: 'dashboard',
   params: {},
   theme: 'light',
-  gateStep: null,      // 'rules' | 'training' | null
-  quizAnswers: {},
-  quizChecked: false,
+  gateStep: null,      // 'rules' | null
   bellOpen: false
 };
 
@@ -843,7 +825,6 @@ function computeGateStep(){
   var a = currentAgent();
   if(!a){ state.gateStep = null; return; }
   if(!a.rulesAcceptedAt){ state.gateStep = 'rules'; return; }
-  if(!a.trainingCompletedAt){ state.gateStep = 'training'; return; }
   state.gateStep = null;
 }
 
@@ -890,8 +871,6 @@ function render(){
   var bodyHtml;
   if(role==='agent' && state.gateStep==='rules'){
     bodyHtml = renderRulesGate();
-  } else if(role==='agent' && state.gateStep==='training'){
-    bodyHtml = renderTrainingGate();
   } else {
     bodyHtml = renderCurrentView();
   }
@@ -1546,7 +1525,6 @@ function viewAgentAdmin(id){
   html += '<div class="data-grid">'+
     dgItem('Country', a.country) + dgItem('Phone', a.phone) + dgItem('Email', a.email) +
     dgItem('Coordinator', a.coordinator.name) + dgItem('Rules accepted', a.rulesAcceptedAt?fmtDate(a.rulesAcceptedAt):'Not yet') +
-    dgItem('Training completed', a.trainingCompletedAt?fmtDate(a.trainingCompletedAt):'Not yet') +
   '</div>';
   html += '<div class="kpi-grid" style="margin-top:14px">'+
     kpi('Total Candidates', st.total, '') + kpi('Arrived', st.arrived, '') +
@@ -1926,7 +1904,7 @@ function modalHead(title){
 }
 
 /* ---------------------------------------------------------------
-   7c. GATES — Rules & Training
+   7c. GATES — Rules
    --------------------------------------------------------------- */
 function renderRulesGate(){
   var html = '<div class="gate-wrap">';
@@ -1935,7 +1913,7 @@ function renderRulesGate(){
     html += '<div class="gate-rule"><span class="gate-rule__n">'+(i+1)+'</span><div><b>'+esc(r.t)+'</b><span>'+esc(r.d)+'</span></div></div>';
   });
   html += '<div class="check-row"><input type="checkbox" id="rulesAccept"><label for="rulesAccept">I have read and understood these six rules, and I agree to follow them.</label></div>';
-  html += '<button class="btn btn--primary btn--block" onclick="acceptRules()">Continue to training</button>';
+  html += '<button class="btn btn--primary btn--block" onclick="acceptRules()">Accept and continue</button>';
   html += '</div>';
   return html;
 }
@@ -1946,68 +1924,8 @@ function acceptRules(){
   if(!a) return;
   a.rulesAcceptedAt = nowISO();
   saveDB();
-  toast('Rules accepted. Now a short training check.', 'ok');
+  toast('Rules accepted. Welcome aboard!', 'ok');
   render();
-}
-
-function renderTrainingGate(){
-  var checked = state.quizChecked;
-  var html = '<div class="gate-wrap">';
-  html += '<div class="view-head"><div><h1>Quick Training Check</h1><p>Five short questions about the rules you just read. All five must be correct to unlock candidate submissions.</p></div></div>';
-  QUIZ.forEach(function(q, qi){
-    html += '<div class="quiz-q"><div class="quiz-q__title">'+(qi+1)+'. '+esc(q.q)+'</div>';
-    q.opts.forEach(function(opt, oi){
-      var cls = 'quiz-opt';
-      var picked = state.quizAnswers[qi]===oi;
-      if(checked){
-        if(oi===q.correct) cls += ' correct';
-        else if(picked) cls += ' wrong';
-      } else if(picked){ cls += ' selected'; }
-      html += '<label class="'+cls+'"><input type="radio" name="q'+qi+'" '+(picked?'checked':'')+
-        (checked?' disabled':'')+' onchange="setQuizAnswer('+qi+','+oi+')">'+esc(opt)+'</label>';
-    });
-    html += '</div>';
-  });
-  if(!checked){
-    html += '<button class="btn btn--primary btn--block" onclick="checkQuiz()">Submit Answers</button>';
-  } else {
-    var allCorrect = QUIZ.every(function(q, qi){ return state.quizAnswers[qi]===q.correct; });
-    if(allCorrect){
-      html += '<div class="alert" style="border-color:var(--green-line);background:var(--green-bg)">'+icon('check')+'<span><b>All correct!</b> You can now submit candidates.</span></div>';
-      html += '<button class="btn btn--primary btn--block" onclick="finishTraining()">Continue to dashboard</button>';
-    } else {
-      html += '<div class="alert alert--red">'+icon('incident')+'<span><b>Not quite.</b> Check the correct answers highlighted in green, then try again.</span></div>';
-      html += '<button class="btn btn--primary btn--block" onclick="retryQuiz()">Try Again</button>';
-    }
-  }
-  html += '</div>';
-  return html;
-}
-function setQuizAnswer(qi, oi){
-  if(state.quizChecked) return;
-  state.quizAnswers[qi] = oi;
-  render();
-}
-function checkQuiz(){
-  if(Object.keys(state.quizAnswers).length < QUIZ.length){
-    toast('Please answer all questions.', 'err'); return;
-  }
-  state.quizChecked = true;
-  render();
-}
-function retryQuiz(){
-  state.quizAnswers = {};
-  state.quizChecked = false;
-  render();
-}
-function finishTraining(){
-  var a = currentAgent();
-  if(!a) return;
-  a.trainingCompletedAt = nowISO();
-  saveDB();
-  state.quizAnswers = {}; state.quizChecked = false;
-  toast('Training complete. Welcome aboard!', 'ok');
-  navigate('dashboard');
 }
 
 /* ---------------------------------------------------------------

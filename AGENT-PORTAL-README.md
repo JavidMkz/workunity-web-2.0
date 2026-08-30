@@ -17,7 +17,7 @@ All data lives in the browser's `localStorage` under the key `wu_agent_portal_v2
 
 | Role | Email | Password | Notes |
 |---|---|---|---|
-| Agent | `agent@workunity.com` | `agent123` | Ahmed Khan, Pakistan. Starts un-onboarded — logging in walks through the Rules gate and a 5-question Training quiz before the dashboard unlocks. |
+| Agent | `agent@workunity.com` | `agent123` | Ahmed Khan, Pakistan. Starts un-onboarded — logging in walks through the Rules gate before the dashboard unlocks. |
 | Admin | `admin@workunity.com` | `admin123` | Compliance admin — full access to every agent, vacancy, and candidate. |
 
 An admin can restore the app to this exact starting state at any time via **Reset Demo Data** in the sidebar (admin-only, asks for confirmation first).
@@ -39,7 +39,7 @@ Agents propose; only WorkUnity admin/compliance disposes. Concretely, the code e
 5. Every status or compliance change — anywhere in the app — writes a timestamped, attributed entry to the candidate's status history, with a required note.
 6. Passport numbers are masked everywhere they're displayed, including CSV exports (`WU•••001` style) — never shown in full except deliberately (`maskPassport`).
 7. The agent's candidate view is strictly read-only: no status dropdown, no incident button. Only the admin edit view has either.
-8. The Rules-acceptance and Training-quiz gates block an agent from reaching the dashboard (and therefore from submitting anything) until both are complete.
+8. The Rules-acceptance gate blocks an agent from reaching the dashboard (and therefore from submitting anything) until they've accepted the six rules.
 9. Activating a waitlisted candidate re-checks the vacancy's live quota first; it refuses if the quota is still full.
 10. `permitExpiry` is computed the instant a candidate's status is set to Arrived (permit issue date + 60 days), not lazily on next page load.
 11. Every commission row carries the submitting agent's ID; an agent's Commissions page only ever shows their own rows, while admin sees the whole network.

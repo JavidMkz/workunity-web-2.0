@@ -2,6 +2,12 @@
 
 All notable changes to `agent-cabinet-v2.html` are recorded here. This file covers the Agent Portal only — it is unrelated to the marketing site's own history in this repository.
 
+## v2.1.0 — Remove the Training Check gate
+
+- Dropped the 5-question Training quiz that used to sit between the Rules gate and the dashboard. Accepting the six rules now leads straight to the dashboard.
+- Removed the now-unused quiz code (`QUIZ`, `renderTrainingGate`, `setQuizAnswer`, `checkQuiz`, `retryQuiz`, `finishTraining`) and its CSS, and dropped the `trainingCompletedAt` field from the agent data model, including its read-out on the admin agent detail view.
+- The Rules-gate button now reads "Accept and continue" instead of "Continue to training".
+
 ## v2.0.0 — Initial full build
 
 Complete from-scratch build of the Agent Portal as a single self-contained HTML file: vanilla JS and CSS, no framework, no build step, no backend, `localStorage`-backed.

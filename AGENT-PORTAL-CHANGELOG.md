@@ -2,6 +2,13 @@
 
 All notable changes to `agent-cabinet-v2.html` are recorded here. This file covers the Agent Portal only — it is unrelated to the marketing site's own history in this repository.
 
+## v2.3.0 — Agents created by admin can actually log in
+
+- Login credentials moved out of the hardcoded `CREDS` constant and into `db.creds`, so they persist in `localStorage` and can be created at runtime. `migrateDB()` backfills the two demo logins for any pre-existing save that predates this field; `Reset Demo Data` wipes back down to just those two.
+- The "New Agent" form now has a "Portal Login" section (email + password). Creating an agent creates their login in the same step — no separate setup needed.
+- Duplicate emails are rejected at creation (case-insensitive) so a typo can't silently make an existing account's login stop matching.
+- Deleting an agent also removes their login, so a deleted account can no longer sign in.
+
 ## v2.2.0 — Replace the Rules content with a "How This Works" guide
 
 - The onboarding gate and its matching sidebar page no longer present the six compliance/policy rules as something to formally accept. They now explain the portal's own mechanics instead: how a candidate moves through statuses, how WorkUnity's direct candidate confirmation works, the open+verified vacancy rule, duplicate-passport blocking, the waitlist, agent levels, and the notification bell.

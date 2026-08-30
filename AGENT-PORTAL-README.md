@@ -22,11 +22,13 @@ All data lives in the browser's `localStorage` under the key `wu_agent_portal_v2
 
 An admin can restore the app to this exact starting state at any time via **Reset Demo Data** in the sidebar (admin-only, asks for confirmation first).
 
+Admin can also create additional agent logins from **Agents → New Agent** — set an email and password there and that agent can sign in immediately. Logins live in `localStorage` alongside the rest of the data, so they survive reloads but reset along with everything else via Reset Demo Data.
+
 ## What's in the box
 
 **Agent side:** dashboard (KPIs, level progress, coordinator contact, active vacancies, recent activity, network leaderboard, rejection-reason breakdown), vacancy browser (region filters, only open + verified vacancies ever appear), submit-candidate form (duplicate-passport check, required consent/expectations checkboxes, automatic waitlisting if a vacancy's quota is full), My Candidates (search/filter, CSV export, read-only detail view with a status timeline and an editable quality checklist), My Commissions (earned/paid/pending, no way to mark anything paid), and a "How This Works" page explaining the portal's own mechanics (candidate flow, confirmation, waitlist, levels).
 
-**Admin side:** network-wide dashboard (funnel, compliance mix, needs-attention feed, vacancy quotas, leaderboard), vacancy CRUD (create/edit/close/delete, per-agent submission breakdown), candidate management (the only place status or compliance can change — every change requires a written note and is logged), agent management (level/status/violations), an incidents register, network-wide commissions with **Mark Paid**, and a compliance calendar (permit-expiry tracking plus welfare check-in / retention-confirmation checkboxes for 7/30/90-day milestones).
+**Admin side:** network-wide dashboard (funnel, compliance mix, needs-attention feed, vacancy quotas, leaderboard), vacancy CRUD (create/edit/close/delete, per-agent submission breakdown), candidate management (the only place status or compliance can change — every change requires a written note and is logged), agent CRUD (create with a login, edit level/status/violations, delete once they have no candidates), an incidents register, network-wide commissions with **Mark Paid**, and a compliance calendar (permit-expiry tracking plus welfare check-in / retention-confirmation checkboxes for 7/30/90-day milestones).
 
 ## The rule the whole app is built around
 

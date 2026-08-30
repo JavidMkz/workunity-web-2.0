@@ -733,6 +733,11 @@ function seedDB(){
     }
   });
 
+  var creds = [
+    { email:'agent@workunity.com', password:'agent123', role:'agent', agentId:'a1' },
+    { email:'admin@workunity.com', password:'admin123', role:'admin', agentId:null }
+  ];
+
   return {
     version: DB_VERSION,
     agents: agents,
@@ -742,6 +747,7 @@ function seedDB(){
     incidents: incidents,
     paidCommissions: paidCommissions,
     notifications: [],
+    creds: creds,
     session: null
   };
 }
@@ -784,11 +790,6 @@ function resetDemoData(){
 /* ---------------------------------------------------------------
    3. AUTH / SESSION
    --------------------------------------------------------------- */
-var CREDS = [
-  { email:'agent@workunity.com', password:'agent123', role:'agent', agentId:'a1' },
-  { email:'admin@workunity.com', password:'admin123', role:'admin', agentId:null }
-];
-
 var state = {
   session: null,      // {role:'agent'|'admin', agentId}
   view: 'dashboard',
@@ -800,7 +801,7 @@ var state = {
 
 function doLogin(email, password){
   email = (email||'').trim().toLowerCase();
-  var match = CREDS.filter(function(c){ return c.email===email && c.password===password; })[0];
+  var match = db.creds.filter(function(c){ return c.email===email && c.password===password; })[0];
   if(!match){ toast('Incorrect email or password.', 'err'); return false; }
   if(match.role==='agent'){
     var agentRecord = getAgent(match.agentId);
@@ -1597,6 +1598,7 @@ function deleteAgent(id){
   if(st.total>0){ toast('Cannot delete an agent who already has candidates.', 'err'); return; }
   if(!confirm('Delete this agent? This cannot be undone.')) return;
   db.agents = db.agents.filter(function(a){ return a.id!==id; });
+  db.creds = db.creds.filter(function(c){ return c.agentId!==id; });
   saveDB();
   closeModal();
   toast('Agent deleted.', 'ok');
@@ -1613,12 +1615,17 @@ function openNewAgentModal(){
     '<div class="field"><label>Phone</label><input id="naPhone" placeholder="+92 300 0000000"></div>'+
     '<div class="field"><label>WhatsApp</label><input id="naWhatsapp" placeholder="+92 300 0000000"></div>'+
   '</div>';
-  html += '<div class="field"><label>Email</label><input type="email" id="naEmail" placeholder="agent@example.com"></div>';
   html += '<div class="two-col">'+
     '<div class="field"><label>Coordinator name</label><input id="naCoordName" placeholder="e.g. Elena Sharipova"></div>'+
     '<div class="field"><label>Coordinator WhatsApp</label><input id="naCoordWA" placeholder="+996700123445"></div>'+
   '</div>';
   html += '<div class="field"><label>Starting level</label><select id="naLevel">'+AGENT_LEVELS.map(function(l){ return '<option'+(l==='Candidate Agent'?' selected':'')+'>'+l+'</option>'; }).join('')+'</select></div>';
+  html += '<h3 style="margin-top:16px">Portal Login</h3>';
+  html += '<p style="color:var(--muted);font-size:12.5px;margin-top:-8px">This is what the agent will use to sign in.</p>';
+  html += '<div class="two-col">'+
+    '<div class="field"><label>Email</label><input type="email" id="naEmail" placeholder="agent@example.com"></div>'+
+    '<div class="field"><label>Password</label><input type="text" id="naPassword" placeholder="e.g. agent123"></div>'+
+  '</div>';
   html += '</div>';
   html += '<div class="modal__foot"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn--primary" onclick="createAgent()">Create Agent</button></div>';
   openModal(html);
@@ -1628,20 +1635,26 @@ function createAgent(){
   var country = qs('#naCountry').value.trim();
   var phone = qs('#naPhone').value.trim();
   var whatsapp = qs('#naWhatsapp').value.trim() || phone;
-  var email = qs('#naEmail').value.trim();
   var coordName = qs('#naCoordName').value.trim();
   var coordWA = qs('#naCoordWA').value.trim();
   var level = qs('#naLevel').value;
-  if(!name || !country || !phone || !email || !coordName || !coordWA){
+  var email = qs('#naEmail').value.trim().toLowerCase();
+  var password = qs('#naPassword').value;
+  if(!name || !country || !phone || !coordName || !coordWA || !email || !password){
     toast('Please fill in every field.', 'err'); return;
   }
+  if(db.creds.some(function(c){ return c.email===email; })){
+    toast('That email is already used for another login. Pick a different one.', 'err'); return;
+  }
+  var newId = uid('a');
   db.agents.push({
-    id: uid('a'), name:name, country:country, phone:phone, whatsapp:whatsapp,
+    id: newId, name:name, country:country, phone:phone, whatsapp:whatsapp,
     email:email, level:level, status:'Active', rulesAcceptedAt:null,
     coordinator:{ name:coordName, whatsapp:coordWA }, violations:0
   });
+  db.creds.push({ email:email, password:password, role:'agent', agentId:newId });
   saveDB();
-  toast('Agent created.', 'ok');
+  toast('Agent created — they can sign in with the email and password you set.', 'ok');
   closeModal();
   render();
 }

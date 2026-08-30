@@ -2,6 +2,13 @@
 
 All notable changes to `agent-cabinet-v2.html` are recorded here. This file covers the Agent Portal only — it is unrelated to the marketing site's own history in this repository.
 
+## v2.2.0 — Replace the Rules content with a "How This Works" guide
+
+- The onboarding gate and its matching sidebar page no longer present the six compliance/policy rules as something to formally accept. They now explain the portal's own mechanics instead: how a candidate moves through statuses, how WorkUnity's direct candidate confirmation works, the open+verified vacancy rule, duplicate-passport blocking, the waitlist, agent levels, and the notification bell.
+- Removed the acceptance checkbox — the gate is now a one-click "Continue to dashboard" introduction rather than a checkbox-gated agreement. `acceptRules()` no longer validates a checkbox; it just records that the agent has seen the intro and proceeds.
+- Renamed the admin agent-detail field from "Rules accepted" to "Onboarding seen" to match.
+- Sidebar label changed from "Rules" to "How It Works" for both roles.
+
 ## v2.1.0 — Remove the Training Check gate
 
 - Dropped the 5-question Training quiz that used to sit between the Rules gate and the dashboard. Accepting the six rules now leads straight to the dashboard.

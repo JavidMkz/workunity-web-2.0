@@ -445,12 +445,13 @@ tbody tr:hover{background:var(--surface-2)}
 var DB_KEY = 'wu_agent_portal_v2';
 var DB_VERSION = 1;
 var RULES = [
-  { t:'No cash from candidates', d:'An agent never receives money from a candidate, family member, or employer for a job placement. All payments go through official WorkUnity company accounts only.' },
-  { t:'Commission is for results, not submissions', d:'Agent commission is paid only when a candidate Arrives, and again at 30-day and 90-day retention. Submitting a candidate never earns a commission by itself.' },
-  { t:'One passport, one record', d:'Every candidate is checked for duplicate passport numbers. If a passport already exists in the system, the new submission is blocked.' },
-  { t:'Only WorkUnity changes a candidate status', d:'Agents submit candidates and information. Only WorkUnity admin/compliance staff can change a candidate\'s status or compliance flag. This keeps the process fair and auditable.' },
-  { t:'Candidates must be able to reach WorkUnity directly', d:'Every candidate gets a direct confirmation channel with WorkUnity, separate from the agent, so they always have someone official to contact.' },
-  { t:'Only open and verified vacancies can be filled', d:'You will only ever see vacancies that are open and compliance-verified. A vacancy that is not verified cannot be submitted to, even if you know about it.' }
+  { t:'How a candidate moves through the pipeline', d:'You submit a candidate, then they move through statuses: New, Screening, Approved, Processing, Arrived. You never change the status yourself — only WorkUnity admin/compliance does, and every change is logged with a note.' },
+  { t:'How candidate confirmation works', d:'After you submit, WorkUnity contacts the candidate directly, separate from you. Until that happens, the candidate shows "Awaiting confirmation." This is not a delay to worry about — it is how every candidate ends up with a direct line to WorkUnity, not only to their agent.' },
+  { t:'Only open and verified vacancies', d:'You will only ever see vacancies that are both Open and Verified. A vacancy that has not been verified yet simply will not appear in your list.' },
+  { t:'One passport, one record', d:'If a passport number is already in the system, a new submission with that number is blocked automatically.' },
+  { t:'The waitlist', d:'If a vacancy\'s quota is already full, your candidate is not lost — they are placed on the waitlist and activated automatically as soon as a spot opens up.' },
+  { t:'Agent levels', d:'Candidate Agent, then Agent after 5 arrivals, then Corridor Partner after 30+ arrivals with at least a year on the platform and no violations. Track your progress on the dashboard.' },
+  { t:'The notification bell', d:'This is where you will see updates when one of your candidates changes status, and when a commission is paid out.' }
 ];
 var REGIONS = ['Asia','Gulf','Europe'];
 var AGENT_LEVELS = ['Candidate Agent','Agent','Corridor Partner'];
@@ -966,7 +967,7 @@ function renderSidebar(){
     html += item('submit','Submit Candidate','submit');
     html += item('mycandidates','My Candidates','users');
     html += item('commissions','My Commissions','money');
-    html += item('rules','Rules','book');
+    html += item('rules','How It Works','book');
   } else {
     html += item('dashboard','Dashboard','dashboard');
     html += item('vacancies','Vacancies','vac');
@@ -975,7 +976,7 @@ function renderSidebar(){
     html += item('incidents','Incidents','incident');
     html += item('commissions','Commissions','money');
     html += item('calendar','Compliance Calendar','calendar');
-    html += item('rules','Rules','book');
+    html += item('rules','How It Works','book');
     html += '<div class="sidebar__group-title">Admin</div>';
     html += '<button class="nav-item" onclick="if(confirm(\'Reset all demo data? This cannot be undone.\')) resetDemoData()">'+icon('reset')+'<span>Reset Demo Data</span></button>';
   }
@@ -1551,7 +1552,7 @@ function viewAgentAdmin(id){
   html += '<div class="modal__body">';
   html += '<div class="data-grid">'+
     dgItem('Country', a.country) + dgItem('Phone', a.phone) + dgItem('Email', a.email) +
-    dgItem('Coordinator', a.coordinator.name) + dgItem('Rules accepted', a.rulesAcceptedAt?fmtDate(a.rulesAcceptedAt):'Not yet') +
+    dgItem('Coordinator', a.coordinator.name) + dgItem('Onboarding seen', a.rulesAcceptedAt?fmtDate(a.rulesAcceptedAt):'Not yet') +
   '</div>';
   html += '<div class="kpi-grid" style="margin-top:14px">'+
     kpi('Total Candidates', st.total, '') + kpi('Arrived', st.arrived, '') +
@@ -2008,23 +2009,20 @@ function modalHead(title){
    --------------------------------------------------------------- */
 function renderRulesGate(){
   var html = '<div class="gate-wrap">';
-  html += '<div class="view-head"><div><h1>WorkUnity Rules</h1><p>Please read all six rules before you can submit candidates. This only takes a minute.</p></div></div>';
+  html += '<div class="view-head"><div><h1>How This Works</h1><p>A quick look at how the portal works before your first candidate. Takes about a minute.</p></div></div>';
   RULES.forEach(function(r, i){
     html += '<div class="gate-rule"><span class="gate-rule__n">'+(i+1)+'</span><div><b>'+esc(r.t)+'</b><span>'+esc(r.d)+'</span></div></div>';
   });
-  html += '<div class="check-row"><input type="checkbox" id="rulesAccept"><label for="rulesAccept">I have read and understood these six rules, and I agree to follow them.</label></div>';
-  html += '<button class="btn btn--primary btn--block" onclick="acceptRules()">Accept and continue</button>';
+  html += '<button class="btn btn--primary btn--block" onclick="acceptRules()">Continue to dashboard</button>';
   html += '</div>';
   return html;
 }
 function acceptRules(){
-  var box = qs('#rulesAccept');
-  if(!box || !box.checked){ toast('Please check the box to confirm you accept the rules.', 'err'); return; }
   var a = currentAgent();
   if(!a) return;
   a.rulesAcceptedAt = nowISO();
   saveDB();
-  toast('Rules accepted. Welcome aboard!', 'ok');
+  toast('Welcome aboard!', 'ok');
   render();
 }
 
@@ -2032,11 +2030,7 @@ function acceptRules(){
    7d. RULES PAGE (shared, read-only, post-gate)
    --------------------------------------------------------------- */
 function renderRulesPage(){
-  var a = currentAgent();
-  var html = '<div class="view-head"><div><h1>Rules</h1><p>The six rules every WorkUnity agent works by.</p></div></div>';
-  if(a){
-    html += '<div class="alert alert--blue">'+icon('check')+'<span>You accepted these rules on <b>'+esc(fmtDate(a.rulesAcceptedAt))+'</b>.</span></div>';
-  }
+  var html = '<div class="view-head"><div><h1>How This Works</h1><p>How the portal works, any time you need a reminder.</p></div></div>';
   RULES.forEach(function(r, i){
     html += '<div class="gate-rule"><span class="gate-rule__n">'+(i+1)+'</span><div><b>'+esc(r.t)+'</b><span>'+esc(r.d)+'</span></div></div>';
   });

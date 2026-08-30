@@ -486,6 +486,16 @@ function daysBetween(fromISO, toISO){
   var b = toISO ? new Date(toISO) : new Date(); b.setHours(0,0,0,0);
   return Math.round((b-a)/86400000);
 }
+function subtractWorkingDays(iso, n){
+  var d = new Date(iso);
+  var left = n;
+  while(left>0){
+    d.setDate(d.getDate()-1);
+    var day = d.getDay();
+    if(day!==0 && day!==6) left--;
+  }
+  return d.toISOString();
+}
 function fmtDate(iso){
   if(!iso) return '—';
   var d = new Date(iso);
@@ -1106,7 +1116,13 @@ function renderAdminDashboard(){
   var totC = gC+yC+rC || 1;
   var gp = pct(gC,totC), yp = pct(yC,totC);
   var gradient = 'conic-gradient(var(--green) 0 '+gp+'%, var(--yellow) '+gp+'% '+(gp+yp)+'%, var(--red) '+(gp+yp)+'% 100%)';
-  html += '<div class="card"><h3>Compliance Mix</h3><div class="donut-wrap">' +
+  html += '<div class="card"><h3>Compliance Mix</h3>' +
+    '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">' +
+      '<span class="badge badge--green">Green '+gC+'</span>' +
+      '<span class="badge badge--yellow">Yellow '+yC+'</span>' +
+      '<span class="badge badge--red">Red '+rC+'</span>' +
+    '</div>' +
+    '<div class="donut-wrap">' +
     '<div class="donut" style="background:'+gradient+'"></div>' +
     '<div class="donut-legend">' +
       '<div class="donut-legend__row"><span class="donut-legend__dot" style="background:var(--green)"></span>Green — '+gC+'</div>' +
@@ -1114,6 +1130,14 @@ function renderAdminDashboard(){
       '<div class="donut-legend__row"><span class="donut-legend__dot" style="background:var(--red)"></span>Red — '+rC+'</div>' +
     '</div></div></div>';
   html += '</div>';
+
+  var byCountry = {};
+  allCands.forEach(function(c){ byCountry[c.nationality] = (byCountry[c.nationality]||0) + 1; });
+  html += '<div class="card" style="margin-bottom:14px"><h3>Candidates by Country</h3><div class="tools-row">';
+  Object.keys(byCountry).sort(function(x,y){ return byCountry[y]-byCountry[x]; }).forEach(function(nat){
+    html += '<span class="chip" style="cursor:default">'+esc(nat)+' <span class="chip__count">'+byCountry[nat]+'</span></span>';
+  });
+  html += '</div></div>';
 
   html += '<div class="card" style="margin-bottom:14px"><h3>Vacancy Quotas</h3><div class="table-wrap"><table><thead><tr>'+
     '<th>Vacancy</th><th>Region</th><th>Status</th><th>Verified</th><th>Quota</th><th>Active</th><th>Arrived</th><th>Progress</th></tr></thead><tbody>';
@@ -1501,7 +1525,8 @@ function submitIncident(candId){
   viewCandidateAdmin(candId);
 }
 function renderAdminAgents(){
-  var html = '<div class="view-head"><div><h1>Agents</h1><p>All registered recruiting agents and their performance.</p></div></div>';
+  var html = '<div class="view-head"><div><h1>Agents</h1><p>All registered recruiting agents and their performance.</p></div>'+
+    '<button class="btn btn--primary" onclick="openNewAgentModal()">'+icon('plus')+' New Agent</button></div>';
   html += '<div class="table-wrap"><table><thead><tr><th>Agent</th><th>Country</th><th>Level</th><th>Status</th><th>Candidates</th><th>Arrived</th><th>Conversion</th><th>Violations</th><th></th></tr></thead><tbody>';
   db.agents.forEach(function(a){
     var st = agentStats(a.id);
@@ -1546,7 +1571,11 @@ function viewAgentAdmin(id){
   html += '<div class="field"><label>Violations</label><input type="number" min="0" id="agViolations" value="'+a.violations+'"></div>';
   html += '<button class="btn btn--primary" onclick="saveAgentAdmin(\''+a.id+'\')">Save</button>';
 
-  html += '</div><div class="modal__foot"><button class="btn" onclick="closeModal()">Close</button></div>';
+  html += '</div><div class="modal__foot">';
+  if(st.total===0){
+    html += '<button class="btn" style="color:var(--red)" onclick="deleteAgent(\''+a.id+'\')">Delete</button>';
+  }
+  html += '<button class="btn" onclick="closeModal()">Close</button></div>';
   openModal(html, {wide:true});
 }
 function saveAgentAdmin(id){
@@ -1557,6 +1586,59 @@ function saveAgentAdmin(id){
   a.violations = Math.max(0, parseInt(qs('#agViolations').value,10) || 0);
   saveDB();
   toast('Agent updated.', 'ok');
+  closeModal();
+  render();
+}
+function deleteAgent(id){
+  var st = agentStats(id);
+  if(st.total>0){ toast('Cannot delete an agent who already has candidates.', 'err'); return; }
+  if(!confirm('Delete this agent? This cannot be undone.')) return;
+  db.agents = db.agents.filter(function(a){ return a.id!==id; });
+  saveDB();
+  closeModal();
+  toast('Agent deleted.', 'ok');
+  render();
+}
+function openNewAgentModal(){
+  var html = modalHead('New Agent');
+  html += '<div class="modal__body">';
+  html += '<div class="two-col">'+
+    '<div class="field"><label>Full name</label><input id="naName" placeholder="e.g. Farida Yasmin"></div>'+
+    '<div class="field"><label>Country</label><input id="naCountry" placeholder="e.g. Pakistan"></div>'+
+  '</div>';
+  html += '<div class="two-col">'+
+    '<div class="field"><label>Phone</label><input id="naPhone" placeholder="+92 300 0000000"></div>'+
+    '<div class="field"><label>WhatsApp</label><input id="naWhatsapp" placeholder="+92 300 0000000"></div>'+
+  '</div>';
+  html += '<div class="field"><label>Email</label><input type="email" id="naEmail" placeholder="agent@example.com"></div>';
+  html += '<div class="two-col">'+
+    '<div class="field"><label>Coordinator name</label><input id="naCoordName" placeholder="e.g. Elena Sharipova"></div>'+
+    '<div class="field"><label>Coordinator WhatsApp</label><input id="naCoordWA" placeholder="+996700123445"></div>'+
+  '</div>';
+  html += '<div class="field"><label>Starting level</label><select id="naLevel">'+AGENT_LEVELS.map(function(l){ return '<option'+(l==='Candidate Agent'?' selected':'')+'>'+l+'</option>'; }).join('')+'</select></div>';
+  html += '</div>';
+  html += '<div class="modal__foot"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn--primary" onclick="createAgent()">Create Agent</button></div>';
+  openModal(html);
+}
+function createAgent(){
+  var name = qs('#naName').value.trim();
+  var country = qs('#naCountry').value.trim();
+  var phone = qs('#naPhone').value.trim();
+  var whatsapp = qs('#naWhatsapp').value.trim() || phone;
+  var email = qs('#naEmail').value.trim();
+  var coordName = qs('#naCoordName').value.trim();
+  var coordWA = qs('#naCoordWA').value.trim();
+  var level = qs('#naLevel').value;
+  if(!name || !country || !phone || !email || !coordName || !coordWA){
+    toast('Please fill in every field.', 'err'); return;
+  }
+  db.agents.push({
+    id: uid('a'), name:name, country:country, phone:phone, whatsapp:whatsapp,
+    email:email, level:level, status:'Active', rulesAcceptedAt:null,
+    coordinator:{ name:coordName, whatsapp:coordWA }, violations:0
+  });
+  saveDB();
+  toast('Agent created.', 'ok');
   closeModal();
   render();
 }
@@ -1632,13 +1714,18 @@ function markCommissionPaid(candId, milestone){
   pushNotification('agent:'+c.agentId, 'A commission payment for '+c.firstName+' '+c.lastName+' has been paid out.');
   render();
 }
+function residentCardDeadline(c){
+  return c.permitExpiry ? subtractWorkingDays(c.permitExpiry, 10) : null;
+}
 function renderComplianceCalendar(){
   var arrivedCands = db.candidates.filter(function(c){ return c.status==='Arrived'; })
     .sort(function(a,b){ return new Date(a.arrivedAt)-new Date(b.arrivedAt); });
   var expiring = arrivedCands.filter(function(c){ return c.permitExpiry && daysBetween(nowISO(),c.permitExpiry)<=30; })
     .sort(function(a,b){ return daysBetween(nowISO(),a.permitExpiry) - daysBetween(nowISO(),b.permitExpiry); });
+  var cardDue = arrivedCands.filter(function(c){ var rd = residentCardDeadline(c); return rd && daysBetween(nowISO(),rd)<=14; })
+    .sort(function(a,b){ return daysBetween(nowISO(),residentCardDeadline(a)) - daysBetween(nowISO(),residentCardDeadline(b)); });
 
-  var html = '<div class="view-head"><div><h1>Compliance Calendar</h1><p>Track welfare check-in calls, retention confirmation, and work permit expiries for every arrived candidate.</p></div></div>';
+  var html = '<div class="view-head"><div><h1>Compliance Calendar</h1><p>Track welfare check-in calls, retention confirmation, work permit expiries, and resident card deadlines for every arrived candidate.</p></div></div>';
 
   html += '<div class="card" style="margin-bottom:14px"><h3>Permits Expiring Soon (within 30 days)</h3>';
   if(!expiring.length) html += '<div class="empty">No permits expiring in the next 30 days.</div>';
@@ -1648,14 +1735,25 @@ function renderComplianceCalendar(){
   });
   html += '</div>';
 
-  html += '<div class="table-wrap"><table><thead><tr><th>Candidate</th><th>Agent</th><th>Arrived</th><th>Permit Expiry</th>'+
+  html += '<div class="card" style="margin-bottom:14px"><h3>Resident Card Deadlines (within 14 days)</h3>';
+  html += '<p style="color:var(--muted);font-size:12.5px;margin-top:-6px">The resident card must be filed at least 10 working days before the work permit expires.</p>';
+  if(!cardDue.length) html += '<div class="empty">No resident card deadlines in the next 14 days.</div>';
+  cardDue.forEach(function(c){
+    var rd = residentCardDeadline(c);
+    var dleft = daysBetween(nowISO(), rd);
+    html += '<div class="alert'+(dleft<0?' alert--red':'')+'">'+icon('calendar')+'<span><b>'+esc(c.firstName+' '+c.lastName)+'</b> — '+daysLeftLabel(rd)+' (file by '+esc(fmtDate(rd))+')</span></div>';
+  });
+  html += '</div>';
+
+  html += '<div class="table-wrap"><table><thead><tr><th>Candidate</th><th>Agent</th><th>Arrived</th><th>Permit Expiry</th><th>Resident Card Due</th>'+
     '<th>Day 7 Call</th><th>Day 30 Call</th><th>Day 30 Retention</th><th>Day 90 Call</th><th>Day 90 Retention</th></tr></thead><tbody>';
-  if(!arrivedCands.length) html += '<tr><td colspan="9"><div class="empty">No arrived candidates yet.</div></td></tr>';
+  if(!arrivedCands.length) html += '<tr><td colspan="10"><div class="empty">No arrived candidates yet.</div></td></tr>';
   arrivedCands.forEach(function(c){
     var ag = getAgent(c.agentId);
     var daysSince = daysBetween(c.arrivedAt, nowISO());
     html += '<tr><td class="cell-strong">'+esc(c.firstName+' '+c.lastName)+'</td><td>'+esc(ag?ag.name:'—')+'</td>'+
       '<td>'+esc(fmtDate(c.arrivedAt))+'</td><td>'+daysLeftLabel(c.permitExpiry)+'</td>'+
+      '<td>'+daysLeftLabel(residentCardDeadline(c))+'</td>'+
       '<td>'+callCell(c,'w7',7,daysSince)+'</td>'+
       '<td>'+callCell(c,'w30',30,daysSince)+'</td>'+
       '<td>'+callCell(c,'c30',30,daysSince,30)+'</td>'+

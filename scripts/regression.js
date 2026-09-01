@@ -23,6 +23,7 @@ const PAGES = [
   ['partners.html',     'partners',   '#cta-form'],
   ['inostrantsam.html', 'foreigners', '#cta-form'],
   ['kak-nanyat-inostrannogo-rabotnika.html', 'guide', 'index.html'],
+  ['check-job-offer.html', 'check', 'inostrantsam.html#cta-form'],
   // audit.html: minimal header (no #mainnav), so nav/navOn checks are skipped for it;
   // its mobile CTA points at the on-page form, not the shared consultation anchor.
   ['audit.html', 'audit', 'index.html', '#form', null],

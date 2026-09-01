@@ -181,4 +181,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://workunityglobe.com/check-job-offer.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/check-job-offer.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/check-job-offer.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/check-job-offer.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/check-job-offer.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/check-job-offer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/check-job-offer.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

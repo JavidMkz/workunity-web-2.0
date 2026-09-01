@@ -14,7 +14,8 @@ const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const BASE = process.env.WU_LOCAL_ORIGIN || 'http://localhost:8731';
 const ORIGIN = 'https://workunityglobe.com/';
 const FILES = ['index.html', 'inostrantsam.html', 'partners.html',
-               'o-workunity.html', 'audit.html', 'kak-nanyat-inostrannogo-rabotnika.html'];
+               'o-workunity.html', 'audit.html', 'kak-nanyat-inostrannogo-rabotnika.html',
+               'check-job-offer.html'];
 const LANGS = ['ru', 'en', 'ur'];
 // характерная строка, которая обязана быть в разметке на этом языке
 const MARK = {
@@ -61,7 +62,9 @@ const dirOf = (lang) => (lang === 'ru' ? '' : lang + '/');
             const c = document.body.cloneNode(true);
             // скрипты в body содержат русские словари — это не видимый текст
             c.querySelectorAll('script,style,template,.f-langs__row').forEach(n => n.remove());
-            return c.textContent.slice(0, 6000);
+            // без обрезки: подвал на длинных страницах иначе не проверяется,
+            // и непереведённые ссылки в нём проходят мимо
+            return c.textContent;
           })(),
           imgs: [...document.querySelectorAll('img[src]')].map(i => i.getAttribute('src')),
           swLinks: [...document.querySelectorAll('#lsw a')].map(a => a.getAttribute('href')),

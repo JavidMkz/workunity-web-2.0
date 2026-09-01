@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=" js";</script>
+<script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>How to Check That a Job Offer Is Real | WorkUnity</title>
+<meta name="description" content="Eight checks that tell a real job offer abroad from a scam: agency licence, written contract, work visa, your passport, and money asked up front.">
+<link rel="icon" href="../img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icon-32.png">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WorkUnity">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://workunity.pro/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="How to Check That a Job Offer Is Real">
+<meta property="og:description" content="Eight checks against recruitment fraud when taking a job abroad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Nastaliq+Urdu:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-line:#22355C;
+  --navy-glass:rgba(15,30,61,.9);
+  --muted-l:#93A3BF;
+
+  --green:#0C875E;
+  --green-deep:#0A6E4C;
+  --green-text:#0C875E;
+  --green-text-deep:#0A6E4C;
+
+  --paper:#FFFFFF;
+  --surface:#FFFFFF;
+  --card:#FFFFFF;
+  --bone:#F5F3EF;
+  --field-focus:#FFFFFF;
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --line:#E4E1DA;
+
+  --accent:#0F1E3D;
+  --accent-deep:#070E1D;
+  --accent-rgb:15,30,61;
+
+  --err:#B3402A;
+  --err-bg:#FCF4F2;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:10px;
+  --r-lg:14px;
+  --r-sm:8px;
+  --sec:clamp(48px,calc(27px + 3.6vw),96px);
+
+  --lh-body:1.7;
+  --lh-heading:1.2;
+  --lh-small:1.5;
+  --space-s:8px;
+  --space-m:16px;
+  --space-l:24px;
+  --space-xl:48px;
+  --space-xxl:96px;
+}
+
+:root[data-theme="dark"]{
+  --green-text:#2FBF85;
+  --green-text-deep:#5BD6A3;
+  --paper:#0D1826;
+  --surface:#101E30;
+  --card:#15273C;
+  --bone:#1B2E45;
+  --field-focus:#21395A;
+  --ink:#F4EFE6;
+  --muted:#A9B6C6;
+  --line:rgba(255,255,255,.08);
+
+  --accent:#7290DB;
+  --accent-deep:#93ABE8;
+  --accent-rgb:114,144,219;
+
+  --err:#E97468;
+  --err-bg:#3A2220;
+}
+
+/* 1b ─ URDU TYPOGRAPHY --------------------------------------
+   Same mechanism as o-workunity.html: swap the shared --h/--b/--m
+   tokens under html[lang="ur"] so every component picks up Nastaliq
+   automatically, with the vertical room and de-tracked spacing it
+   needs (tight letter-spacing/uppercase break its joined letterforms). */
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
+
+/* 2 ─ BASE ---------------------------------------------------*/
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:var(--lh-heading);margin:0;letter-spacing:-.04em}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+[id]{scroll-margin-top:96px}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+.narrow{max-width:900px}
+
+.ix{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;flex-wrap:wrap;row-gap:6px;margin-bottom:var(--space-s)}
+.ix::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--navy{background:var(--accent);color:#fff;border-color:var(--accent)}
+[data-theme="dark"] .btn--navy,[data-theme="dark"] .btn--navy:hover{color:var(--paper)}
+.btn--navy:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--sm{padding:11px 19px;font-size:14px}
+.btn--full{width:100%;padding-block:18px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
+
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER — идентична index.html / o-workunity.html */
+.hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
+.logo img{height:26px;width:auto}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
+.nav{display:none;gap:28px}
+@media(min-width:1100px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1100px){.burger{display:none}}
+@media(max-width:1099px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    inset-inline:0;background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130;max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+@media(max-width:479px){.hdr__in{gap:12px}}
+
+.hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
+.tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
+.tsw:hover{border-color:#fff}
+.tsw svg{width:16px;height:16px}
+.tsw__moon{display:none}
+[data-theme="dark"] .tsw__sun{display:none}
+[data-theme="dark"] .tsw__moon{display:block}
+@media(max-width:479px){
+  .hdr .wide{padding-inline:10px}
+  .hdr__in{gap:5px}
+  .hdr__tools{gap:3px}
+  .lsw{padding:0 5px;font-size:10px;gap:3px}
+  .lsw__ur{font-size:11px}
+  .tsw{width:28px;height:28px}
+  .tsw svg{width:14px;height:14px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
+}
+
+/* SECTIONS base rhythm */
+.sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,calc(20px + 2.2vw),80px)}
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(28px,4.2vw,52px);margin-top:var(--space-s);max-width:22ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:56ch;font-size:16.5px}
+
+
+
+/* GUIDE ----------------------------------------------------------------*/
+.g-top{background:var(--navy);color:#fff;padding-block:clamp(44px,6.5vw,80px) clamp(44px,6vw,74px)}
+.g-top .ix{color:var(--accent-l,#7290DB)}
+.g-top h1{font-size:clamp(30px,4.4vw,50px);margin-block:18px 20px;max-width:20ch;color:#fff}
+.g-top p{color:var(--muted-l);font-size:clamp(16px,1.6vw,18.5px);max-width:58ch;line-height:1.6}
+.toc{margin-top:clamp(30px,3.6vw,42px);border-top:1px solid var(--navy-line);padding-top:26px;
+  display:grid;gap:9px}
+@media(min-width:720px){.toc{grid-template-columns:repeat(2,1fr);column-gap:34px}}
+.toc a{display:flex;gap:12px;color:var(--muted-l);text-decoration:none;font-size:15px;
+  transition:color .18s;padding-block:3px}
+.toc a:hover{color:#fff}
+.toc b{color:#fff;font-family:var(--m);font-weight:500;font-size:12px;flex:none;opacity:.6;
+  padding-top:3px}
+.g-body{max-width:820px;margin:0 auto;padding-inline:var(--gut);padding-block:var(--sec)}
+.g-body > h2{font-size:clamp(22px,2.8vw,31px);margin-top:clamp(44px,5vw,60px);margin-bottom:16px}
+.g-body > h2:first-of-type{margin-top:0}
+.g-body h3{font-size:18.5px;margin-top:30px;margin-bottom:10px}
+.g-body p{margin-bottom:16px;color:var(--ink)}
+.g-body ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:11px}
+.g-body ul li{padding-inline-start:22px;position:relative;color:var(--ink)}
+.g-body ul li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;width:7px;
+  height:7px;border-radius:50%;background:var(--accent)}
+.g-call{background:var(--bone);border-inline-start:3px solid var(--accent);
+  border-radius:0 var(--r-lg) var(--r-lg) 0;padding:24px 22px;margin:26px 0}
+html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
+.g-call p{margin:0;font-size:15.5px;color:var(--ink)}
+.g-warn{border-inline-start-color:var(--err)}
+.g-tw{overflow-x:auto;margin-bottom:24px}
+.g-tab{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.g-tab th{text-align:start;padding:10px 12px;font-family:var(--h);font-weight:700;
+  border-bottom:2px solid var(--line);color:var(--ink)}
+.g-tab td{padding:12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.g-tab tr:last-child td{border-bottom:0}
+.g-tab td:first-child{color:var(--ink);font-weight:600}
+.g-cta{background:var(--navy);color:#fff;border-radius:var(--r-lg);
+  padding:clamp(26px,4vw,40px);margin-top:clamp(44px,5vw,64px)}
+.g-cta h3{color:#fff;font-size:clamp(20px,2.3vw,25px);margin-bottom:12px}
+.g-cta p{color:var(--muted-l);margin-bottom:22px;max-width:56ch}
+.g-cta__alt{margin:20px 0 0;font-size:14.5px;max-width:56ch}
+.g-cta__alt a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* FOOTER — идентичен index.html / o-workunity.html */
+.ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
+.ftr .logo img{height:90px;filter:brightness(0)}
+[data-theme="dark"] .ftr .logo img{filter:none}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h3{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--accent)}
+.ftr a.ftr__wa{color:var(--green-text)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1099px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* MOTION ---------------------------------------------------------------*/
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://workunityglobe.com/#org",
+   "name": "WorkUnity",
+   "url": "https://workunityglobe.com/",
+   "email": "workunityglobe@gmail.com",
+   "telephone": "+996700123445",
+   "logo": "https://workunityglobe.com/img/logo-full-white.png",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Бишкек",
+    "addressCountry": "KG"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Кыргызстан"
+    },
+    {
+     "@type": "Country",
+     "name": "Казахстан"
+    },
+    {
+     "@type": "Country",
+     "name": "Узбекистан"
+    },
+    {
+     "@type": "Country",
+     "name": "Россия"
+    },
+    {
+     "@type": "Country",
+     "name": "Азербайджан"
+    },
+    {
+     "@type": "Country",
+     "name": "Беларусь"
+    },
+    {
+     "@type": "Country",
+     "name": "Таджикистан"
+    },
+    {
+     "@type": "Country",
+     "name": "Грузия"
+    },
+    {
+     "@type": "Country",
+     "name": "Украина"
+    }
+   ],
+   "slogan": "Empowering People."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://workunityglobe.com/#site",
+   "url": "https://workunityglobe.com/",
+   "name": "WorkUnity",
+   "publisher": {
+    "@id": "https://workunityglobe.com/#org"
+   },
+   "inLanguage": "en"
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://workunityglobe.com/en/check-job-offer.html#page",
+   "url": "https://workunityglobe.com/en/check-job-offer.html",
+   "name": "How to Check That a Job Offer Is Real | WorkUnity",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://workunityglobe.com/#site"
+   },
+   "about": {
+    "@id": "https://workunityglobe.com/#org"
+   },
+   "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "WorkUnity",
+      "item": "https://workunityglobe.com/en/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "How to Check a Job Offer",
+      "item": "https://workunityglobe.com/en/check-job-offer.html"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://workunityglobe.com/en/check-job-offer.html#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "The agency is asking for payment up front. Is that always a scam?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you check an offer if the job is not in Kyrgyzstan?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "The employer has taken my passport. What should I do?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country's embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does a check cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Checking a job offer and the employer's documents is free. We charge only for specific services, agreed separately and in advance."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="canonical" href="https://workunityglobe.com/en/check-job-offer.html">
+<link rel="alternate" hreflang="ru" href="https://workunityglobe.com/check-job-offer.html">
+<link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/check-job-offer.html">
+<link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/check-job-offer.html">
+<link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/check-job-offer.html">
+</head>
+<body data-page="check">
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></symbol>
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.8-1.8M18 6l1.8-1.8"></path></symbol>
+  <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"></path></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"></rect><path d="m2 7 10 6 10-6"></path></symbol>
+</svg>
+
+
+<header class="hdr">
+  <div class="wide hdr__in">
+    <a class="logo" href="index.html" aria-label="WorkUnity">
+      <img src="../img/logo-mark-white.png" alt="WorkUnity" height="26">
+      <span>WorkUnity</span>
+    </a>
+    <nav class="nav" id="mainnav" data-i18n-attr="aria-label:nav.aria_main_menu" aria-label="Main navigation">
+      <a href="index.html" data-i18n="nav.employers">For Employers</a><a href="inostrantsam.html" class="on" aria-current="page" data-i18n="nav.foreigners">For Foreigners</a><a href="partners.html" data-i18n="nav.partners">Partners</a><a href="o-workunity.html" data-i18n="nav.about">About WorkUnity</a>
+    </nav>
+    <div class="hdr__tools">
+      <div class="lsw" id="lsw" data-lang="en" role="group" aria-label="Language"><a class="lsw__ru" href="../check-job-offer.html" hreflang="ru">RU</a><span class="lsw__d">/</span><a class="lsw__en" href="../en/check-job-offer.html" hreflang="en" aria-current="true">EN</a><span class="lsw__d">/</span><a class="lsw__ur" href="../ur/check-job-offer.html" hreflang="ur" lang="ur" dir="rtl">اردو</a></div>
+      <button class="tsw" id="tsw" type="button" data-i18n-attr="aria-label:header.aria_theme" aria-label="Theme"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"></use></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"></use></svg></button>
+    </div>
+    <a class="btn btn--white btn--sm hdr__cta" href="inostrantsam.html#cta-form" data-i18n="header.consultation">Consultation</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" data-i18n-attr="aria-label:header.aria_open_menu" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="g-top">
+  <div class="wrap">
+    <span class="ix" data-i18n="c.eyebrow">A guide for foreign workers</span>
+    <h1 data-i18n="c.h1">How to Check That a Job Offer Is Real</h1>
+    <p data-i18n="c.lead">A promise of work abroad is the most common way migrant workers are defrauded. The checks below take half an hour and protect your money, your documents and a year of your life.</p>
+      <nav class="toc" aria-label="Contents" data-i18n-attr="aria-label:c.tocaria">
+        <a href="#pay"><b>01</b><span data-i18n="c.toc1">Never pay for a job</span></a>
+        <a href="#licence"><b>02</b><span data-i18n="c.toc2">Check the agency licence</span></a>
+        <a href="#employer"><b>03</b><span data-i18n="c.toc3">Confirm the employer exists</span></a>
+        <a href="#contract"><b>04</b><span data-i18n="c.toc4">Get the contract before you travel</span></a>
+        <a href="#visa"><b>05</b><span data-i18n="c.toc5">A work visa, not a tourist visa</span></a>
+        <a href="#passport"><b>06</b><span data-i18n="c.toc6">Your passport stays with you</span></a>
+        <a href="#flags"><b>07</b><span data-i18n="c.toc7">Warning signs</span></a>
+        <a href="#help"><b>08</b><span data-i18n="c.toc8">If you have already been deceived</span></a>
+      </nav>
+  </div>
+</section>
+
+<article class="g-body">
+  <h2 id="pay" data-i18n="c.h.pay">01. Never pay for a job</h2>
+  <p data-i18n="c.pay.p1">This single rule rules out most scams. A legitimate employer pays to hire you: sourcing, permits and the invitation are their costs, not yours. Being asked for money to “hold the place”, “reserve the vacancy” or “process the invitation” before a contract is signed almost always means fraud.</p>
+  <p data-i18n="c.pay.p2">A licensed agency in your country may charge for its services, but the amount is capped by law and you must be given a receipt. Cash handed to “a friend”, a transfer to a private card, payment in cryptocurrency, or any payment without a document: that is not how legitimate companies operate.</p>
+
+  <h2 id="licence" data-i18n="c.h.licence">02. Check the agency licence</h2>
+  <p data-i18n="c.lic.p1">Recruiting workers for jobs abroad is a licensed activity. Most countries keep a public register, and checking it takes a couple of minutes.</p>
+  <ul>
+    <li data-i18n="c.lic.pk"><strong>Pakistan.</strong> The agency must hold an Overseas Employment Promoter (OEP) licence from the Bureau of Emigration &amp; Overseas Employment. Active licences are published at <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a>, and you can confirm one further at a Protector of Emigrants office.</li>
+    <li data-i18n="c.lic.in"><strong>India.</strong> A Recruiting Agent (RA) licence is required, issued by the Protector General of Emigrants under the Ministry of External Affairs. The list is at <a href="https://www.mea.gov.in/ras" target="_blank" rel="noopener">mea.gov.in</a>. The licence number must appear on the agency's letterhead and website.</li>
+    <li data-i18n="c.lic.bd"><strong>Bangladesh.</strong> A Recruiting Licence (RL) from the Bureau of Manpower, Employment and Training is required. You can check an agency through the government platform <a href="https://www.oep.gov.bd/" target="_blank" rel="noopener">oep.gov.bd</a>.</li>
+    <li data-i18n="c.lic.other"><strong>Other countries.</strong> Look for the labour migration authority under your ministry of labour: the register of agencies is usually published on its website.</li>
+  </ul>
+  <p data-i18n="c.lic.p2">The rule is simple: an agency must give you its licence number if you ask. Refusing, dodging the question or promising to “show it later” is reason enough to end the conversation.</p>
+
+  <h2 id="employer" data-i18n="c.h.employer">03. Confirm the employer exists</h2>
+  <p data-i18n="c.emp.p1">Find out the company's full name, address and phone number. Call the number you found <strong>yourself</strong>, on the company website or in a directory, not the one the middleman gave you. It is a simple check, and fraudsters rarely survive it.</p>
+  <p data-i18n="c.emp.p2">Ask who will employ you on paper, who your direct manager will be and at which site you will work. A real employer answers all three without hesitating.</p>
+
+  <h2 id="contract" data-i18n="c.h.contract">04. Get the contract before you travel</h2>
+  <p data-i18n="c.con.p1">You should hold the contract before departure, in a language you understand. “You will sign on arrival” is a bad answer: on arrival you are already without money, without a return ticket and in a foreign country.</p>
+  <p data-i18n="c.con.p2">The contract must state:</p>
+  <ul>
+    <li data-i18n="c.con.li1">the job title and the nature of the work;</li>
+    <li data-i18n="c.con.li2">the salary, the currency and when it is paid;</li>
+    <li data-i18n="c.con.li3">working hours, days off and overtime pay;</li>
+    <li data-i18n="c.con.li4">who pays for the flight, accommodation and medical insurance;</li>
+    <li data-i18n="c.con.li5">the length of the contract and how it can be ended.</li>
+  </ul>
+  <p data-i18n="c.con.p3">Verbal promises count for nothing. If what you were told is not written into the contract, it does not exist.</p>
+
+  <h2 id="visa" data-i18n="c.h.visa">05. A work visa, not a tourist visa</h2>
+  <p data-i18n="c.visa.p1">No country allows you to work on a tourist visa. If you are told to “enter as a tourist and we will sort the permit out later”, that is a breach of the law, and you are the one who answers for it: a fine, deportation and an entry ban for several years.</p>
+  <p data-i18n="c.visa.p2">Before you fly, establish which visa you hold and whether a work permit is being arranged. Most countries require two permits: one allowing the company to employ foreign nationals, and one issued to you personally. Ask about both.</p>
+
+  <h2 id="passport" data-i18n="c.h.passport">06. Your passport stays with you</h2>
+  <p data-i18n="c.pas.p1">It is unlawful for an employer or agency to hold your passport. The original must stay with you. Copies are enough for paperwork, or a temporary handover against a written receipt stating when it will be returned.</p>
+  <p data-i18n="c.pas.p2">Someone without a passport cannot resign, cannot leave and cannot seek help: that is precisely why it gets taken. If your passport is already being held, seek help immediately.</p>
+
+  <h2 id="flags" data-i18n="c.h.flags">07. Warning signs</h2>
+  <p data-i18n="c.flag.p1">Any one of these is a reason to stop and check again. Two or more together almost certainly means fraud.</p>
+  <ul>
+    <li data-i18n="c.flag.li1">money is requested before a contract is signed;</li>
+    <li data-i18n="c.flag.li2">they will not give a licence number;</li>
+    <li data-i18n="c.flag.li3">there is no contract, or it is in a language you do not understand;</li>
+    <li data-i18n="c.flag.li4">the salary promised is well above the going rate for the work;</li>
+    <li data-i18n="c.flag.li5">you are rushed: “decide today, the place goes tomorrow”;</li>
+    <li data-i18n="c.flag.li6">contact is only through a messenger, with no office and no registered company;</li>
+    <li data-i18n="c.flag.li7">you are asked to hand over your passport;</li>
+    <li data-i18n="c.flag.li8">you are offered entry on a tourist visa.</li>
+  </ul>
+
+  <h2 id="help" data-i18n="c.h.help">08. If you have already been deceived</h2>
+  <p data-i18n="c.help.p1">Silence works for whoever deceived you. Keep everything you have: messages, receipts, names, phone numbers, addresses, copies of documents. Even scattered fragments add up to evidence.</p>
+  <p data-i18n="c.help.p2">Contact the labour migration authority in your country and your embassy. If you are already in Kyrgyzstan, tell us what happened: we will assess the situation and explain what can be done. It is free, and we do not pass information to the employer.</p>
+
+  <div class="g-call"><p data-i18n="c.disclaimer">This guide sets out general safety rules and does not replace legal advice on your situation. Requirements for visas, permits and contracts are set by the law of each country and can change.</p></div>
+
+  <h2 id="voprosy" data-i18n="c.h.faq">09. Short answers</h2>
+  <div class="faq">
+    <details class="q"><summary><span class="q__i">01</span><span data-i18n="c.q1">The agency is asking for payment up front. Is that always a scam?</span></summary><div class="q__a" data-i18n="c.a1">Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay.</div></details>
+    <details class="q"><summary><span class="q__i">02</span><span data-i18n="c.q2">Can you check an offer if the job is not in Kyrgyzstan?</span></summary><div class="q__a" data-i18n="c.a2">The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.</div></details>
+    <details class="q"><summary><span class="q__i">03</span><span data-i18n="c.q3">The employer has taken my passport. What should I do?</span></summary><div class="q__a" data-i18n="c.a3">Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country's embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.</div></details>
+    <details class="q"><summary><span class="q__i">04</span><span data-i18n="c.q4">What does a check cost?</span></summary><div class="q__a" data-i18n="c.a4">Checking a job offer and the employer's documents is free. We charge only for specific services, agreed separately and in advance.</div></details>
+  </div>
+
+  <div class="g-cta">
+  <h3 data-i18n="c.cta.h">Send us the offer and we will check it</h3>
+  <p data-i18n="c.cta.p">Show us the documents or your messages with the employer. We will tell you what is wrong with them before you pay any money or hand over your passport.</p>
+    <a class="btn btn--white" href="inostrantsam.html#cta-form" data-i18n="c.cta.btn">Ask for help</a>
+    <p class="g-cta__alt" data-i18n="c.cta.alt">The check is free, and we do not tell the employer that you contacted us.</p>
+  </div>
+</article>
+
+</main>
+
+<footer class="ftr">
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="index.html" aria-label="WorkUnity">
+          <img src="../img/logo-full-white.png" alt="WorkUnity" height="90">
+        </a>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — legal employment and migration support infrastructure.</p>
+      </div>
+      <div><h3 data-i18n="footer.sections">Sections</h3><ul><li><a href="index.html" data-i18n="nav.employers">For Employers</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">For Foreigners</a></li><li><a href="partners.html" data-i18n="nav.partners">Partners</a></li><li><a href="o-workunity.html" data-i18n="nav.about">About WorkUnity</a></li></ul></div>
+      <div><h3 data-i18n="footer.materials">Resources</h3><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Guide</a></li><li><a href="check-job-offer.html" data-i18n="footer.checkoffer">Checking an offer</a></li><li><a href="index.html" data-i18n="nav.faq">FAQ</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
+      <div><h3 data-i18n="footer.contacts">Contacts</h3><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Bishkek</li></ul></div>
+    </div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic</span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta">
+  <a class="mcta__go" href="inostrantsam.html#cta-form" data-i18n="mcta.primary">Request a consultation</a>
+  <a class="mcta__ico" href="tel:+996700123445" aria-label="Call" data-i18n-attr="aria-label:mcta.call"><svg aria-hidden="true"><use href="#phone"></use></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"></use></svg></a>
+</div>
+
+<script>
+(function(){
+'use strict';
+var WA_NUMBER = '996700123445';
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+var LANG = 'ru';
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ SCROLL: progress + mobile CTA ═══════════════════════ */
+/* ═══ SCROLL RESTORATION ══════════════════ */
+history.scrollRestoration = "manual";
+if (window.location.hash) {
+  document.documentElement.style.scrollBehavior = "auto";
+  document.addEventListener("DOMContentLoaded", function () {
+    var el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({ block: "start" });
+    document.documentElement.style.scrollBehavior = "";
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+}
+
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+onScroll();
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+var burger = $('#burger'), nav = $('#mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+});
+
+/* ═══ LOCALIZATION ════════════════════════════════════════ */
+var I18N_EN = {
+  'nav.aria_main_menu':'Main navigation',
+  'header.aria_theme':'Theme',
+  'header.aria_open_menu':'Open menu',
+  'nav.faq':'FAQ',
+  'nav.about':'About WorkUnity',
+  'nav.employers':'For Employers',
+  'nav.foreigners':'For Foreigners',
+  'nav.partners':'Partners',
+  'header.consultation2':'Become a Partner',
+  'footer.tagline':'WorkUnity — legal employment and migration support infrastructure.',
+  'footer.sections':'Sections',
+  'footer.materials':'Resources',
+  'footer.instructions':'Guide',
+  'footer.checkoffer':'Checking an offer',
+  'footer.contacts':'Contacts',
+  'footer.city':'Bishkek',
+  'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · Reg. No. <span dir="ltr">00408202610480</span> · Bishkek, Kyrgyz Republic',
+  'mcta.call':'Call',
+  'mcta.primary':'Request a consultation',
+  'header.consultation':'Consultation',
+  'c.eyebrow':'A guide for foreign workers',
+  'c.h1':'How to Check That a Job Offer Is Real',
+  'c.lead':'A promise of work abroad is the most common way migrant workers are defrauded. The checks below take half an hour and protect your money, your documents and a year of your life.',
+  'c.tocaria':'Contents',
+  'c.toc1':'Never pay for a job',
+  'c.toc2':'Check the agency licence',
+  'c.toc3':'Confirm the employer exists',
+  'c.toc4':'Get the contract before you travel',
+  'c.toc5':'A work visa, not a tourist visa',
+  'c.toc6':'Your passport stays with you',
+  'c.toc7':'Warning signs',
+  'c.toc8':'If you have already been deceived',
+  'c.h.pay':'01. Never pay for a job',
+  'c.pay.p1':'This single rule rules out most scams. A legitimate employer pays to hire you: sourcing, permits and the invitation are their costs, not yours. Being asked for money to “hold the place”, “reserve the vacancy” or “process the invitation” before a contract is signed almost always means fraud.',
+  'c.pay.p2':'A licensed agency in your country may charge for its services, but the amount is capped by law and you must be given a receipt. Cash handed to “a friend”, a transfer to a private card, payment in cryptocurrency, or any payment without a document: that is not how legitimate companies operate.',
+  'c.h.licence':'02. Check the agency licence',
+  'c.lic.p1':'Recruiting workers for jobs abroad is a licensed activity. Most countries keep a public register, and checking it takes a couple of minutes.',
+  'c.lic.pk':'<strong>Pakistan.</strong> The agency must hold an Overseas Employment Promoter (OEP) licence from the Bureau of Emigration &amp; Overseas Employment. Active licences are published at <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a>, and you can confirm one further at a Protector of Emigrants office.',
+  'c.lic.in':'<strong>India.</strong> A Recruiting Agent (RA) licence is required, issued by the Protector General of Emigrants under the Ministry of External Affairs. The list is at <a href="https://www.mea.gov.in/ras" target="_blank" rel="noopener">mea.gov.in</a>. The licence number must appear on the agency\'s letterhead and website.',
+  'c.lic.bd':'<strong>Bangladesh.</strong> A Recruiting Licence (RL) from the Bureau of Manpower, Employment and Training is required. You can check an agency through the government platform <a href="https://www.oep.gov.bd/" target="_blank" rel="noopener">oep.gov.bd</a>.',
+  'c.lic.other':'<strong>Other countries.</strong> Look for the labour migration authority under your ministry of labour: the register of agencies is usually published on its website.',
+  'c.lic.p2':'The rule is simple: an agency must give you its licence number if you ask. Refusing, dodging the question or promising to “show it later” is reason enough to end the conversation.',
+  'c.h.employer':'03. Confirm the employer exists',
+  'c.emp.p1':'Find out the company\'s full name, address and phone number. Call the number you found <strong>yourself</strong>, on the company website or in a directory, not the one the middleman gave you. It is a simple check, and fraudsters rarely survive it.',
+  'c.emp.p2':'Ask who will employ you on paper, who your direct manager will be and at which site you will work. A real employer answers all three without hesitating.',
+  'c.h.contract':'04. Get the contract before you travel',
+  'c.con.p1':'You should hold the contract before departure, in a language you understand. “You will sign on arrival” is a bad answer: on arrival you are already without money, without a return ticket and in a foreign country.',
+  'c.con.p2':'The contract must state:',
+  'c.con.li1':'the job title and the nature of the work;',
+  'c.con.li2':'the salary, the currency and when it is paid;',
+  'c.con.li3':'working hours, days off and overtime pay;',
+  'c.con.li4':'who pays for the flight, accommodation and medical insurance;',
+  'c.con.li5':'the length of the contract and how it can be ended.',
+  'c.con.p3':'Verbal promises count for nothing. If what you were told is not written into the contract, it does not exist.',
+  'c.h.visa':'05. A work visa, not a tourist visa',
+  'c.visa.p1':'No country allows you to work on a tourist visa. If you are told to “enter as a tourist and we will sort the permit out later”, that is a breach of the law, and you are the one who answers for it: a fine, deportation and an entry ban for several years.',
+  'c.visa.p2':'Before you fly, establish which visa you hold and whether a work permit is being arranged. Most countries require two permits: one allowing the company to employ foreign nationals, and one issued to you personally. Ask about both.',
+  'c.h.passport':'06. Your passport stays with you',
+  'c.pas.p1':'It is unlawful for an employer or agency to hold your passport. The original must stay with you. Copies are enough for paperwork, or a temporary handover against a written receipt stating when it will be returned.',
+  'c.pas.p2':'Someone without a passport cannot resign, cannot leave and cannot seek help: that is precisely why it gets taken. If your passport is already being held, seek help immediately.',
+  'c.h.flags':'07. Warning signs',
+  'c.flag.p1':'Any one of these is a reason to stop and check again. Two or more together almost certainly means fraud.',
+  'c.flag.li1':'money is requested before a contract is signed;',
+  'c.flag.li2':'they will not give a licence number;',
+  'c.flag.li3':'there is no contract, or it is in a language you do not understand;',
+  'c.flag.li4':'the salary promised is well above the going rate for the work;',
+  'c.flag.li5':'you are rushed: “decide today, the place goes tomorrow”;',
+  'c.flag.li6':'contact is only through a messenger, with no office and no registered company;',
+  'c.flag.li7':'you are asked to hand over your passport;',
+  'c.flag.li8':'you are offered entry on a tourist visa.',
+  'c.h.help':'08. If you have already been deceived',
+  'c.help.p1':'Silence works for whoever deceived you. Keep everything you have: messages, receipts, names, phone numbers, addresses, copies of documents. Even scattered fragments add up to evidence.',
+  'c.help.p2':'Contact the labour migration authority in your country and your embassy. If you are already in Kyrgyzstan, tell us what happened: we will assess the situation and explain what can be done. It is free, and we do not pass information to the employer.',
+  'c.disclaimer':'This guide sets out general safety rules and does not replace legal advice on your situation. Requirements for visas, permits and contracts are set by the law of each country and can change.',
+  'c.h.faq':'09. Short answers',
+  'c.q1':'The agency is asking for payment up front. Is that always a scam?',
+  'c.a1':'Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay.',
+  'c.q2':'Can you check an offer if the job is not in Kyrgyzstan?',
+  'c.a2':'The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.',
+  'c.q3':'The employer has taken my passport. What should I do?',
+  'c.a3':'Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country\'s embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.',
+  'c.q4':'What does a check cost?',
+  'c.a4':'Checking a job offer and the employer\'s documents is free. We charge only for specific services, agreed separately and in advance.',
+  'c.cta.h':'Send us the offer and we will check it',
+  'c.cta.p':'Show us the documents or your messages with the employer. We will tell you what is wrong with them before you pay any money or hand over your passport.',
+  'c.cta.btn':'Ask for help',
+  'c.cta.alt':'The check is free, and we do not tell the employer that you contacted us.'
+};
+var I18N_UR = {
+  'nav.aria_main_menu':'مرکزی مینیو',
+  'header.aria_theme':'تھیم',
+  'header.aria_open_menu':'مینیو کھولیں',
+  'nav.faq':'سوالات',
+  'nav.about':'WorkUnity کے بارے میں',
+  'nav.employers':'آجروں کے لیے',
+  'nav.foreigners':'غیر ملکیوں کے لیے',
+  'nav.partners':'شراکت دار',
+  'header.consultation2':'شراکت دار بنیں',
+  'footer.tagline':'WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔',
+  'footer.sections':'حصے',
+  'footer.materials':'وسائل',
+  'footer.instructions':'ہدایات',
+  'footer.checkoffer':'پیشکش کی جانچ',
+  'footer.contacts':'رابطہ',
+  'footer.city':'بشکیک',
+  'footer.about':'WorkUnity',
+  'footer.legal':'WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان',
+  'mcta.call':'کال کریں',
+  'mcta.primary':'مشاورت حاصل کریں',
+  'header.consultation':'مشاورت',
+  'c.eyebrow':'غیر ملکی کارکنوں کے لیے رہنما',
+  'c.h1':'کیسے جانیں کہ نوکری کی پیشکش اصلی ہے',
+  'c.lead':'بیرونِ ملک کام کا وعدہ محنت کش تارکینِ وطن کو دھوکہ دینے کا سب سے عام طریقہ ہے۔ نیچے دی گئی جانچ میں آدھا گھنٹہ لگتا ہے اور یہ آپ کے پیسے، دستاویزات اور زندگی کا ایک سال بچا سکتی ہے۔',
+  'c.tocaria':'فہرست',
+  'c.toc1':'نوکری کے لیے پیسے نہ دیں',
+  'c.toc2':'ایجنسی کا لائسنس جانچیں',
+  'c.toc3':'تصدیق کریں کہ آجر موجود ہے',
+  'c.toc4':'روانگی سے پہلے معاہدہ لیں',
+  'c.toc5':'ورک ویزا، سیاحتی نہیں',
+  'c.toc6':'پاسپورٹ آپ کے پاس رہے',
+  'c.toc7':'دھوکے کی علامات',
+  'c.toc8':'اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
+  'c.h.pay':'01. نوکری کے لیے کبھی پیسے نہ دیں',
+  'c.pay.p1':'یہی ایک اصول زیادہ تر دھوکوں کو ختم کر دیتا ہے۔ ایک درست آجر آپ کو بھرتی کرنے کا خرچ خود اٹھاتا ہے: تلاش، اجازت نامے اور دعوت نامہ اس کے اخراجات ہیں، آپ کے نہیں۔ معاہدے پر دستخط سے پہلے “جگہ رکھنے” یا “دعوت نامہ بنوانے” کے نام پر پیسے مانگنا تقریباً ہمیشہ دھوکہ ہوتا ہے۔',
+  'c.pay.p2':'آپ کے ملک میں لائسنس یافتہ ایجنسی اپنی خدمات کا معاوضہ لے سکتی ہے، مگر اس کی حد قانون طے کرتا ہے اور رسید دینا لازم ہے۔ “کسی جاننے والے” کو نقد رقم، ذاتی کارڈ پر رقم، کرپٹو کرنسی یا بغیر دستاویز کوئی بھی ادائیگی: درست کمپنیاں اس طرح کام نہیں کرتیں۔',
+  'c.h.licence':'02. ایجنسی کا لائسنس جانچیں',
+  'c.lic.p1':'بیرونِ ملک کے لیے کارکن بھرتی کرنا لائسنس والا کام ہے۔ زیادہ تر ممالک میں سرکاری فہرست عوام کے لیے کھلی ہوتی ہے اور جانچ میں چند منٹ لگتے ہیں۔',
+  'c.lic.pk':'<strong>پاکستان۔</strong> ایجنسی کے پاس Bureau of Emigration &amp; Overseas Employment کا Overseas Employment Promoter (OEP) لائسنس ہونا چاہیے۔ فعال لائسنس <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a> پر شائع ہیں، اور Protector of Emigrants کے دفتر سے مزید تصدیق کی جا سکتی ہے۔',
+  'c.lic.in':'<strong>بھارت۔</strong> وزارتِ خارجہ کے تحت Protector General of Emigrants کا جاری کردہ Recruiting Agent (RA) لائسنس ضروری ہے۔ فہرست <a href="https://www.mea.gov.in/ras" target="_blank" rel="noopener">mea.gov.in</a> پر ہے۔ لائسنس نمبر ایجنسی کے لیٹر ہیڈ اور ویب سائٹ پر درج ہونا لازم ہے۔',
+  'c.lic.bd':'<strong>بنگلہ دیش۔</strong> Bureau of Manpower, Employment and Training کا Recruiting Licence (RL) درکار ہے۔ ایجنسی کی جانچ سرکاری پلیٹ فارم <a href="https://www.oep.gov.bd/" target="_blank" rel="noopener">oep.gov.bd</a> پر کی جا سکتی ہے۔',
+  'c.lic.other':'<strong>دیگر ممالک۔</strong> اپنی وزارتِ محنت کے تحت مزدور نقل مکانی کے ادارے کو تلاش کریں: ایجنسیوں کی فہرست عموماً اس کی ویب سائٹ پر ہوتی ہے۔',
+  'c.lic.p2':'اصول سیدھا ہے: پوچھنے پر ایجنسی کو اپنا لائسنس نمبر بتانا ہوگا۔ انکار، بات ٹالنا یا “بعد میں دکھائیں گے” کہنا گفتگو ختم کرنے کے لیے کافی وجہ ہے۔',
+  'c.h.employer':'03. تصدیق کریں کہ آجر واقعی موجود ہے',
+  'c.emp.p1':'کمپنی کا پورا نام، پتہ اور فون نمبر معلوم کریں۔ اس نمبر پر کال کریں جو آپ نے <strong>خود</strong> کمپنی کی ویب سائٹ یا ڈائریکٹری سے نکالا ہو، نہ کہ وہ جو بیچ والے نے دیا۔ یہ آسان جانچ ہے اور دھوکہ باز اس میں شاذ و نادر ہی پورے اترتے ہیں۔',
+  'c.emp.p2':'پوچھیں کہ کاغذوں میں آپ کو کون ملازم رکھے گا، آپ کا براہِ راست افسر کون ہوگا اور کس مقام پر کام ہوگا۔ اصلی آجر تینوں سوالوں کا جواب بغیر رکے دے گا۔',
+  'c.h.contract':'04. روانگی سے پہلے معاہدہ لیں',
+  'c.con.p1':'معاہدہ روانگی سے پہلے آپ کے پاس ہونا چاہیے، اس زبان میں جو آپ سمجھتے ہیں۔ “پہنچ کر دستخط کر لینا” برا جواب ہے: وہاں پہنچ کر آپ پیسوں کے بغیر، واپسی کے ٹکٹ کے بغیر اور اجنبی ملک میں ہوں گے۔',
+  'c.con.p2':'معاہدے میں یہ درج ہونا چاہیے:',
+  'c.con.li1':'عہدہ اور کام کی نوعیت؛',
+  'c.con.li2':'تنخواہ، کرنسی اور ادائیگی کا وقت؛',
+  'c.con.li3':'کام کے اوقات، چھٹیاں اور اوور ٹائم کی ادائیگی؛',
+  'c.con.li4':'پرواز، رہائش اور طبی بیمے کا خرچ کون اٹھائے گا؛',
+  'c.con.li5':'معاہدے کی مدت اور اسے ختم کرنے کی شرائط۔',
+  'c.con.p3':'زبانی وعدوں کی کوئی حیثیت نہیں۔ جو بات معاہدے میں نہیں لکھی، وہ موجود نہیں ہے۔',
+  'c.h.visa':'05. ورک ویزا، سیاحتی ویزا نہیں',
+  'c.visa.p1':'کسی بھی ملک میں سیاحتی ویزے پر کام کرنے کی اجازت نہیں۔ اگر آپ سے کہا جائے کہ “سیاح بن کر آ جاؤ، اجازت نامہ بعد میں بنوا لیں گے” تو یہ قانون کی خلاف ورزی ہے، اور جواب دہ آپ ہوں گے: جرمانہ، ملک بدری اور کئی سال کے لیے داخلے پر پابندی۔',
+  'c.visa.p2':'روانگی سے پہلے معلوم کریں کہ آپ کے پاس کون سا ویزا ہے اور ورک پرمٹ بن رہا ہے یا نہیں۔ زیادہ تر ممالک میں دو اجازت نامے درکار ہوتے ہیں: ایک کمپنی کو غیر ملکیوں کو ملازم رکھنے کا، اور دوسرا ذاتی طور پر آپ کا۔ دونوں کے بارے میں پوچھیں۔',
+  'c.h.passport':'06. پاسپورٹ آپ کے پاس رہنا چاہیے',
+  'c.pas.p1':'آجر یا ایجنسی کا آپ کا پاسپورٹ روکنا غیر قانونی ہے۔ اصل دستاویز ہمیشہ آپ کے پاس رہے۔ کاغذی کارروائی کے لیے نقول کافی ہیں، یا تحریری رسید کے ساتھ عارضی حوالگی جس میں واپسی کی تاریخ درج ہو۔',
+  'c.pas.p2':'پاسپورٹ کے بغیر انسان نہ نوکری چھوڑ سکتا ہے، نہ جا سکتا ہے، نہ مدد مانگ سکتا ہے: اسی لیے وہ لیا جاتا ہے۔ اگر آپ کا پاسپورٹ پہلے ہی روکا جا چکا ہے تو فوراً مدد لیں۔',
+  'c.h.flags':'07. دھوکے کی علامات',
+  'c.flag.p1':'ان میں سے کوئی ایک بھی رک کر دوبارہ جانچنے کی وجہ ہے۔ دو یا زیادہ ایک ساتھ ہوں تو تقریباً یقینی طور پر دھوکہ ہے۔',
+  'c.flag.li1':'معاہدے سے پہلے پیسے مانگے جاتے ہیں؛',
+  'c.flag.li2':'لائسنس نمبر بتانے سے انکار؛',
+  'c.flag.li3':'معاہدہ نہیں ہے، یا ایسی زبان میں ہے جو آپ نہیں سمجھتے؛',
+  'c.flag.li4':'وعدہ کی گئی تنخواہ اس کام کے عام معاوضے سے کہیں زیادہ ہے؛',
+  'c.flag.li5':'جلدی کرائی جاتی ہے: “آج فیصلہ کرو، کل جگہ نہیں رہے گی”؛',
+  'c.flag.li6':'رابطہ صرف میسنجر پر، نہ دفتر ہے نہ رجسٹرڈ کمپنی؛',
+  'c.flag.li7':'پاسپورٹ دینے کو کہا جاتا ہے؛',
+  'c.flag.li8':'سیاحتی ویزے پر آنے کی پیشکش۔',
+  'c.h.help':'08. اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
+  'c.help.p1':'خاموشی اسی کے حق میں جاتی ہے جس نے دھوکہ دیا۔ جو کچھ آپ کے پاس ہے سب محفوظ رکھیں: پیغامات، رسیدیں، نام، فون نمبر، پتے، دستاویزات کی نقول۔ بکھرے ہوئے ٹکڑے بھی مل کر ثبوت بن جاتے ہیں۔',
+  'c.help.p2':'اپنے ملک کے مزدور نقل مکانی کے ادارے اور سفارت خانے سے رابطہ کریں۔ اگر آپ پہلے ہی کرغزستان میں ہیں تو ہمیں بتائیں کہ کیا ہوا: ہم صورتِ حال کا جائزہ لے کر بتائیں گے کہ کیا کیا جا سکتا ہے۔ یہ مفت ہے، اور ہم آجر کو معلومات نہیں دیتے۔',
+  'c.disclaimer':'یہ رہنما عمومی حفاظتی اصول بیان کرتا ہے اور آپ کی صورتِ حال پر قانونی مشورے کا متبادل نہیں۔ ویزے، اجازت ناموں اور معاہدوں کی شرائط ہر ملک کا قانون طے کرتا ہے اور وہ بدل سکتی ہیں۔',
+  'c.h.faq':'09. مختصر جوابات',
+  'c.q1':'ایجنسی پیشگی رقم مانگ رہی ہے۔ کیا یہ ہمیشہ دھوکہ ہے؟',
+  'c.a1':'ہمیشہ نہیں، مگر محتاط ہونے کی وجہ ضرور ہے۔ لائسنس یافتہ ایجنسی خدمات کا معاوضہ لے سکتی ہے، مگر اس کی حد آپ کے ملک کا قانون طے کرتا ہے اور رسید دینا لازم ہے۔ اگر نقد، ذاتی کارڈ پر یا بغیر دستاویز رقم مانگی جائے تو ادائیگی نہ کریں۔',
+  'c.q2':'اگر نوکری کرغزستان میں نہیں تو کیا آپ پیشکش جانچ سکتے ہیں؟',
+  'c.a2':'اس رہنما کی جانچ ہر ملک کے لیے کارآمد ہے۔ جہاں پیشکش کرغزستان یا ان ممالک سے متعلق ہو جہاں ہم کام کرتے ہیں، ہم تفصیل سے مدد کر سکتے ہیں؛ باقی صورتوں میں ہم درست ادارے کی طرف رہنمائی کریں گے۔',
+  'c.q3':'آجر نے میرا پاسپورٹ لے لیا ہے۔ کیا کروں؟',
+  'c.a3':'پاسپورٹ روکنا غیر قانونی ہے۔ تحریری طور پر واپسی کا مطالبہ کریں، اس کی نقل اپنے پاس رکھیں اور مدد لیں: ہم سے، اپنے ملک کے سفارت خانے سے یا محنت کے محکمے سے۔ انتظار نہ کریں: پاسپورٹ کے بغیر آپ کی حالت ہر دن مزید خراب ہوتی ہے۔',
+  'c.q4':'آپ کے پاس جانچ کی قیمت کیا ہے؟',
+  'c.a4':'نوکری کی پیشکش اور آجر کی دستاویزات کی جانچ مفت ہے۔ ہم صرف ان مخصوص خدمات کا معاوضہ لیتے ہیں جن پر پہلے سے الگ اتفاق ہوتا ہے۔',
+  'c.cta.h':'پیشکش بھیجیں، ہم جانچ لیں گے',
+  'c.cta.p':'ہمیں دستاویزات یا آجر کے ساتھ اپنے پیغامات دکھائیں۔ پیسے دینے یا پاسپورٹ حوالے کرنے سے پہلے ہم بتا دیں گے کہ ان میں کیا خرابی ہے۔',
+  'c.cta.btn':'مدد کے لیے رابطہ کریں',
+  'c.cta.alt':'جانچ مفت ہے، اور ہم آجر کو نہیں بتاتے کہ آپ نے ہم سے رابطہ کیا۔'
+};
+var DICTS = { en: I18N_EN, ur: I18N_UR };
+var RTL_LANGS = { ur: true };
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  if (i === -1) i = 0;
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+
+
+var SEO = {
+  ru: {
+    title: 'Как проверить, что предложение о работе настоящее | WorkUnity',
+    description: 'Восемь проверок, которые отличают настоящее предложение работы за границей от обмана: лицензия агентства, договор, виза, паспорт и деньги вперёд.',
+    ogTitle: 'Как проверить, что предложение о работе настоящее',
+    ogDescription: 'Восемь проверок против обмана при трудоустройстве за границей.',
+    locale: 'ru_RU'
+  },
+  en: {
+    title: 'How to Check That a Job Offer Is Real | WorkUnity',
+    description: 'Eight checks that tell a real job offer abroad from a scam: agency licence, written contract, work visa, your passport, and money asked up front.',
+    ogTitle: 'How to Check That a Job Offer Is Real',
+    ogDescription: 'Eight checks against recruitment fraud when taking a job abroad.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'کیسے جانیں کہ نوکری کی پیشکش اصلی ہے | WorkUnity',
+    description: 'آٹھ جانچیں جو بیرونِ ملک نوکری کی اصلی پیشکش کو دھوکے سے الگ کرتی ہیں: ایجنسی کا لائسنس، تحریری معاہدہ، ورک ویزا، پاسپورٹ اور پیشگی رقم۔',
+    ogTitle: 'کیسے جانیں کہ نوکری کی پیشکش اصلی ہے',
+    ogDescription: 'بیرونِ ملک ملازمت میں دھوکے سے بچنے کی آٹھ جانچیں۔',
+    locale: 'ur_PK'
+  }
+};
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
+}
+
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-i18n]').map(function(el){
+  return { el:el, key:el.getAttribute('data-i18n'), ru:el.innerHTML };
+});
+var i18nAttrNodes = $$('[data-i18n-attr]').map(function(el){
+  var parts = el.getAttribute('data-i18n-attr').split(':');
+  return { el:el, attr:parts[0], key:parts[1], ru:el.getAttribute(parts[0]) };
+});
+function setLang(lang){
+  LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
+  lsw.setAttribute('data-lang', LANG);
+  var dict = DICTS[LANG];
+  i18nNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
+  i18nAttrNodes.forEach(function(n){
+    var val = dict && dict[n.key];
+    n.el.setAttribute(n.attr, (val && val.trim()) ? val : n.ru);
+  });
+  applySeo(LANG);
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+setLang('en');
+
+/* ═══ THEME SWITCH ════════════════════════════════════════ */
+var tsw = $('#tsw');
+function setTheme(theme){
+  var t = theme === 'dark' ? 'dark' : 'light';
+  if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  tsw.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  try{ localStorage.setItem('wu_theme', t); }catch(err){}
+}
+tsw.addEventListener('click', function(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+var savedTheme = 'light';
+try{ savedTheme = localStorage.getItem('wu_theme') || 'light'; }catch(err){}
+setTheme(savedTheme);
+
+
+})();
+</script>
+
+
+</body></html>

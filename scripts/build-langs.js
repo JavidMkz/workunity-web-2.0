@@ -44,7 +44,14 @@ const PAGES = [
   { file: 'kak-nanyat-inostrannogo-rabotnika.html', howto: true,
     name: { ru: 'Как нанять иностранного работника',
             en: 'How to Hire a Foreign Worker',
-            ur: 'غیر ملکی کارکن کو کیسے بھرتی کریں' } }
+            ur: 'غیر ملکی کارکن کو کیسے بھرتی کریں' } },
+  // howto здесь намеренно не включён: разделы пронумерованы, но последние из
+  // них — не шаги, а признаки обмана и вопросы. Разметка HowTo описывала бы
+  // страницу неверно. FAQPage при этом соберётся из блока вопросов.
+  { file: 'check-job-offer.html',
+    name: { ru: 'Как проверить предложение о работе',
+            en: 'How to Check a Job Offer',
+            ur: 'نوکری کی پیشکش کیسے جانچیں' } }
 ];
 
 const SWITCH_LABEL = { ru: 'Язык', en: 'Language', ur: 'زبان' };
@@ -340,7 +347,8 @@ function injectSchema(html, json) {
   const today = new Date().toISOString().slice(0, 10);
   const PRIORITY = { 'index.html': '1.0', 'inostrantsam.html': '0.8', 'partners.html': '0.8',
                      'o-workunity.html': '0.8', 'audit.html': '0.7',
-                     'kak-nanyat-inostrannogo-rabotnika.html': '0.6' };
+                     'kak-nanyat-inostrannogo-rabotnika.html': '0.6',
+                     'check-job-offer.html': '0.6' };
   const entries = [];
   for (const spec of PAGES) {
     for (const lang of LANGS) {

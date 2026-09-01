@@ -6,7 +6,8 @@
 <script>document.documentElement.className+=" js";</script>
 <script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>WorkUnity — легальное трудоустройство иностранных работников</title>
-<meta name="description" content="Инфраструктура легального трудоустройства и миграционного сопровождения. Работодателям — подбор, разрешения, документы и юридическая защита. Иностранным гражданам — правовая помощь и защита прав. Специалисты из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки.">
+<meta name="description" content="Легальное трудоустройство иностранных работников: подбор, разрешения, документы и юридическая защита. Специалисты из Индии, Пакистана, Бангладеш и Непала.">
+<link rel="canonical" href="https://workunityglobe.com/">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
@@ -40,8 +41,10 @@
   --navy-glass:rgba(15,30,61,.9);
   --muted-l:#93A3BF;
 
-  --green:#0E9F6E;
-  --green-deep:#0C875E;
+  --green:#0C875E;
+  --green-deep:#0A6E4C;
+  --green-text:#0C875E;
+  --green-text-deep:#0A6E4C;
 
   /* theme-adaptive surface & text — light values below match the pre-theme design exactly */
   --paper:#FFFFFF;      /* page background */
@@ -61,7 +64,7 @@
   --err:#B3402A;
   --err-bg:#FCF4F2;
 
-  --amber:#9A6B12;
+  --amber:#8F6410;
   --amber-bg:#FBF3E1;
   --amber-border:#E7CE9A;
 
@@ -88,6 +91,8 @@
 
 /* dark theme — same brand hue, lightened for legibility; header stays the constant brand navy */
 :root[data-theme="dark"]{
+  --green-text:#2FBF85;
+  --green-text-deep:#5BD6A3;
   --paper:#0D1826;
   --surface:#101E30;
   --card:#15273C;
@@ -101,7 +106,7 @@
   --accent-deep:#93ABE8;
   --accent-rgb:114,144,219;
 
-  --err:#E5665A;
+  --err:#E97468;
   --err-bg:#3A2220;
 
   --amber:#D9AE5C;
@@ -148,6 +153,7 @@ img{max-width:100%;display:block}
   font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
   text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
 .btn--navy,.btn--dark{background:var(--accent);color:#fff;border-color:var(--accent)}
+[data-theme="dark"] .btn--navy,[data-theme="dark"] .btn--dark,[data-theme="dark"] .btn--navy:hover,[data-theme="dark"] .btn--dark:hover{color:var(--paper)}
 .btn--navy:hover,.btn--dark:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
 .btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
 .btn--out:hover{background:var(--accent);color:#fff}
@@ -279,7 +285,7 @@ html[lang="ur"] .hero h1{font-size:clamp(25px,4.4vw,56px);max-width:19ch}
 .tcm__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .tcm__l li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);
   font-size:14px;line-height:1.5}
-.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green)}
+.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green-text)}
 .tcm__note{margin-top:clamp(20px,2.6vw,28px);padding:18px 20px;
   border-inline-start:3px solid var(--accent);background:var(--bone);
   color:var(--ink);font-size:14.5px;line-height:1.6}
@@ -390,6 +396,7 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
 .dsel button:nth-last-child(-n+3){border-bottom:0}
 .dsel button:hover{color:var(--ink);background:var(--bone)}
 .dsel button[aria-selected="true"]{background:var(--accent);color:#fff}
+[data-theme="dark"] .dsel button[aria-selected="true"]{color:var(--paper)}
 .dpanel{margin-top:14px;border:1px solid var(--line);border-radius:var(--r-lg);
   background:var(--card);padding:clamp(24px,3.4vw,40px)}
 .dpanel__t{font-family:var(--h);font-weight:800;font-size:clamp(21px,2.6vw,30px);
@@ -534,8 +541,8 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
   transition:color .2s,padding-inline-start .25s}
 .alt a:hover{color:var(--accent);padding-inline-start:8px}
 .alt svg{width:19px;height:19px;color:var(--accent);flex:none}
-.alt a.alt__wa svg{color:var(--green)}
-.alt a.alt__wa:hover{color:var(--green)}
+.alt a.alt__wa svg{color:var(--green-text)}
+.alt a.alt__wa:hover{color:var(--green-text)}
 .qr{display:flex;gap:14px;align-items:flex-start;margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
 .qr img{width:180px;height:168px;border-radius:var(--r);border:1px solid var(--line);flex:none;background:#fff;padding:4px}
 .qr span{font-size:13px;color:var(--muted);max-width:22ch;line-height:1.45}
@@ -563,12 +570,12 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
 [data-theme="dark"] .ftr .logo img{filter:none}
 .ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
 @media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
-.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+.ftr h3{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--ink);margin-bottom:16px;font-weight:500}
 .ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
 .ftr a:hover{color:var(--accent)}
-.ftr a.ftr__wa{color:var(--green)}
-.ftr a.ftr__wa:hover{color:var(--green-deep)}
+.ftr a.ftr__wa{color:var(--green-text)}
+.ftr a.ftr__wa:hover{color:var(--green-text-deep)}
 .ftr li{margin-bottom:10px}
 .ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
   font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
@@ -997,9 +1004,9 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
         </a>
         <p style="margin-top:16px;max-width:32ch" data-en="WorkUnity — legal employment and migration support infrastructure." data-ur="WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-en="Sections" data-ur="سیکشنز">Разделы</h4><ul><li><a href="index.html" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a></li><li><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a></li></ul></div>
-      <div><h4 data-en="Resources" data-ur="وسائل">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">Инструкция</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">Отрасли</a></li></ul></div>
-      <div><h4 data-en="Contact" data-ur="رابطہ">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">Бишкек</li></ul></div>
+      <div><h3 data-en="Sections" data-ur="سیکشنز">Разделы</h3><ul><li><a href="index.html" data-en="For Employers" data-ur="آجروں کے لیے">Работодателям</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">Иностранцам</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">Партнёрам</a></li><li><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">О WorkUnity</a></li></ul></div>
+      <div><h3 data-en="Resources" data-ur="وسائل">Материалы</h3><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">Инструкция</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">Вопросы</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">Отрасли</a></li></ul></div>
+      <div><h3 data-en="Contact" data-ur="رابطہ">Контакты</h3><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-en="WorkUnity LLC · Reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · Bishkek, Kyrgyz Republic" data-ur="WorkUnity LLC · رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · بشکیک، جمہوریہ کرغزستان">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
   </div>
@@ -1313,20 +1320,20 @@ function nextLang(cur){
 var SEO = {
   ru: {
     title: 'WorkUnity — легальное трудоустройство иностранных работников',
-    description: 'Инфраструктура легального трудоустройства и миграционного сопровождения. Работодателям — подбор, разрешения, документы и юридическая защита. Иностранным гражданам — правовая помощь и защита прав. Специалисты из Индии, Пакистана, Бангладеш, Непала и Шри-Ланки.',
+    description: 'Легальное трудоустройство иностранных работников: подбор, разрешения, документы и юридическая защита. Специалисты из Индии, Пакистана, Бангладеш и Непала.',
     ogTitle: 'WorkUnity — легальное трудоустройство иностранных работников',
     ogDescription: 'Предсказуемый процесс, проверенные документы, юридическая защита. Работодателям, иностранным гражданам и партнёрам.'
   },
   en: {
     title: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
-    description: 'Legal employment and migration support infrastructure. For employers — sourcing, permits, documents and legal protection. For foreign nationals — legal assistance and protection of rights. Specialists from India, Pakistan, Bangladesh, Nepal and Sri Lanka.',
+    description: 'Legal employment of foreign workers: sourcing, permits, documents and legal protection. Specialists from India, Pakistan, Bangladesh and Nepal.',
     ogTitle: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
     ogDescription: 'A predictable process, verified documents, legal protection. For employers, foreign nationals and partners.',
     locale: 'en_US'
   },
   ur: {
     title: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
-    description: 'قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔ آجروں کے لیے — بھرتی، اجازت نامے، دستاویزات اور قانونی تحفظ۔ غیر ملکی شہریوں کے لیے — قانونی مدد اور حقوق کا تحفظ۔ بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے ماہرین۔',
+    description: 'غیر ملکی کارکنوں کا قانونی روزگار: بھرتی، اجازت نامے، دستاویزات اور قانونی تحفظ۔ بھارت، پاکستان، بنگلہ دیش اور نیپال سے ماہرین۔',
     ogTitle: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
     ogDescription: 'قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔ آجروں، غیر ملکی شہریوں اور شراکت داروں کے لیے۔',
     locale: 'ur_PK'

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Внутренний портал агентов — не для индексации
+Disallow: /agent-cabinet-v2.html
+
+Sitemap: https://workunityglobe.com/sitemap.xml

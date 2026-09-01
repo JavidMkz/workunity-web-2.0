@@ -6,7 +6,8 @@
 <script>document.documentElement.className+=" js";</script>
 <script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
 <title>О WorkUnity — право, миграция, доверие</title>
-<meta name="description" content="WorkUnity создаёт прозрачную систему для иностранных граждан и бизнеса в Кыргызстане: подбор и миграционное сопровождение, проверка сторон, юридическая помощь и защита интересов.">
+<meta name="description" content="WorkUnity строит прозрачную систему для иностранцев и бизнеса в Кыргызстане: подбор, миграционное сопровождение, проверка сторон и юридическая помощь.">
+<link rel="canonical" href="https://workunityglobe.com/o-workunity.html">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
@@ -38,7 +39,9 @@
   --navy-glass:rgba(15,30,61,.9);
   --muted-l:#93A3BF;
 
-  --green:#0E9F6E;
+  --green:#0C875E;
+  --green-text:#0C875E;
+  --green-text-deep:#0A6E4C;
 
   --paper:#FFFFFF;
   --surface:#FFFFFF;
@@ -78,6 +81,8 @@
 }
 
 :root[data-theme="dark"]{
+  --green-text:#2FBF85;
+  --green-text-deep:#5BD6A3;
   --paper:#0D1826;
   --surface:#101E30;
   --card:#15273C;
@@ -130,6 +135,7 @@ img{max-width:100%;display:block}
   font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
   text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
 .btn--navy,.btn--dark{background:var(--accent);color:#fff;border-color:var(--accent)}
+[data-theme="dark"] .btn--navy,[data-theme="dark"] .btn--dark,[data-theme="dark"] .btn--navy:hover,[data-theme="dark"] .btn--dark:hover{color:var(--paper)}
 .btn--navy:hover,.btn--dark:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
 .btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
 .btn--out:hover{background:var(--accent);color:#fff}
@@ -395,7 +401,7 @@ html[dir="rtl"] .nav a::after{transform-origin:right}
 .tcm__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
 .tcm__l li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);
   font-size:14px;line-height:1.5}
-.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green)}
+.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green-text)}
 .tcm__note{margin-top:clamp(20px,2.6vw,28px);padding:18px 20px;
   border-inline-start:3px solid var(--accent);background:var(--bone);
   color:var(--ink);font-size:14.5px;line-height:1.6}
@@ -461,11 +467,11 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
 [data-theme="dark"] .ftr .logo img{filter:none}
 .ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
 @media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
-.ftr h4{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+.ftr h3{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--ink);margin-bottom:16px;font-weight:500}
 .ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
 .ftr a:hover{color:var(--accent)}
-.ftr a.ftr__wa{color:var(--green)}
+.ftr a.ftr__wa{color:var(--green-text)}
 .ftr li{margin-bottom:10px}
 .ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
   font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
@@ -888,9 +894,9 @@ html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
         </a>
         <p style="margin-top:16px;max-width:32ch" data-i18n="footer.tagline">WorkUnity — инфраструктура легального трудоустройства и миграционного сопровождения.</p>
       </div>
-      <div><h4 data-i18n="footer.sections">Разделы</h4><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
-      <div><h4 data-i18n="footer.materials">Материалы</h4><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
-      <div><h4 data-i18n="footer.contacts">Контакты</h4><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
+      <div><h3 data-i18n="footer.sections">Разделы</h3><ul><li><a href="index.html" data-i18n="nav.employers">Работодателям</a></li><li><a href="inostrantsam.html" data-i18n="nav.foreigners">Иностранцам</a></li><li><a href="partners.html" data-i18n="nav.partners">Партнёрам</a></li><li><a href="o-workunity.html" data-i18n="nav.about">О WorkUnity</a></li></ul></div>
+      <div><h3 data-i18n="footer.materials">Материалы</h3><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-i18n="footer.instructions">Инструкция</a></li><li><a href="index.html" data-i18n="nav.faq">Вопросы</a></li><li><a href="o-workunity.html" data-i18n="footer.about">WorkUnity</a></li></ul></div>
+      <div><h3 data-i18n="footer.contacts">Контакты</h3><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-i18n="footer.city">Бишкек</li></ul></div>
     </div>
     <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-i18n="footer.legal">ОсОО «WorkUnity» · рег. № <span dir="ltr">00408202610480</span> · Бишкек, Кыргызская Республика</span></div>
   </div>
@@ -1225,13 +1231,13 @@ function nextLang(cur){
 var SEO = {
   ru: {
     title: 'О WorkUnity — право, миграция, доверие',
-    description: 'WorkUnity создаёт прозрачную систему для иностранных граждан и бизнеса в Кыргызстане: подбор и миграционное сопровождение, проверка сторон, юридическая помощь и защита интересов.',
+    description: 'WorkUnity строит прозрачную систему для иностранцев и бизнеса в Кыргызстане: подбор, миграционное сопровождение, проверка сторон и юридическая помощь.',
     ogTitle: 'О WorkUnity — право, миграция, доверие',
     ogDescription: 'Прозрачная система для иностранных граждан и бизнеса в Кыргызстане.'
   },
   en: {
     title: 'About WorkUnity — Legal, Migration, Trust',
-    description: 'WorkUnity builds a transparent system for foreign nationals and businesses in Kyrgyzstan: workforce recruitment and migration support, verification of all parties, legal assistance and protection of rights.',
+    description: 'WorkUnity builds a transparent system for foreign nationals and businesses in Kyrgyzstan: recruitment, migration support, verification and legal help.',
     ogTitle: 'About WorkUnity — Legal, Migration, Trust',
     ogDescription: 'A transparent system for foreign nationals and businesses in Kyrgyzstan.',
     locale: 'en_US'

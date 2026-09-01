@@ -1174,6 +1174,25 @@ html[lang="ur"] .audit-teaser__t{letter-spacing:0}
 'use strict';
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var WA_NUMBER = '996700123445';
+
+/* ═══ ЗАЯВКИ: копия в Google-форму ═══════════════════════ */
+/* Заявка попадает в таблицу независимо от того, дошёл ли человек до
+   отправки сообщения в WhatsApp. Отправка «вслепую»: ответ Google
+   прочитать нельзя из-за его политики, поэтому ошибки игнорируются —
+   на работу формы это в любом случае не влияет. sendBeacon переживает
+   уход со страницы, что важно при переходе в WhatsApp с телефона. */
+var LEAD_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeMCvw0Cv7aCy2vf4DUkjNiTX5-UvVzbdk0VuL2PBcCGtv9Ww/formResponse';
+function saveLead(source, contact, who, details){
+  try{
+    var fd = new FormData();
+    fd.append('entry.1222194727', source  || '');
+    fd.append('entry.1683094239', contact || '');
+    fd.append('entry.95507460',   who     || '');
+    fd.append('entry.2137771975', details || '');
+    if (navigator.sendBeacon) navigator.sendBeacon(LEAD_URL, fd);
+    else fetch(LEAD_URL, { method:'POST', mode:'no-cors', body:fd });
+  }catch(err){}
+}
 var $ = function(s){ return document.querySelector(s); };
 var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
 
@@ -1418,6 +1437,7 @@ f.addEventListener('submit', function(e){
       + 'Профессии и количество: ' + v.need + '\n'
       + 'Сроки: ' + v.when + '\n'
       + 'Контакт: ' + v.contact);
+  saveLead('Работодатели · ' + LANG, v.contact, v.company, text);
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   m.textContent = LANG === 'en'
     ? 'Opening WhatsApp with a ready message. If the window didn\'t appear — allow pop-ups or write to us directly.'

@@ -584,6 +584,25 @@ html[dir="rtl"] .a-back__a{transform:scaleX(-1)}
 var $=function(s,c){return (c||document).querySelector(s);};
 var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
 var WA_NUMBER = '996700123445';
+
+/* ═══ ЗАЯВКИ: копия в Google-форму ═══════════════════════ */
+/* Заявка попадает в таблицу независимо от того, дошёл ли человек до
+   отправки сообщения в WhatsApp. Отправка «вслепую»: ответ Google
+   прочитать нельзя из-за его политики, поэтому ошибки игнорируются —
+   на работу формы это в любом случае не влияет. sendBeacon переживает
+   уход со страницы, что важно при переходе в WhatsApp с телефона. */
+var LEAD_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeMCvw0Cv7aCy2vf4DUkjNiTX5-UvVzbdk0VuL2PBcCGtv9Ww/formResponse';
+function saveLead(source, contact, who, details){
+  try{
+    var fd = new FormData();
+    fd.append('entry.1222194727', source  || '');
+    fd.append('entry.1683094239', contact || '');
+    fd.append('entry.95507460',   who     || '');
+    fd.append('entry.2137771975', details || '');
+    if (navigator.sendBeacon) navigator.sendBeacon(LEAD_URL, fd);
+    else fetch(LEAD_URL, { method:'POST', mode:'no-cors', body:fd });
+  }catch(err){}
+}
 var LANG = 'ru';
 /* ═══ REVEAL ═════════════════════════════════════════════ */
 var io = new IntersectionObserver(function(es){
@@ -947,6 +966,7 @@ af.addEventListener('submit', function(e){
     + I18N_UI('wa.phone') + ': ' + val('phone') + '\n'
     + I18N_UI('wa.address') + ': ' + (val('address') || notSpec) + '\n'
     + I18N_UI('wa.count') + ': ' + (val('count') || notSpec);
+  saveLead('Аудит · ' + LANG, val('phone'), val('name'), text);
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   am.textContent = I18N_UI('h.sent');
 });

@@ -1,0 +1,1544 @@
+<!doctype html>
+<html lang="ur" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=" js";</script>
+<script>try{if(localStorage.getItem('wu_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<title>WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ</title>
+<meta name="description" content="غیر ملکی کارکنوں کا قانونی روزگار: بھرتی، اجازت نامے، دستاویزات اور قانونی تحفظ۔ بھارت، پاکستان، بنگلہ دیش اور نیپال سے ماہرین۔">
+<link rel="canonical" href="https://workunityglobe.com/ur/">
+<link rel="alternate" hreflang="ru" href="https://workunityglobe.com/">
+<link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/">
+<link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/">
+<link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/">
+<link rel="icon" href="../img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icon-32.png">
+<link rel="apple-touch-icon" href="../img/icon-180.png">
+<meta name="theme-color" content="#0F1E3D">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WorkUnity">
+<meta property="og:locale" content="ur_PK">
+<meta property="og:title" content="WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ">
+<meta property="og:description" content="قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔ آجروں، غیر ملکی شہریوں اور شراکت داروں کے لیے۔">
+<meta property="og:image" content="https://workunityglobe.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Noto+Nastaliq+Urdu:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WORKUNITY — INDUSTRIAL EDITORIAL
+   1. Tokens   2. Base   3. Grid   4. Components
+   5. Sections 6. Calculator  7. Motion  8. Responsive
+   ============================================================ */
+
+/* 1 ─ TOKENS ------------------------------------------------ */
+:root{
+  /* brand chrome — constant across themes (header, mobile nav, sticky CTA) */
+  --navy:#0F1E3D;
+  --navy-deep:#070E1D;
+  --navy-soft:#1A2F57;
+  --navy-line:#22355C;
+  --navy-glass:rgba(15,30,61,.9);
+  --muted-l:#93A3BF;
+
+  --green:#0C875E;
+  --green-deep:#0A6E4C;
+  --green-text:#0C875E;
+  --green-text-deep:#0A6E4C;
+
+  /* theme-adaptive surface & text — light values below match the pre-theme design exactly */
+  --paper:#FFFFFF;      /* page background */
+  --surface:#FFFFFF;    /* banded sections: manifesto, footer */
+  --card:#FFFFFF;       /* cards & panels: docs panel, process cards, video frame, form card, chips */
+  --bone:#F5F3EF;       /* hover / input backgrounds */
+  --field-focus:#FFFFFF;/* focused input background */
+  --ink:#101A2E;
+  --muted:#5A6880;
+  --line:#E4E1DA;
+
+  /* accent — used for icons/links/CTAs on top of paper/surface/card; header keeps --navy untouched */
+  --accent:#0F1E3D;
+  --accent-deep:#070E1D;
+  --accent-rgb:15,30,61;
+
+  --err:#B3402A;
+  --err-bg:#FCF4F2;
+
+  --amber:#8F6410;
+  --amber-bg:#FBF3E1;
+  --amber-border:#E7CE9A;
+
+  --h:'Manrope',system-ui,-apple-system,sans-serif;
+  --b:'Inter',system-ui,-apple-system,sans-serif;
+  --m:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --ur:'Noto Nastaliq Urdu','Manrope',system-ui,sans-serif;
+
+  --gut:clamp(20px,5vw,72px);
+  --r:10px;              /* buttons & tags/plaques */
+  --r-lg:14px;           /* cards & panels */
+  --r-sm:8px;            /* small elements */
+  --sec:clamp(48px,calc(27px + 3.6vw),96px);
+
+  --lh-body:1.7;
+  --lh-heading:1.2;
+  --lh-small:1.5;
+  --space-s:8px;
+  --space-m:16px;
+  --space-l:24px;
+  --space-xl:48px;
+  --space-xxl:96px;
+}
+
+/* dark theme — same brand hue, lightened for legibility; header stays the constant brand navy */
+:root[data-theme="dark"]{
+  --green-text:#2FBF85;
+  --green-text-deep:#5BD6A3;
+  --paper:#0D1826;
+  --surface:#101E30;
+  --card:#15273C;
+  --bone:#1B2E45;
+  --field-focus:#21395A;
+  --ink:#F4EFE6;
+  --muted:#A9B6C6;
+  --line:rgba(255,255,255,.08);
+
+  --accent:#7290DB;
+  --accent-deep:#93ABE8;
+  --accent-rgb:114,144,219;
+
+  --err:#E97468;
+  --err-bg:#3A2220;
+
+  --amber:#D9AE5C;
+  --amber-bg:#2E2712;
+  --amber-border:#5C4B22;
+}
+
+/* 2 ─ BASE -------------------------------------------------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html[lang="ur"]{--h:var(--ur);--b:var(--ur);--m:var(--ur)}
+html[lang="ur"] body{line-height:2.05}
+html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3,html[lang="ur"] h4{line-height:1.7;letter-spacing:0}
+html[lang="ur"] .ix,html[lang="ur"] .ix--d{letter-spacing:0;text-transform:none}
+html[lang="ur"] .btn,html[lang="ur"] .lsw,html[lang="ur"] .nav a{letter-spacing:0}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--b);
+  font-size:16.5px;line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--h);font-weight:800;line-height:var(--lh-heading);margin:0;letter-spacing:-.045em}
+@media(max-width:479px){h1,h2,h3,h4{overflow-wrap:break-word}}
+p{margin:0}ul,ol{margin:0;padding:0;list-style:none}svg{display:block}
+[id]{scroll-margin-top:96px}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.wide{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+
+/* 3 ─ GRID -------------------------------------------------- */
+.g12{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.2vw,32px)}
+@media(max-width:899px){.g12{grid-template-columns:repeat(6,1fr)}}
+
+/* editorial section index + label */
+.ix,.ix--d{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;flex-wrap:wrap;row-gap:6px;margin-bottom:var(--space-s)}
+.ix::before,.ix--d::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+.ix--plain::before{display:none}
+
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.rule--d{background:var(--line)}
+
+/* 4 ─ COMPONENTS -------------------------------------------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:17px 30px;border:1.5px solid transparent;border-radius:var(--r);
+  font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:-.01em;
+  text-decoration:none;cursor:pointer;transition:.22s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn--navy,.btn--dark{background:var(--accent);color:#fff;border-color:var(--accent)}
+[data-theme="dark"] .btn--navy,[data-theme="dark"] .btn--dark,[data-theme="dark"] .btn--navy:hover,[data-theme="dark"] .btn--dark:hover{color:var(--paper)}
+.btn--navy:hover,.btn--dark:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--accent);border-color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{background:#fff;color:var(--navy);border-color:#fff}
+.btn--white:hover{background:#F5F3EF;border-color:#F5F3EF;transform:translateY(-2px)}
+.btn--wa{background:var(--green);color:#fff;border-color:var(--green)}
+.btn--wa:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-2px)}
+.btn--sm{padding:11px 19px;font-size:14px}
+.btn--full{width:100%;padding-block:18px}
+html[dir="rtl"] .arr{transform:scaleX(-1)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+textarea:focus-visible,summary:focus-visible,.vframe:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hdr a:focus-visible,.hdr button:focus-visible,.mcta a:focus-visible{outline-color:#fff}
+
+/* stacking helper (kept for .hero::before) */
+.tex{position:relative;isolation:isolate}
+.tex > *{position:relative;z-index:1}
+
+/* scroll progress */
+.prog{position:fixed;top:0;inset-inline-start:0;height:2px;width:0;background:var(--accent);z-index:200;
+  transition:width .1s linear;pointer-events:none}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:120;background:var(--navy-glass);
+  backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--navy-line)}
+.hdr__in{display:flex;align-items:center;gap:20px;height:72px;position:relative}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto;flex:none;color:#fff}
+.logo img{height:26px;width:auto}
+.logo span{font-family:var(--h);font-weight:800;font-size:19.5px;letter-spacing:-.035em}
+.nav{display:none;gap:28px}
+@media(min-width:1200px){.nav{display:flex}}
+.nav a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--muted-l);transition:color .18s;position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;
+  transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.3,1)}
+html[dir="rtl"] .nav a::after{transform-origin:right}
+.nav a:hover{color:#fff}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.on{color:#fff}
+.burger{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:#fff;position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;
+  background:#fff;transition:transform .25s,top .25s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+@media(min-width:1200px){.burger{display:none}}
+@media(max-width:1199px){
+  .hdr__cta{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;top:72px;
+    inset-inline:0;background:var(--navy);
+    border-bottom:1px solid var(--navy-line);padding:6px var(--gut) 20px;z-index:130}
+  .nav.open a{padding:15px 0;border-bottom:1px solid var(--navy-line);font-size:17px;
+    font-family:var(--h);font-weight:600;color:#fff}
+  .nav.open a::after{display:none}
+  .nav.open a:last-child{border-bottom:0}
+}
+@media(max-width:479px){.hdr__in{gap:12px}}
+
+/* header tools: language + theme switch */
+.hdr__tools{display:flex;align-items:center;gap:8px;flex:none}
+.lsw{display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;
+  font-family:var(--h);font-size:12.5px;font-weight:700;letter-spacing:.01em;transition:border-color .18s}
+.lsw:hover{border-color:#fff}
+.lsw__ru,.lsw__en,.lsw__ur{color:var(--muted-l);transition:color .18s}
+.lsw__ur{font-size:13px}
+.lsw__d{color:var(--navy-line);font-weight:400}
+.lsw[data-lang="ru"] .lsw__ru{color:#fff}
+.lsw[data-lang="en"] .lsw__en{color:#fff}
+.lsw[data-lang="ur"] .lsw__ur{color:#fff}
+
+.tsw{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--navy-line);
+  border-radius:var(--r);background:transparent;flex:none;cursor:pointer;color:#fff;transition:border-color .18s}
+.tsw:hover{border-color:#fff}
+.tsw svg{width:16px;height:16px}
+.tsw__moon{display:none}
+[data-theme="dark"] .tsw__sun{display:none}
+[data-theme="dark"] .tsw__moon{display:block}
+@media(max-width:479px){
+  .hdr .wide{padding-inline:12px}
+  .hdr__in{gap:6px}
+  .logo{gap:6px}
+  .logo img{height:20px}
+  .logo span{font-size:15px}
+  .burger{width:38px;height:38px}
+  .hdr__tools{gap:4px}
+  .lsw{padding:0 6px;font-size:10.5px;gap:3px}
+  .lsw__ur{font-size:11px}
+  .tsw{width:28px;height:28px}
+  .tsw svg{width:14px;height:14px}
+}
+
+/* 5 ─ SECTIONS ---------------------------------------------- */
+.sec{padding-block:var(--sec)}
+.sec--tight{padding-block:clamp(48px,calc(20px + 2.2vw),80px)}
+
+.hd{margin-bottom:clamp(34px,4.5vw,62px)}
+.hd h2{font-size:clamp(30px,4.6vw,60px);margin-top:var(--space-s);max-width:19ch}
+.hd p{color:var(--muted);margin-top:16px;max-width:52ch;font-size:16.5px}
+.hd--split{display:grid;gap:22px;align-items:end}
+@media(min-width:900px){.hd--split{grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr)}}
+
+/* HERO */
+.hero{background:var(--paper);color:var(--ink);position:relative;overflow:hidden;
+  padding-top:clamp(48px,7vw,96px)}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(900px 620px at 88% 2%,rgba(var(--accent-rgb),.05),transparent 66%)}
+.hero__g{align-items:end;padding-bottom:clamp(38px,5vw,62px)}
+.hero__l{grid-column:1/-1}
+.hero h1{font-size:clamp(38px,7.4vw,92px);line-height:1.2;margin-block:24px 26px;max-width:13ch}
+/* long Russian compounds need the full column and a lower floor on phones,
+   otherwise the 13ch box forces mid-word breaks */
+@media(max-width:479px){.hero h1{font-size:clamp(29px,8.6vw,38px);max-width:none}}
+/* Nastaliq renders much larger than Latin at the same px and the 13ch box
+   is measured on its very wide "0", so Urdu needs its own hero sizing */
+html[lang="ur"] .hero h1{font-size:clamp(25px,4.4vw,56px);max-width:19ch}
+.hero h1 em{font-style:normal;color:var(--accent);display:block}
+.hero__sub{font-size:clamp(16px,1.55vw,19.5px);color:var(--muted);max-width:46ch;line-height:1.58}
+
+/* Trust & Compliance matrix -------------------------------------------*/
+.tcm{display:grid;gap:14px;margin-top:clamp(24px,3vw,34px)}
+@media(min-width:820px){.tcm{grid-template-columns:repeat(3,1fr);gap:20px}}
+.tcm__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(20px,2.4vw,26px)}
+.tcm__t{font-size:15px;letter-spacing:-.01em;margin-bottom:14px;padding-bottom:12px;
+  border-bottom:1px solid var(--line)}
+.tcm__l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.tcm__l li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);
+  font-size:14px;line-height:1.5}
+.tcm__l svg{width:15px;height:15px;flex:none;margin-top:3px;color:var(--green-text)}
+.tcm__note{margin-top:clamp(20px,2.6vw,28px);padding:18px 20px;
+  border-inline-start:3px solid var(--accent);background:var(--bone);
+  color:var(--ink);font-size:14.5px;line-height:1.6}
+.tcm__intro{max-width:70ch;color:var(--muted);line-height:1.65}
+.tcm__intro + .tcm__intro{margin-top:var(--space-m)}
+.tcm__intro b{color:var(--ink);font-weight:600}
+
+/* other-country prompt -------------------------------------------------*/
+.elsew{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bone);
+  padding:clamp(24px,3vw,34px);display:flex;flex-wrap:wrap;gap:18px 34px;
+  align-items:center;justify-content:space-between}
+.elsew__b{max-width:62ch}
+.elsew__t{font-size:clamp(18px,1.9vw,22px);letter-spacing:-.02em;margin-bottom:9px}
+.elsew__d{color:var(--muted);font-size:15px;line-height:1.6}
+.hero__pts{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;
+  max-width:52ch}
+.hero__pts li{position:relative;padding-inline-start:19px;color:var(--muted);
+  font-size:clamp(14.5px,1.25vw,16px);line-height:1.5}
+.hero__pts li::before{content:"";position:absolute;inset-inline-start:0;top:.62em;
+  width:7px;height:1.5px;background:var(--accent)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* three-route band ------------------------------------------------------*/
+.bridge{display:grid;gap:14px}
+@media(min-width:760px){.bridge{grid-template-columns:repeat(3,1fr);gap:20px}}
+.bridge__c{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--card);
+  padding:clamp(22px,2.6vw,28px);display:flex;flex-direction:column;gap:14px}
+.bridge__t{font-size:17.5px;letter-spacing:-.02em}
+.bridge__d{color:var(--muted);font-size:14.5px;line-height:1.6;flex:1}
+.bridge__a{display:inline-flex;align-items:center;gap:8px;font-family:var(--h);font-weight:700;
+  font-size:14.5px;color:var(--accent);text-decoration:none}
+.bridge__a svg{width:14px;height:14px;transition:transform .2s}
+.bridge__a:hover svg{transform:translateX(3px)}
+html[dir="rtl"] .bridge__a svg{transform:scaleX(-1)}
+html[dir="rtl"] .bridge__a:hover svg{transform:scaleX(-1) translateX(3px)}
+.hero__cta .btn{flex:1 1 200px}
+
+/* audit teaser — restrained warm accent, no border-bar drama */
+.audit-teaser{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--r-lg);
+  padding:clamp(24px,2.4vw,32px) clamp(24px,3vw,34px);display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:20px 32px}
+.audit-teaser__body{flex:1 1 380px;min-width:0}
+.audit-teaser__t{font-size:clamp(19px,2.1vw,24px);letter-spacing:-.02em;color:var(--amber);margin-bottom:8px}
+.audit-teaser__d{color:var(--ink);font-size:15.5px;line-height:1.6;max-width:60ch}
+.audit-teaser__actions{display:flex;flex-wrap:wrap;gap:12px;flex:none}
+.audit-teaser__actions svg{width:16px;height:16px;flex:none}
+.audit-teaser .btn--out{color:var(--amber);border-color:var(--amber-border)}
+.audit-teaser .btn--out:hover{background:var(--amber);border-color:var(--amber);color:#fff}
+@media(max-width:560px){
+  .audit-teaser{flex-direction:column;align-items:stretch}
+  .audit-teaser__body{flex-basis:auto}
+  .audit-teaser__actions{flex-direction:column}
+  .audit-teaser__actions .btn{width:100%}
+}
+html[lang="ur"] .audit-teaser__t{letter-spacing:0}
+
+/* hero stat strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  position:relative;z-index:1}
+.strip__g{display:grid;grid-template-columns:repeat(2,1fr);column-gap:24px}
+@media(min-width:820px){.strip__g{grid-template-columns:repeat(4,1fr)}}
+.st{padding-block:26px 24px;padding-inline-end:20px;border-inline-end:1px solid var(--line)}
+.st:last-child{border-inline-end:0}
+@media(max-width:819px){.st:nth-child(2n){border-inline-end:0}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.st__n{font-family:var(--h);font-weight:800;font-size:clamp(30px,3.6vw,46px);line-height:1;
+  letter-spacing:-.05em;color:var(--ink)}
+.st__n em{font-style:normal;color:var(--accent)}
+.st__l{font-family:var(--m);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);margin-top:11px;line-height:1.5}
+
+/* ticker */
+.tick{border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+.tick__row{display:flex;width:max-content;animation:marq 48s linear infinite}
+.tick:hover .tick__row{animation-play-state:paused}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick__i{display:flex;align-items:center;padding:14px 0;white-space:nowrap;font-family:var(--m);
+  font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.tick__i::after{content:"";width:4px;height:4px;background:var(--accent);margin-inline:20px;flex:none}
+
+/* NETWORK */
+.net__hd{margin-bottom:clamp(26px,3.6vw,44px)}
+.net__hd h2{font-size:clamp(28px,4.2vw,54px);max-width:18ch;margin-top:16px}
+.net__hd p{color:var(--muted);max-width:38ch;font-size:16px}
+
+/* recruiting -> hub -> hiring flow (single layout at all widths) */
+.mnet{display:block;max-width:660px;margin-inline:auto}
+.mnet__col{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media(max-width:639px){.mnet__col{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:479px){.mnet__col{grid-template-columns:repeat(2,1fr)}}
+.mnet__c{display:flex;align-items:center;justify-content:center;text-align:center;
+  min-width:0;overflow-wrap:break-word;
+  border:1px solid var(--line);border-radius:var(--r);padding:10px 10px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;background:var(--card);transition:.2s ease}
+.mnet__arrow{display:grid;place-items:center;padding:14px 0}
+.mnet__arrow span{width:1px;height:30px;background:linear-gradient(180deg,rgba(var(--accent-rgb),.1),var(--accent))}
+.mnet__hub{border:1px solid var(--accent);border-radius:var(--r);padding:16px 18px;text-align:center}
+.mnet__hub b{font-family:var(--h);font-weight:800;font-size:18px;color:var(--accent)}
+.mlab{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;text-align:center}
+
+/* country selector + doc panel */
+.dsel{display:grid;grid-template-columns:repeat(3,1fr);margin:clamp(30px,4vw,48px) auto 0;
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;max-width:660px}
+.dsel button{border:0;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--muted);
+  min-width:0;overflow-wrap:break-word;
+  padding:14px 10px;font-family:var(--h);font-weight:700;font-size:14px;cursor:pointer;transition:.2s ease;text-align:center}
+.dsel button:nth-child(3n){border-inline-end:0}
+.dsel button:nth-last-child(-n+3){border-bottom:0}
+.dsel button:hover{color:var(--ink);background:var(--bone)}
+.dsel button[aria-selected="true"]{background:var(--accent);color:#fff}
+[data-theme="dark"] .dsel button[aria-selected="true"]{color:var(--paper)}
+.dpanel{margin-top:14px;border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--card);padding:clamp(24px,3.4vw,40px)}
+.dpanel__t{font-family:var(--h);font-weight:800;font-size:clamp(21px,2.6vw,30px);
+  letter-spacing:-.04em;margin-bottom:8px}
+.dpanel__s{color:var(--muted);font-size:15.5px;margin-bottom:26px;max-width:62ch}
+.docs{display:grid;gap:0}
+@media(min-width:760px){.docs{grid-template-columns:repeat(2,1fr);column-gap:38px}}
+.doc{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ink);
+  padding:13px 0;border-bottom:1px solid var(--line)}
+.doc svg{width:17px;height:17px;flex:none;color:var(--accent);margin-top:4px}
+.doc__n{font-family:var(--m);font-size:11px;color:var(--accent);flex:none;margin-top:4px;letter-spacing:.1em}
+.dnote{margin-top:24px;font-family:var(--m);font-size:12px;line-height:1.7;
+  color:var(--muted);letter-spacing:.02em;max-width:72ch}
+
+/* SOLUTIONS — editorial numbered list */
+.sol{border-top:1px solid var(--line)}
+.sol__i{display:grid;gap:14px;padding:clamp(26px,3.4vw,42px) 0;border-bottom:1px solid var(--line);
+  position:relative;transition:background .3s ease}
+@media(min-width:900px){
+  .sol__i{grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) minmax(0,1.5fr);
+    gap:clamp(20px,3vw,48px);align-items:start}
+}
+.sol__i:hover{background:var(--bone)}
+.sol__n{font-family:var(--m);font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--accent);padding-top:7px}
+.sol__t{display:flex;gap:16px;align-items:flex-start}
+.sol__t svg{width:26px;height:26px;flex:none;color:var(--accent);margin-top:2px;transition:color .25s}
+.sol__t h3{font-size:clamp(20px,2.3vw,27px);letter-spacing:-.04em}
+.sol__d{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:46ch}
+.sol__d b{color:var(--ink);font-weight:600}
+
+/* MANIFESTO */
+.man{background:var(--surface);color:var(--ink);padding-block:var(--sec);border-top:1px solid var(--line)}
+.man__q{font-family:var(--h);font-weight:800;letter-spacing:-.05em;
+  line-height:1.02;font-size:clamp(32px,7vw,88px);max-width:15ch}
+.man__q span{color:var(--accent)}
+.man__s{margin-top:34px;font-size:clamp(16px,1.6vw,19px);
+  max-width:50ch;color:var(--muted)}
+
+/* WHY */
+.why{display:grid;gap:0;border-top:1px solid var(--line)}
+@media(min-width:760px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.why{grid-template-columns:repeat(3,1fr)}}
+.w{padding-block:clamp(26px,3vw,38px);padding-inline-end:clamp(20px,2.4vw,32px);padding-inline-start:0;
+  border-bottom:1px solid var(--line);border-inline-end:1px solid var(--line);
+  transition:background .28s ease;position:relative}
+.w:hover{background:var(--bone)}
+@media(min-width:760px) and (max-width:1099px){.w:nth-child(2n){border-inline-end:0;padding-inline-end:0}
+  .w:nth-child(2n+1){padding-inline-start:0}.w:nth-child(2n){padding-inline-start:clamp(20px,2.4vw,32px)}}
+@media(min-width:1100px){.w:nth-child(3n){border-inline-end:0}
+  .w:not(:nth-child(3n+1)){padding-inline-start:clamp(20px,2.4vw,32px)}}
+@media(max-width:759px){.w{border-inline-end:0;padding-inline-end:0}}
+.w svg{width:23px;height:23px;color:var(--accent);margin-bottom:16px}
+.w b{font-family:var(--h);font-size:18px;font-weight:700;letter-spacing:-.03em;display:block;margin-bottom:8px}
+.w span{font-size:14.5px;color:var(--muted);display:block;line-height:1.6;max-width:36ch}
+
+/* PROCESS (scroll-pinned) */
+.pw{position:relative}
+.pstick{padding-block:clamp(56px,8vw,90px)}
+.plist{display:grid;gap:14px}
+.pi{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
+.pi__n{font-family:var(--m);font-size:11.5px;font-weight:500;letter-spacing:.2em;color:var(--accent)}
+.pi h3{font-size:20px;margin-block:11px 9px;letter-spacing:-.04em}
+.pi p{font-size:15px;color:var(--muted);line-height:1.6}
+.pi__meta{font-family:var(--m);font-size:11.5px;letter-spacing:.1em;color:var(--muted);
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);text-transform:uppercase}
+@media(min-width:900px){
+  .js .pw{height:340vh}
+  .js .pstick{position:sticky;top:0;height:100vh;display:flex;align-items:center;padding-block:0}
+  .pgrid{display:grid;grid-template-columns:minmax(0,.44fr) minmax(0,1fr);
+    gap:clamp(40px,7vw,110px);align-items:center;width:100%}
+  .js .plist{gap:0;position:relative}
+  .js .pi{background:transparent;border:0;border-radius:0;padding:0;position:absolute;inset:0;
+    opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+  .js .pi.on{opacity:1;transform:none;pointer-events:auto;position:relative}
+  .js .pi h3{font-size:clamp(28px,3.5vw,50px);margin-block:16px 16px}
+  .js .pi p{font-size:17.5px;max-width:40ch}
+  .js .pi__meta{max-width:40ch}
+  .prail{display:grid;align-content:center}
+  .rail{display:flex;flex-direction:column;margin-top:24px}
+  .rail__i{display:flex;align-items:center;gap:18px;padding:12px 0;opacity:.35;transition:opacity .4s ease}
+  .rail__i.on{opacity:1}
+  .rail__d{width:9px;height:9px;border:1px solid var(--accent);flex:none;transition:.35s ease}
+  .rail__i.on .rail__d{background:var(--accent);transform:scale(1.3)}
+  .rail__t{font-family:var(--h);font-weight:700;font-size:15.5px;letter-spacing:-.03em}
+  .rail__line{width:1px;height:26px;background:var(--line);margin-inline-start:4px;transition:background .4s}
+  .rail__line.on{background:var(--accent)}
+}
+@media(max-width:899px){.prail{display:none}.pmob{display:block}}
+@media(min-width:900px){.pmob{display:none}}
+
+/* VIDEO / ABOUT */
+.vid{display:grid;gap:clamp(28px,4.5vw,64px);align-items:center}
+@media(min-width:900px){.vid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.vframe{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;
+  background:var(--card);border:1px solid var(--line);
+  display:grid;place-items:center;cursor:pointer}
+.vframe video{width:100%;height:100%;object-fit:cover}
+.vplay{display:grid;place-items:center;gap:18px;text-align:center;padding:20px;position:relative;z-index:2}
+.vplay__b{width:76px;height:76px;border-radius:50%;background:var(--accent);display:grid;place-items:center;
+  transition:transform .25s;animation:ring 2.8s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),.35)}70%{box-shadow:0 0 0 26px rgba(var(--accent-rgb),0)}100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0)}}
+.vframe:hover .vplay__b{transform:scale(1.08)}
+.vplay__b svg{width:26px;height:26px;color:#fff;margin-left:4px}
+.vplay__t{font-family:var(--h);font-weight:700;font-size:16.5px;color:var(--ink);letter-spacing:-.03em}
+.vplay__s{font-family:var(--m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* INDUSTRIES */
+.ind{display:grid;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
+@media(min-width:560px){.ind{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.ind{grid-template-columns:repeat(4,1fr)}}
+.i{border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:30px 24px;display:flex;flex-direction:column;gap:16px;transition:background .25s;position:relative}
+.i::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.i:hover{background:var(--bone)}
+.i:hover::after{transform:scaleX(1)}
+.i svg{width:26px;height:26px;color:var(--accent)}
+.i h3{font-size:16.5px;font-weight:700;letter-spacing:-.03em}
+.i__n{font-family:var(--m);font-size:10.5px;letter-spacing:.18em;color:var(--muted);margin-top:auto}
+
+/* FAQ */
+.faq{display:grid;border-top:1px solid var(--line)}
+.q{border-bottom:1px solid var(--line);overflow:hidden}
+.q summary{list-style:none;cursor:pointer;padding:24px 0;font-family:var(--h);font-weight:700;
+  font-size:clamp(16.5px,1.9vw,20px);letter-spacing:-.035em;display:flex;gap:20px;align-items:center}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"";margin-inline-start:auto;flex:none;width:13px;height:13px;
+  background:linear-gradient(var(--accent) 0 0) center/100% 1.5px no-repeat,
+             linear-gradient(var(--accent) 0 0) center/1.5px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.q[open] summary::after{transform:rotate(135deg)}
+.q__a{padding:0 0 26px;font-size:16px;color:var(--muted);max-width:68ch;line-height:1.65}
+.q__i{font-family:var(--m);font-size:11px;color:var(--accent);letter-spacing:.18em;flex:none}
+
+/* LEAD */
+.lead{display:grid;gap:clamp(32px,5vw,72px)}
+@media(min-width:960px){.lead{grid-template-columns:minmax(0,1fr) minmax(0,.92fr);align-items:start}}
+.lead h2{color:var(--ink);font-size:clamp(30px,4.4vw,56px);margin-block:16px 18px;max-width:14ch}
+.alt{margin-top:34px;display:grid;border-top:1px solid var(--line)}
+.alt a{display:flex;align-items:center;gap:14px;text-decoration:none;font-family:var(--h);
+  font-weight:600;font-size:16px;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--line);
+  transition:color .2s,padding-inline-start .25s}
+.alt a:hover{color:var(--accent);padding-inline-start:8px}
+.alt svg{width:19px;height:19px;color:var(--accent);flex:none}
+.alt a.alt__wa svg{color:var(--green-text)}
+.alt a.alt__wa:hover{color:var(--green-text)}
+.qr{display:flex;gap:14px;align-items:flex-start;margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
+.qr img{width:180px;height:168px;border-radius:var(--r);border:1px solid var(--line);flex:none;background:#fff;padding:4px}
+.qr span{font-size:13px;color:var(--muted);max-width:22ch;line-height:1.45}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,2.4vw,32px) clamp(24px,3.4vw,40px);color:var(--ink)}
+.fc__t{font-family:var(--h);font-weight:800;font-size:20px;letter-spacing:-.04em;margin-bottom:4px}
+.fc__s{font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:24px}
+.f{margin-bottom:16px}
+.f label{display:block;font-family:var(--m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px}
+.f input,.f select,.f textarea{width:100%;padding:14px 15px;font-family:var(--b);font-size:16px;
+  color:var(--ink);background:var(--bone);border:1px solid var(--line);border-radius:var(--r-sm);transition:.18s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--accent);background:var(--field-focus);outline:none;
+  box-shadow:0 0 0 3px rgba(var(--accent-rgb),.08)}
+.f input.err,.f textarea.err{border-color:var(--err);background:var(--err-bg)}
+.f textarea{min-height:88px;resize:vertical}
+.fn{font-family:var(--m);font-size:11px;line-height:var(--lh-small);color:var(--muted);margin-top:14px;letter-spacing:.02em}
+.fm{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--r-sm);background:var(--bone);
+  border-inline-start:2px solid var(--accent);font-size:14.5px}
+.fm.on{display:block}
+
+/* FOOTER */
+.ftr{background:var(--surface);color:var(--muted);padding-block:56px 28px;font-size:14.5px;border-top:1px solid var(--line)}
+.ftr .logo img{height:90px;filter:brightness(0)}
+[data-theme="dark"] .ftr .logo img{filter:none}
+.ftr__t{display:grid;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+@media(min-width:800px){.ftr__t{grid-template-columns:1.5fr 1fr 1fr 1fr}}
+.ftr h3{font-family:var(--m);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:16px;font-weight:500}
+.ftr a{color:var(--muted);text-decoration:none;transition:color .18s}
+.ftr a:hover{color:var(--accent)}
+.ftr a.ftr__wa{color:var(--green-text)}
+.ftr a.ftr__wa:hover{color:var(--green-text-deep)}
+.ftr li{margin-bottom:10px}
+.ftr__b{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* sticky mobile CTA */
+.mcta{position:fixed;inset-inline:0;bottom:0;z-index:110;display:none;gap:1px;
+  background:var(--navy-line);border-top:1px solid var(--navy-line);
+  transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.mcta.on{transform:none}
+.mcta a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px 8px;
+  font-family:var(--h);font-weight:700;font-size:14.5px;text-decoration:none}
+.mcta__go{flex:1 1 auto;min-width:0;background:var(--navy);color:#fff;font-size:14px;
+  line-height:1.22;text-align:center}
+.mcta__ico{flex:0 0 54px;background:var(--navy);color:#fff;padding-inline:0}
+.mcta__ico--wa{background:var(--green)}
+.mcta svg{width:17px;height:17px;flex:none}
+@media(max-width:379px){.mcta__go{font-size:12.5px}.mcta__ico{flex-basis:46px}}
+@media(max-width:1199px){.mcta{display:flex}.ftr{padding-bottom:86px}}
+
+/* 7 ─ MOTION ------------------------------------------------ */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.07s}.rv-d2{transition-delay:.14s}.rv-d3{transition-delay:.21s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+  .pw{height:auto!important}
+  .pstick{position:static!important;height:auto!important;padding-block:60px!important}
+  .pi{position:relative!important;opacity:1!important;transform:none!important}
+  .plist{gap:14px!important}
+}
+</style>
+</head>
+<body data-page="employers">
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></symbol>
+  <symbol id="users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path></symbol>
+  <symbol id="stamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="m9 15 2 2 4-4"></path></symbol>
+  <symbol id="scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M7 21h10"></path><path d="M5 7h14"></path><path d="m5 7-3 6a3 3 0 0 0 6 0z"></path><path d="m19 7 3 6a3 3 0 0 1-6 0z"></path></symbol>
+  <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></symbol>
+  <symbol id="compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m14.5 9.5-2 5-5 2 2-5z"></path></symbol>
+  <symbol id="one" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></symbol>
+  <symbol id="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"></path></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></symbol>
+  <symbol id="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="1"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></symbol>
+  <symbol id="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></symbol>
+  <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></symbol>
+  <symbol id="alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19z"></path><path d="M12 10v4"></path><path d="M12 17.5v.1"></path></symbol>
+  <symbol id="build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l7-5 7 5v13"></path><path d="M10 21v-6h4v6"></path></symbol>
+  <symbol id="fact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18V10l-6 4V10l-6 4V6H3z"></path><path d="M7 21v-4"></path><path d="M13 21v-4"></path></symbol>
+  <symbol id="box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5"></path><path d="M12 13v8"></path></symbol>
+  <symbol id="road" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21 8 3"></path><path d="M20 21 16 3"></path><path d="M12 5v3"></path><path d="M12 11v3"></path><path d="M12 17v3"></path></symbol>
+  <symbol id="thread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18"></path><path d="M5 8h14"></path><path d="M5 16h14"></path></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-9 16-9 0 9-3 16-9 16z"></path><path d="M4 21c3-6 7-9 12-11"></path></symbol>
+  <symbol id="cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"></path><path d="M17 9h2a2 2 0 0 1 0 4h-2"></path><path d="M3 21h16"></path></symbol>
+  <symbol id="pick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 14 9"></path><path d="M4 12c4-6 12-8 16-9-1 4-3 12-9 16"></path></symbol>
+  <symbol id="play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></symbol>
+  <symbol id="wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.8 9.8 0 0 0 4.68 1.19h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.14-.3.3-.13.59.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.65-.14.27.09 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.37z"></path></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="1"></rect><path d="m2 7 10 6 10-6"></path></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></symbol>
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.8-1.8M18 6l1.8-1.8"></path></symbol>
+  <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wide hdr__in">
+    <a class="logo" href="#top" aria-label="WorkUnity">
+      <img src="../img/logo-mark-white.png" alt="WorkUnity" height="26">
+      <span>WorkUnity</span>
+    </a>
+    <nav class="nav" id="mainnav" aria-label="مرکزی مینو">
+      <a href="index.html" class="on" aria-current="page" data-en="For Employers" data-ur="آجروں کے لیے">آجروں کے لیے</a><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">غیر ملکیوں کے لیے</a><a href="partners.html" data-en="Partners" data-ur="شراکت دار">شراکت دار</a><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">WorkUnity کے بارے میں</a><a href="audit.html" data-en="Document Audit" data-ur="دستاویزات کا آڈٹ">دستاویزات کا آڈٹ</a>
+    </nav>
+    <div class="hdr__tools">
+      <div class="lsw" id="lsw" data-lang="ur" role="group" aria-label="زبان"><a class="lsw__ru" href="../index.html" hreflang="ru">RU</a><span class="lsw__d">/</span><a class="lsw__en" href="../en/index.html" hreflang="en">EN</a><span class="lsw__d">/</span><a class="lsw__ur" href="../ur/index.html" hreflang="ur" lang="ur" dir="rtl" aria-current="true">اردو</a></div>
+      <button class="tsw" id="tsw" type="button" aria-label="تھیم"><svg class="tsw__sun" aria-hidden="true"><use href="#sun"></use></svg><svg class="tsw__moon" aria-hidden="true"><use href="#moon"></use></svg></button>
+    </div>
+    <a class="btn btn--white btn--sm hdr__cta" href="#contact" data-en="Consultation" data-ur="مشاورت">مشاورت</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="مینو کھولیں"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero tex">
+  <div class="wide">
+    <div class="g12 hero__g">
+      <div class="hero__l">
+        <span class="ix" data-en="9 destination countries" data-ur="9 ممالک میں ملازمت">9 ممالک میں ملازمت</span>
+        <h1 data-en="Legal Employment Infrastructure &lt;em&gt;for Foreign Workers&lt;/em&gt;" data-ur="غیر ملکی کارکنوں کے قانونی روزگار کا &lt;em&gt;بنیادی ڈھانچہ&lt;/em&gt;">غیر ملکی کارکنوں کے قانونی روزگار کا <em>بنیادی ڈھانچہ</em></h1>
+        <p class="hero__sub" data-en="We help employers close workforce gaps through verified foreign workers, legal documentation and support after placement." data-ur="ہم آجروں کو تصدیق شدہ غیر ملکی کارکنوں، قانونی دستاویزات اور کام شروع ہونے کے بعد مسلسل معاونت کے ذریعے افرادی قوت کی کمی پوری کرنے میں مدد دیتے ہیں۔">ہم آجروں کو تصدیق شدہ غیر ملکی کارکنوں، قانونی دستاویزات اور کام شروع ہونے کے بعد مسلسل معاونت کے ذریعے افرادی قوت کی کمی پوری کرنے میں مدد دیتے ہیں۔</p>
+        <ul class="hero__pts">
+          <li data-en="Employers get a predictable process and legal protection." data-ur="آجروں کو قابلِ پیشگوئی عمل اور قانونی تحفظ ملتا ہے۔">آجروں کو قابلِ پیشگوئی عمل اور قانونی تحفظ ملتا ہے۔</li>
+          <li data-en="Workers get honest conditions and a direct support channel." data-ur="کارکنوں کو منصفانہ شرائط اور براہِ راست معاونت کا ذریعہ ملتا ہے۔">کارکنوں کو منصفانہ شرائط اور براہِ راست معاونت کا ذریعہ ملتا ہے۔</li>
+          <li data-en="The state gets transparent migration, proper documentation and reduced risks of illegal employment." data-ur="ریاست کو شفاف نقل مکانی، درست دستاویزات اور غیر قانونی روزگار کے خطرات میں کمی ملتی ہے۔">ریاست کو شفاف نقل مکانی، درست دستاویزات اور غیر قانونی روزگار کے خطرات میں کمی ملتی ہے۔</li>
+        </ul>
+        <div class="hero__cta">
+          <a class="btn btn--navy" href="#contact"><span data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">آجر کے لیے مشاورت</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"></use></svg></a>
+          <a class="btn btn--out" href="inostrantsam.html"><span data-en="Foreign national assistance" data-ur="غیر ملکی شہری کی مدد">غیر ملکی شہری کی مدد</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wide">
+      <div class="strip__g">
+        <div class="st"><div class="st__n" data-to="5">5</div><div class="st__l" data-en="source&lt;br&gt;countries" data-ur="بھرتی کے&lt;br&gt;ممالک">بھرتی کے<br>ممالک</div></div>
+        <div class="st"><div class="st__n" data-to="9">9</div><div class="st__l" data-en="destination&lt;br&gt;countries" data-ur="ملازمت کے&lt;br&gt;ممالک">ملازمت کے<br>ممالک</div></div>
+        <div class="st"><div class="st__n" data-to="10" data-post="+">10+</div><div class="st__l" data-en="industries&lt;br&gt;we work with" data-ur="شعبے&lt;br&gt;جن میں ہم کام کرتے ہیں">شعبے<br>جن میں ہم کام کرتے ہیں</div></div>
+        <div class="st"><div class="st__n"><em data-en="Full" data-ur="مکمل">مکمل</em></div><div class="st__l" data-en="legal support&lt;br&gt;at every stage" data-ur="ہر مرحلے پر&lt;br&gt;قانونی معاونت">ہر مرحلے پر<br>قانونی معاونت</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tick" aria-hidden="true"><div class="tick__row" id="tickRow"><span class="tick__i">ویلڈرز</span><span class="tick__i">اسٹیل اسٹرکچر انسٹالرز</span><span class="tick__i">سی این سی آپریٹرز</span><span class="tick__i">درزی</span><span class="tick__i">سریا فٹرز</span><span class="tick__i">کنکریٹ ورکرز</span><span class="tick__i">لائن آپریٹرز</span><span class="tick__i">گودام ورکرز</span><span class="tick__i">فورک لفٹ ڈرائیورز</span><span class="tick__i">الیکٹریشنز</span><span class="tick__i">فنشنگ ورکرز</span><span class="tick__i">عام مزدور</span><span class="tick__i">ٹائل لگانے والے</span><span class="tick__i">اسمبلی فٹرز</span><span class="tick__i">سڑک کے مزدور</span><span class="tick__i">ویلڈرز</span><span class="tick__i">اسٹیل اسٹرکچر انسٹالرز</span><span class="tick__i">سی این سی آپریٹرز</span><span class="tick__i">درزی</span><span class="tick__i">سریا فٹرز</span><span class="tick__i">کنکریٹ ورکرز</span><span class="tick__i">لائن آپریٹرز</span><span class="tick__i">گودام ورکرز</span><span class="tick__i">فورک لفٹ ڈرائیورز</span><span class="tick__i">الیکٹریشنز</span><span class="tick__i">فنشنگ ورکرز</span><span class="tick__i">عام مزدور</span><span class="tick__i">ٹائل لگانے والے</span><span class="tick__i">اسمبلی فٹرز</span><span class="tick__i">سڑک کے مزدور</span></div></div>
+</section>
+
+<!-- ══ THREE ROUTES ═══════════════════════════════════════ -->
+<section class="sec" id="bridge">
+  <div class="wide">
+    <div class="hd rv"><span class="ix" data-en="Navigation" data-ur="رہنمائی">رہنمائی</span><h2 data-en="Employer, foreign worker, or partner?" data-ur="آجر، غیر ملکی کارکن، یا شراکت دار؟">آجر، غیر ملکی کارکن، یا شراکت دار؟</h2></div>
+    <div class="bridge rv">
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Employers" data-ur="آجروں کے لیے">آجروں کے لیے</h3>
+        <p class="bridge__d" data-en="Sourcing, documentation and support for foreign workers. A predictable process, verified documents, legal protection." data-ur="غیر ملکی کارکنوں کی بھرتی، دستاویزات اور نگرانی۔ قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔">غیر ملکی کارکنوں کی بھرتی، دستاویزات اور نگرانی۔ قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔</p>
+        <a class="bridge__a" href="#contact"><span data-en="Submit a request" data-ur="درخواست دیں">درخواست دیں</span><svg aria-hidden="true"><use href="#arrow"></use></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Foreign Nationals" data-ur="غیر ملکی شہریوں کے لیے">غیر ملکی شہریوں کے لیے</h3>
+        <p class="bridge__d" data-en="Legal assistance, migration matters, protection of your rights. Verify a job offer before you pay." data-ur="قانونی مدد، نقل مکانی کے معاملات، آپ کے حقوق کا تحفظ۔ ادائیگی سے پہلے روزگار کی پیشکش کی تصدیق کریں۔">قانونی مدد، نقل مکانی کے معاملات، آپ کے حقوق کا تحفظ۔ ادائیگی سے پہلے روزگار کی پیشکش کی تصدیق کریں۔</p>
+        <a class="bridge__a" href="inostrantsam.html"><span data-en="Get help" data-ur="مدد حاصل کریں">مدد حاصل کریں</span><svg aria-hidden="true"><use href="#arrow"></use></svg></a>
+      </div>
+      <div class="bridge__c">
+        <h3 class="bridge__t" data-en="For Partners" data-ur="شراکت داروں کے لیے">شراکت داروں کے لیے</h3>
+        <p class="bridge__d" data-en="Join the network of verified partners. Infrastructure, standards, a transparent commission model." data-ur="تصدیق شدہ شراکت داروں کے نیٹ ورک میں شامل ہوں۔ بنیادی ڈھانچہ، معیارات، شفاف کمیشن ماڈل۔">تصدیق شدہ شراکت داروں کے نیٹ ورک میں شامل ہوں۔ بنیادی ڈھانچہ، معیارات، شفاف کمیشن ماڈل۔</p>
+        <a class="bridge__a" href="partners.html"><span data-en="Become a partner" data-ur="شراکت دار بنیں">شراکت دار بنیں</span><svg aria-hidden="true"><use href="#arrow"></use></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AUDIT TEASER ═══════════════════════════════════════ -->
+<section class="sec sec--tight">
+  <div class="wide">
+    <div class="audit-teaser rv">
+      <div class="audit-teaser__body">
+        <h2 class="audit-teaser__t" data-en="Free Document Audit for Your Foreign Workers" data-ur="غیر ملکی کارکنوں کی دستاویزات کا مفت آڈٹ">غیر ملکی کارکنوں کی دستاویزات کا مفت آڈٹ</h2>
+        <p class="audit-teaser__d" data-en="We'll check before the inspection does. We come to your site, review the documents in about an hour, and give you a written report." data-ur="معائنے سے پہلے ہم خود جانچ لیں گے۔ ہم آپ کی جگہ آ کر تقریباً ایک گھنٹے میں دستاویزات دیکھیں گے اور تحریری رپورٹ دیں گے۔">معائنے سے پہلے ہم خود جانچ لیں گے۔ ہم آپ کی جگہ آ کر تقریباً ایک گھنٹے میں دستاویزات دیکھیں گے اور تحریری رپورٹ دیں گے۔</p>
+      </div>
+      <div class="audit-teaser__actions">
+        <a class="btn btn--navy" href="audit.html"><span data-en="Request an Audit" data-ur="آڈٹ کی درخواست دیں">آڈٹ کی درخواست دیں</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"></use></svg></a>
+        <a class="btn btn--out" href="audit.html"><span data-en="How It Works" data-ur="یہ کیسے کام کرتا ہے">یہ کیسے کام کرتا ہے</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST & COMPLIANCE ═════════════════════════════════ -->
+<section class="sec" id="trust-compliance">
+  <div class="wide">
+    <div class="hd rv"><span class="ix" data-en="Trust &amp; Compliance" data-ur="Trust &amp; Compliance">Trust &amp; Compliance</span><h2 data-en="Trust &amp; Compliance: How We Work" data-ur="Trust &amp; Compliance: ہم کیسے کام کرتے ہیں">Trust &amp; Compliance: ہم کیسے کام کرتے ہیں</h2></div>
+    <div class="rv">
+      <p class="tcm__intro" data-en="WorkUnity is registered as an LLC in the Kyrgyz Republic (Reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;). &lt;b&gt;We start with Kyrgyzstan and build infrastructure for the entire region&lt;/b&gt; — with a single verification and support standard in every country of presence." data-ur="WorkUnity جمہوریہ کرغزستان میں ایک ایل ایل سی کے طور پر رجسٹرڈ ہے (رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt;)۔ &lt;b&gt;ہم کرغزستان سے آغاز کر رہے ہیں اور پورے خطے کے لیے بنیادی ڈھانچہ تعمیر کر رہے ہیں&lt;/b&gt; — ہر اُس ملک میں تصدیق اور نگرانی کا ایک ہی معیار جہاں ہم موجود ہیں۔">WorkUnity جمہوریہ کرغزستان میں ایک ایل ایل سی کے طور پر رجسٹرڈ ہے (رجسٹریشن نمبر <span dir="ltr">00408202610480</span>)۔ <b>ہم کرغزستان سے آغاز کر رہے ہیں اور پورے خطے کے لیے بنیادی ڈھانچہ تعمیر کر رہے ہیں</b> — ہر اُس ملک میں تصدیق اور نگرانی کا ایک ہی معیار جہاں ہم موجود ہیں۔</p>
+      <p class="tcm__intro" data-en="Our standard is not minimal legal compliance, but active protection of all participants." data-ur="ہمارا معیار قانون کی کم سے کم پابندی نہیں، بلکہ عمل میں شامل تمام فریقوں کا فعال تحفظ ہے۔">ہمارا معیار قانون کی کم سے کم پابندی نہیں، بلکہ عمل میں شامل تمام فریقوں کا فعال تحفظ ہے۔</p>
+    </div>
+    <div class="tcm rv">
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For Employers" data-ur="آجر کے لیے">آجر کے لیے</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Every candidate verified before placement" data-ur="کام شروع کرنے سے پہلے ہر امیدوار کی جانچ">کام شروع کرنے سے پہلے ہر امیدوار کی جانچ</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Full documentation and migration support" data-ur="دستاویزات کا مکمل پیکیج اور نقل مکانی کی نگرانی">دستاویزات کا مکمل پیکیج اور نقل مکانی کی نگرانی</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Replacement guarantee in case of mismatch (within the contract)" data-ur="عدم مطابقت کی صورت میں تبدیلی کی ضمانت (معاہدے کے دائرے میں)">عدم مطابقت کی صورت میں تبدیلی کی ضمانت (معاہدے کے دائرے میں)</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Legal protection during inspections" data-ur="معائنوں کے دوران قانونی تحفظ">معائنوں کے دوران قانونی تحفظ</span></li>
+        </ul>
+      </div>
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For Workers" data-ur="کارکن کے لیے">کارکن کے لیے</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Employer verified before departure from home country" data-ur="ملک سے روانگی سے پہلے آجر کی جانچ">ملک سے روانگی سے پہلے آجر کی جانچ</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Honest conditions, fixed in writing" data-ur="منصفانہ شرائط، تحریری طور پر طے شدہ">منصفانہ شرائط، تحریری طور پر طے شدہ</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="A direct channel to WorkUnity (bypassing agents)" data-ur="WorkUnity سے براہِ راست رابطے کا ذریعہ (ایجنٹوں کے بغیر)">WorkUnity سے براہِ راست رابطے کا ذریعہ (ایجنٹوں کے بغیر)</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Organised departure upon termination of work" data-ur="کام ختم ہونے پر منظم واپسی">کام ختم ہونے پر منظم واپسی</span></li>
+        </ul>
+      </div>
+      <div class="tcm__c">
+        <h3 class="tcm__t" data-en="For the State" data-ur="ریاست کے لیے">ریاست کے لیے</h3>
+        <ul class="tcm__l">
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Timely submission of all documents" data-ur="تمام دستاویزات کی بروقت جمع آوری">تمام دستاویزات کی بروقت جمع آوری</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Transparent financial flows" data-ur="شفاف مالی لین دین">شفاف مالی لین دین</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Organised departure upon termination of employment" data-ur="ملازمت ختم ہونے پر منظم واپسی">ملازمت ختم ہونے پر منظم واپسی</span></li>
+        <li><svg aria-hidden="true"><use href="#tick"></use></svg><span data-en="Readiness for inspections and openness to dialogue" data-ur="معائنوں کے لیے تیاری اور مکالمے کے لیے کھلا پن">معائنوں کے لیے تیاری اور مکالمے کے لیے کھلا پن</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="tcm__note rv" data-en="We do not guarantee a visa or permit — that decision belongs to state authorities. But we guarantee that every stage of the process will comply with the law." data-ur="ہم ویزا یا اجازت نامے کی ضمانت نہیں دیتے — یہ فیصلہ سرکاری اداروں کا ہوتا ہے۔ لیکن ہم اس بات کی ضمانت دیتے ہیں کہ عمل کا ہر مرحلہ قانون کے مطابق ہوگا۔">ہم ویزا یا اجازت نامے کی ضمانت نہیں دیتے — یہ فیصلہ سرکاری اداروں کا ہوتا ہے۔ لیکن ہم اس بات کی ضمانت دیتے ہیں کہ عمل کا ہر مرحلہ قانون کے مطابق ہوگا۔</p>
+  </div>
+</section>
+
+<!-- ══ NETWORK ════════════════════════════════════════════ -->
+<section class="sec" id="net">
+  <div class="wide">
+    <div class="net__hd hd--split rv">
+      <div><span class="ix" data-en="01 — Geography" data-ur="01 — جغرافیہ">01 — جغرافیہ</span><h2 data-en="Five Source Countries — Nine Destination Countries" data-ur="پانچ ممالک سے بھرتی — نو ممالک میں ملازمت">پانچ ممالک سے بھرتی — نو ممالک میں ملازمت</h2></div>
+      <p data-en="We connect South Asian labor markets with companies in nine countries and guide every worker through to the job site." data-ur="ہم جنوبی ایشیا کی لیبر مارکیٹس کو نو ممالک کے کاروباروں سے جوڑتے ہیں اور ہر کارکن کو کام کی جگہ تک پہنچاتے ہیں۔">ہم جنوبی ایشیا کی لیبر مارکیٹس کو نو ممالک کے کاروباروں سے جوڑتے ہیں اور ہر کارکن کو کام کی جگہ تک پہنچاتے ہیں۔</p>
+    </div>
+
+    <div class="mnet rv">
+      <div class="mlab" data-en="Source Countries" data-ur="بھرتی کے ممالک">بھرتی کے ممالک</div>
+      <div class="mnet__col">
+        <span class="mnet__c" data-en="India" data-ur="بھارت">بھارت</span><span class="mnet__c" data-en="Pakistan" data-ur="پاکستان">پاکستان</span><span class="mnet__c" data-en="Bangladesh" data-ur="بنگلہ دیش">بنگلہ دیش</span><span class="mnet__c" data-en="Nepal" data-ur="نیپال">نیپال</span><span class="mnet__c" data-en="Sri Lanka" data-ur="سری لنکا">سری لنکا</span>
+      </div>
+      <div class="mnet__arrow"><span></span></div>
+      <div class="mnet__hub"><b>WorkUnity</b><div style="font-family:var(--m);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-top:6px" data-en="RECRUITMENT · DOCUMENTS · LEGAL" data-ur="بھرتی · دستاویزات · قانونی معاونت">بھرتی · دستاویزات · قانونی معاونت</div></div>
+      <div class="mnet__arrow"><span></span></div>
+      <div class="mlab" data-en="Destination Countries — 9" data-ur="ملازمت کے ممالک — 9">ملازمت کے ممالک — 9</div>
+    </div>
+
+    <div class="dsel rv" role="tablist" aria-label="ملازمت کا ملک" id="dsel"><button type="button" role="tab" aria-selected="true">کرغزستان</button><button type="button" role="tab" aria-selected="false">قازقستان</button><button type="button" role="tab" aria-selected="false">ازبکستان</button><button type="button" role="tab" aria-selected="false">روس</button><button type="button" role="tab" aria-selected="false">آذربائیجان</button><button type="button" role="tab" aria-selected="false">بیلاروس</button><button type="button" role="tab" aria-selected="false">تاجکستان</button><button type="button" role="tab" aria-selected="false">جارجیا</button><button type="button" role="tab" aria-selected="false">یوکرین</button></div>
+    <div class="dpanel rv" id="dpanel"><div class="dpanel__t">کیا تیار ہوتا ہے: کرغزستان</div><p class="dpanel__s">کمپنی کو غیر ملکیوں کی خدمات حاصل کرنے کا حق ملتا ہے، پھر ہر کارکن کے لیے دستاویزات مکمل کی جاتی ہیں۔</p><div class="docs"><div class="doc"><span class="doc__n">01</span><svg aria-hidden="true"><use href="#tick"></use></svg><span>غیر ملکی افرادی قوت رکھنے کا اجازت نامہ</span></div><div class="doc"><span class="doc__n">02</span><svg aria-hidden="true"><use href="#tick"></use></svg><span>ماہر کے لیے ورک پرمٹ</span></div><div class="doc"><span class="doc__n">03</span><svg aria-hidden="true"><use href="#tick"></use></svg><span>داخلے کے لیے ویزا</span></div><div class="doc"><span class="doc__n">04</span><svg aria-hidden="true"><use href="#tick"></use></svg><span>قیام کے مقام پر رجسٹریشن</span></div><div class="doc"><span class="doc__n">05</span><svg aria-hidden="true"><use href="#tick"></use></svg><span>کارکن کی سمجھ میں آنے والی زبان میں ملازمت کا معاہدہ</span></div></div><p class="dnote">یہ فہرست عمومی طریقہ کار ظاہر کرتی ہے۔ آپ کی اسامی کے لیے دستاویزات کی صحیح تفصیل اور مدت مشاورت کے دوران بتائی جاتی ہے۔</p></div>
+  </div>
+</section>
+
+
+<!-- ══ SOLUTIONS ══════════════════════════════════════════ -->
+<section class="sec" id="sol">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d" data-en="02 — Services" data-ur="02 — خدمات">02 — خدمات</span><h2 data-en="What We Take Care Of" data-ur="ہم کیا ذمہ داری لیتے ہیں">ہم کیا ذمہ داری لیتے ہیں</h2></div>
+    <div class="sol">
+      <article class="sol__i rv">
+        <div class="sol__n">01</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#users"></use></svg><h3 data-en="Recruitment" data-ur="بھرتی">بھرتی</h3></div>
+        <p class="sol__d" data-en="Specialists matched to your production requirements — with &lt;b&gt;qualification checks&lt;/b&gt;, document verification, and medical screening in the sourcing country. The final decision is always yours." data-ur="آپ کی پیداواری ضروریات کے مطابق ماہرین — بھرتی کے ملک میں &lt;b&gt;قابلیت کی جانچ&lt;/b&gt;، دستاویزات کی تصدیق اور طبی معائنے کے ساتھ۔ حتمی فیصلہ ہمیشہ آپ کا ہوتا ہے۔">آپ کی پیداواری ضروریات کے مطابق ماہرین — بھرتی کے ملک میں <b>قابلیت کی جانچ</b>، دستاویزات کی تصدیق اور طبی معائنے کے ساتھ۔ حتمی فیصلہ ہمیشہ آپ کا ہوتا ہے۔</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">02</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#stamp"></use></svg><h3 data-en="Permits and Quotas" data-ur="اجازت نامے اور کوٹے">اجازت نامے اور کوٹے</h3></div>
+        <p class="sol__d" data-en="Employer permit, recruitment quota, work permit, visa, registration — &lt;b&gt;according to the rules of the specific destination country&lt;/b&gt;. We handle obtaining quotas and correspondence with government authorities." data-ur="آجر کا اجازت نامہ، بھرتی کا کوٹہ، ورک پرمٹ، ویزا، رجسٹریشن — &lt;b&gt;متعلقہ ملک کے قوانین کے مطابق&lt;/b&gt;۔ کوٹے حاصل کرنا اور سرکاری اداروں سے خط و کتابت ہم خود کرتے ہیں۔">آجر کا اجازت نامہ، بھرتی کا کوٹہ، ورک پرمٹ، ویزا، رجسٹریشن — <b>متعلقہ ملک کے قوانین کے مطابق</b>۔ کوٹے حاصل کرنا اور سرکاری اداروں سے خط و کتابت ہم خود کرتے ہیں۔</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">03</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#scale"></use></svg><h3 data-en="Legal Consultations" data-ur="قانونی مشاورت">قانونی مشاورت</h3></div>
+        <p class="sol__d" data-en="Contracts, correspondence with authorities, disputes, consultations on hiring foreign labor. &lt;b&gt;The employer bears responsibility for violations&lt;/b&gt; — we cover this area for you." data-ur="معاہدے، اداروں سے خط و کتابت، تنازعات، اور غیر ملکی افرادی قوت کی بھرتی سے متعلق مشاورت۔ &lt;b&gt;خلاف ورزی کی ذمہ داری آجر پر ہوتی ہے&lt;/b&gt; — یہ ذمہ داری ہم سنبھالتے ہیں۔">معاہدے، اداروں سے خط و کتابت، تنازعات، اور غیر ملکی افرادی قوت کی بھرتی سے متعلق مشاورت۔ <b>خلاف ورزی کی ذمہ داری آجر پر ہوتی ہے</b> — یہ ذمہ داری ہم سنبھالتے ہیں۔</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">04</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#compass"></use></svg><h3 data-en="Adaptation and Support" data-ur="معاونت اور رہنمائی">معاونت اور رہنمائی</h3></div>
+        <p class="sol__d" data-en="We help workers settle in, resolve everyday and work-related issues, and &lt;b&gt;handle on-site motivation&lt;/b&gt;. If needed, we can also arrange meals — as an optional service on request." data-ur="ہم کارکنوں کو نئی جگہ ایڈجسٹ ہونے میں مدد دیتے ہیں، روزمرہ اور کام سے متعلق مسائل حل کرتے ہیں، اور &lt;b&gt;کام کی جگہ پر حوصلہ افزائی کا خیال رکھتے ہیں&lt;/b&gt;۔ ضرورت پڑنے پر کھانے کے انتظام کی سہولت بھی درخواست پر فراہم کرتے ہیں۔">ہم کارکنوں کو نئی جگہ ایڈجسٹ ہونے میں مدد دیتے ہیں، روزمرہ اور کام سے متعلق مسائل حل کرتے ہیں، اور <b>کام کی جگہ پر حوصلہ افزائی کا خیال رکھتے ہیں</b>۔ ضرورت پڑنے پر کھانے کے انتظام کی سہولت بھی درخواست پر فراہم کرتے ہیں۔</p>
+      </article>
+      <article class="sol__i rv">
+        <div class="sol__n">05</div>
+        <div class="sol__t"><svg aria-hidden="true"><use href="#shield"></use></svg><h3 data-en="Migration Audit" data-ur="امیگریشن آڈٹ">امیگریشن آڈٹ</h3></div>
+        <p class="sol__d" data-en="Checking foreign workers already on staff for risks — &lt;b&gt;before an inspection does&lt;/b&gt;. We show what's wrong and in what order to fix it." data-ur="پہلے سے کام کرنے والے غیر ملکی کارکنوں کے خطرات کی جانچ — &lt;b&gt;اس سے پہلے کہ کوئی سرکاری معائنہ یہ کرے&lt;/b&gt;۔ ہم بتاتے ہیں کہاں کمی ہے اور اسے کس ترتیب سے درست کرنا ہے۔">پہلے سے کام کرنے والے غیر ملکی کارکنوں کے خطرات کی جانچ — <b>اس سے پہلے کہ کوئی سرکاری معائنہ یہ کرے</b>۔ ہم بتاتے ہیں کہاں کمی ہے اور اسے کس ترتیب سے درست کرنا ہے۔</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANIFESTO ══════════════════════════════════════════ -->
+<section class="man">
+  <div class="wide">
+    <p class="man__q rv" data-en="A staffing issue shouldn't become a &lt;span&gt;legal risk&lt;/span&gt;." data-ur="افرادی قوت کا معاملہ &lt;span&gt;قانونی خطرہ&lt;/span&gt; نہیں بننا چاہیے۔">افرادی قوت کا معاملہ <span>قانونی خطرہ</span> نہیں بننا چاہیے۔</p>
+    <p class="man__s rv rv-d1" data-en="The rules in each of the nine destination countries differ. The logic is the same: until a document is issued, the employer is liable. We cover that part." data-ur="نو ممالک میں سے ہر ایک کے قوانین مختلف ہیں۔ منطق ایک ہی ہے: جب تک دستاویز مکمل نہ ہو، ذمہ داری آجر کی ہوتی ہے۔ یہ ذمہ داری ہم سنبھالتے ہیں۔">نو ممالک میں سے ہر ایک کے قوانین مختلف ہیں۔ منطق ایک ہی ہے: جب تک دستاویز مکمل نہ ہو، ذمہ داری آجر کی ہوتی ہے۔ یہ ذمہ داری ہم سنبھالتے ہیں۔</p>
+  </div>
+</section>
+
+<!-- ══ WHY ════════════════════════════════════════════════ -->
+<section class="sec" id="why">
+  <div class="wide">
+    <div class="hd rv"><span class="ix" data-en="03 — Reasons" data-ur="03 — وجوہات">03 — وجوہات</span><h2 data-en="Why Employers Choose WorkUnity" data-ur="آجرین WorkUnity کو کیوں منتخب کرتے ہیں">آجرین WorkUnity کو کیوں منتخب کرتے ہیں</h2></div>
+    <div class="why">
+      <div class="w rv"><svg aria-hidden="true"><use href="#one"></use></svg><b data-en="One Partner Instead of Five" data-ur="پانچ کی بجائے ایک شراکت دار">پانچ کی بجائے ایک شراکت دار</b><span data-en="Recruitment, documents, legal support, and logistics in one place." data-ur="بھرتی، دستاویزات، قانونی معاونت اور لاجسٹکس — سب ایک ہی جگہ۔">بھرتی، دستاویزات، قانونی معاونت اور لاجسٹکس — سب ایک ہی جگہ۔</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#lock"></use></svg><b data-en="Only Official Procedures" data-ur="صرف سرکاری طریقہ کار">صرف سرکاری طریقہ کار</b><span data-en="Every stage is processed, verified, and monitored." data-ur="ہر مرحلہ باقاعدہ دستاویزی، تصدیق شدہ اور نگرانی میں ہوتا ہے۔">ہر مرحلہ باقاعدہ دستاویزی، تصدیق شدہ اور نگرانی میں ہوتا ہے۔</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#globe"></use></svg><b data-en="Nine Destination Countries" data-ur="نو ممالک میں ملازمت">نو ممالک میں ملازمت</b><span data-en="One responsible partner for the entire process." data-ur="پورے عمل کے لیے ایک ذمہ دار شراکت دار۔">پورے عمل کے لیے ایک ذمہ دار شراکت دار۔</span></div>
+      <div class="w rv"><svg aria-hidden="true"><use href="#scale"></use></svg><b data-en="Legal Protection for Your Business" data-ur="کاروبار کا قانونی تحفظ">کاروبار کا قانونی تحفظ</b><span data-en="We help reduce employer migration risks: document processing, deadline monitoring, and mandatory notifications." data-ur="ہم آجر کے امیگریشن خطرات کم کرنے میں مدد دیتے ہیں: دستاویزات کی تیاری، مدت کی نگرانی اور لازمی اطلاعات کا خیال۔">ہم آجر کے امیگریشن خطرات کم کرنے میں مدد دیتے ہیں: دستاویزات کی تیاری، مدت کی نگرانی اور لازمی اطلاعات کا خیال۔</span></div>
+      <div class="w rv rv-d1"><svg aria-hidden="true"><use href="#bolt"></use></svg><b data-en="Non-Standard Situations" data-ur="غیرمعمولی حالات">غیرمعمولی حالات</b><span data-en="Urgent replacement, refusal, schedule changes — we handle them without delays." data-ur="فوری تبدیلی، انکار، یا شیڈول میں تبدیلی — ہم بغیر تاخیر کے حل کرتے ہیں۔">فوری تبدیلی، انکار، یا شیڈول میں تبدیلی — ہم بغیر تاخیر کے حل کرتے ہیں۔</span></div>
+      <div class="w rv rv-d2"><svg aria-hidden="true"><use href="#eye"></use></svg><b data-en="Process Transparency" data-ur="عمل میں شفافیت">عمل میں شفافیت</b><span data-en="You can see the status of every worker at every stage." data-ur="آپ ہر مرحلے پر ہر کارکن کی صورتحال دیکھ سکتے ہیں۔">آپ ہر مرحلے پر ہر کارکن کی صورتحال دیکھ سکتے ہیں۔</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════════ -->
+<section class="pw" id="proc">
+  <div class="pstick">
+    <div class="wide">
+      <div class="pgrid">
+        <div class="pmob" style="margin-bottom:26px"><span class="ix ix--d" data-en="04 — Process" data-ur="04 — طریقہ کار">04 — طریقہ کار</span><h2 style="font-size:clamp(28px,4.2vw,44px);margin-top:16px" data-en="Five Steps" data-ur="پانچ مراحل">پانچ مراحل</h2></div>
+        <div class="prail">
+          <span class="ix ix--d" data-en="04 — Process" data-ur="04 — طریقہ کار">04 — طریقہ کار</span>
+          <div class="rail" id="rail">
+            <div class="rail__i on"><span class="rail__d"></span><span class="rail__t" data-en="Application" data-ur="درخواست">درخواست</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Company Permit" data-ur="کمپنی کا اجازت نامہ">کمپنی کا اجازت نامہ</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Recruitment" data-ur="بھرتی">بھرتی</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Documents and Entry" data-ur="دستاویزات اور داخلہ">دستاویزات اور داخلہ</span></div>
+            <div class="rail__line"></div>
+            <div class="rail__i"><span class="rail__d"></span><span class="rail__t" data-en="Start at the Site" data-ur="کام کا آغاز">کام کا آغاز</span></div>
+          </div>
+          <div style="margin-top:36px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="More details on each stage — in our guide" data-ur="ہر مرحلے کی تفصیل — ہمارے رہنما میں">ہر مرحلے کی تفصیل — ہمارے رہنما میں</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"></use></svg></a></div>
+        </div>
+        <div class="plist" id="plist">
+          <div class="pi on"><div class="pi__n" data-en="Stage 01" data-ur="مرحلہ 01">مرحلہ 01</div><h3 data-en="Application" data-ur="درخواست">درخواست</h3><p data-en="We record professions, quantity, timeline, and conditions. We check whether your request meets the destination country's requirements." data-ur="ہم پیشے، تعداد، مدت اور شرائط نوٹ کرتے ہیں۔ اور دیکھتے ہیں کہ آپ کی ضرورت متعلقہ ملک کے قوانین کے مطابق ہے یا نہیں۔">ہم پیشے، تعداد، مدت اور شرائط نوٹ کرتے ہیں۔ اور دیکھتے ہیں کہ آپ کی ضرورت متعلقہ ملک کے قوانین کے مطابق ہے یا نہیں۔</p><div class="pi__meta" data-en="You provide the details — we verify feasibility" data-ur="آپ تفصیلات دیتے ہیں — ہم امکان جانچتے ہیں">آپ تفصیلات دیتے ہیں — ہم امکان جانچتے ہیں</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 02" data-ur="مرحلہ 02">مرحلہ 02</div><h3 data-en="Company Permit" data-ur="کمپنی کا اجازت نامہ">کمپنی کا اجازت نامہ</h3><p data-en="We prepare and file documents for the company's right to engage foreign labor. We handle correspondence with the authorities." data-ur="ہم کمپنی کو غیر ملکی افرادی قوت رکھنے کا حق دلانے کے لیے دستاویزات تیار کرتے اور جمع کراتے ہیں۔ اداروں سے خط و کتابت ہم خود کرتے ہیں۔">ہم کمپنی کو غیر ملکی افرادی قوت رکھنے کا حق دلانے کے لیے دستاویزات تیار کرتے اور جمع کراتے ہیں۔ اداروں سے خط و کتابت ہم خود کرتے ہیں۔</p><div class="pi__meta" data-en="Attraction permit · quota · notifications" data-ur="بھرتی کا اجازت نامہ · کوٹہ · اطلاعات">بھرتی کا اجازت نامہ · کوٹہ · اطلاعات</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 03" data-ur="مرحلہ 03">مرحلہ 03</div><h3 data-en="Recruitment" data-ur="بھرتی">بھرتی</h3><p data-en="Selection in the sourcing country, qualification and document checks, medical screening. The final decision is yours." data-ur="بھرتی کے ملک میں انتخاب، قابلیت اور دستاویزات کی جانچ، طبی معائنہ۔ حتمی فیصلہ آپ کا ہوتا ہے۔">بھرتی کے ملک میں انتخاب، قابلیت اور دستاویزات کی جانچ، طبی معائنہ۔ حتمی فیصلہ آپ کا ہوتا ہے۔</p><div class="pi__meta" data-en="Applications · tests · video interviews · medical exam" data-ur="فارم · ٹیسٹ · ویڈیو انٹرویو · طبی معائنہ">فارم · ٹیسٹ · ویڈیو انٹرویو · طبی معائنہ</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 04" data-ur="مرحلہ 04">مرحلہ 04</div><h3 data-en="Documents and Entry" data-ur="دستاویزات اور داخلہ">دستاویزات اور داخلہ</h3><p data-en="Work permit for each specialist, visa documents, flight, and reception." data-ur="ہر ماہر کے لیے ورک پرمٹ، ویزا دستاویزات، پرواز اور استقبال۔">ہر ماہر کے لیے ورک پرمٹ، ویزا دستاویزات، پرواز اور استقبال۔</p><div class="pi__meta" data-en="Work permit · visa · tickets · transfer" data-ur="ورک پرمٹ · ویزا · ٹکٹ · ٹرانسفر">ورک پرمٹ · ویزا · ٹکٹ · ٹرانسفر</div></div>
+          <div class="pi"><div class="pi__n" data-en="Stage 05" data-ur="مرحلہ 05">مرحلہ 05</div><h3 data-en="Start at the Site" data-ur="کام کا آغاز">کام کا آغاز</h3><p data-en="Registration, employment contract, induction briefing. After that — deadline monitoring and timely renewals." data-ur="رجسٹریشن، ملازمت کا معاہدہ، ابتدائی بریفنگ۔ اس کے بعد — مدت کی نگرانی اور بروقت تجدید۔">رجسٹریشن، ملازمت کا معاہدہ، ابتدائی بریفنگ۔ اس کے بعد — مدت کی نگرانی اور بروقت تجدید۔</p><div class="pi__meta" data-en="Registration · contract · renewals on schedule" data-ur="رجسٹریشن · معاہدہ · شیڈول کے مطابق تجدید">رجسٹریشن · معاہدہ · شیڈول کے مطابق تجدید</div></div>
+        </div>
+        <div class="pmob" style="margin-top:26px"><a class="btn btn--out btn--sm" href="kak-nanyat-inostrannogo-rabotnika.html"><span data-en="More details on each stage — in our guide" data-ur="ہر مرحلے کی تفصیل — ہمارے رہنما میں">ہر مرحلے کی تفصیل — ہمارے رہنما میں</span><svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"></use></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT / VIDEO ══════════════════════════════════════ -->
+<section class="sec">
+  <div class="wide vid">
+    <div class="vframe rv" id="vf" role="button" tabindex="0" aria-label="بانی کا ویڈیو پیغام دیکھیں">
+      <div class="vplay">
+        <div class="vplay__b"><svg aria-hidden="true"><use href="#play"></use></svg></div>
+        <div><div class="vplay__t" data-en="Founder's Message" data-ur="بانی کا پیغام">بانی کا پیغام</div><div class="vplay__s" data-en="30 seconds" data-ur="30 سیکنڈ">30 سیکنڈ</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d1">
+      <span class="ix" data-en="05 — About Us" data-ur="05 — ہمارے بارے میں">05 — ہمارے بارے میں</span>
+      <h2 style="font-size:clamp(27px,3.6vw,44px);margin-block:16px 18px;max-width:15ch" data-en="What Stands Behind Every Application" data-ur="ہر درخواست کے پیچھے کیا ہوتا ہے">ہر درخواست کے پیچھے کیا ہوتا ہے</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:44ch" data-en="Behind every request is a company that needs hands, and a person traveling thousands of kilometers to work. Our job is to make sure both sides are protected." data-ur="ہر درخواست کے پیچھے ایک کمپنی ہوتی ہے جسے کارکنوں کی ضرورت ہے، اور ایک شخص جو ہزاروں کلومیٹر دور کام کرنے جا رہا ہے۔ ہمارا کام یہ یقینی بنانا ہے کہ دونوں فریق محفوظ رہیں۔">ہر درخواست کے پیچھے ایک کمپنی ہوتی ہے جسے کارکنوں کی ضرورت ہے، اور ایک شخص جو ہزاروں کلومیٹر دور کام کرنے جا رہا ہے۔ ہمارا کام یہ یقینی بنانا ہے کہ دونوں فریق محفوظ رہیں۔</p>
+      <div style="margin-top:30px"><a class="btn btn--out" href="#contact"><span data-en="Talk to Us" data-ur="ہم سے بات کریں">ہم سے بات کریں</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"></use></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES ═════════════════════════════════════════ -->
+<section class="sec" id="ind">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d" data-en="06 — Industries" data-ur="06 — شعبے">06 — شعبے</span><h2 data-en="Who We Work With" data-ur="ہم کن کے ساتھ کام کرتے ہیں">ہم کن کے ساتھ کام کرتے ہیں</h2></div>
+    <div class="ind rv">
+      <article class="i"><svg aria-hidden="true"><use href="#build"></use></svg><h3 data-en="Construction" data-ur="تعمیرات">تعمیرات</h3><span class="i__n">01</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#fact"></use></svg><h3 data-en="Manufacturing" data-ur="مینوفیکچرنگ">مینوفیکچرنگ</h3><span class="i__n">02</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#box"></use></svg><h3 data-en="Warehousing and Logistics" data-ur="گودام اور لاجسٹکس">گودام اور لاجسٹکس</h3><span class="i__n">03</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#road"></use></svg><h3 data-en="Road Works" data-ur="سڑکوں کی تعمیر">سڑکوں کی تعمیر</h3><span class="i__n">04</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#thread"></use></svg><h3 data-en="Garment Production" data-ur="ملبوسات کی تیاری">ملبوسات کی تیاری</h3><span class="i__n">05</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#leaf"></use></svg><h3 data-en="Agriculture" data-ur="زراعت">زراعت</h3><span class="i__n">06</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#cup"></use></svg><h3 data-en="Hotels and Catering" data-ur="ہوٹل اور کیٹرنگ">ہوٹل اور کیٹرنگ</h3><span class="i__n">07</span></article>
+      <article class="i"><svg aria-hidden="true"><use href="#pick"></use></svg><h3 data-en="Mining" data-ur="کان کنی">کان کنی</h3><span class="i__n">08</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════════ -->
+<section class="sec" id="faq">
+  <div class="wide">
+    <div class="hd rv"><span class="ix ix--d" data-en="07 — FAQ" data-ur="07 — سوالات">07 — سوالات</span><h2 data-en="Key Questions" data-ur="اہم سوالات، مختصراً">اہم سوالات، مختصراً</h2></div>
+    <div class="faq rv">
+      <details class="q"><summary><span class="q__i">01</span><span data-en="Which countries do you work in?" data-ur="آپ کن ممالک میں کام کرتے ہیں؟">آپ کن ممالک میں کام کرتے ہیں؟</span></summary><div class="q__a" data-en="We recruit for companies in Kyrgyzstan, Kazakhstan, Uzbekistan, Russia, Azerbaijan, Belarus, Tajikistan, Georgia, and Ukraine. We source specialists in India, Pakistan, Bangladesh, Nepal, and Sri Lanka." data-ur="ہم کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھرتی کرتے ہیں۔ ماہرین بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے لیے جاتے ہیں۔">ہم کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھرتی کرتے ہیں۔ ماہرین بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے لیے جاتے ہیں۔</div></details>
+      <details class="q"><summary><span class="q__i">02</span><span data-en="Does the employer need a separate permit?" data-ur="کیا آجر کو الگ اجازت نامہ درکار ہوتا ہے؟">کیا آجر کو الگ اجازت نامہ درکار ہوتا ہے؟</span></summary><div class="q__a" data-en="Yes, in all nine countries. The company needs a foreign labor attraction permit, and the worker needs a work permit. Document names differ, the logic is the same. We handle both." data-ur="جی ہاں، تمام نو ممالک میں۔ کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ درکار ہوتا ہے، اور کارکن کو ورک پرمٹ۔ دستاویزات کے نام مختلف ہیں، لیکن منطق ایک جیسی ہے۔ دونوں ہم مکمل کرتے ہیں۔">جی ہاں، تمام نو ممالک میں۔ کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ درکار ہوتا ہے، اور کارکن کو ورک پرمٹ۔ دستاویزات کے نام مختلف ہیں، لیکن منطق ایک جیسی ہے۔ دونوں ہم مکمل کرتے ہیں۔</div></details>
+      <details class="q"><summary><span class="q__i">03</span><span data-en="How long does the process take?" data-ur="پورا عمل کتنا وقت لیتا ہے؟">پورا عمل کتنا وقت لیتا ہے؟</span></summary><div class="q__a" data-en="Candidate selection takes 15–25 days depending on the quantity and profession. After that come permits, visas, and the flight, and these timelines depend on the destination country and how busy the authorities are. We give you the exact timeline for your vacancy after reviewing your request." data-ur="امیدواروں کا انتخاب تعداد اور پیشے کے لحاظ سے 15 سے 25 دن لیتا ہے۔ اس کے بعد اجازت نامے، ویزے اور پرواز کا مرحلہ آتا ہے، اور اس کی مدت متعلقہ ملک اور اداروں کے کام کے بوجھ پر منحصر ہوتی ہے۔ آپ کی اسامی کی صحیح مدت ہم درخواست کا جائزہ لینے کے بعد بتاتے ہیں۔">امیدواروں کا انتخاب تعداد اور پیشے کے لحاظ سے 15 سے 25 دن لیتا ہے۔ اس کے بعد اجازت نامے، ویزے اور پرواز کا مرحلہ آتا ہے، اور اس کی مدت متعلقہ ملک اور اداروں کے کام کے بوجھ پر منحصر ہوتی ہے۔ آپ کی اسامی کی صحیح مدت ہم درخواست کا جائزہ لینے کے بعد بتاتے ہیں۔</div></details>
+      <details class="q"><summary><span class="q__i">04</span><span data-en="How much does it cost?" data-ur="اس کی لاگت کتنی ہے؟">اس کی لاگت کتنی ہے؟</span></summary><div class="q__a" data-en="There's no fixed price list. The cost depends on the destination country, quantity, professions, and scope of support — we prepare an individual estimate." data-ur="کوئی مقررہ قیمت فہرست نہیں ہے۔ لاگت ملک، تعداد، پیشوں اور معاونت کے دائرہ کار پر منحصر ہوتی ہے — ہم ہر کیس کے لیے الگ تخمینہ تیار کرتے ہیں۔">کوئی مقررہ قیمت فہرست نہیں ہے۔ لاگت ملک، تعداد، پیشوں اور معاونت کے دائرہ کار پر منحصر ہوتی ہے — ہم ہر کیس کے لیے الگ تخمینہ تیار کرتے ہیں۔</div></details>
+      <details class="q"><summary><span class="q__i">05</span><span data-en="What if a worker doesn't work out?" data-ur="اگر کارکن موزوں نہ ہو تو کیا ہوگا؟">اگر کارکن موزوں نہ ہو تو کیا ہوگا؟</span></summary><div class="q__a" data-en="Replacement terms are fixed in the contract before work begins, so there's no ambiguity later." data-ur="تبدیلی کی شرائط ہم کام شروع ہونے سے پہلے ہی معاہدے میں طے کر لیتے ہیں، تاکہ بعد میں کوئی ابہام نہ رہے۔">تبدیلی کی شرائط ہم کام شروع ہونے سے پہلے ہی معاہدے میں طے کر لیتے ہیں، تاکہ بعد میں کوئی ابہام نہ رہے۔</div></details>
+      <details class="q"><summary><span class="q__i">06</span><span data-en="We already have foreign workers — can you check them?" data-ur="ہمارے پاس پہلے سے غیر ملکی کارکن کام کر رہے ہیں — کیا آپ انہیں چیک کر سکتے ہیں؟">ہمارے پاس پہلے سے غیر ملکی کارکن کام کر رہے ہیں — کیا آپ انہیں چیک کر سکتے ہیں؟</span></summary><div class="q__a" data-en="Yes, that's a migration audit: we check documents and deadlines, and show you the risks and what to fix." data-ur="جی ہاں، یہ امیگریشن آڈٹ کہلاتا ہے: ہم دستاویزات اور مدتیں چیک کرتے ہیں، اور بتاتے ہیں کہ کہاں خطرہ ہے اور کیا درست کرنا ہے۔">جی ہاں، یہ امیگریشن آڈٹ کہلاتا ہے: ہم دستاویزات اور مدتیں چیک کرتے ہیں، اور بتاتے ہیں کہ کہاں خطرہ ہے اور کیا درست کرنا ہے۔</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OTHER COUNTRIES ════════════════════════════════════ -->
+<section class="sec" id="elsewhere">
+  <div class="wide">
+    <div class="elsew rv">
+      <div class="elsew__b">
+        <h2 class="elsew__t" data-en="Operating in another country?" data-ur="کسی اور ملک میں کام کر رہے ہیں؟">کسی اور ملک میں کام کر رہے ہیں؟</h2>
+        <p class="elsew__d" data-en="We are expanding our presence and building legal employment infrastructure across CIS countries. Tell us about your needs — we will let you know what we can offer in your jurisdiction." data-ur="ہم اپنی موجودگی کا دائرہ بڑھا رہے ہیں اور سی آئی ایس ممالک میں قانونی روزگار کا بنیادی ڈھانچہ تعمیر کر رہے ہیں۔ ہمیں اپنی ضرورت بتائیں — ہم آپ کو بتائیں گے کہ آپ کے دائرۂ اختیار میں ہم کیا پیش کر سکتے ہیں۔">ہم اپنی موجودگی کا دائرہ بڑھا رہے ہیں اور سی آئی ایس ممالک میں قانونی روزگار کا بنیادی ڈھانچہ تعمیر کر رہے ہیں۔ ہمیں اپنی ضرورت بتائیں — ہم آپ کو بتائیں گے کہ آپ کے دائرۂ اختیار میں ہم کیا پیش کر سکتے ہیں۔</p>
+      </div>
+      <a class="btn btn--navy" href="#contact"><span data-en="Contact us" data-ur="ہمیں لکھیں">ہمیں لکھیں</span><svg class="arr" width="17" height="17" aria-hidden="true"><use href="#arrow"></use></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════ -->
+<section class="sec" id="contact">
+  <div class="wide lead">
+    <div class="rv">
+      <span class="ix" data-en="08 — Request" data-ur="08 — درخواست">08 — درخواست</span>
+      <h2 data-en="Tell Us About Your Project" data-ur="اپنی ضرورت بتائیں">اپنی ضرورت بتائیں</h2>
+      <p style="color:var(--muted);font-size:17.5px;max-width:42ch" data-en="Five lines — and we'll come back with a plan: what to arrange, in what order, and how long it will take." data-ur="صرف پانچ سطریں — اور ہم ایک منصوبے کے ساتھ رابطہ کریں گے: کیا تیار کرنا ہے، کس ترتیب میں، اور کتنے وقت میں۔">صرف پانچ سطریں — اور ہم ایک منصوبے کے ساتھ رابطہ کریں گے: کیا تیار کرنا ہے، کس ترتیب میں، اور کتنے وقت میں۔</p>
+      <div class="alt">
+        <a class="alt__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"></use></svg>WhatsApp: +996 700 123 445</a>
+        <a href="tel:+996700123445" dir="ltr"><svg aria-hidden="true"><use href="#phone"></use></svg>+996 700 123 445</a>
+        <a href="mailto:workunityglobe@gmail.com" dir="ltr"><svg aria-hidden="true"><use href="#mail"></use></svg>workunityglobe@gmail.com</a>
+      </div>
+      <div class="qr">
+        <img src="../img/whatsapp-qr.png" alt="WorkUnity WhatsApp چیٹ کے لیے QR کوڈ" width="180" height="168" loading="lazy">
+        <span data-en="On desktop — scan the QR code with your phone" data-ur="کمپیوٹر پر ہیں تو — فون کیمرہ کوڈ پر رکھیں">کمپیوٹر پر ہیں تو — فون کیمرہ کوڈ پر رکھیں</span>
+      </div>
+    </div>
+    <div class="fc rv rv-d1">
+      <div class="fc__t" data-en="Application Form" data-ur="درخواست فارم">درخواست فارم</div>
+      <div class="fc__s" data-en="Response Within One Business Day" data-ur="ایک کاروباری دن میں جواب">ایک کاروباری دن میں جواب</div>
+      <form id="leadform" novalidate="">
+        <div class="f"><label for="c0" data-en="Country Where Workers Are Needed" data-ur="وہ ملک جہاں کارکن درکار ہیں">وہ ملک جہاں کارکن درکار ہیں</label><select id="c0" name="country"><option data-en="Kyrgyzstan" data-ur="کرغزستان">کرغزستان</option><option data-en="Kazakhstan" data-ur="قازقستان">قازقستان</option><option data-en="Uzbekistan" data-ur="ازبکستان">ازبکستان</option><option data-en="Russia" data-ur="روس">روس</option><option data-en="Other Country" data-ur="دیگر ملک">دیگر ملک</option></select></div>
+        <div class="f"><label for="c1" data-en="Company and Your Name" data-ur="کمپنی اور آپ کا نام">کمپنی اور آپ کا نام</label><input id="c1" name="company" type="text" autocomplete="organization" required=""></div>
+        <div class="f"><label for="c2" data-en="Professions and Quantity" data-ur="پیشے اور تعداد">پیشے اور تعداد</label><textarea id="c2" name="need" placeholder="ویلڈرز — 15، عام مزدور — 30" required=""></textarea></div>
+        <div class="f"><label for="c3" data-en="When Do You Need Them" data-ur="کب تک کارکن درکار ہیں">کب تک کارکن درکار ہیں</label><input id="c3" name="when" type="text" placeholder="دسمبر تک" required=""></div>
+        <div class="f"><label for="c4" data-en="Phone or Email" data-ur="فون یا ای میل">فون یا ای میل</label><input id="c4" name="contact" type="text" autocomplete="tel" required=""></div>
+        <button class="btn btn--wa btn--full" type="submit"><svg width="17" height="17" aria-hidden="true"><use href="#wa"></use></svg><span data-en="Send via WhatsApp" data-ur="WhatsApp پر بھیجیں">WhatsApp پر بھیجیں</span></button>
+        <p class="fn" data-en="Clicking the button opens WhatsApp with a ready message — just send it." data-ur="بٹن دبانے پر WhatsApp ایک تیار پیغام کے ساتھ کھل جائے گا — بس اسے بھیجنا ہوگا۔">بٹن دبانے پر WhatsApp ایک تیار پیغام کے ساتھ کھل جائے گا — بس اسے بھیجنا ہوگا۔</p>
+        <div class="fm" id="msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wide">
+    <div class="ftr__t">
+      <div>
+        <a class="logo" href="#top" aria-label="WorkUnity">
+          <img src="../img/logo-full-white.png" alt="WorkUnity" height="90">
+        </a>
+        <p style="margin-top:16px;max-width:32ch" data-en="WorkUnity — legal employment and migration support infrastructure." data-ur="WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔">WorkUnity — قانونی روزگار اور نقل مکانی کی سہولت کا بنیادی ڈھانچہ۔</p>
+      </div>
+      <div><h3 data-en="Sections" data-ur="سیکشنز">سیکشنز</h3><ul><li><a href="index.html" data-en="For Employers" data-ur="آجروں کے لیے">آجروں کے لیے</a></li><li><a href="inostrantsam.html" data-en="For Foreigners" data-ur="غیر ملکیوں کے لیے">غیر ملکیوں کے لیے</a></li><li><a href="partners.html" data-en="Partners" data-ur="شراکت دار">شراکت دار</a></li><li><a href="o-workunity.html" data-en="About WorkUnity" data-ur="WorkUnity کے بارے میں">WorkUnity کے بارے میں</a></li></ul></div>
+      <div><h3 data-en="Resources" data-ur="وسائل">وسائل</h3><ul><li><a href="kak-nanyat-inostrannogo-rabotnika.html" data-en="Instructions" data-ur="ہدایات">ہدایات</a></li><li><a href="#faq" data-en="FAQ" data-ur="سوالات">سوالات</a></li><li><a href="#ind" data-en="Industries" data-ur="شعبے">شعبے</a></li></ul></div>
+      <div><h3 data-en="Contact" data-ur="رابطہ">رابطہ</h3><ul><li><a href="tel:+996700123445" dir="ltr">+996 700 123 445</a></li><li><a class="ftr__wa" href="https://wa.me/996700123445" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:workunityglobe@gmail.com" dir="ltr">workunityglobe@gmail.com</a></li><li data-en="Bishkek" data-ur="بشکیک">بشکیک</li></ul></div>
+    </div>
+    <div class="ftr__b"><span dir="ltr">© 2026 WorkUnity</span><span data-en="WorkUnity LLC · Reg. No. &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · Bishkek, Kyrgyz Republic" data-ur="WorkUnity LLC · رجسٹریشن نمبر &lt;span dir=&quot;ltr&quot;&gt;00408202610480&lt;/span&gt; · بشکیک، جمہوریہ کرغزستان">WorkUnity LLC · رجسٹریشن نمبر <span dir="ltr">00408202610480</span> · بشکیک، جمہوریہ کرغزستان</span></div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta">
+  <a class="mcta__go" href="#contact" data-en="Employer consultation" data-ur="آجر کے لیے مشاورت">آجر کے لیے مشاورت</a>
+  <a class="mcta__ico" id="mctaCall" href="tel:+996700123445" aria-label="کال کریں"><svg aria-hidden="true"><use href="#phone"></use></svg></a>
+  <a class="mcta__ico mcta__ico--wa" href="https://wa.me/996700123445" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#wa"></use></svg></a>
+</div>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://workunityglobe.com/#org",
+   "name": "WorkUnity",
+   "url": "https://workunityglobe.com/",
+   "email": "workunityglobe@gmail.com",
+   "telephone": "+996700123445",
+   "logo": "https://workunityglobe.com/img/logo-full-white.png",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Бишкек",
+    "addressCountry": "KG"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Кыргызстан"
+    },
+    {
+     "@type": "Country",
+     "name": "Казахстан"
+    },
+    {
+     "@type": "Country",
+     "name": "Узбекистан"
+    },
+    {
+     "@type": "Country",
+     "name": "Россия"
+    },
+    {
+     "@type": "Country",
+     "name": "Азербайджан"
+    },
+    {
+     "@type": "Country",
+     "name": "Беларусь"
+    },
+    {
+     "@type": "Country",
+     "name": "Таджикистан"
+    },
+    {
+     "@type": "Country",
+     "name": "Грузия"
+    },
+    {
+     "@type": "Country",
+     "name": "Украина"
+    }
+   ],
+   "slogan": "Empowering People."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://workunityglobe.com/#site",
+   "url": "https://workunityglobe.com/",
+   "name": "WorkUnity",
+   "publisher": {
+    "@id": "https://workunityglobe.com/#org"
+   },
+   "inLanguage": "ur"
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://workunityglobe.com/ur/#page",
+   "url": "https://workunityglobe.com/ur/",
+   "name": "WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ",
+   "inLanguage": "ur",
+   "isPartOf": {
+    "@id": "https://workunityglobe.com/#site"
+   },
+   "about": {
+    "@id": "https://workunityglobe.com/#org"
+   },
+   "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "WorkUnity",
+      "item": "https://workunityglobe.com/ur/"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://workunityglobe.com/ur/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "آپ کن ممالک میں کام کرتے ہیں؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ہم کرغزستان، قازقستان، ازبکستان، روس، آذربائیجان، بیلاروس، تاجکستان، جارجیا اور یوکرین کی کمپنیوں کے لیے بھرتی کرتے ہیں۔ ماہرین بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا سے لیے جاتے ہیں۔"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "کیا آجر کو الگ اجازت نامہ درکار ہوتا ہے؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "جی ہاں، تمام نو ممالک میں۔ کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ درکار ہوتا ہے، اور کارکن کو ورک پرمٹ۔ دستاویزات کے نام مختلف ہیں، لیکن منطق ایک جیسی ہے۔ دونوں ہم مکمل کرتے ہیں۔"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "پورا عمل کتنا وقت لیتا ہے؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "امیدواروں کا انتخاب تعداد اور پیشے کے لحاظ سے 15 سے 25 دن لیتا ہے۔ اس کے بعد اجازت نامے، ویزے اور پرواز کا مرحلہ آتا ہے، اور اس کی مدت متعلقہ ملک اور اداروں کے کام کے بوجھ پر منحصر ہوتی ہے۔ آپ کی اسامی کی صحیح مدت ہم درخواست کا جائزہ لینے کے بعد بتاتے ہیں۔"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "اس کی لاگت کتنی ہے؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "کوئی مقررہ قیمت فہرست نہیں ہے۔ لاگت ملک، تعداد، پیشوں اور معاونت کے دائرہ کار پر منحصر ہوتی ہے — ہم ہر کیس کے لیے الگ تخمینہ تیار کرتے ہیں۔"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "اگر کارکن موزوں نہ ہو تو کیا ہوگا؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "تبدیلی کی شرائط ہم کام شروع ہونے سے پہلے ہی معاہدے میں طے کر لیتے ہیں، تاکہ بعد میں کوئی ابہام نہ رہے۔"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ہمارے پاس پہلے سے غیر ملکی کارکن کام کر رہے ہیں — کیا آپ انہیں چیک کر سکتے ہیں؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "جی ہاں، یہ امیگریشن آڈٹ کہلاتا ہے: ہم دستاویزات اور مدتیں چیک کرتے ہیں، اور بتاتے ہیں کہ کہاں خطرہ ہے اور کیا درست کرنا ہے۔"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>
+(function(){
+'use strict';
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var WA_NUMBER = '996700123445';
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+var LANG = 'ru';
+
+/* ═══ DATA ═══════════════════════════════════════════════ */
+var GENERIC_DOCS = ['Разрешение на привлечение иностранной рабочей силы','Разрешение на работу для специалиста','Виза для въезда','Регистрация по месту пребывания','Трудовой договор на понятном работнику языке'];
+var GENERIC_DOCS_EN = ['Foreign Labor Attraction Permit','Work Permit for the Specialist','Entry Visa','Registration at Place of Stay','Employment Contract in a Language the Worker Understands'];
+var GENERIC_DOCS_UR = ['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','ماہر کے لیے ورک پرمٹ','داخلے کے لیے ویزا','قیام کے مقام پر رجسٹریشن','کارکن کی سمجھ میں آنے والی زبان میں ملازمت کا معاہدہ'];
+var DEST = [
+  {id:'kg', name:'Кыргызстан', name_en:'Kyrgyzstan', name_ur:'کرغزستان',
+   lead:'Предприятие получает право нанимать иностранцев, затем оформляются документы на каждого работника.',
+   lead_en:'The company obtains the right to hire foreign workers, then documents are processed for each worker.',
+   lead_ur:'کمپنی کو غیر ملکیوں کی خدمات حاصل کرنے کا حق ملتا ہے، پھر ہر کارکن کے لیے دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'kz', name:'Казахстан', name_en:'Kazakhstan', name_ur:'قازقستان',
+   lead:'Привлечение идёт в рамках квоты, поэтому проверку возможности делаем до старта подбора.',
+   lead_en:'Recruitment takes place within a quota, so we check availability before starting the selection process.',
+   lead_ur:'بھرتی کوٹے کے تحت ہوتی ہے، اس لیے ہم انتخاب شروع کرنے سے پہلے امکان کی جانچ کرتے ہیں۔',
+   docs:['Разрешение на привлечение иностранной рабочей силы','Квота на привлечение','Виза для трудовой деятельности','Регистрация по месту пребывания','Трудовой договор'],
+   docs_en:['Foreign Labor Attraction Permit','Recruitment Quota','Work Visa','Registration at Place of Stay','Employment Contract'],
+   docs_ur:['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','بھرتی کا کوٹہ','ملازمت کا ویزا','قیام کے مقام پر رجسٹریشن','ملازمت کا معاہدہ']},
+  {id:'uz', name:'Узбекистан', name_en:'Uzbekistan', name_ur:'ازبکستان',
+   lead:'Разрешительная часть проходит через уполномоченный орган по внешней трудовой миграции.',
+   lead_en:'The permit process goes through the authorized body for external labor migration.',
+   lead_ur:'اجازت کا مرحلہ بیرونی لیبر امیگریشن کے مجاز ادارے کے ذریعے مکمل ہوتا ہے۔',
+   docs:['Разрешение на привлечение иностранной рабочей силы','Подтверждение права на трудовую деятельность','Виза для въезда','Регистрация по месту пребывания','Трудовой договор'],
+   docs_en:['Foreign Labor Attraction Permit','Confirmation of the Right to Work','Entry Visa','Registration at Place of Stay','Employment Contract'],
+   docs_ur:['غیر ملکی افرادی قوت رکھنے کا اجازت نامہ','ملازمت کے حق کی تصدیق','داخلے کے لیے ویزا','قیام کے مقام پر رجسٹریشن','ملازمت کا معاہدہ']},
+  {id:'ru', name:'Россия', name_en:'Russia', name_ur:'روس',
+   lead:'Для граждан Индии, Пакистана, Бангладеш, Непала и Шри-Ланки действует визовый порядок с уведомлением органов.',
+   lead_en:'A visa-based procedure with mandatory notification of the authorities applies to citizens of India, Pakistan, Bangladesh, Nepal, and Sri Lanka.',
+   lead_ur:'بھارت، پاکستان، بنگلہ دیش، نیپال اور سری لنکا کے شہریوں کے لیے ویزے پر مبنی طریقہ کار ہے جس میں اداروں کو لازمی اطلاع دی جاتی ہے۔',
+   docs:['Разрешение на привлечение и использование иностранных работников','Разрешение на работу для специалиста','Приглашение и рабочая виза','Миграционный учёт по месту пребывания','Уведомление о заключении трудового договора'],
+   docs_en:['Permit to Attract and Employ Foreign Workers','Work Permit for the Specialist','Invitation and Work Visa','Migration Registration at Place of Stay','Notification of Employment Contract Conclusion'],
+   docs_ur:['غیر ملکی کارکنوں کو رکھنے اور استعمال کرنے کا اجازت نامہ','ماہر کے لیے ورک پرمٹ','دعوت نامہ اور ورک ویزا','قیام کے مقام پر امیگریشن رجسٹریشن','ملازمت کے معاہدے کی اطلاع']},
+  {id:'az', name:'Азербайджан', name_en:'Azerbaijan', name_ur:'آذربائیجان',
+   lead:'Предприятие получает право привлекать иностранных работников, затем оформляются документы на каждого специалиста.',
+   lead_en:'The company obtains the right to engage foreign workers, then documents are processed for each specialist.',
+   lead_ur:'کمپنی کو غیر ملکی کارکن رکھنے کا حق ملتا ہے، پھر ہر ماہر کے لیے دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'by', name:'Беларусь', name_en:'Belarus', name_ur:'بیلاروس',
+   lead:'Сначала оформляется право предприятия привлекать иностранную рабочую силу, затем — документы на конкретного работника.',
+   lead_en:'First, the company\'s right to engage foreign labor is issued, then documents for the specific worker.',
+   lead_ur:'پہلے کمپنی کو غیر ملکی افرادی قوت رکھنے کا حق دیا جاتا ہے، پھر متعلقہ کارکن کی دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'tj', name:'Таджикистан', name_en:'Tajikistan', name_ur:'تاجکستان',
+   lead:'Привлечение иностранных специалистов проходит в разрешительном порядке: сначала предприятие, затем работник.',
+   lead_en:'Engaging foreign specialists follows a permit-based procedure: first the company, then the worker.',
+   lead_ur:'غیر ملکی ماہرین کی بھرتی اجازت نامے کے طریقہ کار سے ہوتی ہے: پہلے کمپنی، پھر کارکن۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'ge', name:'Грузия', name_en:'Georgia', name_ur:'جارجیا',
+   lead:'Предприятие получает разрешение на привлечение иностранной рабочей силы, затем оформляются документы работника.',
+   lead_en:'The company obtains a permit to engage foreign labor, then the worker\'s documents are processed.',
+   lead_ur:'کمپنی کو غیر ملکی افرادی قوت رکھنے کا اجازت نامہ ملتا ہے، پھر کارکن کی دستاویزات مکمل کی جاتی ہیں۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR},
+  {id:'ua', name:'Украина', name_en:'Ukraine', name_ur:'یوکرین',
+   lead:'Привлечение иностранных специалистов идёт по разрешительному порядку — сначала предприятие, затем работник.',
+   lead_en:'Engaging foreign specialists follows a permit-based procedure — first the company, then the worker.',
+   lead_ur:'غیر ملکی ماہرین کی بھرتی اجازت نامے کے طریقہ کار کے مطابق ہوتی ہے — پہلے کمپنی، پھر کارکن۔',
+   docs:GENERIC_DOCS, docs_en:GENERIC_DOCS_EN, docs_ur:GENERIC_DOCS_UR}
+];
+var DNOTE_RU = 'ПЕРЕЧЕНЬ ОТРАЖАЕТ ОБЩИЙ ПОРЯДОК. ТОЧНЫЙ СОСТАВ ДОКУМЕНТОВ И СРОКИ ПО ВАШЕЙ ВАКАНСИИ ПОДТВЕРЖДАЕМ НА КОНСУЛЬТАЦИИ.';
+var DNOTE_EN = 'THIS LIST REFLECTS THE GENERAL PROCEDURE. THE EXACT SET OF DOCUMENTS AND TIMELINE FOR YOUR VACANCY ARE CONFIRMED DURING A CONSULTATION.';
+var DNOTE_UR = 'یہ فہرست عمومی طریقہ کار ظاہر کرتی ہے۔ آپ کی اسامی کے لیے دستاویزات کی صحیح تفصیل اور مدت مشاورت کے دوران بتائی جاتی ہے۔';
+
+var state = { c:0 };
+
+/* ═══ COUNTRY PANEL (section 01) ═════════════════════════ */
+var dsel = $('#dsel'), dpanel = $('#dpanel');
+
+function destName(d){ return LANG === 'en' ? d.name_en : LANG === 'ur' ? d.name_ur : d.name; }
+function destDocs(d){ return LANG === 'en' ? d.docs_en : LANG === 'ur' ? d.docs_ur : d.docs; }
+function destLead(d){ return LANG === 'en' ? d.lead_en : LANG === 'ur' ? d.lead_ur : d.lead; }
+function renderSel(){
+  dsel.innerHTML = '';
+  DEST.forEach(function(d, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role','tab');
+    b.setAttribute('aria-selected', i === state.c ? 'true' : 'false');
+    b.textContent = destName(d);
+    b.addEventListener('click', function(){ state.c = i; syncAll(); });
+    dsel.appendChild(b);
+  });
+}
+function renderPanel(){
+  var d = DEST[state.c];
+  var docs = destDocs(d).map(function(x, n){
+    return '<div class="doc"><span class="doc__n">' + String(n+1).padStart(2,'0') + '</span>' +
+           '<svg aria-hidden="true"><use href="#tick"/></svg><span>' + x + '</span></div>';
+  }).join('');
+  var titlePrefix = LANG === 'en' ? 'What Is Processed: ' : LANG === 'ur' ? 'کیا تیار ہوتا ہے: ' : 'Что оформляется: ';
+  var dnote = LANG === 'en' ? DNOTE_EN : LANG === 'ur' ? DNOTE_UR : DNOTE_RU;
+  dpanel.innerHTML =
+    '<div class="dpanel__t">' + titlePrefix + destName(d) + '</div>' +
+    '<p class="dpanel__s">' + destLead(d) + '</p>' +
+    '<div class="docs">' + docs + '</div>' +
+    '<p class="dnote">' + dnote + '</p>';
+}
+function syncAll(){
+  renderSel(); renderPanel();
+}
+
+/* ═══ TICKER ═════════════════════════════════════════════ */
+var trades = ['Сварщики','Монтажники металлоконструкций','Операторы ЧПУ','Швеи','Арматурщики','Бетонщики','Операторы линий','Кладовщики','Водители погрузчика','Электромонтажники','Отделочники','Разнорабочие','Плиточники','Слесари-сборщики','Дорожные рабочие'];
+var tradesEn = ['Welders','Steel Structure Installers','CNC Operators','Seamstresses','Rebar Workers','Concrete Workers','Line Operators','Warehouse Workers','Forklift Drivers','Electricians','Finishers','General Workers','Tile Layers','Assembly Fitters','Road Workers'];
+var tradesUr = ['ویلڈرز','اسٹیل اسٹرکچر انسٹالرز','سی این سی آپریٹرز','درزی','سریا فٹرز','کنکریٹ ورکرز','لائن آپریٹرز','گودام ورکرز','فورک لفٹ ڈرائیورز','الیکٹریشنز','فنشنگ ورکرز','عام مزدور','ٹائل لگانے والے','اسمبلی فٹرز','سڑک کے مزدور'];
+var row = $('#tickRow');
+function renderTicker(){
+  var list = LANG === 'en' ? tradesEn : LANG === 'ur' ? tradesUr : trades;
+  var tickHtml = list.map(function(t){ return '<span class="tick__i">' + t + '</span>'; }).join('');
+  row.innerHTML = tickHtml + tickHtml;
+}
+
+/* ═══ REVEAL ═════════════════════════════════════════════ */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+$$('.rv').forEach(function(el){ io.observe(el); });
+
+/* ═══ COUNTERS ═══════════════════════════════════════════ */
+var cio = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    var el = e.target, to = parseInt(el.dataset.to, 10);
+    if(isNaN(to)) return;
+    var pre = el.dataset.pre || '', post = el.dataset.post || '';
+    if(reduce){ el.textContent = pre + to + post; return; }
+    var t0 = null, dur = 950;
+    function step(t){
+      if(!t0) t0 = t;
+      var k = Math.min((t - t0) / dur, 1), ease = 1 - Math.pow(1 - k, 3);
+      el.textContent = pre + Math.round(to * ease) + post;
+      if(k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+},{threshold:.5});
+$$('.st__n[data-to]').forEach(function(el){ cio.observe(el); });
+
+/* ═══ PROCESS SCROLL ═════════════════════════════════════ */
+var pw = $('#proc');
+var items = $$('.pi'), railItems = $$('.rail__i'), railLines = $$('.rail__line');
+var cur = 0;
+function setStep(i){
+  if(i === cur) return;
+  cur = i;
+  items.forEach(function(el, n){ el.classList.toggle('on', n === i); });
+  railItems.forEach(function(el, n){ el.classList.toggle('on', n <= i); });
+  railLines.forEach(function(el, n){ el.classList.toggle('on', n < i); });
+}
+function onProcess(){
+  if(window.innerWidth < 900 || reduce) return;
+  var r = pw.getBoundingClientRect(), total = pw.offsetHeight - window.innerHeight;
+  if(total <= 0) return;
+  var p = Math.min(Math.max(-r.top / total, 0), 1);
+  setStep(Math.min(Math.floor(p * items.length), items.length - 1));
+}
+
+/* ═══ SCROLL: progress + mobile CTA + process ════════════ */
+/* ═══ SCROLL RESTORATION ══════════════════ */
+history.scrollRestoration = "manual";
+if (window.location.hash) {
+  document.documentElement.style.scrollBehavior = "auto";
+  document.addEventListener("DOMContentLoaded", function () {
+    var el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({ block: "start" });
+    document.documentElement.style.scrollBehavior = "";
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+}
+
+var prog = $('#prog'), mcta = $('#mcta'), ticking = false;
+function onScroll(){
+  var h = document.documentElement;
+  var max = h.scrollHeight - h.clientHeight;
+  prog.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  mcta.classList.toggle('on', h.scrollTop > window.innerHeight * .6);
+  onProcess();
+}
+window.addEventListener('scroll', function(){
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(function(){ onScroll(); ticking = false; });
+}, {passive:true});
+window.addEventListener('resize', onScroll);
+onScroll();
+
+/* ═══ VIDEO ══════════════════════════════════════════════ */
+var vf = $('#vf');
+function playVideo(){
+  if(vf.dataset.on) return;
+  vf.dataset.on = '1';
+  var noVideo = LANG === 'en' ? "Your browser doesn't support video." : LANG === 'ur' ? 'آپ کا براؤزر ویڈیو سپورٹ نہیں کرتا۔' : 'Ваш браузер не поддерживает видео.';
+  vf.innerHTML = '<video controls autoplay playsinline preload="metadata" poster="video/ali-poster.jpg"><source src="video/ali.mp4" type="video/mp4">' + noVideo + '</video>';
+}
+vf.addEventListener('click', playVideo);
+vf.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); playVideo(); } });
+
+/* ═══ LEAD FORM ══════════════════════════════════════════ */
+var f = $('#leadform'), m = $('#msg');
+f.addEventListener('submit', function(e){
+  e.preventDefault();
+  var names = ['company','need','when','contact'], v = {}, bad = null;
+  names.forEach(function(n){
+    var el = f.elements[n];
+    v[n] = el.value.trim();
+    var ok = v[n].length > 1;
+    el.classList.toggle('err', !ok);
+    if(!ok && !bad) bad = el;
+  });
+  m.classList.add('on');
+  if(bad){
+    m.textContent = LANG === 'en' ? 'Please fill in the highlighted fields.'
+      : LANG === 'ur' ? 'براہ کرم نشان زدہ خانے پُر کریں۔'
+      : 'Заполните отмеченные поля.';
+    m.style.borderInlineStartColor = 'var(--err)';
+    bad.focus();
+    return;
+  }
+  var text = LANG === 'en'
+    ? ('Request from the WorkUnity website\n\n'
+      + 'Destination country: ' + f.elements.country.value + '\n'
+      + 'Company: ' + v.company + '\n'
+      + 'Professions and quantity: ' + v.need + '\n'
+      + 'Timeline: ' + v.when + '\n'
+      + 'Contact: ' + v.contact)
+    : LANG === 'ur'
+    ? ('WorkUnity ویب سائٹ سے درخواست\n\n'
+      + 'ملازمت کا ملک: ' + f.elements.country.value + '\n'
+      + 'کمپنی: ' + v.company + '\n'
+      + 'پیشے اور تعداد: ' + v.need + '\n'
+      + 'مدت: ' + v.when + '\n'
+      + 'رابطہ: ' + v.contact)
+    : ('Заявка с сайта WorkUnity\n\n'
+      + 'Страна найма: ' + f.elements.country.value + '\n'
+      + 'Компания: ' + v.company + '\n'
+      + 'Профессии и количество: ' + v.need + '\n'
+      + 'Сроки: ' + v.when + '\n'
+      + 'Контакт: ' + v.contact);
+  window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  m.textContent = LANG === 'en'
+    ? 'Opening WhatsApp with a ready message. If the window didn\'t appear — allow pop-ups or write to us directly.'
+    : LANG === 'ur'
+    ? 'WhatsApp ایک تیار پیغام کے ساتھ کھل رہا ہے۔ اگر ونڈو ظاہر نہ ہو — پاپ اپس کی اجازت دیں یا براہ راست ہمیں لکھیں۔'
+    : 'Открываем WhatsApp с готовым сообщением. Если окно не появилось — разрешите всплывающие окна или напишите нам напрямую.';
+  m.style.borderInlineStartColor = 'var(--accent)';
+});
+f.addEventListener('input', function(e){ if(e.target.classList) e.target.classList.remove('err'); });
+
+/* ═══ NAV ════════════════════════════════════════════════ */
+var burger = $('#burger'), nav = $('#mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+});
+
+/* ═══ LANGUAGE SWITCH ═════════════════════════════════════ */
+var RTL_LANGS = { ur: true };
+var ENABLED_LANGS = ['ru', 'en', 'ur'];
+function nextLang(cur){
+  var i = ENABLED_LANGS.indexOf(cur);
+  if (i === -1) i = 0;
+  return ENABLED_LANGS[(i + 1) % ENABLED_LANGS.length];
+}
+
+var SEO = {
+  ru: {
+    title: 'WorkUnity — легальное трудоустройство иностранных работников',
+    description: 'Легальное трудоустройство иностранных работников: подбор, разрешения, документы и юридическая защита. Специалисты из Индии, Пакистана, Бангладеш и Непала.',
+    ogTitle: 'WorkUnity — легальное трудоустройство иностранных работников',
+    ogDescription: 'Предсказуемый процесс, проверенные документы, юридическая защита. Работодателям, иностранным гражданам и партнёрам.'
+  },
+  en: {
+    title: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
+    description: 'Legal employment of foreign workers: sourcing, permits, documents and legal protection. Specialists from India, Pakistan, Bangladesh and Nepal.',
+    ogTitle: 'WorkUnity — Legal Employment Infrastructure for Foreign Workers',
+    ogDescription: 'A predictable process, verified documents, legal protection. For employers, foreign nationals and partners.',
+    locale: 'en_US'
+  },
+  ur: {
+    title: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
+    description: 'غیر ملکی کارکنوں کا قانونی روزگار: بھرتی، اجازت نامے، دستاویزات اور قانونی تحفظ۔ بھارت، پاکستان، بنگلہ دیش اور نیپال سے ماہرین۔',
+    ogTitle: 'WorkUnity — غیر ملکی کارکنوں کے قانونی روزگار کا بنیادی ڈھانچہ',
+    ogDescription: 'قابلِ پیشگوئی عمل، تصدیق شدہ دستاویزات، قانونی تحفظ۔ آجروں، غیر ملکی شہریوں اور شراکت داروں کے لیے۔',
+    locale: 'ur_PK'
+  }
+};
+SEO.ru.locale = 'ru_RU';
+var metaDescEl = document.querySelector('meta[name="description"]');
+var ogTitleEl = document.querySelector('meta[property="og:title"]');
+var ogDescEl = document.querySelector('meta[property="og:description"]');
+var ogLocaleEl = document.querySelector('meta[property="og:locale"]');
+function applySeo(lang){
+  var seo = SEO[lang] || SEO.ru;
+  document.title = seo.title;
+  if (metaDescEl) metaDescEl.setAttribute('content', seo.description);
+  if (ogTitleEl) ogTitleEl.setAttribute('content', seo.ogTitle);
+  if (ogDescEl) ogDescEl.setAttribute('content', seo.ogDescription);
+  if (ogLocaleEl) ogLocaleEl.setAttribute('content', seo.locale);
+}
+
+var lsw = $('#lsw');
+var i18nNodes = $$('[data-en]').map(function(el){
+  return { el:el, ru:el.innerHTML, en:el.getAttribute('data-en'), ur:el.getAttribute('data-ur') };
+});
+var ATTR_I18N = [
+  { sel:'#c2', attr:'placeholder', ru:'Сварщики — 15, разнорабочие — 30', en:'Welders — 15, general workers — 30', ur:'ویلڈرز — 15، عام مزدور — 30' },
+  { sel:'#c3', attr:'placeholder', ru:'К декабрю', en:'By December', ur:'دسمبر تک' },
+  { sel:'#mainnav', attr:'aria-label', ru:'Основное меню', en:'Main menu', ur:'مرکزی مینو' },
+  { sel:'#burger', attr:'aria-label', ru:'Открыть меню', en:'Open menu', ur:'مینو کھولیں' },
+  { sel:'#vf', attr:'aria-label', ru:'Смотреть видеообращение основателя', en:"Watch the founder's video message", ur:'بانی کا ویڈیو پیغام دیکھیں' },
+  { sel:'#dsel', attr:'aria-label', ru:'Страна найма', en:'Destination country', ur:'ملازمت کا ملک' },
+  { sel:'.qr img', attr:'alt', ru:'QR-код для чата WorkUnity в WhatsApp', en:'QR code for the WorkUnity WhatsApp chat', ur:'WorkUnity WhatsApp چیٹ کے لیے QR کوڈ' },
+  { sel:'#tsw', attr:'aria-label', ru:'Тема', en:'Theme', ur:'تھیم' },
+  { sel:'#mctaCall', attr:'aria-label', ru:'Позвонить', en:'Call', ur:'کال کریں' }
+];
+function setLang(lang){
+  LANG = lang === 'en' || lang === 'ur' ? lang : 'ru';
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = RTL_LANGS[LANG] ? 'rtl' : 'ltr';
+  lsw.setAttribute('data-lang', LANG);
+  i18nNodes.forEach(function(n){
+    var val = LANG === 'en' ? n.en : LANG === 'ur' ? n.ur : n.ru;
+    n.el.innerHTML = (val && val.trim()) ? val : n.ru;
+  });
+  ATTR_I18N.forEach(function(a){
+    var el = $(a.sel);
+    if(el){
+      var val = LANG === 'en' ? a.en : LANG === 'ur' ? a.ur : a.ru;
+      el.setAttribute(a.attr, (val && val.trim()) ? val : a.ru);
+    }
+  });
+  applySeo(LANG);
+  renderTicker();
+  syncAll();
+  try{ localStorage.setItem('wu_lang', LANG); }catch(err){}
+}
+setLang('ur');
+
+/* ═══ THEME SWITCH ════════════════════════════════════════ */
+var tsw = $('#tsw');
+function setTheme(theme){
+  var t = theme === 'dark' ? 'dark' : 'light';
+  if(t === 'dark'){ document.documentElement.setAttribute('data-theme', 'dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  tsw.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  try{ localStorage.setItem('wu_theme', t); }catch(err){}
+}
+tsw.addEventListener('click', function(){
+  var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+var savedTheme = 'light';
+try{ savedTheme = localStorage.getItem('wu_theme') || 'light'; }catch(err){}
+setTheme(savedTheme);
+})();
+</script>
+
+
+</body></html>

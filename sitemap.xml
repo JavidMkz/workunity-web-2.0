@@ -1,39 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://workunityglobe.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/"/>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://workunityglobe.com/inostrantsam.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/inostrantsam.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/inostrantsam.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/inostrantsam.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/inostrantsam.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/inostrantsam.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/inostrantsam.html"/>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://workunityglobe.com/partners.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/partners.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/partners.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/partners.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/partners.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/partners.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/partners.html"/>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://workunityglobe.com/o-workunity.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/o-workunity.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/o-workunity.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/o-workunity.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/o-workunity.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/o-workunity.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/o-workunity.html"/>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://workunityglobe.com/audit.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/audit.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/audit.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/audit.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/audit.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/audit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/audit.html"/>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>yearly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/en/kak-nanyat-inostrannogo-rabotnika.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://workunityglobe.com/ur/kak-nanyat-inostrannogo-rabotnika.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://workunityglobe.com/en/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://workunityglobe.com/ur/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://workunityglobe.com/kak-nanyat-inostrannogo-rabotnika.html"/>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

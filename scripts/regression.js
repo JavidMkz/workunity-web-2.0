@@ -45,8 +45,10 @@ const PAGES = [
         const p = await c.newPage(); const errs = [];
         p.on('pageerror', e => errs.push(e.message));
         p.on('console', m => { if (m.type()==='error' && !/ERR_FAILED|fonts\./.test(m.text())) errs.push(m.text()); });
-        await p.goto('http://localhost:8731/' + page);
-        await p.evaluate(([l,t]) => { try{ localStorage.setItem('wu_lang',l); localStorage.setItem('wu_theme',t); }catch(e){} }, [lang,theme]);
+        // язык задаётся адресом страницы, а не localStorage
+        const langDir = lang === 'ru' ? '' : lang + '/';
+        await p.goto('http://localhost:8731/' + langDir + page);
+        await p.evaluate(t => { try{ localStorage.setItem('wu_theme',t); }catch(e){} }, theme);
         await p.reload({ waitUntil:'domcontentloaded' }); await p.waitForTimeout(280);
 
         const r = await p.evaluate(() => {
@@ -113,9 +115,8 @@ const PAGES = [
     await c.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
     const p = await c.newPage(); const rows = [];
     for (const [page] of PAGES) for (const lang of ['ru','en','ur']) {
-      await p.goto('http://localhost:8731/' + page);
-      await p.evaluate(l => { try{ localStorage.setItem('wu_lang',l); }catch(e){} }, lang);
-      await p.reload({ waitUntil:'domcontentloaded' }); await p.waitForTimeout(170);
+      await p.goto('http://localhost:8731/' + (lang === 'ru' ? '' : lang + '/') + page);
+      await p.waitForTimeout(170);
       const ov = await p.evaluate(() => {
         const bg = document.querySelector('#burger');
         if (bg && getComputedStyle(bg).display !== 'none') bg.click();

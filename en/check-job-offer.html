@@ -256,6 +256,24 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
 .g-tab td{padding:12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
 .g-tab tr:last-child td{border-bottom:0}
 .g-tab td:first-child{color:var(--ink);font-weight:600}
+/* блок вопросов и ответов */
+.faq{display:grid;border-top:1px solid var(--line)}
+.q{border-bottom:1px solid var(--line);overflow:hidden}
+.q summary{list-style:none;cursor:pointer;padding:24px 0;font-family:var(--h);font-weight:700;
+  font-size:clamp(16.5px,1.9vw,20px);letter-spacing:-.035em;display:flex;gap:20px;align-items:center}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"";margin-inline-start:auto;flex:none;width:30px;height:30px;
+  border:1.5px solid var(--line);border-radius:50%;
+  background:linear-gradient(var(--accent) 0 0) center/13px 1.5px no-repeat,
+             linear-gradient(var(--accent) 0 0) center/1.5px 13px no-repeat;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1),border-color .2s}
+.q summary:hover{color:var(--accent)}
+.q summary:hover::after{border-color:var(--accent)}
+.q[open] summary::after{transform:rotate(135deg)}
+.q__a{padding:0 0 26px;font-size:16px;color:var(--muted);max-width:68ch;line-height:1.65}
+.q__i{font-family:var(--m);font-size:11px;color:var(--accent);letter-spacing:.18em;flex:none}
+html[lang="ur"] .q summary{letter-spacing:0}
+.g-body .faq{margin:0 0 26px}
 .g-cta{background:var(--navy);color:#fff;border-radius:var(--r-lg);
   padding:clamp(26px,4vw,40px);margin-top:clamp(44px,5vw,64px)}
 .g-cta h3{color:#fff;font-size:clamp(20px,2.3vw,25px);margin-bottom:12px}
@@ -406,14 +424,6 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "The agency is asking for payment up front. Is that always a scam?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay."
-     }
-    },
-    {
-     "@type": "Question",
      "name": "Can you check an offer if the job is not in Kyrgyzstan?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -486,24 +496,19 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
     <h1 data-i18n="c.h1">How to Check That a Job Offer Is Real</h1>
     <p data-i18n="c.lead">A promise of work abroad is the most common way migrant workers are defrauded. The checks below take half an hour and protect your money, your documents and a year of your life.</p>
       <nav class="toc" aria-label="Contents" data-i18n-attr="aria-label:c.tocaria">
-        <a href="#pay"><b>01</b><span data-i18n="c.toc1">Never pay for a job</span></a>
-        <a href="#licence"><b>02</b><span data-i18n="c.toc2">Check the agency licence</span></a>
-        <a href="#employer"><b>03</b><span data-i18n="c.toc3">Confirm the employer exists</span></a>
-        <a href="#contract"><b>04</b><span data-i18n="c.toc4">Get the contract before you travel</span></a>
-        <a href="#visa"><b>05</b><span data-i18n="c.toc5">A work visa, not a tourist visa</span></a>
-        <a href="#passport"><b>06</b><span data-i18n="c.toc6">Your passport stays with you</span></a>
-        <a href="#flags"><b>07</b><span data-i18n="c.toc7">Warning signs</span></a>
-        <a href="#help"><b>08</b><span data-i18n="c.toc8">If you have already been deceived</span></a>
+        <a href="#licence"><b>01</b><span data-i18n="c.toc1">Check the agency licence</span></a>
+        <a href="#employer"><b>02</b><span data-i18n="c.toc2">Confirm the employer exists</span></a>
+        <a href="#contract"><b>03</b><span data-i18n="c.toc3">Read the contract before you travel</span></a>
+        <a href="#visa"><b>04</b><span data-i18n="c.toc4">Visa and work permit</span></a>
+        <a href="#passport"><b>05</b><span data-i18n="c.toc5">Your passport stays with you</span></a>
+        <a href="#flags"><b>06</b><span data-i18n="c.toc6">Warning signs</span></a>
+        <a href="#help"><b>07</b><span data-i18n="c.toc7">If you have already been deceived</span></a>
       </nav>
   </div>
 </section>
 
 <article class="g-body">
-  <h2 id="pay" data-i18n="c.h.pay">01. Never pay for a job</h2>
-  <p data-i18n="c.pay.p1">This single rule rules out most scams. A legitimate employer pays to hire you: sourcing, permits and the invitation are their costs, not yours. Being asked for money to “hold the place”, “reserve the vacancy” or “process the invitation” before a contract is signed almost always means fraud.</p>
-  <p data-i18n="c.pay.p2">A licensed agency in your country may charge for its services, but the amount is capped by law and you must be given a receipt. Cash handed to “a friend”, a transfer to a private card, payment in cryptocurrency, or any payment without a document: that is not how legitimate companies operate.</p>
-
-  <h2 id="licence" data-i18n="c.h.licence">02. Check the agency licence</h2>
+  <h2 id="licence" data-i18n="c.h.licence">01. Check the agency licence</h2>
   <p data-i18n="c.lic.p1">Recruiting workers for jobs abroad is a licensed activity. Most countries keep a public register, and checking it takes a couple of minutes.</p>
   <ul>
     <li data-i18n="c.lic.pk"><strong>Pakistan.</strong> The agency must hold an Overseas Employment Promoter (OEP) licence from the Bureau of Emigration &amp; Overseas Employment. Active licences are published at <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a>, and you can confirm one further at a Protector of Emigrants office.</li>
@@ -513,12 +518,12 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
   </ul>
   <p data-i18n="c.lic.p2">The rule is simple: an agency must give you its licence number if you ask. Refusing, dodging the question or promising to “show it later” is reason enough to end the conversation.</p>
 
-  <h2 id="employer" data-i18n="c.h.employer">03. Confirm the employer exists</h2>
+  <h2 id="employer" data-i18n="c.h.employer">02. Confirm the employer exists</h2>
   <p data-i18n="c.emp.p1">Find out the company's full name, address and phone number. Call the number you found <strong>yourself</strong>, on the company website or in a directory, not the one the middleman gave you. It is a simple check, and fraudsters rarely survive it.</p>
   <p data-i18n="c.emp.p2">Ask who will employ you on paper, who your direct manager will be and at which site you will work. A real employer answers all three without hesitating.</p>
 
-  <h2 id="contract" data-i18n="c.h.contract">04. Get the contract before you travel</h2>
-  <p data-i18n="c.con.p1">You should hold the contract before departure, in a language you understand. “You will sign on arrival” is a bad answer: on arrival you are already without money, without a return ticket and in a foreign country.</p>
+  <h2 id="contract" data-i18n="c.h.contract">03. Read the contract before you travel</h2>
+  <p data-i18n="c.con.p1">You will most likely sign the contract after you arrive, as is the case almost everywhere. But you need to read it before you fly. Ask for the draft in advance, in a language you understand: you should have time to work through it while you are still at home.</p>
   <p data-i18n="c.con.p2">The contract must state:</p>
   <ul>
     <li data-i18n="c.con.li1">the job title and the nature of the work;</li>
@@ -527,17 +532,17 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
     <li data-i18n="c.con.li4">who pays for the flight, accommodation and medical insurance;</li>
     <li data-i18n="c.con.li5">the length of the contract and how it can be ended.</li>
   </ul>
-  <p data-i18n="c.con.p3">Verbal promises count for nothing. If what you were told is not written into the contract, it does not exist.</p>
+  <p data-i18n="c.con.p3">If they refuse to send the draft, or answer that you will “sort it out on arrival”, treat that as a warning. Verbal promises count for nothing: if a term is not written into the contract, it does not exist.</p>
 
-  <h2 id="visa" data-i18n="c.h.visa">05. A work visa, not a tourist visa</h2>
-  <p data-i18n="c.visa.p1">No country allows you to work on a tourist visa. If you are told to “enter as a tourist and we will sort the permit out later”, that is a breach of the law, and you are the one who answers for it: a fine, deportation and an entry ban for several years.</p>
-  <p data-i18n="c.visa.p2">Before you fly, establish which visa you hold and whether a work permit is being arranged. Most countries require two permits: one allowing the company to employ foreign nationals, and one issued to you personally. Ask about both.</p>
+  <h2 id="visa" data-i18n="c.h.visa">04. Visa and work permit</h2>
+  <p data-i18n="c.visa.p1">Entry usually happens in two stages. First comes an initial visa: in Kyrgyzstan it is issued for around two months, and you enter the country on it. The work permit and the document that lets you stay and work for longer — a residence permit (resident card) or a one-year visa — are arranged after you arrive.</p>
+  <p data-i18n="c.visa.p2">What should worry you is different: being told to enter as a tourist and “sort it out on the spot”; nobody being able to explain clearly what happens when the initial visa runs out; the employer not saying who arranges the work permit, or by when. You are the one who answers for staying without documents — with a fine, deportation and an entry ban.</p>
 
-  <h2 id="passport" data-i18n="c.h.passport">06. Your passport stays with you</h2>
+  <h2 id="passport" data-i18n="c.h.passport">05. Your passport stays with you</h2>
   <p data-i18n="c.pas.p1">It is unlawful for an employer or agency to hold your passport. The original must stay with you. Copies are enough for paperwork, or a temporary handover against a written receipt stating when it will be returned.</p>
   <p data-i18n="c.pas.p2">Someone without a passport cannot resign, cannot leave and cannot seek help: that is precisely why it gets taken. If your passport is already being held, seek help immediately.</p>
 
-  <h2 id="flags" data-i18n="c.h.flags">07. Warning signs</h2>
+  <h2 id="flags" data-i18n="c.h.flags">06. Warning signs</h2>
   <p data-i18n="c.flag.p1">Any one of these is a reason to stop and check again. Two or more together almost certainly means fraud.</p>
   <ul>
     <li data-i18n="c.flag.li1">money is requested before a contract is signed;</li>
@@ -550,18 +555,17 @@ html[dir="rtl"] .g-call{border-radius:var(--r-lg) 0 0 var(--r-lg)}
     <li data-i18n="c.flag.li8">you are offered entry on a tourist visa.</li>
   </ul>
 
-  <h2 id="help" data-i18n="c.h.help">08. If you have already been deceived</h2>
+  <h2 id="help" data-i18n="c.h.help">07. If you have already been deceived</h2>
   <p data-i18n="c.help.p1">Silence works for whoever deceived you. Keep everything you have: messages, receipts, names, phone numbers, addresses, copies of documents. Even scattered fragments add up to evidence.</p>
   <p data-i18n="c.help.p2">Contact the labour migration authority in your country and your embassy. If you are already in Kyrgyzstan, tell us what happened: we will assess the situation and explain what can be done. It is free, and we do not pass information to the employer.</p>
 
   <div class="g-call"><p data-i18n="c.disclaimer">This guide sets out general safety rules and does not replace legal advice on your situation. Requirements for visas, permits and contracts are set by the law of each country and can change.</p></div>
 
-  <h2 id="voprosy" data-i18n="c.h.faq">09. Short answers</h2>
+  <h2 id="voprosy" data-i18n="c.h.faq">08. Short answers</h2>
   <div class="faq">
-    <details class="q"><summary><span class="q__i">01</span><span data-i18n="c.q1">The agency is asking for payment up front. Is that always a scam?</span></summary><div class="q__a" data-i18n="c.a1">Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay.</div></details>
-    <details class="q"><summary><span class="q__i">02</span><span data-i18n="c.q2">Can you check an offer if the job is not in Kyrgyzstan?</span></summary><div class="q__a" data-i18n="c.a2">The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.</div></details>
-    <details class="q"><summary><span class="q__i">03</span><span data-i18n="c.q3">The employer has taken my passport. What should I do?</span></summary><div class="q__a" data-i18n="c.a3">Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country's embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.</div></details>
-    <details class="q"><summary><span class="q__i">04</span><span data-i18n="c.q4">What does a check cost?</span></summary><div class="q__a" data-i18n="c.a4">Checking a job offer and the employer's documents is free. We charge only for specific services, agreed separately and in advance.</div></details>
+    <details class="q"><summary><span class="q__i">01</span><span data-i18n="c.q1">Can you check an offer if the job is not in Kyrgyzstan?</span></summary><div class="q__a" data-i18n="c.a1">The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.</div></details>
+    <details class="q"><summary><span class="q__i">02</span><span data-i18n="c.q2">The employer has taken my passport. What should I do?</span></summary><div class="q__a" data-i18n="c.a2">Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country's embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.</div></details>
+    <details class="q"><summary><span class="q__i">03</span><span data-i18n="c.q3">What does a check cost?</span></summary><div class="q__a" data-i18n="c.a3">Checking a job offer and the employer's documents is free. We charge only for specific services, agreed separately and in advance.</div></details>
   </div>
 
   <div class="g-cta">
@@ -678,43 +682,39 @@ var I18N_EN = {
   'c.h1':'How to Check That a Job Offer Is Real',
   'c.lead':'A promise of work abroad is the most common way migrant workers are defrauded. The checks below take half an hour and protect your money, your documents and a year of your life.',
   'c.tocaria':'Contents',
-  'c.toc1':'Never pay for a job',
-  'c.toc2':'Check the agency licence',
-  'c.toc3':'Confirm the employer exists',
-  'c.toc4':'Get the contract before you travel',
-  'c.toc5':'A work visa, not a tourist visa',
-  'c.toc6':'Your passport stays with you',
-  'c.toc7':'Warning signs',
-  'c.toc8':'If you have already been deceived',
-  'c.h.pay':'01. Never pay for a job',
-  'c.pay.p1':'This single rule rules out most scams. A legitimate employer pays to hire you: sourcing, permits and the invitation are their costs, not yours. Being asked for money to “hold the place”, “reserve the vacancy” or “process the invitation” before a contract is signed almost always means fraud.',
-  'c.pay.p2':'A licensed agency in your country may charge for its services, but the amount is capped by law and you must be given a receipt. Cash handed to “a friend”, a transfer to a private card, payment in cryptocurrency, or any payment without a document: that is not how legitimate companies operate.',
-  'c.h.licence':'02. Check the agency licence',
+  'c.toc1':'Check the agency licence',
+  'c.toc2':'Confirm the employer exists',
+  'c.toc3':'Read the contract before you travel',
+  'c.toc4':'Visa and work permit',
+  'c.toc5':'Your passport stays with you',
+  'c.toc6':'Warning signs',
+  'c.toc7':'If you have already been deceived',
+  'c.h.licence':'01. Check the agency licence',
   'c.lic.p1':'Recruiting workers for jobs abroad is a licensed activity. Most countries keep a public register, and checking it takes a couple of minutes.',
   'c.lic.pk':'<strong>Pakistan.</strong> The agency must hold an Overseas Employment Promoter (OEP) licence from the Bureau of Emigration &amp; Overseas Employment. Active licences are published at <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a>, and you can confirm one further at a Protector of Emigrants office.',
   'c.lic.in':'<strong>India.</strong> A Recruiting Agent (RA) licence is required, issued by the Protector General of Emigrants under the Ministry of External Affairs. The list is at <a href="https://www.mea.gov.in/ras" target="_blank" rel="noopener">mea.gov.in</a>. The licence number must appear on the agency\'s letterhead and website.',
   'c.lic.bd':'<strong>Bangladesh.</strong> A Recruiting Licence (RL) from the Bureau of Manpower, Employment and Training is required. You can check an agency through the government platform <a href="https://www.oep.gov.bd/" target="_blank" rel="noopener">oep.gov.bd</a>.',
   'c.lic.other':'<strong>Other countries.</strong> Look for the labour migration authority under your ministry of labour: the register of agencies is usually published on its website.',
   'c.lic.p2':'The rule is simple: an agency must give you its licence number if you ask. Refusing, dodging the question or promising to “show it later” is reason enough to end the conversation.',
-  'c.h.employer':'03. Confirm the employer exists',
+  'c.h.employer':'02. Confirm the employer exists',
   'c.emp.p1':'Find out the company\'s full name, address and phone number. Call the number you found <strong>yourself</strong>, on the company website or in a directory, not the one the middleman gave you. It is a simple check, and fraudsters rarely survive it.',
   'c.emp.p2':'Ask who will employ you on paper, who your direct manager will be and at which site you will work. A real employer answers all three without hesitating.',
-  'c.h.contract':'04. Get the contract before you travel',
-  'c.con.p1':'You should hold the contract before departure, in a language you understand. “You will sign on arrival” is a bad answer: on arrival you are already without money, without a return ticket and in a foreign country.',
+  'c.h.contract':'03. Read the contract before you travel',
+  'c.con.p1':'You will most likely sign the contract after you arrive, as is the case almost everywhere. But you need to read it before you fly. Ask for the draft in advance, in a language you understand: you should have time to work through it while you are still at home.',
   'c.con.p2':'The contract must state:',
   'c.con.li1':'the job title and the nature of the work;',
   'c.con.li2':'the salary, the currency and when it is paid;',
   'c.con.li3':'working hours, days off and overtime pay;',
   'c.con.li4':'who pays for the flight, accommodation and medical insurance;',
   'c.con.li5':'the length of the contract and how it can be ended.',
-  'c.con.p3':'Verbal promises count for nothing. If what you were told is not written into the contract, it does not exist.',
-  'c.h.visa':'05. A work visa, not a tourist visa',
-  'c.visa.p1':'No country allows you to work on a tourist visa. If you are told to “enter as a tourist and we will sort the permit out later”, that is a breach of the law, and you are the one who answers for it: a fine, deportation and an entry ban for several years.',
-  'c.visa.p2':'Before you fly, establish which visa you hold and whether a work permit is being arranged. Most countries require two permits: one allowing the company to employ foreign nationals, and one issued to you personally. Ask about both.',
-  'c.h.passport':'06. Your passport stays with you',
+  'c.con.p3':'If they refuse to send the draft, or answer that you will “sort it out on arrival”, treat that as a warning. Verbal promises count for nothing: if a term is not written into the contract, it does not exist.',
+  'c.h.visa':'04. Visa and work permit',
+  'c.visa.p1':'Entry usually happens in two stages. First comes an initial visa: in Kyrgyzstan it is issued for around two months, and you enter the country on it. The work permit and the document that lets you stay and work for longer — a residence permit (resident card) or a one-year visa — are arranged after you arrive.',
+  'c.visa.p2':'What should worry you is different: being told to enter as a tourist and “sort it out on the spot”; nobody being able to explain clearly what happens when the initial visa runs out; the employer not saying who arranges the work permit, or by when. You are the one who answers for staying without documents — with a fine, deportation and an entry ban.',
+  'c.h.passport':'05. Your passport stays with you',
   'c.pas.p1':'It is unlawful for an employer or agency to hold your passport. The original must stay with you. Copies are enough for paperwork, or a temporary handover against a written receipt stating when it will be returned.',
   'c.pas.p2':'Someone without a passport cannot resign, cannot leave and cannot seek help: that is precisely why it gets taken. If your passport is already being held, seek help immediately.',
-  'c.h.flags':'07. Warning signs',
+  'c.h.flags':'06. Warning signs',
   'c.flag.p1':'Any one of these is a reason to stop and check again. Two or more together almost certainly means fraud.',
   'c.flag.li1':'money is requested before a contract is signed;',
   'c.flag.li2':'they will not give a licence number;',
@@ -724,19 +724,17 @@ var I18N_EN = {
   'c.flag.li6':'contact is only through a messenger, with no office and no registered company;',
   'c.flag.li7':'you are asked to hand over your passport;',
   'c.flag.li8':'you are offered entry on a tourist visa.',
-  'c.h.help':'08. If you have already been deceived',
+  'c.h.help':'07. If you have already been deceived',
   'c.help.p1':'Silence works for whoever deceived you. Keep everything you have: messages, receipts, names, phone numbers, addresses, copies of documents. Even scattered fragments add up to evidence.',
   'c.help.p2':'Contact the labour migration authority in your country and your embassy. If you are already in Kyrgyzstan, tell us what happened: we will assess the situation and explain what can be done. It is free, and we do not pass information to the employer.',
   'c.disclaimer':'This guide sets out general safety rules and does not replace legal advice on your situation. Requirements for visas, permits and contracts are set by the law of each country and can change.',
-  'c.h.faq':'09. Short answers',
-  'c.q1':'The agency is asking for payment up front. Is that always a scam?',
-  'c.a1':'Not always, but it is a reason to be careful. A licensed agency may charge for its services, but the amount is capped by the law of your country and you must be given a receipt. If you are asked for cash, for a transfer to a private card, or for payment with no document, do not pay.',
-  'c.q2':'Can you check an offer if the job is not in Kyrgyzstan?',
-  'c.a2':'The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.',
-  'c.q3':'The employer has taken my passport. What should I do?',
-  'c.a3':'Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country\'s embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.',
-  'c.q4':'What does a check cost?',
-  'c.a4':'Checking a job offer and the employer\'s documents is free. We charge only for specific services, agreed separately and in advance.',
+  'c.h.faq':'08. Short answers',
+  'c.q1':'Can you check an offer if the job is not in Kyrgyzstan?',
+  'c.a1':'The checks in this guide are universal and work for any country. We can help in detail where the offer concerns Kyrgyzstan or the other countries we work in; elsewhere we will point you to the right authority.',
+  'c.q2':'The employer has taken my passport. What should I do?',
+  'c.a2':'Holding your passport is unlawful. Ask for it back in writing, keep a copy of that request, and seek help: from us, from your country\'s embassy or from the labour inspectorate. Do not wait: without a passport your position worsens every day.',
+  'c.q3':'What does a check cost?',
+  'c.a3':'Checking a job offer and the employer\'s documents is free. We charge only for specific services, agreed separately and in advance.',
   'c.cta.h':'Send us the offer and we will check it',
   'c.cta.p':'Show us the documents or your messages with the employer. We will tell you what is wrong with them before you pay any money or hand over your passport.',
   'c.cta.btn':'Ask for help',
@@ -768,43 +766,39 @@ var I18N_UR = {
   'c.h1':'کیسے جانیں کہ نوکری کی پیشکش اصلی ہے',
   'c.lead':'بیرونِ ملک کام کا وعدہ محنت کش تارکینِ وطن کو دھوکہ دینے کا سب سے عام طریقہ ہے۔ نیچے دی گئی جانچ میں آدھا گھنٹہ لگتا ہے اور یہ آپ کے پیسے، دستاویزات اور زندگی کا ایک سال بچا سکتی ہے۔',
   'c.tocaria':'فہرست',
-  'c.toc1':'نوکری کے لیے پیسے نہ دیں',
-  'c.toc2':'ایجنسی کا لائسنس جانچیں',
-  'c.toc3':'تصدیق کریں کہ آجر موجود ہے',
-  'c.toc4':'روانگی سے پہلے معاہدہ لیں',
-  'c.toc5':'ورک ویزا، سیاحتی نہیں',
-  'c.toc6':'پاسپورٹ آپ کے پاس رہے',
-  'c.toc7':'دھوکے کی علامات',
-  'c.toc8':'اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
-  'c.h.pay':'01. نوکری کے لیے کبھی پیسے نہ دیں',
-  'c.pay.p1':'یہی ایک اصول زیادہ تر دھوکوں کو ختم کر دیتا ہے۔ ایک درست آجر آپ کو بھرتی کرنے کا خرچ خود اٹھاتا ہے: تلاش، اجازت نامے اور دعوت نامہ اس کے اخراجات ہیں، آپ کے نہیں۔ معاہدے پر دستخط سے پہلے “جگہ رکھنے” یا “دعوت نامہ بنوانے” کے نام پر پیسے مانگنا تقریباً ہمیشہ دھوکہ ہوتا ہے۔',
-  'c.pay.p2':'آپ کے ملک میں لائسنس یافتہ ایجنسی اپنی خدمات کا معاوضہ لے سکتی ہے، مگر اس کی حد قانون طے کرتا ہے اور رسید دینا لازم ہے۔ “کسی جاننے والے” کو نقد رقم، ذاتی کارڈ پر رقم، کرپٹو کرنسی یا بغیر دستاویز کوئی بھی ادائیگی: درست کمپنیاں اس طرح کام نہیں کرتیں۔',
-  'c.h.licence':'02. ایجنسی کا لائسنس جانچیں',
+  'c.toc1':'ایجنسی کا لائسنس جانچیں',
+  'c.toc2':'تصدیق کریں کہ آجر موجود ہے',
+  'c.toc3':'روانگی سے پہلے معاہدہ پڑھ لیں',
+  'c.toc4':'ویزا اور ورک پرمٹ',
+  'c.toc5':'پاسپورٹ آپ کے پاس رہے',
+  'c.toc6':'دھوکے کی علامات',
+  'c.toc7':'اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
+  'c.h.licence':'01. ایجنسی کا لائسنس جانچیں',
   'c.lic.p1':'بیرونِ ملک کے لیے کارکن بھرتی کرنا لائسنس والا کام ہے۔ زیادہ تر ممالک میں سرکاری فہرست عوام کے لیے کھلی ہوتی ہے اور جانچ میں چند منٹ لگتے ہیں۔',
   'c.lic.pk':'<strong>پاکستان۔</strong> ایجنسی کے پاس Bureau of Emigration &amp; Overseas Employment کا Overseas Employment Promoter (OEP) لائسنس ہونا چاہیے۔ فعال لائسنس <a href="https://beoe.gov.pk/list-of-oeps" target="_blank" rel="noopener">beoe.gov.pk</a> پر شائع ہیں، اور Protector of Emigrants کے دفتر سے مزید تصدیق کی جا سکتی ہے۔',
   'c.lic.in':'<strong>بھارت۔</strong> وزارتِ خارجہ کے تحت Protector General of Emigrants کا جاری کردہ Recruiting Agent (RA) لائسنس ضروری ہے۔ فہرست <a href="https://www.mea.gov.in/ras" target="_blank" rel="noopener">mea.gov.in</a> پر ہے۔ لائسنس نمبر ایجنسی کے لیٹر ہیڈ اور ویب سائٹ پر درج ہونا لازم ہے۔',
   'c.lic.bd':'<strong>بنگلہ دیش۔</strong> Bureau of Manpower, Employment and Training کا Recruiting Licence (RL) درکار ہے۔ ایجنسی کی جانچ سرکاری پلیٹ فارم <a href="https://www.oep.gov.bd/" target="_blank" rel="noopener">oep.gov.bd</a> پر کی جا سکتی ہے۔',
   'c.lic.other':'<strong>دیگر ممالک۔</strong> اپنی وزارتِ محنت کے تحت مزدور نقل مکانی کے ادارے کو تلاش کریں: ایجنسیوں کی فہرست عموماً اس کی ویب سائٹ پر ہوتی ہے۔',
   'c.lic.p2':'اصول سیدھا ہے: پوچھنے پر ایجنسی کو اپنا لائسنس نمبر بتانا ہوگا۔ انکار، بات ٹالنا یا “بعد میں دکھائیں گے” کہنا گفتگو ختم کرنے کے لیے کافی وجہ ہے۔',
-  'c.h.employer':'03. تصدیق کریں کہ آجر واقعی موجود ہے',
+  'c.h.employer':'02. تصدیق کریں کہ آجر واقعی موجود ہے',
   'c.emp.p1':'کمپنی کا پورا نام، پتہ اور فون نمبر معلوم کریں۔ اس نمبر پر کال کریں جو آپ نے <strong>خود</strong> کمپنی کی ویب سائٹ یا ڈائریکٹری سے نکالا ہو، نہ کہ وہ جو بیچ والے نے دیا۔ یہ آسان جانچ ہے اور دھوکہ باز اس میں شاذ و نادر ہی پورے اترتے ہیں۔',
   'c.emp.p2':'پوچھیں کہ کاغذوں میں آپ کو کون ملازم رکھے گا، آپ کا براہِ راست افسر کون ہوگا اور کس مقام پر کام ہوگا۔ اصلی آجر تینوں سوالوں کا جواب بغیر رکے دے گا۔',
-  'c.h.contract':'04. روانگی سے پہلے معاہدہ لیں',
-  'c.con.p1':'معاہدہ روانگی سے پہلے آپ کے پاس ہونا چاہیے، اس زبان میں جو آپ سمجھتے ہیں۔ “پہنچ کر دستخط کر لینا” برا جواب ہے: وہاں پہنچ کر آپ پیسوں کے بغیر، واپسی کے ٹکٹ کے بغیر اور اجنبی ملک میں ہوں گے۔',
+  'c.h.contract':'03. روانگی سے پہلے معاہدہ پڑھ لیں',
+  'c.con.p1':'معاہدے پر دستخط آپ غالباً وہاں پہنچ کر ہی کریں گے، تقریباً ہر جگہ ایسا ہی ہوتا ہے۔ لیکن اسے پڑھنا روانگی سے پہلے ضروری ہے۔ مسودہ پہلے سے منگوائیں، اس زبان میں جو آپ سمجھتے ہیں: گھر پر رہتے ہوئے آپ کے پاس اسے سمجھنے کا وقت ہونا چاہیے۔',
   'c.con.p2':'معاہدے میں یہ درج ہونا چاہیے:',
   'c.con.li1':'عہدہ اور کام کی نوعیت؛',
   'c.con.li2':'تنخواہ، کرنسی اور ادائیگی کا وقت؛',
   'c.con.li3':'کام کے اوقات، چھٹیاں اور اوور ٹائم کی ادائیگی؛',
   'c.con.li4':'پرواز، رہائش اور طبی بیمے کا خرچ کون اٹھائے گا؛',
   'c.con.li5':'معاہدے کی مدت اور اسے ختم کرنے کی شرائط۔',
-  'c.con.p3':'زبانی وعدوں کی کوئی حیثیت نہیں۔ جو بات معاہدے میں نہیں لکھی، وہ موجود نہیں ہے۔',
-  'c.h.visa':'05. ورک ویزا، سیاحتی ویزا نہیں',
-  'c.visa.p1':'کسی بھی ملک میں سیاحتی ویزے پر کام کرنے کی اجازت نہیں۔ اگر آپ سے کہا جائے کہ “سیاح بن کر آ جاؤ، اجازت نامہ بعد میں بنوا لیں گے” تو یہ قانون کی خلاف ورزی ہے، اور جواب دہ آپ ہوں گے: جرمانہ، ملک بدری اور کئی سال کے لیے داخلے پر پابندی۔',
-  'c.visa.p2':'روانگی سے پہلے معلوم کریں کہ آپ کے پاس کون سا ویزا ہے اور ورک پرمٹ بن رہا ہے یا نہیں۔ زیادہ تر ممالک میں دو اجازت نامے درکار ہوتے ہیں: ایک کمپنی کو غیر ملکیوں کو ملازم رکھنے کا، اور دوسرا ذاتی طور پر آپ کا۔ دونوں کے بارے میں پوچھیں۔',
-  'c.h.passport':'06. پاسپورٹ آپ کے پاس رہنا چاہیے',
+  'c.con.p3':'اگر مسودہ بھیجنے سے انکار کیا جائے یا جواب ملے کہ ”وہاں پہنچ کر دیکھ لیں گے“ تو یہ خطرے کی علامت ہے۔ زبانی وعدوں کی کوئی حیثیت نہیں: جو شرط معاہدے میں نہیں لکھی، وہ موجود نہیں۔',
+  'c.h.visa':'04. ویزا اور ورک پرمٹ',
+  'c.visa.p1':'داخلہ عموماً دو مرحلوں میں ہوتا ہے۔ پہلے ابتدائی ویزا بنتا ہے — کرغزستان میں یہ تقریباً دو ماہ کے لیے جاری ہوتا ہے، اور اسی پر آپ ملک میں داخل ہوتے ہیں۔ ورک پرمٹ اور زیادہ عرصے تک رہنے اور کام کرنے کا حق دینے والی دستاویز — رہائشی اجازت نامہ (ریزیڈنٹ کارڈ) یا ایک سال کا ویزا — پہنچنے کے بعد بنتی ہے۔',
+  'c.visa.p2':'فکر کی بات کچھ اور ہے: آپ سے کہا جائے کہ سیاح بن کر آ جائیں اور ”وہاں دیکھ لیں گے“؛ کوئی واضح طور پر نہ بتا سکے کہ ابتدائی ویزا ختم ہونے پر کیا ہوگا؛ آجر یہ نہ بتائے کہ ورک پرمٹ کون اور کب بنوائے گا۔ بغیر دستاویزات رہنے کا جواب دہ آپ ہوں گے — جرمانہ، ملک بدری اور داخلے پر پابندی۔',
+  'c.h.passport':'05. پاسپورٹ آپ کے پاس رہنا چاہیے',
   'c.pas.p1':'آجر یا ایجنسی کا آپ کا پاسپورٹ روکنا غیر قانونی ہے۔ اصل دستاویز ہمیشہ آپ کے پاس رہے۔ کاغذی کارروائی کے لیے نقول کافی ہیں، یا تحریری رسید کے ساتھ عارضی حوالگی جس میں واپسی کی تاریخ درج ہو۔',
   'c.pas.p2':'پاسپورٹ کے بغیر انسان نہ نوکری چھوڑ سکتا ہے، نہ جا سکتا ہے، نہ مدد مانگ سکتا ہے: اسی لیے وہ لیا جاتا ہے۔ اگر آپ کا پاسپورٹ پہلے ہی روکا جا چکا ہے تو فوراً مدد لیں۔',
-  'c.h.flags':'07. دھوکے کی علامات',
+  'c.h.flags':'06. دھوکے کی علامات',
   'c.flag.p1':'ان میں سے کوئی ایک بھی رک کر دوبارہ جانچنے کی وجہ ہے۔ دو یا زیادہ ایک ساتھ ہوں تو تقریباً یقینی طور پر دھوکہ ہے۔',
   'c.flag.li1':'معاہدے سے پہلے پیسے مانگے جاتے ہیں؛',
   'c.flag.li2':'لائسنس نمبر بتانے سے انکار؛',
@@ -814,19 +808,17 @@ var I18N_UR = {
   'c.flag.li6':'رابطہ صرف میسنجر پر، نہ دفتر ہے نہ رجسٹرڈ کمپنی؛',
   'c.flag.li7':'پاسپورٹ دینے کو کہا جاتا ہے؛',
   'c.flag.li8':'سیاحتی ویزے پر آنے کی پیشکش۔',
-  'c.h.help':'08. اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
+  'c.h.help':'07. اگر آپ کے ساتھ دھوکہ ہو چکا ہے',
   'c.help.p1':'خاموشی اسی کے حق میں جاتی ہے جس نے دھوکہ دیا۔ جو کچھ آپ کے پاس ہے سب محفوظ رکھیں: پیغامات، رسیدیں، نام، فون نمبر، پتے، دستاویزات کی نقول۔ بکھرے ہوئے ٹکڑے بھی مل کر ثبوت بن جاتے ہیں۔',
   'c.help.p2':'اپنے ملک کے مزدور نقل مکانی کے ادارے اور سفارت خانے سے رابطہ کریں۔ اگر آپ پہلے ہی کرغزستان میں ہیں تو ہمیں بتائیں کہ کیا ہوا: ہم صورتِ حال کا جائزہ لے کر بتائیں گے کہ کیا کیا جا سکتا ہے۔ یہ مفت ہے، اور ہم آجر کو معلومات نہیں دیتے۔',
   'c.disclaimer':'یہ رہنما عمومی حفاظتی اصول بیان کرتا ہے اور آپ کی صورتِ حال پر قانونی مشورے کا متبادل نہیں۔ ویزے، اجازت ناموں اور معاہدوں کی شرائط ہر ملک کا قانون طے کرتا ہے اور وہ بدل سکتی ہیں۔',
-  'c.h.faq':'09. مختصر جوابات',
-  'c.q1':'ایجنسی پیشگی رقم مانگ رہی ہے۔ کیا یہ ہمیشہ دھوکہ ہے؟',
-  'c.a1':'ہمیشہ نہیں، مگر محتاط ہونے کی وجہ ضرور ہے۔ لائسنس یافتہ ایجنسی خدمات کا معاوضہ لے سکتی ہے، مگر اس کی حد آپ کے ملک کا قانون طے کرتا ہے اور رسید دینا لازم ہے۔ اگر نقد، ذاتی کارڈ پر یا بغیر دستاویز رقم مانگی جائے تو ادائیگی نہ کریں۔',
-  'c.q2':'اگر نوکری کرغزستان میں نہیں تو کیا آپ پیشکش جانچ سکتے ہیں؟',
-  'c.a2':'اس رہنما کی جانچ ہر ملک کے لیے کارآمد ہے۔ جہاں پیشکش کرغزستان یا ان ممالک سے متعلق ہو جہاں ہم کام کرتے ہیں، ہم تفصیل سے مدد کر سکتے ہیں؛ باقی صورتوں میں ہم درست ادارے کی طرف رہنمائی کریں گے۔',
-  'c.q3':'آجر نے میرا پاسپورٹ لے لیا ہے۔ کیا کروں؟',
-  'c.a3':'پاسپورٹ روکنا غیر قانونی ہے۔ تحریری طور پر واپسی کا مطالبہ کریں، اس کی نقل اپنے پاس رکھیں اور مدد لیں: ہم سے، اپنے ملک کے سفارت خانے سے یا محنت کے محکمے سے۔ انتظار نہ کریں: پاسپورٹ کے بغیر آپ کی حالت ہر دن مزید خراب ہوتی ہے۔',
-  'c.q4':'آپ کے پاس جانچ کی قیمت کیا ہے؟',
-  'c.a4':'نوکری کی پیشکش اور آجر کی دستاویزات کی جانچ مفت ہے۔ ہم صرف ان مخصوص خدمات کا معاوضہ لیتے ہیں جن پر پہلے سے الگ اتفاق ہوتا ہے۔',
+  'c.h.faq':'08. مختصر جوابات',
+  'c.q1':'اگر نوکری کرغزستان میں نہیں تو کیا آپ پیشکش جانچ سکتے ہیں؟',
+  'c.a1':'اس رہنما کی جانچ ہر ملک کے لیے کارآمد ہے۔ جہاں پیشکش کرغزستان یا ان ممالک سے متعلق ہو جہاں ہم کام کرتے ہیں، ہم تفصیل سے مدد کر سکتے ہیں؛ باقی صورتوں میں ہم درست ادارے کی طرف رہنمائی کریں گے۔',
+  'c.q2':'آجر نے میرا پاسپورٹ لے لیا ہے۔ کیا کروں؟',
+  'c.a2':'پاسپورٹ روکنا غیر قانونی ہے۔ تحریری طور پر واپسی کا مطالبہ کریں، اس کی نقل اپنے پاس رکھیں اور مدد لیں: ہم سے، اپنے ملک کے سفارت خانے سے یا محنت کے محکمے سے۔ انتظار نہ کریں: پاسپورٹ کے بغیر آپ کی حالت ہر دن مزید خراب ہوتی ہے۔',
+  'c.q3':'آپ کے پاس جانچ کی قیمت کیا ہے؟',
+  'c.a3':'نوکری کی پیشکش اور آجر کی دستاویزات کی جانچ مفت ہے۔ ہم صرف ان مخصوص خدمات کا معاوضہ لیتے ہیں جن پر پہلے سے الگ اتفاق ہوتا ہے۔',
   'c.cta.h':'پیشکش بھیجیں، ہم جانچ لیں گے',
   'c.cta.p':'ہمیں دستاویزات یا آجر کے ساتھ اپنے پیغامات دکھائیں۔ پیسے دینے یا پاسپورٹ حوالے کرنے سے پہلے ہم بتا دیں گے کہ ان میں کیا خرابی ہے۔',
   'c.cta.btn':'مدد کے لیے رابطہ کریں',
